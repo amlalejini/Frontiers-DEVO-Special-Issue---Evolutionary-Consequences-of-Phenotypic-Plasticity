@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="First Author ^{1,*}, Co-Author ^{2} and Co-Author ^{1,2}" />
+  <title>Phenotypic plasticity can promote the evolution and maintenance of complex features in fluctuating environments</title>
+  <style>
+    html {
+      line-height: 1.7;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 40em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin-top: 1.7em;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.7em;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1.7em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1.7em 0 1.7em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      font-style: italic;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      background-color: #f0f0f0;
+      font-size: 85%;
+      margin: 0;
+      padding: .2em .4em;
+    }
+    pre {
+      line-height: 1.5em;
+      padding: 1em;
+      background-color: #f0f0f0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin-top: 1.7em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+    }
+    th, td {
+      border-bottom: 1px solid lightgray;
+      padding: 1em 3em 1em 0;
+    }
+    header {
+      margin-bottom: 6em;
+      text-align: center;
+    }
+    nav a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Phenotypic plasticity can promote the evolution and maintenance of complex features in fluctuating environments</h1>
+<p class="author">First Author <span class="math inline"><sup>1, *</sup></span>, Co-Author <span class="math inline"><sup>2</sup></span> and Co-Author <span class="math inline"><sup>1, 2</sup></span></p>
+</header>
+<h1 id="introduction">Introduction</h1>
+<p>Fluctuating environmental conditions are ubiquitous in natural systems. Species have evolved a wide range of evolved strategies for coping with environmental change, such as phenotypic plasticity <span class="citation" data-cites="ghalambor_adaptive_2007">(C. K. Ghalambor et al. 2007)</span>, bet hedging <span class="citation" data-cites="simons_modes_2011">(Simons 2011)</span>, periodic migration <span class="citation" data-cites="winger_long_2019">(Winger et al. 2019)</span>, and adaptive tracking <span class="citation" data-cites="barrett_adaptation_2008">(Barrett and Schluter 2008)</span>. The particular coping mechanisms that evolve in fluctuating environments shift the course of subsequent evolution [citations]. Identifying the mechanisms most likely to evolve and examining both the evolutionary constraints and opportunities associated with each is critical for us to understand and predict evolutionary dynamics in changing environments.</p>
+<p>In this work, we focus on phenotypic plasticity, which can be defined as the capacity for a single genotype to alter phenotypic expression in response to a change in environment <span class="citation" data-cites="west-eberhard_developmental_2003">(May Jane West-Eberhard 2003)</span>. Phenotypic plasticity is controlled by genes whose expression is coupled to one or more abiotic or biotic environmental signals. For example, the sex ratio of the crustacean Gammarus duebeni is modulated by changes in photoperiod and temperature [Dunn et al. 2005], and the reproductive output of some invertebrate species is heightened when infected with parasites to compensate for offspring loss [CITE]. In this study, we conducted digital evolution experiments to investigate how the evolution of adaptive phenotypic plasticity shifts the course of evolution in a cyclically changing environment. Specifically, we examined the effects of adaptive plasticity on subsequent genomic and phenotypic change, the capacity to evolve and then maintain novel traits, and the accumulation of deleterious alleles.</p>
+<p>Evolutionary biologists have long been interested in how evolutionary change across generations is influenced by phenotypic plasticity because of its role in generating phenotypic variance <span class="citation" data-cites="gibert_phenotypic_2019">(Gibert, Debat, and Ghalambor 2019)</span>. The effects of phenotypic plasticity on adaptive evolution have been disputed, as few studies have been able to observe both the initial patterns of plasticity and the subsequent divergence of traits in natural populations <span class="citation" data-cites="ghalambor_adaptive_2007 wund_assessing_2012 forsman_rethinking_2015 ghalambor_non-adaptive_2015 hendry_key_2016">(C. K. Ghalambor et al. 2007; Wund 2012; Forsman 2015; Cameron K. Ghalambor et al. 2015; Hendry 2016)</span>. In a rapidly changing environment, adaptive phenotypic plasticity provides a mechanism for organisms to adaptively modify traits over intra-generational timescales, which can both assist in the initial survival of populations and reduce the probability of extinction <span class="citation" data-cites="gibert_phenotypic_2019">(Gibert, Debat, and Ghalambor 2019)</span>. In this context, the [conventional/traditional] view is that adaptive plasticity will constrain the rate of adaptive evolution <span class="citation" data-cites="gupta_study_1982 ancel_undermining_2000 huey_behavioral_2003 price_role_2003 paenke_influence_2007">(Gupta and Lewontin 1982; Ancel 2000; Huey, Hertz, and Sinervo 2003; Price, Qvarnström, and Irwin 2003; Paenke, Sendhoff, and Kawecki 2007)</span>. That is, directional selection may be weak if environmentally-induced [adaptive] phenotypes are close to the optimum; as such, adaptively plastic populations may evolve slowly unless there is a substantial fitness cost to plasticity [cite]. In contrast, non-adaptive plasticity shifts a trait further away from the phenotypic optimum in response to an environmental signal. Non-adaptive plasticity can increase a population’s extinction risk, especially if a [misaligned] plastic trait is strongly tied to survival [citations]. If the population persists, however, the population should experience strong directional selection against maladaptive responses to environmental cues, resulting in rapid evolutionary change [citations].</p>
+<p>Phenotypic plasticity can serve as a source of heritable cryptic variation (i.e., unexpressed traits that vary in a population but do not currently affect fitness). This “hidden” genetic variation can accumulates in a plastic trait’s response to a novel or infrequently experienced environmental cue, creating opportunities for selection when environmental conditions change to reveal this hidden variation <span class="citation" data-cites="schlichting_hidden_2008 levis_evaluating_2016">(Schlichting 2008; Levis and Pfennig 2016)</span>. It remains unclear to what extent and under what circumstances this cryptic variation caches adaptive potential or accumulates deleterious alleles <span class="citation" data-cites="gibson_uncovering_2004 paaby_cryptic_2014 zheng_cryptic_2019">(Gibson and Dworkin 2004; Paaby and Rockman 2014; Zheng, Payne, and Wagner 2019)</span>. [Maybe we want to reference/mention (emerging evidence?) that pleiotropy can be a way to combat relaxed selection in unexpressed, but important traits?].</p>
+<p>The ‘genes as followers’ hypothesis (also known as the plasticity-first hypothesis) predicts that phenotypic plasticity may facilitate evolutionary change by producing variants with enhanced fitness under stressful or novel conditions <span class="citation" data-cites="west-eberhard_developmental_2003 schwander_genes_2011 levis_evaluating_2016">(May Jane West-Eberhard 2003; Schwander and Leimar 2011; Levis and Pfennig 2016)</span>. Environmentally-induced trait changes can be refined through selection over time (i.e., genetic accommodation). Further, selection may drive plastic phenotypes to lose their environmental dependence over time in a process known as genetic assimilation <span class="citation" data-cites="west-eberhard_developmental_2005 pigliucci_phenotypic_2006 crispo_baldwin_2007 schlichting_phenotypic_2014 levis_evaluating_2016">(M. J. West-Eberhard 2005; Pigliucci 2006; Crispo 2007; Schlichting and Wund 2014; Levis and Pfennig 2016)</span>. In this way, enviromentally-induced phenotypic changes can precede an evolutionary response.</p>
+<p>Phenotypic plasticity may also ‘rescue’ populations from extinction under changing environmental conditions by buffering populations against novel stressors. This buffer promotes stability and persistence and grants populations time to further adapt to rapidly changing environmental conditions <span class="citation" data-cites="west-eberhard_developmental_2003 chevin_when_2010">(May Jane West-Eberhard 2003; Chevin and Lande 2010)</span>. Disparate predictions about how phenotypic plasticity may shift the course of subsequent evolution are not mutually exclusive. Genetic and environmental [circumstances/context] will determine if and to what extent phenotypic plasticity promotes or constrains subsequent evolution.</p>
+<p>Experimental studies investigating the relationship between phenotypic plasticity and evolutionary outcomes can be challenging to conduct in natural systems: the long time scales for substantial evolution can be intractable (though not necessarily impossible [cite LTEE]) and fine-grained experimental manipulations of plasticity are impractical. Digital evolution experiments have emerged as a powerful research framework from which evolution can be studied. In digital evolution, self-replicating computer programs (digital organisms) compete for resources, mutate, and evolve following Darwinian dynamics <em>in silico</em> <span class="citation" data-cites="mckinley_harnessing_2008">(McKinley et al. 2008)</span>. Digital evolution studies balance the speed and transparency of mathematical and computational simulations with the open-ended realism of laboratory experiments. Modern computers allow us to observe many generations of digital evolution at tractable time scales (<em>e.g.</em>, thousands of generations take mere minutes as opposed to months, years, or centuries). Digital evolution systems also allow for perfect, non-invasive data tracking. Such transparency permits the tracking of complete evolutionary histories within an experiment, which circumvents the historical problem of drawing evolutionary inferences using incomplete fossil records and extant genetic sequences. Additionally, digital evolution systems allow for experimental manipulations and analyses that are beyond what is possible in laboratory systems, such as systematic knockouts of loci to identify functionality <span class="citation" data-cites="lenski_evolutionary_2003">(Lenski et al. 2003)</span>, exhaustively characterizing local mutational landscapes <span class="citation" data-cites="lenski_genome_1999 canino-koning_fluctuating_2019">(Lenski et al. 1999; Canino-Koning, Wiser, and Ofria 2019)</span>, or disallowing neutral or deleterious mutations <span class="citation" data-cites="covert_experiments_2013">(Covert et al. 2013)</span>. Digital evolution studies allow us to directly manipulate the capacity for plastic responses to evolve and perfectly observe subsequent dynamics, enabling us to experimentally test hypotheses that were previously relegated to theoretical analyses.</p>
+<p>In this work, we use the Avida Digital Evolution Platform <span class="citation" data-cites="ofria_avida:_2009">(Ofria, Bryson, and Wilke 2009)</span> to investigate how adaptive phenotypic plasticity affects subsequent evolutionary dynamics in a fluctuating environment. First, we examined the evolutionary histories of plastic and non-plastic populations to test whether the evolution of adaptive plasticity promoted or constrained subsequent genomic and phenotypic change. Next, we evaluated if adaptive plasticity improves fitness landscape exploration and exploitation by testing whether populations capable of adaptive plasticity are better able to evolve and retain novel adaptive traits. Finally, we compared the [prevalence of deleterious hitchhiking/accumulation of deleterious genes] in plastic and non-plastic populations.</p>
+<p>We found that adaptively plastic populations evolve more slowly than non-plastic populations. The non-plastic populations underwent more frequent selective sweeps and accumulated many more genetic changes over time, as non-plastic populations relied on genetic variation from <em>de novo</em> mutations to continuously re-adapt to environmental changes. Indeed, we observed that the evolutionary dynamics of adaptively plastic populations more closely resemble the dynamics of non-plastic populations evolving in static environmental conditions than non-plastic populations evolving in fluctuating environments. We found that the evolution of adaptive phenotypic plasticity buffers populations against environmental fluctuations, whereas repeated selective sweeps in non-plastic populations drive the accumulation of deleterious genes and the loss of secondary beneficial traits via deleterious hitchhiking. As such, adaptively plastic populations were better able to retain novel traits than their non-plastic counterparts. [A sentence about how we hope this work inspires more use of digital evolution as an experimental tool/expand experimental repertoire of evolutionary biologists studying phenotypic plasticity?].</p>
+<h1 id="materials-and-methods">Materials and Methods</h1>
+<h2 id="the-avida-digital-evolution-platform">The Avida Digital Evolution Platform</h2>
+<p>We conducted our study using the Avida Digital Evolution Platform <span class="citation" data-cites="ofria_avida:_2009">(Ofria, Bryson, and Wilke 2009)</span>. Avida provides a computational study system where populations of digital organisms undergo Darwinian evolution, allowing researchers to test hypotheses that would be difficult or impossible to address in natural systems. Avida is a well-established open-source digital evolution software platform that has been used to conduct a wide range of well-regarded studies on evolutionary dynamics, including the origins of complex features <span class="citation" data-cites="lenski_evolutionary_2003">(Lenski et al. 2003)</span>, the survival of the flattest effect <span class="citation" data-cites="wilke_evolution_2001">(Wilke et al. 2001)</span>, and the origins of reproductive division of labor <span class="citation" data-cites="goldsby_evolutionary_2014">(Goldsby et al. 2014)</span>. For this work, we used a modified version of Avida that is freely available on GitHub [cite].</p>
+<p>Digital organisms in Avida are self-replicating computer programs that compete for space on a finite toroidal grid. Each digital organism is defined by a linear sequence of program instructions (its genome) and a set of virtual hardware components used to interpret and express those instructions. Avida tracks each organism as it expresses its genome in a given environment in order to measure that organism’s phenotype. These genomes are built using a genetic language that is both robust and expressive; however, genomes are not guaranteed to encode meaningful information or to do so efficiently. The genetic language includes operations for basic computations, flow control (e.g., conditional logic and looping), input, output, and self-replication. The virtual hardware set includes components such as a central processing unit (CPU) for executing instructions, registers to store values, buffers for inputs and outputs, and memory stacks.</p>
+<p>Organisms in Avida reproduce asexually by copying their genome instruction-by-instruction and then dividing. However, these operations can be configured to be erroneous, potentially resulting in mutated offspring. Erroneous copy operations result in a single-instruction substitution mutation; in this work, copy operations err at a per-instruction rate of 0.0025 (i.e., one mutation expected for every 400 instructions copied). For all experiments described in this paper, we held individual genomes at a fixed length of 100 instructions (i.e., we did not include insertion and deletion mutations). When an organism divides, its offspring is placed in a random location in the population, replacing any previous occupant. We limited the population size to 3600 organisms; thus, there is a competition for space in Avida, and as such, improvements to the speed of self-replication are advantageous. The combination of this competition for space and heritable variation from imperfect replication results in evolution by natural selection.</p>
+<p>During evolution, organism replication rates improve in two ways: by improving genome efficiency (e.g., using a more compact encoding) or by accelerating the rate at which the genome is expressed (their “metabolic rate”). An organism’s metabolic rate determines the speed at which it executes instructions in its genome. Initially, an organism’s metabolic rate is proportional to the length of its genome, but that rate is adjusted as it completes designated tasks, such as performing Boolean logic computations <span class="citation" data-cites="ofria_avida:_2009">(Ofria, Bryson, and Wilke 2009)</span>. In this way, we can reward or punish particular phenotypic traits.</p>
+<h3 id="sec:methods:evolution-of-plasticity-in-avida">The evolution of phenotypic plasticity in Avida</h3>
+<p>In this work, we define an organism’s phenotype as the set of tasks performed in a given environment. We further define a phenotypically plastic organism as one that uses sensory information to alter their expressed phenotype based on environmental conditions.</p>
+<p>Ghalambor <em>et al.</em> identify four necessary conditions for the evolution of adaptive phenotypic plasticity: (1) populations experience temporal or spatial environmental variation, (2) these environments are differentiable by reliable cues, (3) each environment favors different phenotypic traits, and (4) no single phenotype exhibits high fitness across all environments <span class="citation" data-cites="ghalambor_behavior_2010">(Cameron K. Ghalambor, Angeloni, and Carroll 2010)</span>. Indeed, Clune <em>et al.</em> <span class="citation" data-cites="clune_investigating_2007">(Clune, Ofria, and Pennock 2007)</span> and Lalejini &amp; Ofria <span class="citation" data-cites="lalejini_evolutionary_2016">(Lalejini and Ofria 2016)</span> experimentally demonstrated that adaptive phenotypic plasticity can evolve <em>de novo</em> in Avida under these conditions. Here, we shift from focusing on the evolutionary causes of phenotypic plasticity to investigate its evolutionary consequences.</p>
+<p>In this work, we constructed three experimental environments, abbreviated hereafter as “ENV-A,” “ENV-B,” and “ENV-ALL.” In ENV-A, organisms are rewarded for performing the NOT, AND, and OR Boolean logic tasks, but are punished for performing the NAND, OR-NOT, and AND-NOT logic tasks. Conversely in ENV-B, organisms are rewarded for performing NAND, OR-NOT, and AND-NOT, but are punished for performing NOT, AND, and OR. Finally, in ENV-ALL, all six tasks are rewarded and none are punished. Each rewarded task performed by an organism doubles their metabolic rate (allowing them to execute twice as many instructions in the same amount of time); each punished task performed halves their metabolic rate. Thus, organisms with phenotypes that align with their current environment will quickly outcompete those with mismatched phenotypes. Indeed, a perfect match in ENV-A or ENV-B will have a metabolic bonus of <span class="math inline"> × 8</span>, a perfect mismatch will have a penalty of <span class="math inline"> × 0.125</span>, and an organism that does no tasks or all tasks will not have a modifier at all.</p>
+<p>Organisms can differentiate ENV-A and ENV-B by executing one of six sensory instructions, each associated with a particular logical task (NOT, NAND, AND, OR-NOT, OR, and AND-NOT); these sensory instructions detect whether their associated task is currently rewarded or punished (see Supplemental Section [blah] for details [cite]). Indeed, the values of each of these tasks are perfectly correlated; thus, executing any of the six sensory instructions can differentiate between ENV-A and ENV-B. By using sensory information in combination with execution flow-control instructions, organisms can conditionally perform different logic tasks depending on the current environmental conditions. We can experimentally control the capacity for phenotypic plasticity by disabling the functionality of sensory instructions.</p>
+<p>Across all experiments, we determine if a given genotype is plastic by evaluating that genotype in both ENV-A and ENV-B. If the genotype expresses a different set of tasks in each environment, we categorize that genotype as phenotypically plastic. We consider a genotype to be <em>optimally</em> plastic if it expresses each of the rewarded tasks in a given environment and none of the punished tasks in that environment.</p>
+<h2 id="experimental-design">Experimental design</h2>
+<p>We conducted a series of experiments using Avida to investigate how the evolution of adaptive plasticity alters evolutionary dynamics and influences evolutionary outcomes in fluctuating environments. These experiments build directly on previous digital evolution studies on the evolution of adaptive phenotypic plasticity <span class="citation" data-cites="clune_investigating_2007 lalejini_evolutionary_2016">(Clune, Ofria, and Pennock 2007; Lalejini and Ofria 2016)</span> and on the evolutionary consequences of fluctuating environments <span class="citation" data-cites="wilke_evolution_2001 canino-koning_fluctuating_2019">(Wilke et al. 2001; Canino-Koning, Wiser, and Ofria 2019)</span>. In our work, each replicate (across all experiments) comprised two phases that each lasted for 200,000 updates<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of evolution (approximately 30,000 to 40,000 generations). Phase one was a treatment-specific adaptation phase where we founded populations with a common ancestor (capable only of self-replication) to generate the seed organism (with or without plasticity) that we used to initialize phase two. Phase two was an experimental phase where we used the seed organism to produce a new population that continued to evolve in the same treatment-specific environment, albeit with a possible experimental manipulation, as described below. In phase two, we tracked the evolutionary histories of evolving populations to allow for analysis of underlying evolutionary dynamics, as well as saving the full final population. All comparisons between treatments were performed on data from populations during phase two evolution.</p>
+<p>In each experiment described below, we conducted 100 replicates each of three treatments:</p>
+<ol>
+<li><p>PLASTIC: the environment fluctuates between ENV-A and ENV-B, and digital organisms can differentiate between ENV-A and ENV-B using sensory instructions. As such, adaptive plasticity can evolve.</p></li>
+<li><p>NON-PLASTIC: the environment fluctuations between ENV-A and ENV-B, but sensory instructions are disabled. As such, plasticity cannot evolve.</p></li>
+<li><p>STATIC: a control where organisms evolve in a constant environment (ENV-ALL), and thus sensors provide no information.</p></li>
+</ol>
+<p>In both the PLASTIC and NON-PLASTIC conditions, the environment cycles between equal-length periods of ENV-A and ENV-B. Each of these periods persist for 100 updates (approximately 15 to 20 generations); thus, populations experience a total of 1,000 full periods of ENV-A and 1,000 full periods of ENV-B during each phase.</p>
+<p>Phase one gives populations time to adapt to their treatment conditions, affording adaptive phenotypic plasticity the opportunity to evolve <em>de novo</em> in the PLASTIC treatment. At the end of phase one, we extract the most abundant (i.e., dominant) genotype from each replicate population to seed a new population for phase two. The evolution of optimal phenotypic plasticity is not a guaranteed outcome in the PLASTIC treatment; for this condition, we only continue to phase two if the dominant genotype perfectly regulates which tasks it performs in ENV-A and ENV-B. This ensures that measurements taken during the experimental phase of the PLASTIC treatment are representative of populations with adaptive phenotypic plasticity.</p>
+<h3 id="sec:methods:measurements">Metrics for quantifying the tape of life</h3>
+<p>We analyzed the effects of phenotypic plasticity on evolutionary dynamics by quantifying the evolutionary histories of evolving populations. Specifically, we examined four metrics (the first three are reviewed in <span class="citation" data-cites="dolson_interpreting_2020">(Dolson et al. 2020)</span>): (1) number of coalescence events that have occurred, which indicates the frequency of selective sweeps in the population; (2) mutation accumulation, which is the sum of all mutations that have occurred along a lineage; (3) phenotypic volatility, which counts the instances that parent and offspring phenotypes do not match along a lineage, as measured under a given condition; and (4) mutational stability, which is the fraction of <em>mutated</em> offspring long a lineage whose phenotypes do not match that of their parent, as measured under a given condition.</p>
+<p>In asexual populations without ecological interactions fostering coexistence, phylogenies should coalesce periodically; that is, the most recent common ancestor shared by the extant population should change. The rate that these coalescence events occur can indicate the strength of selection. For example, populations under strong selective pressures should experience more rapid coalescence events than populations under weaker selection <span class="citation" data-cites="dolson_interpreting_2020">(Dolson et al. 2020)</span>.</p>
+<p>A complete lineage describes a continuous line of descent, specifying an unbroken chain of parent-offspring relationships. For phase two of each experimental replicate, we isolated a representative lineage from its seed organism to a member of the dominant genotype at the end of its evolution. Because our experimental treatments do not support long-term coexistence, each of these lineages represents the majority of evolutionary history from a given population at the end of our experiment.</p>
+<p>Mutation accumulation measures the total number of mutations along a lineage <span class="citation" data-cites="dolson_interpreting_2020">(Dolson et al. 2020)</span>. For example, a genotype on the lineage that is two substitution mutations and one insertion mutation away from its parent genotype increases mutation accumulation by three. Note that for this measure of mutation accumulation, we do not distinguish between beneficial, neutral, or deleterious mutations. Instead, we use mutation accumulation as a measure of <em>overall</em> genomic change.</p>
+<p>We measure phenotypic volatility as the sum of mutationally-induced phenotypic changes observed along a lineage under a given condition <span class="citation" data-cites="dolson_interpreting_2020">(Dolson et al. 2020)</span>. To calculate phenotypic volatility for a given lineage, we express (i.e., evaluate) each genotype along that lineage in a treatment-specific condition, and we sum the number of changes in task profiles between consecutive genotypes. For lineages evolved in environments fluctuating between ENV-A and ENV-B, we evaluate genotypes in both environmental conditions and count only changes in its <em>aggregate</em> phenotype; this technique ensures that environmentally-induced changes are excluded from our measurement. This phenotypic volatility metric illuminates the rate at which accumulated genetic changes actually change the phenotype along a lineage.</p>
+<p>We measured mutational stability as the fraction of mutated offspring along a given lineage with a different phenotype than their parent. For lineages evolved in fluctuating environments, we evaluated mutants under both ENV-A and ENV-B and counted all changes in the <em>aggregate</em> task profile; like our measure of phenotypic volatility, this technique ensures that environmentally-induced changes are excluded from our measurement. Mutational stability examines the frequency at which mutations effect changes in an offspring’s phenotype.</p>
+<h3 id="sec:methods:experiment-evolutionary-dynamics">Experiment I: Does adaptive phenotypic plasticity constrain evolutionary change?</h3>
+<p>In our first experiment, we examined how the evolution of adaptive plasticity affects the rate of subsequent evolutionary change in fluctuating environments. Specifically, we examined the four metrics (described above) across PLASTIC, NON-PLASTIC, and STATIC treatments: (1) number of coalescence events, (2) mutation accumulation, (3) phenotypic volatility, and (4) mutational stability.</p>
+<p>To investigate <em>why</em> phenotypic plasticity might alter the rate of evolutionary change, we examine the genetic architecture of organisms evolved under each condition. While Avida clearly defines the mechanics of each instruction, the emergent function of an instruction depends on its context within a genome. For an individual organism, we can perform knockout experiments to identify which instructions are responsible for producing a given phenotypic outcome.</p>
+<p>To perform a knockout, we duplicate the organism, replacing a single instruction with an inert “no-operation” instruction. We then identify any phenotypic changes by contrasting the execution results of the “knockout” organism and the original. Such changes provide evidence of the role that the original instruction must have played in the genome. For example, when an organism performs the NAND task but loses it when an instruction is knocked out, we categorize that instruction as part of the NAND task machinery. We use knockout experiments to characterize the role of each instruction in the genomes of every organism along all study lineages, revealing how genetic architectures change over time. [specifically, we compared x, y, and z...].</p>
+<h3 id="sec:methods:experiment-novel-traits">Experiment II: Does adaptive phenotypic plasticity promote the subsequent evolution of novel traits?</h3>
+<p>We tested how the evolution of adaptive phenotypic plasticity influences the potential for novel adaptive traits to evolve. In this experiment (across all treatments), we used the expanded task set of 77 Boolean logic tasks during the second phase of evolution <span class="citation" data-cites="ofria_avida:_2009">(Ofria, Bryson, and Wilke 2009)</span>. This task set includes the six phase one tasks (NOT, NAND, AND, OR-NOT, OR, and AND-NOT; hereafter called “base” tasks) plus 71 new phase two tasks (hereafter called “novel” tasks). Across all experimental treatments, organisms could improve their metabolic rate by performing any of the 71 novel tasks. The six base tasks were still present in the environment and continued to be rewarded or punished according to the particular treatment. As such, in fluctuating environments, the six base tasks continued to fluctuate, but the additional 71 tasks were always rewarded; in static environments, performing any of the 77 logic tasks was always beneficial.</p>
+<p>An organism receives a 10% metabolic rate improvement for each of the novel tasks that it performs (limited to one reward per unique task). This reward provides a selective pressure to evolve these tasks, but their benefits do not overwhelm existing treatment-specific selective pressures. As such, populations in the PLASTIC and NON-PLASTIC treatments cannot easily escape environmental fluctuations by abandoning the fluctuating base tasks.</p>
+<p>We measured task discovery, task performance, and task loss along successful lineages to examine the extent to which populations are capable of acquiring and retaining novel traits. We limited these measures to the novel task set, excluding the six base tasks:</p>
+<ul>
+<li><p><strong>Task discovery</strong> measures a given lineage’s level of <em>exploration</em> of the fitness landscape [cite - Rose]. We calculated task discovery as the total number of unique tasks ever performed along the lineage, even if a task is later lost; as such, a lineage’s task discovery measurement could range from 0 to 71.</p></li>
+<li><p><strong>Task performance</strong> measures the level of <em>exploitation</em> of the fitness landscape at a given point in time. In this work, we summarized task performance using a count of unique tasks completed by a representative organism from each population. We focused on an organism from the dominant genotype at the end of the experiment as the most representative phenotype in the evolved population.</p></li>
+<li><p><strong>Task loss</strong> measures how often a lineage fails to retain evolved traits over time and thus indicates the ability for traits to be maintained over time. We calculated task loss as the number of times along a lineage that a task is performed by a parent but not its offspring.</p></li>
+</ul>
+<h3 id="sec:methods:experiment-deleterious-hitchhiking">Experiment III: Does adaptive phenotypic plasticity decrease deleterious hitchhiking?</h3>
+<p>Given that preliminary experiments showed numerous deleterious mutations, we conducted tests to determine the role of genetic hitchhiking in these results. In asexual populations without horizontal gene transfer, all mutations are linked. As such, deleterious mutations that co-occur with a beneficial mutation can sometimes ‘hitchhike’ to fixation <span class="citation" data-cites="smith_hitch-hiking_1974 van_den_bergh_experimental_2018">(Smith and Haigh 1974; Van den Bergh et al. 2018)</span>. Without such co-occurrence, natural selection normally prevents deleterious mutations from reaching high frequencies. However, hitchhiking effects have been shown to drive deleterious mutations to high frequencies <span class="citation" data-cites="buskirk_hitchhiking_2017">(Buskirk, Peace, and Lang 2017)</span>.</p>
+<p>To test each of the PLASTIC, NON-PLASTIC, and STATIC treatment’s susceptibility to hitchhiking, we added a <code>poison</code> instruction to the instruction set during the second phase of this experiment. When executed by an organism, the <code>poison</code> instruction reduces the organism’s metabolic rate (and thus reproductive success), but does not otherwise alter the organism’s function. Here, we imposed a 10% penalty each time an organism executed this instruction, making the instruct explicitly deleterious (see [supplementary material] for tests with 3% and 30% penalties, which produced consistent experimental results).</p>
+<p>At the beginning of phase two, the <code>poison</code> instruction is not present in the population as it was not part of the instruction set during the first phase of evolution. However, by adding <code>poison</code> to the instruction set during phase two, it can be introduced via a mutation. We measured susceptibility to genetic hitchhiking by examining the number of times a <code>poison</code> instruction is executed by each genotype along the dominant lineage (including the final dominant genotype). Because the <code>poison</code> instruction is explicitly deleterious, we expect it to show up in successful lineages only as a result of hitchhiking, as selection should purge deleterious mutations not linked to beneficial mutations.</p>
+<h2 id="data-analysis-and-software-availability">Data analysis and software availability</h2>
+<p>Across all of our experiments, we differentiated between sample distributions using non-parametric statistical tests. For each major analysis, we first performed a Kruskal-Wallis test <span class="citation" data-cites="kruskal_use_1952">(Kruskal and Wallis 1952)</span> to determine if there were significant differences in results from the PLASTIC, NON-PLASTIC, and STATIC treatments. If so, we applied a Wilcoxon rank-sum test <span class="citation" data-cites="kotz_individual_1992">(Wilcoxon 1992)</span> to distinguish between pairs of treatments. We applied Bonferroni corrections for multiple comparisons <span class="citation" data-cites="rice_analyzing_1989">(Rice 1989)</span> where appropriate.</p>
+<p>We conducted our experiments using a modified version of the Avida software, which is open source and freely available on GitHub [cite]. We used Python [cite] for data processing, and we conducted all statistical analyses using R version [x] [cite]. We used the tidyverse collection of R packages [cite] to wrangle data, and we used the following R packages for graphing and visualization: [list and citations]. We used R markdown [cite] and bookdown [cite] to generate web-enabled supplemental material. All of the source code for our experiments and analyses, including guides for replication and configuration files, can be found in our supplemental material [cite]. Additionally, our experimental data is available on the Open Science framework at [url] [cite].</p>
+<h1 id="results">Results</h1>
+<h2 id="evolutionary-change">Evolutionary change</h2>
+<figure>
+<embed src="media/evolutionary-dynamics.pdf" id="fig:evolutionary-dynamics" style="width:90.0%" /><figcaption aria-hidden="true"> <strong>todo title.</strong> todo. </figcaption>
+</figure>
+<p>Adaptive phenotypic plasticity evolved in 42 of 100 replicates from the PLASTIC treatment during phase one of Experiment I; we used this more limited group to seed the 42 phase-two PLASTIC replicates. Figure [x] gives the number of coalescence events, mutation accumulation, and phenotypic volatility for PLASTIC, NON-PLASTIC, and STATIC treatments. According to each of these metrics, NON-PLASTIC populations experienced a larger magnitude of evolutionary change than either PLASTIC or STATIC populations. Specifically, we observed significantly more coalescence events in NON-PLASTIC populations than in PLASTIC or STATIC populations [stats]. NON-PLASTIC lineages had significantly higher mutation accumulation and phenotypic volatility than PLASTIC or STATIC lineages [stats]. Additionally, we found that significantly more generations of evolution elapsed in NON-PLASTIC populations than in PLASTIC or STATIC populations [stats]; that is, NON-PLASTIC populations exhibited a significantly higher rate of generational turnover ([data - mean, +- std dev]) than PLASTIC ([data - mean, +- stddev]) or STATIC ([data - mean, +- stddev]) populations.</p>
+<p>Next, we examined the <em>rates</em> of evolutionary change across treatments to determine if the larger magnitude of evolutionary change in NON-PLASTIC populations is due to the number of additional generations elapsed during the experiment. Specifically, we calculated the average number of generations between coalescence events as well as both genotypic fidelity and phenotypic fidelity (i.e., the frequency that an offspring’s genotype or phenotype is identical to that of its parent along the dominant lineage). We found that significantly fewer generations elapse between coalescence events in NON-PLASTIC populations than in either PLASTIC or STATIC populations [stats]. We also observed that NON-PLASTIC lineages had significantly lower genotypic and phenotypic fidelity than either PLASTIC or STATIC lineages [stats]; that is, offspring along NON-PLASTIC lineages more frequently differed genotypically and phenotypically than offspring along either PLASTIC or STATIC lineages. Thus, our results indicate that NON-PLASTIC populations experienced both a greater magnitude of evolutionary change and a higher frequency of evolutionary change than either PLASTIC or STATIC populations.</p>
+<p>We measured the fraction of mutated offspring along these lineages with a different phenotype than their parent. For lineages evolved in fluctuating environments, we evaluated mutants under both environmental conditions and counted all changes in the <em>aggregate</em> task profile. Consistent with previous results, we found that mutated offspring along NON-PLASTIC lineages exhibit more frequent phenotypic changes from their parent than mutated offspring from either PLASTIC or STATIC lineages [stats]. While mutational stability for PLASTIC and STATIC lineages is higher than for those from NON-PLASTIC lineages, we found that STATIC lineages exhibit a small, but significant, difference in mutational stability relative to PLASTIC lineages [stats]. Across all PLASTIC lineages, we found that over 80% ([data]) of changes to task profiles occur in phenotypic traits that are expressed only in the off environment (i.e., as cryptic variation). Approximately 52% ([data]) of this cryptic variation degraded tasks that would have been needed in the off environment, and the remaining <span class="math inline">∼</span>48% ([data]) were compensatory mutations; that is, they restored tasks before the environment changed.</p>
+<p>In general, the evolution of adaptive plasticity stabilized PLASTIC treatment populations against environmental fluctuations, and their evolutionary dynamics more closely resembled those of populations evolving in a static environment. We observed no significant difference in coalescence events in PLASTIC and STATIC populations. We did, however, observe that, relative to STATIC populations, PLASTIC populations had more elapsed generations [significant, stats], mutation accumulation [stats], and phenotypic volatility [stats]; though these differences were statistically significant, they were not substantial.</p>
+<p>[todo - genetic architecture results]</p>
+<h2 id="the-evolution-of-novel-traits">The evolution of novel traits</h2>
+<figure>
+<embed src="media/complex-traits-panel.pdf" id="fig:complex-traits" style="width:90.0%" /><figcaption aria-hidden="true"> <strong>todo title.</strong> todo. </figcaption>
+</figure>
+<p>Adaptive phenotypic plasticity evolved in 42 of 100 replicates from the PLASTIC treatment during phase one of Experiment II; we used this more limited group to seed the 42 phase-two PLASTIC replicates. Figure [x] shows the task discovery, task performance, and task loss for PLASTIC, NON-PLASTIC, and STATIC treatments. We found that both PLASTIC and STATIC populations have significantly higher task performance at the end of the experiment than NON-PLASTIC populations [stats]. This, however, was not due to PLASTIC and STATIC lineages exploring a larger breadth of the fitness landscape, as NON-PLASTIC lineages had significantly higher task discovery than either PLASTIC or STATIC lineages [stats]. Indeed, we found that NON-PLASTIC lineages exhibited significantly more task loss than either PLASTIC or STATIC lineages [stats], as NON-PLASTIC lineages repeatedly failed to retain novel tasks.</p>
+<p>As noted in our evolutionary change results, a larger number of generations elapsed in NON-PLASTIC populations than in PLASTIC or STATIC populations during our experiment. As such, we examined the <em>rates</em> of task loss and task discovery: are NON-PLASTIC lineages discovering and losing novel tasks more frequently than PLASTIC or STATIC lineages? We computed the per-generation rate of task discovery along dominant lineages and the per-generation rate of task loss along those same lineages. We found no significant difference in per-generation task discovery between NON-PLASTIC and STATIC lineages [stats], but we did find that PLASTIC lineages had a lower per-generation task discovery rate than NON-PLASTIC or STATIC lineages [stats]. We found that NON-PLASTIC lineages had a significantly higher per-generation rate of task loss than either PLASTIC or STATIC lineages [stats], while PLASTIC lineages had a small but significantly lower per-generation rate of task loss than STATIC lineages [stats]. We cannot reject the possibility that the larger magnitude of task discovery in NON-PLASTIC lineages was driven by a larger number of elapsed generations. Indeed, we found that NON-PLASTIC lineages repeatedly gained and failed to retain novel tasks during the experiment, and the final evolved genotypes performed fewer overall tasks.</p>
+<p>Next, we examined the frequency at which novel task loss along lineages co-occurred with base task loss (i.e., loss of any of the original six tasks). Across all NON-PLASTIC dominant lineages, over 97% (10998 out of 11229) of instances of novel task loss co-occurred with a simultaneous change in base task profile. In contrast, across all PLASTIC and STATIC dominant lineages, we observed that approximately 20% (29 out of 142) and 2% (13 out of 631), respectively, of instances of novel task loss co-occurred with a simultaneous change in base task profile.</p>
+<h2 id="deleterious-hitchhiking">Deleterious hitchhiking</h2>
+<p>Adaptive phenotypic plasticity evolved in 43 of 100 replicates from the PLASTIC treatment during phase one of Experiment III; we used this more limited group to seed the 43 phase-two PLASTIC replicates. Figure [x] shows the [whatever we decide] for PLASTIC, NON-PLASTIC, and STATIC treatments. At the end of our experiment, no dominant genotypes evolved in PLASTIC or STATIC treatments express the <code>poison</code> instruction; however, the dominant genotype from 14 replicates of the NON-PLASTIC treatment did express the <code>poison</code> instruction at least once (statistically significant, [stats]). The minimal instances of <code>poison</code> execution in dominant organisms is expected given that each execution is a 10% reduction in metabolic rate.</p>
+<p>We found that the number of offspring on NON-PLASTIC lineages where <code>poison</code> instruction execution increases was significantly higher than that of PLASTIC or STATIC lineages [stats]; we found no significant difference in <code>poison</code> execution along dominant lineages between PLASTIC and STATIC lineages. We also found that the per-generation number of <code>poison</code> execution increases along the lineage was significantly higher in NON-PLASTIC lineages than in PLASTIC or STATIC lineages [stats], and we found no significant difference between PLASTIC and STATIC lineages.</p>
+<p>Next, we examined the frequency that mutations that increase <code>poison</code> execution co-occur with mutations that change the base task profile of offspring along dominant lineages across treatments. Across all NON-PLASTIC dominant lineages, we found that approximately 49% (956 out of 1916) mutations that increase <code>poison</code> execution co-occurred with mutations that change the base task profile ([per-lineage statistically significant relative to PLASTIC or STATIC, stats]); we did not observe instances of co-occurrence in PLASTIC and STATIC lineages. Additionally, we did not find evidence that mutations that increased <code>poison</code> execution occurred as cryptic variation in PLASTIC lineages.</p>
+<h1 id="discussion">Discussion</h1>
+<h2 id="the-evolution-of-adaptive-phenotypic-plasticity-slows-evolutionary-change-in-fluctuating-environments">The evolution of adaptive phenotypic plasticity slows evolutionary change in fluctuating environments</h2>
+<p>Our results demonstrate that the evolution of adaptive phenotypic plasticity can slow the rate of evolutionary change in fluctuating environments. The evolution of adaptive phenotypic plasticity resulted in populations experiencing fewer selective sweeps and less total genetic change relative to non-plastic populations evolving in the same environmental conditions. Plastic populations relied on environmentally-induced phenotypic changes to adapt to environmental changes, whereas non-plastic engaged in adaptive evolutionary tracking [cite]; that is, non-plastic populations relied on <em>de novo</em> mutations to continuously re-adapt to environmental changes, driving more frequent selective sweeps. Adaptive plasticity stabilized populations against fluctuations. Indeed, across all three of our experiments, the evolutionary dynamics of plastic populations were more similar to that of populations evolving in a static environment than to that of non-plastic populations evolving in the same fluctuating environment.</p>
+<p>This study is the first to use digital organisms to study how the <em>de novo</em> evolution of adaptive plasticity shifts the trajectory of subsequent evolutionary dynamics. The evolutionary dynamics that we observed in non-plastic populations, however, are consistent with results from previous digital evolution studies of the type of fluctuating environment used in this work. <span class="citation" data-cites="dolson_interpreting_2020">(Dolson et al. 2020)</span> proposed a suite of lineage and phylogeny metrics for quantifying the evolutionary histories of evolving populations of digital organisms; consistent with our findings, they observed that non-plastic populations evolved in changing environments exhibited higher phenotypic volatility and mutation accumulation than that of populations evolving in static conditions. <span class="citation" data-cites="lalejini_evolutionary_2016">(Lalejini and Ofria 2016)</span> visually inspected the evolutionary histories of non-plastic organisms evolved in fluctuating environments, observing that mutations readily switched the set of traits expressed by offspring. <span class="citation" data-cites="canino-koning_evolution_2016">(Canino-Koning, Wiser, and Ofria 2016)</span> investigated how different types of changing environments shape the genetic architectures of evolved organisms, confirming that cyclically-changing environments can steer populations toward genotypes that more readily mutate to alternative phenotypes. Further <span class="citation" data-cites="canino-koning_evolution_2016">(Canino-Koning, Wiser, and Ofria 2016)</span> demonstrated that genomes evolved in harsh cyclic environments often contained vestigial fragments of genetic material adapted to prior environments.</p>
+<p>A trait’s evolutionary response to selection depends on the strength of directional selection and on the amount of genetic variation for selection to act on [citations; Gilbert et al 2019]. As such, plasticity is often thought to constrain evolutionary responses because variation in a plastic trait is likely to be environmentally-induced, shielding the genotype from selection [citations; Ghalambor 2007, etc]. Our results support that adaptive plasticity can constrain evolution in cyclically changing environments where changes are predictable; that is, sensory information is reliable, and [the environment does not change in novel ways.] Of course, real world environmental conditions are not so [simple/one-dimensional]. While predictable cyclic change is ubiquitous (e.g., day-night cycles, seasonal cycles, etc.), other axes of environmental change commonly [co-occur/layer on top]. [TODO - experimental/theoretical literature on scenarios where plasticity constrains evolutionary change]. [Our experiment differs because we leverage digital evolution to directly manipulate the capacity for phenotypic plasticity in digital organisms]. Our results [(and results of others [citations; theoretical work])] confirm baseline consequences of adaptive plasticity in a simple cyclic environment.</p>
+<h2 id="plastic-populations-retain-more-novel-traits-than-non-plastic-populations-in-fluctuation-environments">Plastic populations retain more novel traits than non-plastic populations in fluctuation environments</h2>
+<p>We demonstrated that adaptive phenotypic plasticity slows evolutionary change in our experimental system. Thus, we might expect that non-plastic populations would better adapt to novel environmental conditions, more rapidly evolving to exploit newly available resources. [Literature about changing environments promoting evolution of complexity/novel traits.]</p>
+<p>Indeed, our experimental results show that non-plastic populations better explore the fitness landscape, discovering more novel tasks than plastic populations. However, despite lower task discovery, plastic populations better retained novel tasks, resulting in better exploitation of the fitness landscape compared to non-plastic populations. The frequent selective sweeps in non-plastic populations driven by environmental fluctuations made it difficult for non-plastic populations to maintain these evolved novel traits. If the mutation that caused the loss of a novel trait also helped the offspring adapt to the environmental fluctuations, the loss hitchhikes to frequency because of the relative values of base and novel tasks. Such co-occurences were disproportionately observed in non-plastic populations [because/due to] [novel trait exapted or loss hitchhiked along with beneficial change in base traits]. [Limitation (relative value): in supplemental experiments, relative value of fluctuating and novel tasks affects novel task retention, the stronger directional selection on fluctuation tasks relative to selection on novel tasks makes novel tasks harder to maintain because less deleterious to lose novel trait].</p>
+<p>[Limitation (HGT): asexual populations, horizontal gene transfer [cite - Rose, lit review ].</p>
+<p>[Limitation: most scenarios hypothesized where plasticity promotes adaptive evolution, change in environment changes phenotypic expression, exposing unexpressed variation; however, this was not the case for this experiment. Novel environmental conditions did not change sensory input].</p>
+<p>[Literature: plastic rescue].</p>
+<p>[This work establishes baseline consequences of changes in population dynamics as result of adaptive plasticity]. [Future work/next steps: explore more complex changes to environment; changes affect sensors; start testing plasticity-first adaptation, ...].</p>
+<h2 id="non-plastic-populations-experience-more-genetic-hitchhiking-than-plastic-populations-in-fluctuating-environments">Non-plastic populations experience more genetic hitchhiking than plastic populations in fluctuating environments</h2>
+<p>In our first two experiments, we found that non-plastic populations of digital organisms accumulated more mutations and more frequently lost newly acquired adaptive traits than plastic populations in our experimental system. These two results motivated us to directly evaluate the propensity for deleterious hitchhiking in plastic and non-plastic populations evolving in a fluctuating environment. [Genetic hitchhiking is X]. In the absence of recombination or horizontal gene transfer, ... [Conditions where genetic hitchhiking is expected]. [Reasons why unclear what treatment might have increased rates of hitchhiking. Plastic populations could accumulate unexpressed hitchhiking instructions, non-plastic populations have more frequent selective sweeps, providing more opportunities for hitchhiking].</p>
+<p>We found that adaptive phenotypic plasticity can reduce a population’s susceptibility to deleterious genetic hitchhiking by buffering the population against repeated environmental fluctuations. [Power of digital evolution: unique because instruction is explicitly deleterious and is selected against, so incorporation into successful lineages is due to hitchhiking]. [Indeed, we observed that mutations in non-plastic lineages evolved in fluctuating environment that caused increase in execution of deleterious instructions co-occured with mutations that also changed base tasks]. [The strength of selection against deleterious traits mattered. Weaker selection, more hitchhiking; stronger selection, less hitchhiking.] [Rate of selective sweeps; plastic populations had sweeps slower than changes, which allowed unexpressed variation to be selected against before having a chance to sweep population].</p>
+<p>[Limitation: asexual populations; future work could incorporate horizontal gene transfer e.g., rose hgt work to see if it reduces propensity for hitchhiking]. [Limitation: affected by specific genetic machinery e.g., way that regulation/plasticity works in system influences how much unexpressed variation can build up, influencing hitchhiking].</p>
+<h2 id="future-directions">Future directions</h2>
+<h1 class="unnumbered" id="supplemental-data">Supplemental Data</h1>
+<h1 class="unnumbered" id="data-availability-statement">Data Availability Statement</h1>
+<h1 class="unnumbered" id="author-contributions">Author Contributions</h1>
+<h1 class="unnumbered" id="funding">Funding</h1>
+<h1 class="unnumbered" id="conflict-of-interest-statement">Conflict of Interest Statement</h1>
+<p>The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.</p>
+<h1 class="unnumbered" id="acknowledgments">Acknowledgments</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-ancel_undermining_2000" class="csl-entry" role="doc-biblioentry">
+Ancel, Lauren W. 2000. <span>“Undermining the <span>Baldwin</span> <span>Expediting</span> <span>Effect</span>: <span>Does</span> <span>Phenotypic</span> <span>Plasticity</span> <span>Accelerate</span> <span>Evolution</span>?”</span> <em>Theoretical Population Biology</em> 58 (4): 307–19. <a href="https://doi.org/10.1006/tpbi.2000.1484">https://doi.org/10.1006/tpbi.2000.1484</a>.
+</div>
+<div id="ref-barrett_adaptation_2008" class="csl-entry" role="doc-biblioentry">
+Barrett, R, and D Schluter. 2008. <span>“Adaptation from Standing Genetic Variation.”</span> <em>Trends in Ecology &amp; Evolution</em> 23 (1): 38–44. <a href="https://doi.org/10.1016/j.tree.2007.09.008">https://doi.org/10.1016/j.tree.2007.09.008</a>.
+</div>
+<div id="ref-buskirk_hitchhiking_2017" class="csl-entry" role="doc-biblioentry">
+Buskirk, Sean W., Ryan Emily Peace, and Gregory I. Lang. 2017. <span>“Hitchhiking and Epistasis Give Rise to Cohort Dynamics in Adapting Populations.”</span> <em>Proceedings of the National Academy of Sciences</em> 114 (31): 8330–35. <a href="https://doi.org/10.1073/pnas.1702314114">https://doi.org/10.1073/pnas.1702314114</a>.
+</div>
+<div id="ref-canino-koning_evolution_2016" class="csl-entry" role="doc-biblioentry">
+Canino-Koning, Rosangela, Michael J. Wiser, and Charles Ofria. 2016. <span>“The <span>Evolution</span> of <span>Evolvability</span>: <span>Changing</span> <span>Environments</span> <span>Promote</span> <span>Rapid</span> <span>Adaptation</span> in <span>Digital</span> <span>Organisms</span>.”</span> In <em>Proceedings of the <span>Artificial</span> <span>Life</span> <span>Conference</span> 2016</em>, 268–75. Cancun, Mexico: MIT Press. <a href="https://doi.org/10.7551/978-0-262-33936-0-ch047">https://doi.org/10.7551/978-0-262-33936-0-ch047</a>.
+</div>
+<div id="ref-canino-koning_fluctuating_2019" class="csl-entry" role="doc-biblioentry">
+———. 2019. <span>“Fluctuating Environments Select for Short-Term Phenotypic Variation Leading to Long-Term Exploration.”</span> Edited by Laurent Keller. <em>PLOS Computational Biology</em> 15 (4): e1006445. <a href="https://doi.org/10.1371/journal.pcbi.1006445">https://doi.org/10.1371/journal.pcbi.1006445</a>.
+</div>
+<div id="ref-chevin_when_2010" class="csl-entry" role="doc-biblioentry">
+Chevin, Luis-Miguel, and Russell Lande. 2010. <span>“When Do Adaptive Plasticity and Genetic Evolution Prevent Extinction of a Density‐regulated Population?”</span> <em>Evolution</em> 64 (4): 1143–50. <a href="https://doi.org/10.1111/j.1558-5646.2009.00875.x">https://doi.org/10.1111/j.1558-5646.2009.00875.x</a>.
+</div>
+<div id="ref-clune_investigating_2007" class="csl-entry" role="doc-biblioentry">
+Clune, Jeff, Charles Ofria, and Robert T. Pennock. 2007. <span>“Investigating the <span>Emergence</span> of <span>Phenotypic</span> <span>Plasticity</span> in <span>Evolving</span> <span>Digital</span> <span>Organisms</span>.”</span> In <em>Advances in <span>Artificial</span> <span>Life</span></em>, edited by Fernando Almeida e Costa, Luis Mateus Rocha, Ernesto Costa, Inman Harvey, and António Coutinho, 4648:74–83. Berlin, Heidelberg: Springer Berlin Heidelberg. <a href="https://doi.org/10.1007/978-3-540-74913-4_8">https://doi.org/10.1007/978-3-540-74913-4_8</a>.
+</div>
+<div id="ref-covert_experiments_2013" class="csl-entry" role="doc-biblioentry">
+Covert, Arthur W., Richard E. Lenski, Claus O. Wilke, and Charles Ofria. 2013. <span>“Experiments on the Role of Deleterious Mutations as Stepping Stones in Adaptive Evolution.”</span> <em>Proceedings of the National Academy of Sciences</em> 110 (34): E3171–78. <a href="https://doi.org/10.1073/pnas.1313424110">https://doi.org/10.1073/pnas.1313424110</a>.
+</div>
+<div id="ref-crispo_baldwin_2007" class="csl-entry" role="doc-biblioentry">
+Crispo, Erika. 2007. <span>“The <span>Baldwin</span> Effect and Genetic Assimilation: Revisiting Two Mechanisms of Evolutionary Change Mediated by Phenotypic Plasticity.”</span> <em>Evolution</em> 61 (11): 2469–79. <a href="https://doi.org/10.1111/j.1558-5646.2007.00203.x">https://doi.org/10.1111/j.1558-5646.2007.00203.x</a>.
+</div>
+<div id="ref-dolson_interpreting_2020" class="csl-entry" role="doc-biblioentry">
+Dolson, Emily, Alexander Lalejini, Steven Jorgensen, and Charles Ofria. 2020. <span>“Interpreting the <span>Tape</span> of <span>Life</span>: <span>Ancestry</span>-<span>Based</span> <span>Analyses</span> <span>Provide</span> <span>Insights</span> and <span>Intuition</span> about <span>Evolutionary</span> <span>Dynamics</span>.”</span> <em>Artificial Life</em> 26 (1): 58–79. <a href="https://doi.org/10.1162/artl_a_00313">https://doi.org/10.1162/artl_a_00313</a>.
+</div>
+<div id="ref-forsman_rethinking_2015" class="csl-entry" role="doc-biblioentry">
+Forsman, A. 2015. <span>“Rethinking Phenotypic Plasticity and Its Consequences for Individuals, Populations and Species.”</span> <em>Heredity</em> 115 (4): 276–84. <a href="https://doi.org/10.1038/hdy.2014.92">https://doi.org/10.1038/hdy.2014.92</a>.
+</div>
+<div id="ref-ghalambor_adaptive_2007" class="csl-entry" role="doc-biblioentry">
+Ghalambor, C. K., J. K. McKAY, S. P. Carroll, and D. N. Reznick. 2007. <span>“Adaptive Versus Non-Adaptive Phenotypic Plasticity and the Potential for Contemporary Adaptation in New Environments.”</span> <em>Functional Ecology</em> 21 (3): 394–407. <a href="https://doi.org/10.1111/j.1365-2435.2007.01283.x">https://doi.org/10.1111/j.1365-2435.2007.01283.x</a>.
+</div>
+<div id="ref-ghalambor_behavior_2010" class="csl-entry" role="doc-biblioentry">
+Ghalambor, Cameron K., Lisa M. Angeloni, and Scott P. Carroll. 2010. <span>“Behavior as Phenotypic Plasticity.”</span> In <em>Evolutionary Behavioral Ecology</em>, edited by David Westneat and Charles W. Fox, 90–107. New York, NY: Oxford University Press.
+</div>
+<div id="ref-ghalambor_non-adaptive_2015" class="csl-entry" role="doc-biblioentry">
+Ghalambor, Cameron K., Kim L. Hoke, Emily W. Ruell, Eva K. Fischer, David N. Reznick, and Kimberly A. Hughes. 2015. <span>“Non-Adaptive Plasticity Potentiates Rapid Adaptive Evolution of Gene Expression in Nature.”</span> <em>Nature</em> 525 (7569): 372–75. <a href="https://doi.org/10.1038/nature15256">https://doi.org/10.1038/nature15256</a>.
+</div>
+<div id="ref-gibert_phenotypic_2019" class="csl-entry" role="doc-biblioentry">
+Gibert, Patricia, Vincent Debat, and Cameron K Ghalambor. 2019. <span>“Phenotypic Plasticity, Global Change, and the Speed of Adaptive Evolution.”</span> <em>Current Opinion in Insect Science</em> 35 (October): 34–40. <a href="https://doi.org/10.1016/j.cois.2019.06.007">https://doi.org/10.1016/j.cois.2019.06.007</a>.
+</div>
+<div id="ref-gibson_uncovering_2004" class="csl-entry" role="doc-biblioentry">
+Gibson, Greg, and Ian Dworkin. 2004. <span>“Uncovering Cryptic Genetic Variation.”</span> <em>Nature Reviews Genetics</em> 5 (9): 681–90. <a href="https://doi.org/10.1038/nrg1426">https://doi.org/10.1038/nrg1426</a>.
+</div>
+<div id="ref-goldsby_evolutionary_2014" class="csl-entry" role="doc-biblioentry">
+Goldsby, Heather J., David B. Knoester, Charles Ofria, and Benjamin Kerr. 2014. <span>“The <span>Evolutionary</span> <span>Origin</span> of <span>Somatic</span> <span>Cells</span> Under the <span>Dirty</span> <span>Work</span> <span>Hypothesis</span>.”</span> Edited by Laurent Keller. <em>PLoS Biology</em> 12 (5): e1001858. <a href="https://doi.org/10.1371/journal.pbio.1001858">https://doi.org/10.1371/journal.pbio.1001858</a>.
+</div>
+<div id="ref-gupta_study_1982" class="csl-entry" role="doc-biblioentry">
+Gupta, Anand P., and R. C. Lewontin. 1982. <span>“A <span>Study</span> of <span>Reaction</span> <span>Norms</span> in <span>Natural</span> <span>Populations</span> of <span>Drosophila</span> Pseudoobscura.”</span> <em>Evolution</em> 36 (5): 934. <a href="https://doi.org/10.2307/2408073">https://doi.org/10.2307/2408073</a>.
+</div>
+<div id="ref-hendry_key_2016" class="csl-entry" role="doc-biblioentry">
+Hendry, Andrew P. 2016. <span>“Key <span>Questions</span> on the <span>Role</span> of <span>Phenotypic</span> <span>Plasticity</span> in <span>Eco</span>-<span>Evolutionary</span> <span>Dynamics</span>.”</span> <em>Journal of Heredity</em> 107 (1): 25–41. <a href="https://doi.org/10.1093/jhered/esv060">https://doi.org/10.1093/jhered/esv060</a>.
+</div>
+<div id="ref-huey_behavioral_2003" class="csl-entry" role="doc-biblioentry">
+Huey, Raymond B., Paul E. Hertz, and B. Sinervo. 2003. <span>“Behavioral <span>Drive</span> Versus <span>Behavioral</span> <span>Inertia</span> in <span>Evolution</span>: <span>A</span> <span>Null</span> <span>Model</span> <span>Approach</span>.”</span> <em>The American Naturalist</em> 161 (3): 357–66. <a href="https://doi.org/10.1086/346135">https://doi.org/10.1086/346135</a>.
+</div>
+<div id="ref-kruskal_use_1952" class="csl-entry" role="doc-biblioentry">
+Kruskal, William H., and W. Allen Wallis. 1952. <span>“Use of <span>Ranks</span> in <span>One</span>-<span>Criterion</span> <span>Variance</span> <span>Analysis</span>.”</span> <em>Journal of the American Statistical Association</em> 47 (260): 583–621. <a href="https://doi.org/10.1080/01621459.1952.10483441">https://doi.org/10.1080/01621459.1952.10483441</a>.
+</div>
+<div id="ref-lalejini_evolutionary_2016" class="csl-entry" role="doc-biblioentry">
+Lalejini, Alexander, and Charles Ofria. 2016. <span>“The <span>Evolutionary</span> <span>Origins</span> of <span>Phenotypic</span> <span>Plasticity</span>.”</span> In <em>Proceedings of the <span>Artificial</span> <span>Life</span> <span>Conference</span> 2016</em>, 372–79. Cancun, Mexico: MIT Press. <a href="https://doi.org/10.7551/978-0-262-33936-0-ch063">https://doi.org/10.7551/978-0-262-33936-0-ch063</a>.
+</div>
+<div id="ref-lenski_genome_1999" class="csl-entry" role="doc-biblioentry">
+Lenski, Richard E., Charles Ofria, Travis C. Collier, and Christoph Adami. 1999. <span>“Genome Complexity, Robustness and Genetic Interactions in Digital Organisms.”</span> <em>Nature</em> 400 (6745): 661–64. <a href="https://doi.org/10.1038/23245">https://doi.org/10.1038/23245</a>.
+</div>
+<div id="ref-lenski_evolutionary_2003" class="csl-entry" role="doc-biblioentry">
+Lenski, Richard E., Charles Ofria, Robert T. Pennock, and Christoph Adami. 2003. <span>“The Evolutionary Origin of Complex Features.”</span> <em>Nature</em> 423 (6936): 139–44. <a href="https://doi.org/10.1038/nature01568">https://doi.org/10.1038/nature01568</a>.
+</div>
+<div id="ref-levis_evaluating_2016" class="csl-entry" role="doc-biblioentry">
+Levis, Nicholas A., and David W. Pfennig. 2016. <span>“Evaluating <span>‘<span>Plasticity</span>-<span>First</span>’</span> <span>Evolution</span> in <span>Nature</span>: <span>Key</span> <span>Criteria</span> and <span>Empirical</span> <span>Approaches</span>.”</span> <em>Trends in Ecology &amp; Evolution</em> 31 (7): 563–74. <a href="https://doi.org/10.1016/j.tree.2016.03.012">https://doi.org/10.1016/j.tree.2016.03.012</a>.
+</div>
+<div id="ref-mckinley_harnessing_2008" class="csl-entry" role="doc-biblioentry">
+McKinley, P., B. H. C. Cheng, C. Ofria, D. Knoester, B. Beckmann, and H. Goldsby. 2008. <span>“Harnessing <span>Digital</span> <span>Evolution</span>.”</span> <em>Computer</em> 41 (1): 54–63. <a href="https://doi.org/10.1109/MC.2008.17">https://doi.org/10.1109/MC.2008.17</a>.
+</div>
+<div id="ref-ofria_avida:_2009" class="csl-entry" role="doc-biblioentry">
+Ofria, Charles, David M. Bryson, and Claus O. Wilke. 2009. <span>“Avida: <span>A</span> <span>Software</span> <span>Platform</span> for <span>Research</span> in <span>Computational</span> <span>Evolutionary</span> <span>Biology</span>.”</span> In <em>Artificial <span>Life</span> <span>Models</span> in <span>Software</span></em>, edited by Maciej Komosinski and Andrew Adamatzky, 3–35. London: Springer London. <a href="https://doi.org/10.1007/978-1-84882-285-6_1">https://doi.org/10.1007/978-1-84882-285-6_1</a>.
+</div>
+<div id="ref-paaby_cryptic_2014" class="csl-entry" role="doc-biblioentry">
+Paaby, Annalise B., and Matthew V. Rockman. 2014. <span>“Cryptic Genetic Variation: Evolution’s Hidden Substrate.”</span> <em>Nature Reviews Genetics</em> 15 (4): 247–58. <a href="https://doi.org/10.1038/nrg3688">https://doi.org/10.1038/nrg3688</a>.
+</div>
+<div id="ref-paenke_influence_2007" class="csl-entry" role="doc-biblioentry">
+Paenke, Ingo, Bernhard Sendhoff, and Tadeusz J. Kawecki. 2007. <span>“Influence of <span>Plasticity</span> and <span>Learning</span> on <span>Evolution</span> Under <span>Directional</span> <span>Selection</span>.”</span> <em>The American Naturalist</em> 170 (2): E47–58. <a href="https://doi.org/10.1086/518952">https://doi.org/10.1086/518952</a>.
+</div>
+<div id="ref-pigliucci_phenotypic_2006" class="csl-entry" role="doc-biblioentry">
+Pigliucci, M. 2006. <span>“Phenotypic Plasticity and Evolution by Genetic Assimilation.”</span> <em>Journal of Experimental Biology</em> 209 (12): 2362–67. <a href="https://doi.org/10.1242/jeb.02070">https://doi.org/10.1242/jeb.02070</a>.
+</div>
+<div id="ref-price_role_2003" class="csl-entry" role="doc-biblioentry">
+Price, Trevor D., Anna Qvarnström, and Darren E. Irwin. 2003. <span>“The Role of Phenotypic Plasticity in Driving Genetic Evolution.”</span> <em>Proceedings of the Royal Society of London. Series B: Biological Sciences</em> 270 (1523): 1433–40. <a href="https://doi.org/10.1098/rspb.2003.2372">https://doi.org/10.1098/rspb.2003.2372</a>.
+</div>
+<div id="ref-rice_analyzing_1989" class="csl-entry" role="doc-biblioentry">
+Rice, William R. 1989. <span>“Analyzing <span>Tables</span> of <span>Statistical</span> <span>Tests</span>.”</span> <em>Evolution</em> 43 (1): 223. <a href="https://doi.org/10.2307/2409177">https://doi.org/10.2307/2409177</a>.
+</div>
+<div id="ref-schlichting_hidden_2008" class="csl-entry" role="doc-biblioentry">
+Schlichting, Carl D. 2008. <span>“Hidden <span>Reaction</span> <span>Norms</span>, <span>Cryptic</span> <span>Genetic</span> <span>Variation</span>, and <span>Evolvability</span>.”</span> <em>Annals of the New York Academy of Sciences</em> 1133 (1): 187–203. <a href="https://doi.org/10.1196/annals.1438.010">https://doi.org/10.1196/annals.1438.010</a>.
+</div>
+<div id="ref-schlichting_phenotypic_2014" class="csl-entry" role="doc-biblioentry">
+Schlichting, Carl D., and Matthew A. Wund. 2014. <span>“Phenotypic <span>Plasticity</span> and <span>Epigenetic</span> <span>Marking</span>: <span>An</span> <span>Assessment</span> of <span>Evidence</span> for <span>Genetic</span> <span>Accommodation</span>.”</span> <em>Evolution</em> 68 (3): 656–72. <a href="https://doi.org/10.1111/evo.12348">https://doi.org/10.1111/evo.12348</a>.
+</div>
+<div id="ref-schwander_genes_2011" class="csl-entry" role="doc-biblioentry">
+Schwander, Tanja, and Olof Leimar. 2011. <span>“Genes as Leaders and Followers in Evolution.”</span> <em>Trends in Ecology &amp; Evolution</em> 26 (3): 143–51. <a href="https://doi.org/10.1016/j.tree.2010.12.010">https://doi.org/10.1016/j.tree.2010.12.010</a>.
+</div>
+<div id="ref-simons_modes_2011" class="csl-entry" role="doc-biblioentry">
+Simons, Andrew M. 2011. <span>“Modes of Response to Environmental Change and the Elusive Empirical Evidence for Bet Hedging.”</span> <em>Proceedings of the Royal Society B: Biological Sciences</em> 278 (1712): 1601–9. <a href="https://doi.org/10.1098/rspb.2011.0176">https://doi.org/10.1098/rspb.2011.0176</a>.
+</div>
+<div id="ref-smith_hitch-hiking_1974" class="csl-entry" role="doc-biblioentry">
+Smith, John Maynard, and John Haigh. 1974. <span>“The Hitch-Hiking Effect of a Favourable Gene.”</span> <em>Genetical Research</em> 23 (1): 23–35. <a href="https://doi.org/10.1017/S0016672300014634">https://doi.org/10.1017/S0016672300014634</a>.
+</div>
+<div id="ref-van_den_bergh_experimental_2018" class="csl-entry" role="doc-biblioentry">
+Van den Bergh, Bram, Toon Swings, Maarten Fauvart, and Jan Michiels. 2018. <span>“Experimental <span>Design</span>, <span>Population</span> <span>Dynamics</span>, and <span>Diversity</span> in <span>Microbial</span> <span>Experimental</span> <span>Evolution</span>.”</span> <em>Microbiology and Molecular Biology Reviews</em> 82 (3): e00008–18, /mmbr/82/3/e00008–18.atom. <a href="https://doi.org/10.1128/MMBR.00008-18">https://doi.org/10.1128/MMBR.00008-18</a>.
+</div>
+<div id="ref-west-eberhard_developmental_2005" class="csl-entry" role="doc-biblioentry">
+West-Eberhard, M. J. 2005. <span>“Developmental Plasticity and the Origin of Species Differences.”</span> <em>Proceedings of the National Academy of Sciences</em> 102 (Supplement 1): 6543–49. <a href="https://doi.org/10.1073/pnas.0501844102">https://doi.org/10.1073/pnas.0501844102</a>.
+</div>
+<div id="ref-west-eberhard_developmental_2003" class="csl-entry" role="doc-biblioentry">
+West-Eberhard, May Jane. 2003. <em>Developmental <span>Plasticity</span> and <span>Evolution</span>.</em> Oxford University Press. <a href="http://search.ebscohost.com.proxy1.cl.msu.edu/login.aspx?direct=true&amp;db=e000xna&amp;AN=688592&amp;site=ehost-live">http://search.ebscohost.com.proxy1.cl.msu.edu/login.aspx?direct=true&amp;db=e000xna&amp;AN=688592&amp;site=ehost-live</a>.
+</div>
+<div id="ref-kotz_individual_1992" class="csl-entry" role="doc-biblioentry">
+Wilcoxon, Frank. 1992. <span>“Individual <span>Comparisons</span> by <span>Ranking</span> <span>Methods</span>.”</span> In <em>Breakthroughs in <span>Statistics</span></em>, edited by Samuel Kotz and Norman L. Johnson, 196–202. New York, NY: Springer New York. <a href="https://doi.org/10.1007/978-1-4612-4380-9_16">https://doi.org/10.1007/978-1-4612-4380-9_16</a>.
+</div>
+<div id="ref-wilke_evolution_2001" class="csl-entry" role="doc-biblioentry">
+Wilke, Claus O., Jia Lan Wang, Charles Ofria, Richard E. Lenski, and Christoph Adami. 2001. <span>“Evolution of Digital Organisms at High Mutation Rates Leads to Survival of the Flattest.”</span> <em>Nature</em> 412 (6844): 331–33. <a href="https://doi.org/10.1038/35085569">https://doi.org/10.1038/35085569</a>.
+</div>
+<div id="ref-winger_long_2019" class="csl-entry" role="doc-biblioentry">
+Winger, Benjamin M., Giorgia G. Auteri, Teresa M. Pegan, and Brian C. Weeks. 2019. <span>“A Long Winter for the <span>Red</span> <span>Queen</span>: Rethinking the Evolution of Seasonal Migration.”</span> <em>Biological Reviews</em> 94 (3): 737–52. <a href="https://doi.org/10.1111/brv.12476">https://doi.org/10.1111/brv.12476</a>.
+</div>
+<div id="ref-wund_assessing_2012" class="csl-entry" role="doc-biblioentry">
+Wund, M. A. 2012. <span>“Assessing the <span>Impacts</span> of <span>Phenotypic</span> <span>Plasticity</span> on <span>Evolution</span>.”</span> <em>Integrative and Comparative Biology</em> 52 (1): 5–15. <a href="https://doi.org/10.1093/icb/ics050">https://doi.org/10.1093/icb/ics050</a>.
+</div>
+<div id="ref-zheng_cryptic_2019" class="csl-entry" role="doc-biblioentry">
+Zheng, Jia, Joshua L. Payne, and Andreas Wagner. 2019. <span>“Cryptic Genetic Variation Accelerates Evolution by Opening Access to Diverse Adaptive Peaks.”</span> <em>Science</em> 365 (6451): 347–53. <a href="https://doi.org/10.1126/science.aax1837">https://doi.org/10.1126/science.aax1837</a>.
+</div>
+</div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>One update in Avida is the amount of time required for the average organism to execute 30 instructions. See <span class="citation" data-cites="ofria_avida:_2009">(Ofria, Bryson, and Wilke 2009)</span> for more details.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
