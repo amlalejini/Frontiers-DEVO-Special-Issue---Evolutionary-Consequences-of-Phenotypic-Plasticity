@@ -27,7 +27,7 @@ jobs:
       # Make output directory
       - run: mkdir output
       # Convert latex => word document
-      - uses: docker://pandoc/latex:2.9
+      - uses: docker://pandoc/latex:2.11
         with:
           args: -s main.tex -o manuscript.docx --bibliography references.bib -C 
       # Upload output as action artifact
