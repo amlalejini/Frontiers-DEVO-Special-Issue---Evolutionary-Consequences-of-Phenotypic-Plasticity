@@ -1,0 +1,147 @@
+% GUIDELINES:
+% This section may be divided by subheadings. Discussions should cover the key findings of the study: discuss any prior research related to the subject to place the novelty of the discovery in the appropriate context, discuss the potential shortcomings and limitations on their interpretations, discuss their integration into the current understanding of the problem and how this advances the current views, speculate on the future direction of the research, and freely postulate theories that could be tested in the future.
+
+
+\section{Discussion}
+
+\subsection{The evolution of adaptive phenotypic plasticity slows evolutionary change in fluctuating environments}
+
+% -- Overview of main evolutionary change results --
+Our results demonstrate that the evolution of adaptive phenotypic plasticity can slow the rate of evolutionary change in fluctuating environments.
+The evolution of adaptive phenotypic plasticity resulted in populations experiencing fewer selective sweeps and less total genetic change relative to non-plastic populations evolving in the same environmental conditions.
+Plastic populations relied on environmentally-induced phenotypic changes to adapt to environmental changes, whereas non-plastic engaged in adaptive evolutionary tracking [cite]; that is, non-plastic populations relied on \textit{de novo} mutations to continuously re-adapt to environmental changes, driving more frequent selective sweeps.
+Adaptive plasticity stabilized populations against fluctuations.
+Indeed, across all three of our experiments, the evolutionary dynamics of plastic populations were more similar to that of populations evolving in a static environment than to that of non-plastic populations evolving in the same fluctuating environment.
+
+% -- in context of previous digital evolution work --
+This study is the first to use digital organisms to study how the \textit{de novo} evolution of adaptive plasticity shifts the trajectory of subsequent evolutionary dynamics.
+The evolutionary dynamics that we observed in non-plastic populations, however, are consistent with results from previous digital evolution studies of the type of fluctuating environment used in this work.
+% - interpreting tape of life -
+\cite{dolson_interpreting_2020} proposed a suite of lineage and phylogeny metrics for quantifying the evolutionary histories of evolving populations of digital organisms; consistent with our findings, they observed that non-plastic populations evolved in changing environments exhibited higher phenotypic volatility and mutation accumulation than that of populations evolving in static conditions.
+% - lineages from origins of plasticity -
+\cite{lalejini_evolutionary_2016} visually inspected the evolutionary histories of non-plastic organisms evolved in fluctuating environments, observing that mutations readily switched the set of traits expressed by offspring.
+% - Rose's phenotype switching work - TODO - work in relevant architecture results!
+\cite{canino-koning_evolution_2016} investigated how different types of changing environments shape the genetic architectures of evolved organisms, confirming that cyclically-changing environments can steer populations toward genotypes that more readily mutate to alternative phenotypes.
+Further \cite{canino-koning_evolution_2016} domonstrated that genomes evolved in harsh cyclic environments often contained vestigial fragments of genetic material adapted to prior environments.
+%  - @Austin - depending on what you include about architecture results, you'll also want to work in results from Canino-Koning (2019); going to talk about their novel tasks results in next subsection.
+
+% -- @AML: --bookmark--
+
+% -- broaden out to evolutionary theory --
+
+
+% [Literature on how fluctuating environments accelerate evolutionary change, mutation accumulation].
+
+% -- evolutionary change results in context of literature --
+% -- plasticity perspective --
+% - evolutionary response of a trait to selection is dependent on strength of directional selection and amount of genetic variation [reword,cite]
+A trait's evolutionary response to selection depends on the strength of directional selection and on the amount of genetic variation for selection to act on [citations; Gilbert et al 2019].
+As such, plasticity is often thought to constrain evolutionary responses because variation in a plastic trait is likely to be environmentally-induced, shielding the genotype from selection [citations; Ghalambor 2007, etc]. % @AML: TODO - find papers that explicitly propose/argue/test this.
+Our results support that adaptive plasticity can constrain evolution in cyclically changing environments where changes are predictable; that is, sensory information is reliable, and [the environment does not change in novel ways.]
+Of course, real world environmental conditions are not so [simple/one-dimensional].
+While predictable cyclic change is ubiquitous (e.g., day-night cycles, seasonal cycles, etc.), other axes of environmental change commonly [co-occur/layer on top]. 
+[TODO - experimental/theoretical literature on scenarios where plasticity constrains evolutionary change].
+[Our experiment differs because we leverage digital evolution to directly manipulate the capacity for phenotypic plasticity in digital organisms].
+Our results [(and results of others [citations; theoretical work])] confirm baseline consequences of adaptive plasticity in a simple cyclic environment.
+
+% As such, our results do not necessarily contradict `genes as followers' viewpoints [West-Eberhard 2003]; just make clear that this is not the default scenarios
+
+%%%%%%%%%%%%%% 
+% From Levis and Pfennig:
+% "A chief difficulty with demonstrating plasticity-first evolution in natural popu- lations is that, once a trait has evolved, its evolution cannot be studied in situ. To get around this difficulty, research- ers can study extant lineages that act as ancestral-proxies to the lineage pos- sessing the focal trait"
+% - Digital evolution would be great to test plasticity-first hypotheses!
+%%%%%%%%%%%%%% 
+
+% - mutation accumulation -
+% Different evolutionary contexts are expected to result in different rates of mutation accumulation along successful lineages [citations; Barrick 2013?].
+% Most trivially, we expect larger mutation accumulation in environments with high mutation rates.
+% We would expect strong [purifying/stabilizing] selection to result in lower mutation accumulation relative to lineages evolved under weak selection with [large amount of genetic drift] [citations].
+% We might also expect lineages that must continuously adapt to a changing environment via \textit{de novo} genetic changes to exhibit high mutation accumulation relative to lineages evolved under constant environmental conditions [citations; Tape of life].
+
+
+\subsection{Plastic populations retain more novel traits than non-plastic populations in fluctuation environments}
+
+% - expectations based on previous experiment and literature -
+We demonstrated that adaptive phenotypic plasticity slows evolutionary change in our experimental system. 
+Thus, we might expect that non-plastic populations would better adapt to novel environmental conditions, more rapidly evolving to exploit newly available resources.
+[Literature about changing environments promoting evolution of complexity/novel traits.]
+
+% - our results -
+Indeed, our experimental results show that non-plastic populations better explore the fitness landscape, discovering more novel tasks than plastic populations.
+However, despite lower task discovery, plastic populations better exploited the fitness landscape at the end of the experiment, better retaining acquired novel tasks than non-plastic populations. 
+The frequent selective sweeps in non-plastic populations driven by environmental fluctuations made it difficult for non-plastic populations to maintain these evolved novel traits.
+Because when mutation that caused loss of a novel trait helped offspring adapt to fluctuations, loss hitchhikes to frequency because of relative value of base and novel traits; disproportionate co-occuring either because novel trait exapted or loss hitchhiked along with beneficial change in base traits.
+%Because when mutation that caused loss of a novel trait helped offspring adapt to fluctuations, loss hitchhikes to frequency because of relative value of base and novel traits; disproportionate co-occuring either because novel trait exapted or loss hitchhiked along with beneficial change in base traits.
+[Limitation (relative value): in supplemental experiments, relative value of fluctuating and novel tasks affects novel task retention, the stronger directional selection on fluctuation tasks relative to selection on novel tasks makes novel tasks harder to maintain because less deleterious to lose novel trait].
+
+% -- relevant digital evolution lit --
+%  - Canino-Koning et al., 2019 - short-term variation, long-term exploration
+%  - Nahum - changing environments
+%  - Zaman - complex traits
+
+% Overall, we found that non-plastic populations evolving in a fluctuating environment better explored the fitness landscape (i.e., discovered more novel traits) than plastic populations evolving in a fluctuating environment.
+% Indeed, phenotypic plasticity stabilized populations against environmental fluctuations, allowing lineages to more easily retain novel adaptive traits.
+
+% - Limitation: no recombination/horizontal gene transfer -
+[Limitation (HGT): asexual populations, horizontal gene transfer [cite - Rose, lit review ].
+% - horizontal transmission can decouple/de-link mutations... could change results
+% - see if it reduces effect of trait loss in non-plastic populations
+
+% - relation to plasticity first hypotheses/hypotheses where plasticity promotes adaptive evolution -
+[Limitation: most scenarios hypothesized where plasticity promotes adaptive evolution, change in environment changes phenotypic expression, exposing unexpressed variation; however, this was not the case for this experiment. Novel environmental conditions did not change sensory input].
+
+[Literature: plastic rescue].
+
+[This work establishes baseline consequences of changes in population dynamics as result of adaptive plasticity].
+[Future work/next steps: explore more complex changes to environment; changes affect sensors; start testing plasticity-first adaptation, ...].
+% ... etc etc
+
+\subsection{Non-plastic populations experience more genetic hitchhiking than plastic populations in fluctuating environments}
+
+% When do we expect to see hitchhiking?
+In our first two experiments, we found that non-plastic populations of digital organisms accumulated more mutations and more frequently lost newly acquired adaptive traits than plastic populations in our experimental system.
+These two results motivated us to directly evaluate the propensity for deleterious hitchhiking in plastic and non-plastic populations evolving in a fluctuating environment. 
+[Genetic hitchhiking is X].
+In the absence of recombination or horizontal gene transfer, ...
+[Conditions where genetic hitchhiking is expected].
+% [Barton 2000]
+% - if polymorphishisms fluctuate in frequency, then fluctuating selection could be the main cause of hitchhiking 
+[Reasons why unclear what treatment might have increased rates of hitchhiking. Plastic populations could accumulate unexpressed hitchhiking instructions, non-plastic populations have more frequent selective sweeps, providing more opportunities for hitchhiking].
+
+We found that adaptive phenotypic plasticity can reduce a population's susceptibility to deleterious genetic hitchhiking by buffering the population against repeated environmental fluctuations.
+[Power of digital evolution: unique because instruction is explicitly deleterious and is selected against, so incorporation into successful lineages is due to hitchhiking].
+[Indeed, we observed that mutations in non-plastic lineages evolved in fluctuating environment that caused increase in execution of deleterious instructions co-occured with mutations that also changed base tasks].
+% TODO - can we pull deleterious changes vs. beneficial changes post-hoc?
+[The strength of selection against deleterious traits mattered. Weaker selection, more hitchhiking; stronger selection, less hitchhiking.]
+[Rate of selective sweeps; plastic populations had sweeps slower than changes, which allowed unexpressed variation to be selected against before having a chance to sweep population].
+
+% - limitations of this study (and maybe incorporate future work) -
+[Limitation: asexual populations; future work could incorporate horizontal gene transfer e.g., rose hgt work to see if it reduces propensity for hitchhiking].
+[Limitation: affected by specific genetic machinery e.g., way that regulation/plasticity works in system influences how much unexpressed variation can build up, influencing hitchhiking].
+
+% Our deleterious hitchhiking results were sensitive to the penalty associated with the poison instruction [supplement section x].
+% Lower penalties, weaker selection against poison instruction, resulted in more prevalent hitchhiking.
+% Higher penalties, stronger purifying selection against executing poison instructions, resulted in less hitchhiking.
+
+% These results suggest that non-plastic populations evolving in a fluctuating environment are more susceptible to genetic hitchhiking than plastic populations evolving in the same fluctuating environment.
+% The large number of rapid selective sweeps in non-plastic populations afford many more opportunities for genetic hitchhiking. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc. thoughts/points (across subsections)
+% - What makes our contributions novel/unique?
+%   - This work is important because we directly manipulate the capacity for phenotypic plasticity, keeping all other conditions consistent. 
+%   - Unlike lab/field/numerical, our experiment directly manipulating the capacity for phenotypic plasticity in digital organisms, 
+% -- non-plastic perspective -
+% - rose's fluctuating environment paper(s)
+% - novel traits do not affect sensor readings
+%   - environment changes do not induce phenotypic changes 
+
+\subsection{Future directions}
+
+% demonstrate how we can use digital evolution to test hypotheses about phenotypic plasticity => bridge gap between natural experimental systems (in lab and in field) and mathematical modeling
+
+% Future work continue to use digital evolution to test hypotheses about how phenotypic plasticity affects evolutionary change. 
+% Sensory reliability.
+% Different types of environmental change (more complex environments).
+% Different rates of change; in our experiments, the environment changed frequently enough such that plastic machinery/traits adaptive to non-current environment did not degrade due to relaxed selection.

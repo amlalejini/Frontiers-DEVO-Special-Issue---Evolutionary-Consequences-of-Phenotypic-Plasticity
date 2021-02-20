@@ -1,0 +1,102 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The introduction should be succinct, with no subheadings. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% -- Different mechanisms evolve to cope with fluctuating environments, and those mechanisms
+%    affect evolution. --
+%%%%%%%%%%%%%%%%%%%%%%
+Fluctuating environmental conditions are ubiquitous in natural systems. 
+Species have evolved a wide range of evolved strategies for coping with environmental change, such as 
+phenotypic plasticity \citep{ghalambor_adaptive_2007}, 
+bet hedging \citep{simons_modes_2011}, 
+periodic migration \citep{winger_long_2019}, 
+and adaptive tracking \citep{barrett_adaptation_2008}.
+The particular coping mechanisms that evolve in fluctuating environments shift the course of subsequent evolution [citations].
+Identifying the mechanisms most likely to evolve and examining both the evolutionary constraints and opportunities associated with each is critical for us to understand and predict evolutionary dynamics in changing environments.
+
+%%%%%%%%%%%%%%%%%%%%%%
+% -- We focus on how plasticity affects subsequent evolution. --
+%%%%%%%%%%%%%%%%%%%%%%
+In this work, we focus on phenotypic plasticity, which can be defined as the capacity for a single genotype to alter phenotypic expression in response to a change in environment \citep{west-eberhard_developmental_2003}. 
+Phenotypic plasticity is controlled by genes whose expression is coupled to one or more abiotic or biotic environmental signals. 
+For example, the sex ratio of the crustacean Gammarus duebeni is modulated by changes in photoperiod and temperature [Dunn et al. 2005], and the reproductive output of some invertebrate species is heightened when infected with parasites to compensate for offspring loss [CITE]. 
+In this study, we conducted digital evolution experiments to investigate how the evolution of adaptive phenotypic plasticity shifts the course of evolution in a cyclically changing environment.
+Specifically, we examined the effects of adaptive plasticity on subsequent genomic and phenotypic change, the capacity to evolve and then maintain novel traits, and the accumulation of deleterious alleles.
+
+
+%%%%%%%%%%%%%%
+% Effects of phenotypic plasticity on subsequent evolution disputed.
+%   - baseline expections on rate of evolutionary response given adaptive vs. non-adaptive plasticity
+%%%%%%%%%%%%%%
+Evolutionary biologists have long been interested in how evolutionary change across generations is influenced by phenotypic plasticity because of its role in generating phenotypic variance \citep{gibert_phenotypic_2019}.
+The effects of phenotypic plasticity on adaptive evolution have been disputed, as few studies have been able to observe both the initial patterns of plasticity and the subsequent divergence of traits in natural populations \citep{ghalambor_adaptive_2007,wund_assessing_2012,forsman_rethinking_2015,ghalambor_non-adaptive_2015,hendry_key_2016}.
+In a rapidly changing environment, adaptive phenotypic plasticity provides a mechanism for organisms to adaptively modify traits over intra-generational timescales, which can both assist in the initial survival of populations and reduce the probability of extinction \citep{gibert_phenotypic_2019}.
+In this context, the [conventional/traditional] view is that adaptive plasticity will constrain the rate of adaptive evolution \citep{gupta_study_1982,ancel_undermining_2000,huey_behavioral_2003,price_role_2003,paenke_influence_2007}.
+That is, directional selection may be weak if environmentally-induced [adaptive] phenotypes are close to the optimum; as such, adaptively plastic populations may evolve slowly unless there is a substantial fitness cost to plasticity [cite].
+In contrast, non-adaptive plasticity shifts a trait further away from the phenotypic optimum in response to an environmental signal.
+Non-adaptive plasticity can increase a population's extinction risk, especially if a [misaligned] plastic trait is strongly tied to survival [citations].
+If the population persists, however, the population should experience strong directional selection against maladaptive responses to environmental cues, resulting in rapid evolutionary change [citations].
+
+% -- Plasticity as a source of cryptic variation --
+Phenotypic plasticity can serve as a source of heritable cryptic variation (i.e., unexpressed traits that vary in a population but do not currently affect fitness).
+This ``hidden'' genetic variation can accumulates in a plastic trait's response to a novel or infrequently experienced environmental cue, creating opportunities for selection when environmental conditions change to reveal this hidden variation \citep{schlichting_hidden_2008,levis_evaluating_2016}.
+It remains unclear to what extent and under what circumstances this cryptic variation caches adaptive potential or accumulates deleterious alleles \citep{gibson_uncovering_2004,paaby_cryptic_2014,zheng_cryptic_2019}.
+% Regardless, this cryptic variation has the potential to play an important role in subsequent evolution.
+[Maybe we want to reference/mention (emerging evidence?) that pleiotropy can be a way to combat relaxed selection in unexpressed, but important traits?].
+% @AML: some one has probably written about plasticity + potential for genetic hitchhiking?
+
+% -- Genes as followers --
+The `genes as followers' hypothesis (also known as the plasticity-first hypothesis) predicts that phenotypic plasticity may facilitate evolutionary change by producing variants with enhanced fitness under stressful or novel conditions \citep{west-eberhard_developmental_2003,schwander_genes_2011,levis_evaluating_2016}. 
+Environmentally-induced trait changes can be refined through selection over time (i.e., genetic accommodation).
+Further, selection may drive plastic phenotypes to lose their environmental dependence over time in a process known as genetic assimilation \citep{west-eberhard_developmental_2005,pigliucci_phenotypic_2006,crispo_baldwin_2007,schlichting_phenotypic_2014,levis_evaluating_2016}. 
+In this way, enviromentally-induced phenotypic changes can precede an evolutionary response.
+
+% -- Plastic rescue + wrap up on plasticity background? --
+Phenotypic plasticity may also `rescue' populations from extinction under changing environmental conditions by buffering populations against novel stressors.
+This buffer promotes stability and persistence and grants populations time to further adapt to rapidly changing environmental conditions \citep{west-eberhard_developmental_2003,chevin_when_2010}. %[citations - Snell-Rood et al. 2018?].
+Disparate predictions about how phenotypic plasticity may shift the course of subsequent evolution are not mutually exclusive.
+Genetic and environmental [circumstances/context] will determine if and to what extent phenotypic plasticity promotes or constrains subsequent evolution.
+
+% West-eberhard on genetic accommodation: (1) a mutation or environmental change triggers the expression of a novel, heritable phenotypic variant, (2) the initially rare variant phenotype starts to spread (in the case of an environmentally induced change, due to the consistent recurrence of the environmental factor), creating a subpopulation expressing the novel trait, and (3) selection on existing genetic variation for the regulation or form of the trait causes it to become (a) genetically fixed or to remain (b) phenotypically plastic
+
+%%%%%%%%%%%%%%%%%%%%%%
+% -- Digital evolution --
+%%%%%%%%%%%%%%%%%%%%%%
+Experimental studies investigating the relationship between phenotypic plasticity and evolutionary outcomes can be challenging to conduct in natural systems: 
+the long time scales for substantial evolution can be intractable (though not necessarily impossible [cite LTEE]) and fine-grained experimental manipulations of plasticity are impractical.
+Digital evolution experiments have emerged as a powerful research framework from which evolution can be studied.
+In digital evolution, self-replicating computer programs (digital organisms) compete for resources, mutate, and evolve following Darwinian dynamics \textit{in silico}  \citep{mckinley_harnessing_2008}.
+Digital evolution studies balance the speed and transparency of mathematical and computational simulations with the open-ended realism of laboratory experiments.
+Modern computers allow us to observe many generations of digital evolution at tractable time scales (\textit{e.g.}, thousands of generations take mere minutes as opposed to months, years, or centuries).
+Digital evolution systems also allow for perfect, non-invasive data tracking.
+Such transparency permits the tracking of complete evolutionary histories within an experiment, which circumvents the historical problem of drawing evolutionary inferences using incomplete fossil records and extant genetic sequences.
+Additionally, digital evolution systems allow for experimental manipulations and analyses that are beyond what is possible in laboratory systems, such as 
+systematic knockouts of loci to identify functionality \citep{lenski_evolutionary_2003},
+exhaustively characterizing local mutational landscapes \citep{lenski_genome_1999,canino-koning_fluctuating_2019},
+or disallowing neutral or deleterious mutations \citep{covert_experiments_2013}. 
+Digital evolution studies allow us to directly manipulate the capacity for plastic responses to evolve and perfectly observe subsequent dynamics, enabling us to experimentally test hypotheses that were previously relegated to theoretical analyses.
+
+% - @AML: need to re-write/overhaul this next paragraph
+%%%%%%%%%%%%%%%%%%%%%%
+% -- Overview of what we're testing / doing --
+%%%%%%%%%%%%%%%%%%%%%%
+% @AML: The first three sentences are somewhat redundant. Needs streamlining.
+In this work, we use the Avida Digital Evolution Platform \citep{ofria_avida:_2009} to investigate how adaptive phenotypic plasticity affects subsequent evolutionary dynamics in a fluctuating environment.
+First, we examined the evolutionary histories of plastic and non-plastic populations to test whether the evolution of adaptive plasticity promoted or constrained subsequent genomic and phenotypic change.
+Next, we evaluated if adaptive plasticity improves fitness landscape exploration and exploitation by testing whether populations capable of adaptive plasticity are better able to evolve and retain novel adaptive traits. 
+Finally, we compared the [prevalence of deleterious hitchhiking/accumulation of deleterious genes] in plastic and non-plastic populations. 
+%to test if the evolution of adaptive plasticity increases the potential for deleterious cryptic variation to accumulate. 
+
+%%%%%%%%%%%%%%%%%%%%%%
+% - Overview of findings -
+%%%%%%%%%%%%%%%%%%%%%%
+We found that adaptively plastic populations evolve more slowly than non-plastic populations. 
+The non-plastic populations underwent more frequent selective sweeps and accumulated many more genetic changes over time, as non-plastic populations relied on genetic variation from \textit{de novo} mutations to continuously re-adapt to environmental changes. 
+% TODO - add something here about landscape data? architecture data?
+Indeed, we observed that the evolutionary dynamics of adaptively plastic populations more closely resemble the dynamics of non-plastic populations evolving in static environmental conditions than non-plastic populations evolving in fluctuating environments.
+We found that the evolution of adaptive phenotypic plasticity buffers populations against environmental fluctuations, whereas repeated selective sweeps in non-plastic populations drive the accumulation of deleterious genes and the loss of secondary beneficial traits via deleterious hitchhiking.
+As such, adaptively plastic populations were better able to retain novel traits than their non-plastic counterparts.
+[A sentence about how we hope this work inspires more use of digital evolution as an experimental tool/expand experimental repertoire of evolutionary biologists studying phenotypic plasticity?].
