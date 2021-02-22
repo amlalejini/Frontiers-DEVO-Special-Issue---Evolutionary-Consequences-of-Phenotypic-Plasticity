@@ -10,43 +10,52 @@
 
 \subsection{The Avida Digital Evolution Platform}
 
-We conducted our study using the Avida Digital Evolution Platform \citep{ofria_avida:_2009}. 
-Avida provides a computational study system where populations of digital organisms undergo Darwinian evolution, allowing researchers to test hypotheses that would be difficult or impossible to address in natural systems.
-Avida is a well-established open-source digital evolution software platform that has been used to conduct a wide range of well-regarded studies on evolutionary dynamics, including 
-the origins of complex features \citep{lenski_evolutionary_2003},
-the survival of the flattest effect \citep{wilke_evolution_2001},
-and the origins of reproductive division of labor \citep{goldsby_evolutionary_2014}.
-% - Coevolution + complex features, ...
-For this work, we used a modified version of Avida that is freely available on GitHub [cite].
+% We conducted our study using the Avida Digital Evolution Platform \citep{ofria_avida:_2009}. 
+% Avida provides a computational study system where populations of digital organisms undergo Darwinian evolution, allowing researchers to test hypotheses that would be difficult or impossible to address in natural systems.
 
-% Overview of digital organisms in avida
-Digital organisms in Avida are self-replicating computer programs that compete for space on a finite toroidal grid.
-Each digital organism is defined by a linear sequence of program instructions (its genome) and a set of virtual hardware components used to interpret and express those instructions.
-Avida tracks each organism as it expresses its genome in a given environment in order to measure that organism's phenotype.
-These genomes are built using a genetic language that is both robust and expressive; however, genomes are not guaranteed to encode meaningful information or to do so efficiently.
-The genetic language includes operations for basic computations, flow control (e.g., conditional logic and looping), input, output, and self-replication.
-The virtual hardware set includes components such as a central processing unit (CPU) for executing instructions, registers to store values, buffers for inputs and outputs, and memory stacks.
+% - Define digital organisms -
+Avida is a study system wherein self-replicating computer programs (digital organisms) compete for space on a finite toroidal grid \citep{ofria_avida:_2009}. 
+% Self-replication, however, is imperfect such that organisms mutate randomly and evolve. 
+% in a well mixed population(?)
+Each digital organism is defined by a linear sequence of program instructions (its genome) and a set of virtual hardware components used to interpret and express those instructions [Figure?].
+% Avida tracks each organism as it expresses its genome in a given environment in order to measure that organism's phenotype.
+Genomes are expressed sequentially except when the execution of one instruction deterministically changes which instruction should be executed next (e.g., a `jump' instruction).   
+Genomes are built using a instruction set that is both robust and Turing Complete [cite]; that is, any ordering of instructions is syntactically valid (though not necessarily meaningful), and genomes are able to represent any computable function (though not necessarily in an efficient manner).
+The instruction set includes operations for basic computations, flow control (e.g., conditional logic and looping), input, output, and self-replication.
+% @AML: Outsource the next sentence to a figure!
+% The virtual hardware set includes components such as a central processing unit (CPU) for executing instructions, registers to store values, buffers for inputs and outputs, and memory stacks \citep{ofria_avida:_2009}.
 
-% Reproduction & mutation
+% - define reproduction & mutation -
 Organisms in Avida reproduce asexually by copying their genome instruction-by-instruction and then dividing. 
-However, these operations can be configured to be erroneous, potentially resulting in mutated offspring.
-Erroneous copy operations result in a single-instruction substitution mutation; in this work, copy operations err at a per-instruction rate of 0.0025 (i.e., one mutation expected for every 400 instructions copied).
-% ----- For variable-length genome experiments (shifted to all fixed-length) ----
-% Next, divide operations will erroneously insert a random instruction into the offspring's genome at a per-division rate of 0.05 (i.e., one insertion is expected every 20 replication events).
-% Likewise, divide operations will delete a random instruction from the offspring's genome also at a per-division rate of 0.05.
-For all experiments described in this paper, we held individual genomes at a fixed length of 100 instructions (i.e., we did not include insertion and deletion mutations).
-When an organism divides, its offspring is placed in a random location in the population, replacing any previous occupant.
-We limited the population size to 3600 organisms; thus, there is a competition for space in Avida, and as such, improvements to the speed of self-replication are advantageous.
-The combination of this competition for space and heritable variation from imperfect replication results in evolution by natural selection.
+% However, these operations can be configured to be erroneous, potentially resulting in mutated offspring.
+However, copy operations are imperfect, and erroneous copy operations result in single-instruction substitution mutations in the offspring genome. 
+For this work, we configured copy operations to err at a per-instruction rate of 0.0025 (i.e., one mutation expected for every 400 instructions copied).
+We held individual genomes at a fixed length of 100 instructions; that is, we did not include insertion and deletion mutations. 
+Our use of fixed-length genomes controls [for the fact] that different environmental conditions can result in the evolution of substantially different genome sizes in Avida [supplement, citations] [and we did not want differences in treatments to be driven by different genome sizes].
+[We did replicate our experiments with variable-length genomes and observed qualitatively similar results].
+When an organism divides, its offspring is placed in a random location on the toroidal grid, replacing any previous occupant.
+For this work, we used the default 60 by 60 grid size, and as such, the population size is limited to 3600 organisms.
+Thus, there is a competition for space in Avida, and as such, improvements to the speed of self-replication are advantageous.
+% The combination of this competition for space and heritable variation from imperfect replication results in evolution by natural selection.
 
-% Fitness/metabolic rate/improving replication speed
+% Nkrumah:
+% In this work, copy operations err at a per instruction rate of 1 mutation per every 400 instructions copied (0.0025) and may include single point mutations, insertions and deletions. In this work, we held individual genomes at a fixed length of 100 instructions, that is we only considered point mutations which minimizes… maximizes… simplifies… (WHY?). We also held the population to 3600 organisms….. (not clear why 3600… how big is the grid?) Together, our parameters … and … in a tractable…. Something….
+
+% Erroneous copy operations result in a single-instruction substitution mutation; in this work, copy operations err at a per-instruction rate of 0.0025 (i.e., one mutation expected for every 400 instructions copied).
+% For all experiments described in this paper, we held individual genomes at a fixed length of 100 instructions (i.e., we did not include insertion and deletion mutations).
+% We limited the population size to 3600 organisms; thus, there is a competition for space in Avida, and as such, improvements to the speed of self-replication are advantageous.
+% The combination of this competition for space and heritable variation from imperfect replication results in evolution by natural selection.
+
+% Avida tracks each organism as it expresses its genome in a given environment in order to measure that organism's phenotype.
+
+% - define fitness/metabolic rate/improving replication speed -
 During evolution, organism replication rates improve in two ways: by improving genome efficiency (e.g., using a more compact encoding) or by accelerating the rate at which the genome is expressed (their ``metabolic rate'').
 An organism's metabolic rate determines the speed at which it executes instructions in its genome.
 Initially, an organism's metabolic rate is proportional to the length of its genome, but that rate is adjusted as it completes designated tasks, such as performing Boolean logic computations \citep{ofria_avida:_2009}.
 In this way, we can reward or punish particular phenotypic traits. 
 
 \vspace{1cm}
-\subsubsection{The evolution of phenotypic plasticity in Avida}
+\subsubsection{Evolving phenotypic plasticity in Avida}
 \label{sec:methods:evolution-of-plasticity-in-avida}
 
 % ----- ENVIRONMENTS -----
@@ -54,7 +63,7 @@ In this way, we can reward or punish particular phenotypic traits.
 % traits_set_b <- c("nand", "ornot", "andnot")
 
 In this work, we define an organism's phenotype as the set of tasks performed in a given environment.
-We further define a phenotypically plastic organism as one that uses sensory information to alter their expressed phenotype based on environmental conditions.
+We define a phenotypically plastic organism as one that uses sensory information to alter their task expression based on the environment.
 
 Ghalambor \textit{et al.} identify four necessary conditions for the evolution of adaptive phenotypic plasticity: 
 (1) populations experience temporal or spatial environmental variation,
@@ -161,6 +170,11 @@ Mutation accumulation measures the total number of mutations along a lineage \ci
 For example, a genotype on the lineage that is two substitution mutations and one insertion mutation away from its parent genotype increases mutation accumulation by three.
 Note that for this measure of mutation accumulation, we do not distinguish between beneficial, neutral, or deleterious mutations. 
 Instead, we use mutation accumulation as a measure of \textit{overall} genomic change.
+
+% Different evolutionary contexts are expected to result in different rates of mutation accumulation along successful lineages [citations; Barrick 2013?].
+% Most trivially, we expect larger mutation accumulation in environments with high mutation rates.
+% We would expect strong [purifying/stabilizing] selection to result in lower mutation accumulation relative to lineages evolved under weak selection with [large amount of genetic drift] [citations].
+% We might also expect lineages that must continuously adapt to a changing environment via \textit{de novo} genetic changes to exhibit high mutation accumulation relative to lineages evolved under constant environmental conditions [citations; Tape of life].
 
 % -- Phenotypic volatility --
 We measure phenotypic volatility as the sum of mutationally-induced phenotypic changes observed along a lineage under a given condition \citep{dolson_interpreting_2020}.

@@ -9,20 +9,20 @@
 %    affect evolution. --
 %%%%%%%%%%%%%%%%%%%%%%
 Fluctuating environmental conditions are ubiquitous in natural systems. 
-Species have evolved a wide range of evolved strategies for coping with environmental change, such as 
+Organisms have evolved a wide range of evolved strategies for coping with environmental change, such as 
 phenotypic plasticity \citep{ghalambor_adaptive_2007}, 
 bet hedging \citep{simons_modes_2011}, 
 periodic migration \citep{winger_long_2019}, 
 and adaptive tracking \citep{barrett_adaptation_2008}.
 The particular coping mechanisms that evolve in fluctuating environments shift the course of subsequent evolution [citations].
-Identifying the mechanisms most likely to evolve and examining both the evolutionary constraints and opportunities associated with each is critical for us to understand and predict evolutionary dynamics in changing environments.
+Identifying the mechanisms most likely to evolve and examining both the evolutionary constraints and opportunities associated with each is critical for us to understand and predict evolutionary outcomes in changing environments.
 
 %%%%%%%%%%%%%%%%%%%%%%
 % -- We focus on how plasticity affects subsequent evolution. --
 %%%%%%%%%%%%%%%%%%%%%%
-In this work, we focus on phenotypic plasticity, which can be defined as the capacity for a single genotype to alter phenotypic expression in response to a change in environment \citep{west-eberhard_developmental_2003}. 
+In this work, we focus on phenotypic plasticity, which can be defined as the capacity for a single genotype to alter phenotypic expression in response to a change in its environment \citep{west-eberhard_developmental_2003}. 
 Phenotypic plasticity is controlled by genes whose expression is coupled to one or more abiotic or biotic environmental signals. 
-For example, the sex ratio of the crustacean Gammarus duebeni is modulated by changes in photoperiod and temperature [Dunn et al. 2005], and the reproductive output of some invertebrate species is heightened when infected with parasites to compensate for offspring loss [CITE]. 
+For example, the sex ratio of the crustacean \textit{Gammarus duebeni} is modulated by changes in photoperiod and temperature \citep{dunn_two_2005}, and the reproductive output of some invertebrate species is heightened when infected with parasites to compensate for offspring loss [CITE]. 
 In this study, we conducted digital evolution experiments to investigate how the evolution of adaptive phenotypic plasticity shifts the course of evolution in a cyclically changing environment.
 Specifically, we examined the effects of adaptive plasticity on subsequent genomic and phenotypic change, the capacity to evolve and then maintain novel traits, and the accumulation of deleterious alleles.
 
@@ -33,26 +33,31 @@ Specifically, we examined the effects of adaptive plasticity on subsequent genom
 %%%%%%%%%%%%%%
 Evolutionary biologists have long been interested in how evolutionary change across generations is influenced by phenotypic plasticity because of its role in generating phenotypic variance \citep{gibert_phenotypic_2019}.
 The effects of phenotypic plasticity on adaptive evolution have been disputed, as few studies have been able to observe both the initial patterns of plasticity and the subsequent divergence of traits in natural populations \citep{ghalambor_adaptive_2007,wund_assessing_2012,forsman_rethinking_2015,ghalambor_non-adaptive_2015,hendry_key_2016}.
-In a rapidly changing environment, adaptive phenotypic plasticity provides a mechanism for organisms to adaptively modify traits over intra-generational timescales, which can both assist in the initial survival of populations and reduce the probability of extinction \citep{gibert_phenotypic_2019}.
-In this context, the [conventional/traditional] view is that adaptive plasticity will constrain the rate of adaptive evolution \citep{gupta_study_1982,ancel_undermining_2000,huey_behavioral_2003,price_role_2003,paenke_influence_2007}.
-That is, directional selection may be weak if environmentally-induced [adaptive] phenotypes are close to the optimum; as such, adaptively plastic populations may evolve slowly unless there is a substantial fitness cost to plasticity [cite].
-In contrast, non-adaptive plasticity shifts a trait further away from the phenotypic optimum in response to an environmental signal.
-Non-adaptive plasticity can increase a population's extinction risk, especially if a [misaligned] plastic trait is strongly tied to survival [citations].
-If the population persists, however, the population should experience strong directional selection against maladaptive responses to environmental cues, resulting in rapid evolutionary change [citations].
+%over intra-generational timescales
+%In a changing environment, adaptive phenotypic plasticity provides a mechanism for organisms to regulate trait expression within lifetime, which can both promote the initial survival of populations and reduce the probability of extinction \citep{gibert_phenotypic_2019} [conceptual figure (see comment)?].
+In a changing environment, adaptive phenotypic plasticity provides a mechanism for organisms to regulate trait expression within their lifetime, which can stabilize populations through changes \citep{gibert_phenotypic_2019} [conceptual figure (see comment)?].
+% In this context, the [conventional/traditional] view is that adaptive plasticity will constrain the rate of adaptive evolution \citep{gupta_study_1982,ancel_undermining_2000,huey_behavioral_2003,price_role_2003,paenke_influence_2007}.
+In this context, the stabilization effects of adaptive plasticity have been hypothesized to constrain the rate of adaptive evolution \citep{gupta_study_1982,ancel_undermining_2000,huey_behavioral_2003,price_role_2003,paenke_influence_2007}.
+That is, directional selection may be weak if environmentally-induced phenotypes are close to the optimum; as such, adaptively plastic populations may evolve slowly unless there is a substantial fitness cost to plasticity [cite].
+% In contrast, non-adaptive plasticity can shift a trait further away from the phenotypic optimum in response to an environmental cue.
+% Non-adaptive plasticity can increase a population's extinction risk, especially if a [misaligned] plastic trait is strongly tied to survival [citations].
+% If the population persists, however, the population should experience strong directional selection against maladaptive responses to environmental cues, resulting in rapid evolutionary change [citations].
 
 % -- Plasticity as a source of cryptic variation --
-Phenotypic plasticity can serve as a source of heritable cryptic variation (i.e., unexpressed traits that vary in a population but do not currently affect fitness).
-This ``hidden'' genetic variation can accumulates in a plastic trait's response to a novel or infrequently experienced environmental cue, creating opportunities for selection when environmental conditions change to reveal this hidden variation \citep{schlichting_hidden_2008,levis_evaluating_2016}.
-It remains unclear to what extent and under what circumstances this cryptic variation caches adaptive potential or accumulates deleterious alleles \citep{gibson_uncovering_2004,paaby_cryptic_2014,zheng_cryptic_2019}.
+Phenotypic plasticity allows for the accumulation of genetic variation in genomic regions that are unexpressed under current environmental conditions.
+Such cryptic (``hidden'') genetic variation can serve as a source of diversity in the population, upon which selection can act when the environment changes \citep{schlichting_hidden_2008,levis_evaluating_2016}.  
+It remains unclear to what extent and under what circumstances this cryptic variation caches adaptive potential or merely accumulates deleterious alleles \citep{gibson_uncovering_2004,paaby_cryptic_2014,zheng_cryptic_2019}.
 % Regardless, this cryptic variation has the potential to play an important role in subsequent evolution.
-[Maybe we want to reference/mention (emerging evidence?) that pleiotropy can be a way to combat relaxed selection in unexpressed, but important traits?].
+% [Maybe we want to reference/mention (emerging evidence?) that pleiotropy can be a way to combat relaxed selection in unexpressed, but important traits?].
 % @AML: some one has probably written about plasticity + potential for genetic hitchhiking?
 
 % -- Genes as followers --
-The `genes as followers' hypothesis (also known as the plasticity-first hypothesis) predicts that phenotypic plasticity may facilitate evolutionary change by producing variants with enhanced fitness under stressful or novel conditions \citep{west-eberhard_developmental_2003,schwander_genes_2011,levis_evaluating_2016}. 
+The ``genes as followers'' hypothesis (also known as the ``plasticity first'' hypothesis) predicts that phenotypic plasticity may facilitate adaptive evolutionary change by producing variants with enhanced fitness under stressful or novel conditions \citep{west-eberhard_developmental_2003,schwander_genes_2011,levis_evaluating_2016}. 
 Environmentally-induced trait changes can be refined through selection over time (i.e., genetic accommodation).
 Further, selection may drive plastic phenotypes to lose their environmental dependence over time in a process known as genetic assimilation \citep{west-eberhard_developmental_2005,pigliucci_phenotypic_2006,crispo_baldwin_2007,schlichting_phenotypic_2014,levis_evaluating_2016}. 
 In this way, enviromentally-induced phenotypic changes can precede an evolutionary response.
+
+% -- Editing w/Charles bookmark --
 
 % -- Plastic rescue + wrap up on plasticity background? --
 Phenotypic plasticity may also `rescue' populations from extinction under changing environmental conditions by buffering populations against novel stressors.
@@ -79,12 +84,17 @@ exhaustively characterizing local mutational landscapes \citep{lenski_genome_199
 or disallowing neutral or deleterious mutations \citep{covert_experiments_2013}. 
 Digital evolution studies allow us to directly manipulate the capacity for plastic responses to evolve and perfectly observe subsequent dynamics, enabling us to experimentally test hypotheses that were previously relegated to theoretical analyses.
 
-% - @AML: need to re-write/overhaul this next paragraph
 %%%%%%%%%%%%%%%%%%%%%%
 % -- Overview of what we're testing / doing --
 %%%%%%%%%%%%%%%%%%%%%%
-% @AML: The first three sentences are somewhat redundant. Needs streamlining.
-In this work, we use the Avida Digital Evolution Platform \citep{ofria_avida:_2009} to investigate how adaptive phenotypic plasticity affects subsequent evolutionary dynamics in a fluctuating environment.
+% For this work, we used a modified version of Avida that is freely available on GitHub [cite].
+
+
+In this work, we use the Avida Digital Evolution Platform (hereafter referred to as Avida) \citep{ofria_avida:_2009} to investigate how adaptive phenotypic plasticity affects subsequent evolutionary dynamics in a fluctuating environment.
+Avida is an open-source system that has been used to conduct a wide range of well-regarded studies on evolutionary dynamics, including 
+the origins of complex features \citep{lenski_evolutionary_2003},
+the survival of the flattest effect \citep{wilke_evolution_2001},
+and the origins of reproductive division of labor \citep{goldsby_evolutionary_2014}.
 First, we examined the evolutionary histories of plastic and non-plastic populations to test whether the evolution of adaptive plasticity promoted or constrained subsequent genomic and phenotypic change.
 Next, we evaluated if adaptive plasticity improves fitness landscape exploration and exploitation by testing whether populations capable of adaptive plasticity are better able to evolve and retain novel adaptive traits. 
 Finally, we compared the [prevalence of deleterious hitchhiking/accumulation of deleterious genes] in plastic and non-plastic populations. 

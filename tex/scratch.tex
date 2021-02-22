@@ -355,3 +355,75 @@ The full suite of all possible 77 one-, two-, and three-input logic tasks is a s
 % - If so, expect that these metrics look similar for plastic populations in fluctuating environment and populations evolving in constant environment.
 % - Expect non-plastic populations => rapid evolutionary change as populations continuously adapt to environmental fluctuations via de novo genetic changes.
 % We evaluated the propensity for genetic hitchhiking across PLASTIC, NON-PLASTIC, and STATIC treatment populations.
+
+%%%%%%%%%% discussion %%%%%%%%%%%%%
+% As such, adaptive plasticity is often thought to constrain evolutionary responses because phenotypic variation in a plastic trait is likely to be environmentally-induced, shielding the genotype from selection [citations; Ghalambor 2007, etc]. % @AML: TODO - find papers that explicitly propose/argue/test this.
+
+
+% Our results support that adaptive plasticity can constrain evolution in cyclically changing environments where changes are predictable; that is, sensory information is reliable, and [the environment does not change in novel ways.]
+% Of course, real world environmental conditions are not so [simple/one-dimensional].
+% While predictable cyclic change is ubiquitous (e.g., day-night cycles, seasonal cycles, etc.), other axes of environmental change commonly [co-occur/layer on top]. 
+% [TODO - experimental/theoretical literature on scenarios where plasticity constrains evolutionary change].
+% [Our experiment differs because we leverage digital evolution to directly manipulate the capacity for phenotypic plasticity in digital organisms].
+% Our results [(and results of others [citations; theoretical work])] confirm baseline consequences of adaptive plasticity in a simple cyclic environment.
+
+
+%%%%%%%%%%%%%%%%%%%%
+% 2021-02-22
+%%%%%%%%%%%%%%%%%%%%
+% -- Abstract --
+% O: Here, we investigate how phenotypic plasticity alters evolutionary dynamics and influences evolutionary outcomes in fluctuating environments.
+% NG: Here, we use self-replicating computer programs called ``Avidians'' to investigate how phenotypic plasticity alters evolutionary dynamics and influences evolutionary outcomes when these digital organisms are evolved in cyclically changing environments. Specifically, we evaluate the potential of plastic and non-plastic populations of Avidians to evolve and then maintain complex traits.
+
+% Phenotypic plasticity is the capacity for a single genotype to alter phenotypic expression in response to environmental conditions, allowing plastic genotypes to dynamically adjust to environmental change.
+
+%We compare the evolutionary dynamics of plastic and non-plastic populations of digital organisms --- self-replicating computer programs --- evolved under cyclically changing environments; we evaluate each population's potential to evolve and maintain additional complex features.
+
+% These non-plastic populations undergo more frequent selective sweeps, accumulate many more genetic changes, and move to regions of the fitness landscape where mutations will more frequently result in phenotypic changes. 
+
+% ------- Methods --------
+
+We conducted our study using the Avida Digital Evolution Platform \citep{ofria_avida:_2009}. 
+Avida provides a computational study system where populations of digital organisms undergo Darwinian evolution, allowing researchers to test hypotheses that would be difficult or impossible to address in natural systems.
+Avida is a well-established open-source digital evolution software platform that has been used to conduct a wide range of well-regarded studies on evolutionary dynamics, including 
+the origins of complex features \citep{lenski_evolutionary_2003},
+the survival of the flattest effect \citep{wilke_evolution_2001},
+and the origins of reproductive division of labor \citep{goldsby_evolutionary_2014}.
+% - Coevolution + complex features, ...
+For this work, we used a modified version of Avida that is freely available on GitHub [cite].
+
+% Overview of digital organisms in avida
+Digital organisms in Avida are self-replicating computer programs that compete for space on a finite toroidal grid.
+Each digital organism is defined by a linear sequence of program instructions (its genome) and a set of virtual hardware components used to interpret and express those instructions.
+Avida tracks each organism as it expresses its genome in a given environment in order to measure that organism's phenotype.
+These genomes are built using a genetic language that is both robust and expressive; however, genomes are not guaranteed to encode meaningful information or to do so efficiently.
+The genetic language includes operations for basic computations, flow control (e.g., conditional logic and looping), input, output, and self-replication.
+The virtual hardware set includes components such as a central processing unit (CPU) for executing instructions, registers to store values, buffers for inputs and outputs, and memory stacks.
+
+% Reproduction & mutation
+Organisms in Avida reproduce asexually by copying their genome instruction-by-instruction and then dividing. 
+However, these operations can be configured to be erroneous, potentially resulting in mutated offspring.
+Erroneous copy operations result in a single-instruction substitution mutation; in this work, copy operations err at a per-instruction rate of 0.0025 (i.e., one mutation expected for every 400 instructions copied).
+% ----- For variable-length genome experiments (shifted to all fixed-length) ----
+% Next, divide operations will erroneously insert a random instruction into the offspring's genome at a per-division rate of 0.05 (i.e., one insertion is expected every 20 replication events).
+% Likewise, divide operations will delete a random instruction from the offspring's genome also at a per-division rate of 0.05.
+For all experiments described in this paper, we held individual genomes at a fixed length of 100 instructions (i.e., we did not include insertion and deletion mutations).
+When an organism divides, its offspring is placed in a random location in the population, replacing any previous occupant.
+We limited the population size to 3600 organisms; thus, there is a competition for space in Avida, and as such, improvements to the speed of self-replication are advantageous.
+The combination of this competition for space and heritable variation from imperfect replication results in evolution by natural selection.
+
+% Fitness/metabolic rate/improving replication speed
+During evolution, organism replication rates improve in two ways: by improving genome efficiency (e.g., using a more compact encoding) or by accelerating the rate at which the genome is expressed (their ``metabolic rate'').
+An organism's metabolic rate determines the speed at which it executes instructions in its genome.
+Initially, an organism's metabolic rate is proportional to the length of its genome, but that rate is adjusted as it completes designated tasks, such as performing Boolean logic computations \citep{ofria_avida:_2009}.
+In this way, we can reward or punish particular phenotypic traits. 
+
+% ----- For variable-length genome experiments (shifted to all fixed-length) ----
+% Next, divide operations will erroneously insert a random instruction into the offspring's genome at a per-division rate of 0.05 (i.e., one insertion is expected every 20 replication events).
+% Likewise, divide operations will delete a random instruction from the offspring's genome also at a per-division rate of 0.05.
+
+% Phenotypic plasticity can serve as a source of heritable cryptic variation (i.e., unexpressed traits that vary in a population, but do not currently affect fitness).
+% Such ``hidden'' genetic variation is created as mutations that are shielded from selection (due to inexpression) accumulate in genes associated with the plastic response upon which selection can act when the environment changes \citep{schlichting_hidden_2008,levis_evaluating_2016}.  
+% Mutations that are shielded from selection (due to inexpression) can accumulate in genes associated with the plastic response; selection can then act on this  ``hidden'' genetic variation when the environment changes \citep{schlichting_hidden_2008,levis_evaluating_2016}.  
+
+% This ``hidden'' genetic variation can accumulates in a plastic trait's response to a novel or infrequently experienced environmental cue, creating opportunities for selection when environmental conditions change to reveal this hidden variation .
