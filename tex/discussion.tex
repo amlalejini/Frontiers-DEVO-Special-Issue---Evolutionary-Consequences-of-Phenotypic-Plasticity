@@ -8,56 +8,53 @@
 
 % -- Overview of main evolutionary change results --
 Our results demonstrate that the evolution of adaptive phenotypic plasticity can slow the rate of evolutionary change in fluctuating environments.
-The evolution of adaptive phenotypic plasticity resulted in populations experiencing fewer selective sweeps and less total genetic change relative to non-plastic populations evolving in the same environmental conditions.
-Plastic populations relied on environmentally-induced phenotypic changes to adapt to environmental changes, whereas non-plastic engaged in adaptive evolutionary tracking [cite]; that is, non-plastic populations relied on \textit{de novo} mutations to continuously re-adapt to environmental changes, driving more frequent selective sweeps.
+Adaptively plastic populations experienced fewer selective sweeps and less total genetic change relative to non-plastic populations evolving in the same environmental conditions.
+Plastic populations relied on environmentally-induced phenotypic changes to adapt to environmental changes, whereas non-plastic populations engaged in adaptive evolutionary tracking \cite{simons_modes_2011}[other cite?]; that is, non-plastic populations relied on \textit{de novo} mutations to continuously re-adapt to environmental changes, driving more frequent selective sweeps.
 Adaptive plasticity stabilized populations against fluctuations.
 Indeed, across all three of our experiments, the evolutionary dynamics of plastic populations were more similar to that of populations evolving in a static environment than to that of non-plastic populations evolving in the same fluctuating environment.
 
 % -- in context of previous digital evolution work --
-This study is the first to use digital organisms to study how the \textit{de novo} evolution of adaptive plasticity shifts the trajectory of subsequent evolutionary dynamics.
-The evolutionary dynamics that we observed in non-plastic populations, however, are consistent with results from previous digital evolution studies of the type of fluctuating environment used in this work.
-% - interpreting tape of life -
-\cite{dolson_interpreting_2020} proposed a suite of lineage and phylogeny metrics for quantifying the evolutionary histories of evolving populations of digital organisms; consistent with our findings, they observed that non-plastic populations evolved in changing environments exhibited higher phenotypic volatility and mutation accumulation than that of populations evolving in static conditions.
-% - lineages from origins of plasticity -
+%   - interpreting tape of life -
+%   - lineages from origins of plasticity -
+%   - Rose's 2016 phenotype switching work - TODO - work in relevant architecture results!
+This study is the first to use [digital organisms] to investigate how the \textit{de novo} evolution of adaptive plasticity shifts the trajectory of subsequent evolution.
+The evolutionary dynamics that we observed in non-plastic populations, however, are consistent with results from previous digital evolution studies. % of the type of fluctuating environment used in this work.
+\cite{dolson_interpreting_2020} proposed a suite of lineage and phylogeny metrics for quantifying the evolutionary histories of evolving populations of digital organisms; consistent with our findings, they observed that non-plastic populations evolved in cyclically changing environments exhibited higher phenotypic volatility and mutation accumulation than that of populations evolving in static conditions.
 \cite{lalejini_evolutionary_2016} visually inspected the evolutionary histories of non-plastic organisms evolved in fluctuating environments, observing that mutations readily switched the set of traits expressed by offspring.
-% - Rose's phenotype switching work - TODO - work in relevant architecture results!
-\cite{canino-koning_evolution_2016} investigated how different types of changing environments shape the genetic architectures of evolved organisms, confirming that cyclically-changing environments can steer populations toward genotypes that more readily mutate to alternative phenotypes.
-Further \cite{canino-koning_evolution_2016} demonstrated that genomes evolved in harsh cyclic environments often contained vestigial fragments of genetic material adapted to prior environments.
+\cite{canino-koning_evolution_2016} investigated how different types of changing environments shape the genetic architectures of evolved organisms, showing that cyclically-changing environments can steer populations toward genotypes that more readily mutate to alternative phenotypes.
+Consistent with our observations, \cite{canino-koning_evolution_2016} also demonstrated that genomes evolved in harsh cyclic environments often contained vestigial fragments of genetic material adapted to prior environments.
 %  - @Austin - depending on what you include about architecture results, you'll also want to work in results from Canino-Koning (2019); going to talk about their novel tasks results in next subsection.
 
-% -- @AML: --bookmark--
-
-% -- broaden out to evolutionary theory --
-
-
-% [Literature on how fluctuating environments accelerate evolutionary change, mutation accumulation].
-
-% -- evolutionary change results in context of literature --
-% -- plasticity perspective --
-% - evolutionary response of a trait to selection is dependent on strength of directional selection and amount of genetic variation [reword,cite]
+% -- In context of conventional evolutionary theory: evo response => f(selection, variation) --
+Our results are also consistent with conventional evolutionary theory.
 A trait's evolutionary response to selection depends on the strength of directional selection and on the amount of genetic variation for selection to act on [citations; Gilbert et al 2019].
-As such, plasticity is often thought to constrain evolutionary responses because variation in a plastic trait is likely to be environmentally-induced, shielding the genotype from selection [citations; Ghalambor 2007, etc]. % @AML: TODO - find papers that explicitly propose/argue/test this.
-Our results support that adaptive plasticity can constrain evolution in cyclically changing environments where changes are predictable; that is, sensory information is reliable, and [the environment does not change in novel ways.]
-Of course, real world environmental conditions are not so [simple/one-dimensional].
-While predictable cyclic change is ubiquitous (e.g., day-night cycles, seasonal cycles, etc.), other axes of environmental change commonly [co-occur/layer on top]. 
-[TODO - experimental/theoretical literature on scenarios where plasticity constrains evolutionary change].
-[Our experiment differs because we leverage digital evolution to directly manipulate the capacity for phenotypic plasticity in digital organisms].
-Our results [(and results of others [citations; theoretical work])] confirm baseline consequences of adaptive plasticity in a simple cyclic environment.
+In our experiments, non-plastic populations repeatedly experienced strong directional selection to adjust which tasks were expressed after each environment change, and as such, retrospective analyses of successful lineages revealed high rates of genetic and phenotypic changes.
+[relevant examples from other work].
+Adaptive plasticity provided a mechanism for organisms to regulate task expression in response to environmental changes, which shielded plastic [populations/individuals] from strong directional selection when the environment changed and eliminated the need for a rapid evolutionary response to adjust task expression.
+As such, the rates of genetic and phenotypic change as well as the frequency of selective sweeps that we observed in adaptively plastic populations resembled that of populations evolving in a static environment. 
+[relevant examples from other work].
 
-% As such, our results do not necessarily contradict `genes as followers' viewpoints [West-Eberhard 2003]; just make clear that this is not the default scenarios
+%%%%%%%%%%%%
+% - Evidence for relaxed selection -
+%   (under construction)
+% - Observed a small but significant increase in phenotypic volatility in plastic populations relative to populations evolving in static conditions.
+% - Indeed, the increase in phenotypic volatility driven by observed along successful lineages affected traits that were unexpressed at the time of mutation.
+% - could point to relaxed selection
+% overall, not enough time between environmental changes for the genetic machinery of alternate phenotypes to degrade
+no selection
+off environment not long enough for relaxed selection to reliably degrade unexpressed phenotype
+can shift expression  provides a mechanism  shift a trait's expression toward the 
+[+ relevant examples of these dynamics]
+%%%%%%%%%%%%
 
-%%%%%%%%%%%%%% 
-% From Levis and Pfennig:
-% "A chief difficulty with demonstrating plasticity-first evolution in natural popu- lations is that, once a trait has evolved, its evolution cannot be studied in situ. To get around this difficulty, research- ers can study extant lineages that act as ancestral-proxies to the lineage pos- sessing the focal trait"
-% - Digital evolution would be great to test plasticity-first hypotheses!
-%%%%%%%%%%%%%% 
-
-% - mutation accumulation -
-% Different evolutionary contexts are expected to result in different rates of mutation accumulation along successful lineages [citations; Barrick 2013?].
-% Most trivially, we expect larger mutation accumulation in environments with high mutation rates.
-% We would expect strong [purifying/stabilizing] selection to result in lower mutation accumulation relative to lineages evolved under weak selection with [large amount of genetic drift] [citations].
-% We might also expect lineages that must continuously adapt to a changing environment via \textit{de novo} genetic changes to exhibit high mutation accumulation relative to lineages evolved under constant environmental conditions [citations; Tape of life].
-
+% - hodgepodge of limitations  -
+Our conclusions are limited to \textit{adaptively} plastic populations; we did not explore the affects of non-adaptive plasticity.
+% streamline next sentence
+[Further, environmental cues were reliable, and environmental changes were consistent over time; that is, sensors perfectly differentiated environments, and environmental fluctuations did not expose populations [\textit{novel}/entirely new] conditions.]
+As such, our results are not necessarily evidence against hypotheses that predict that plasticity can accelerate evolutionary responses (e.g., the `genes as followers' hypothesis), as these hypotheses primarily focus on contexts where [plasticity reveals previously unexpressed response to environment or helps population survive in new environment (e.g., plastic rescue)].
+We imposed no additional costs on plasticity, which minimized [chances that non-plastic variants could outcompete plastic variants in conditions where plasticity was allowed].
+[aim to establish/explore baseline expectations for population dynamics in simple cyclic environment.(?)]
+% Indeed, we limited our analyses to phase two where populations were already adapted to their treatment conditions.
 
 \subsection{Plastic populations retain more novel traits than non-plastic populations in fluctuation environments}
 
@@ -147,3 +144,12 @@ We found that adaptive phenotypic plasticity can reduce a population's susceptib
 % Sensory reliability.
 % Different types of environmental change (more complex environments).
 % Different rates of change; in our experiments, the environment changed frequently enough such that plastic machinery/traits adaptive to non-current environment did not degrade due to relaxed selection.
+
+% Of course, real world environmental conditions are not so [simple/one-dimensional].
+% While predictable cyclic change is ubiquitous (e.g., day-night cycles, seasonal cycles, etc.), other axes of environmental change commonly [co-occur/layer on top]. 
+
+%%%%%%%%%%%%%% 
+% From Levis and Pfennig:
+% "A chief difficulty with demonstrating plasticity-first evolution in natural popu- lations is that, once a trait has evolved, its evolution cannot be studied in situ. To get around this difficulty, research- ers can study extant lineages that act as ancestral-proxies to the lineage pos- sessing the focal trait"
+% - Digital evolution would be great to test plasticity-first hypotheses!
+%%%%%%%%%%%%%% 
