@@ -17,13 +17,15 @@
 
 ## Action items
 
-- Question: mutations/lineage step or just mutations?
-- Question: [methods] Should we include a figure that depicts the avida virtual hardware/genome?
+- TODO - [methods] include a figure that depicts the avida virtual hardware/genome
 - TODO - with validation control data - show no stochastic phenotypes
 - TODO - [Van den Bergh et al., 2018] for relevant examples/research wet lab experiments (e.g., cycling environments, hitchhiking, etc)
 - TODO - Draft a figure explaining the metrics
-- TODO - incorporate coalescence theory into measurements section
 - TODO - Re-edit introduction with Charles
+- Question: Do we want to shoot for a bigger journal? 
+    - can we claim that this is the first empirical study of consequences of adaptive plasticity?
+- Future experiment - repeat this sort of experiment with plastic organisms, but keep entire phylogeny to measure rates of relaxed selection.
+- TODO - Define fitness landscape concept somewhere
 
 ### Details to move into supplement
 
