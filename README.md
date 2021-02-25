@@ -26,6 +26,8 @@
     - can we claim that this is the first empirical study of consequences of adaptive plasticity?
 - Future experiment - repeat this sort of experiment with plastic organisms, but keep entire phylogeny to measure rates of relaxed selection.
 - TODO - Define fitness landscape concept somewhere
+- COmment from matthew: "if this figure is going into the paper one quick mention of how I first interpreted the graphs in that figure, I first thought time was on the x axis and it was alternating between equ up nand down etc"
+- 'pre-conditioning'
 
 ### Details to move into supplement
 

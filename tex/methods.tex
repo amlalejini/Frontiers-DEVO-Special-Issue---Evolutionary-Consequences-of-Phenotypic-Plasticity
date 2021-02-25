@@ -8,6 +8,8 @@
 
 \section{Materials and Methods}
 
+% -- bookmark --
+
 \subsection{The Avida Digital Evolution Platform}
 
 % We conducted our study using the Avida Digital Evolution Platform \citep{ofria_avida:_2009}. 
@@ -15,8 +17,6 @@
 
 % - Define digital organisms -
 Avida is a study system wherein self-replicating computer programs (digital organisms) compete for space on a finite toroidal grid \citep{ofria_avida:_2009}.
-% Self-replication, however, is imperfect such that organisms mutate randomly and evolve. 
-% in a well mixed population(?)
 Each digital organism is defined by a linear sequence of program instructions (its genome) and a set of virtual hardware components used to interpret and express those instructions [Figure?].
 % Avida tracks each organism as it expresses its genome in a given environment in order to measure that organism's phenotype.
 Genomes are expressed sequentially except when the execution of one instruction deterministically changes which instruction should be executed next (e.g., a `jump' instruction). 
@@ -27,7 +27,6 @@ The instruction set includes operations for basic computations, flow control (e.
 
 % - define reproduction & mutation -
 Organisms in Avida reproduce asexually by copying their genome instruction-by-instruction and then dividing. 
-% However, these operations can be configured to be erroneous, potentially resulting in mutated offspring.
 However, copy operations are imperfect and can result in single-instruction substitution mutations in an offspring's genome. 
 For this work, we configured copy operations to err at a rate of one expected mutation for every 400 instructions copied (i.e, a per-instruction error rate of 0.0025).
 % at a per-instruction rate of 0.0025 (i.e., one mutation expected for every 400 instructions copied).
@@ -36,14 +35,6 @@ We used fixed-length genomes to control for treatment-specific conditions result
 When an organism divides, its offspring is placed in a random location on the toroidal grid, replacing any previous occupant.
 For this work, we used the default 60 by 60 grid size, which limits the maximum population size to 3600 organisms.
 As such, improvements to the speed of self-replication are advantageous in the competition for space.
-% The combination of this competition for space and heritable variation from imperfect replication results in evolution by natural selection.
-
-% Nkrumah:
-% In this work, copy operations err at a per instruction rate of 1 mutation per every 400 instructions copied (0.0025) and may include single point mutations, insertions and deletions. In this work, we held individual genomes at a fixed length of 100 instructions, that is we only considered point mutations which minimizes… maximizes… simplifies… (WHY?). We also held the population to 3600 organisms….. (not clear why 3600… how big is the grid?) Together, our parameters … and … in a tractable…. Something….
-
-% Erroneous copy operations result in a single-instruction substitution mutation; in this work, copy operations err at a per-instruction rate of 0.0025 (i.e., one mutation expected for every 400 instructions copied).
-% For all experiments described in this paper, we held individual genomes at a fixed length of 100 instructions (i.e., we did not include insertion and deletion mutations).
-% We limited the population size to 3600 organisms; thus, there is a competition for space in Avida, and as such, improvements to the speed of self-replication are advantageous.
 % The combination of this competition for space and heritable variation from imperfect replication results in evolution by natural selection.
 
 % Avida tracks each organism as it expresses its genome in a given environment in order to measure that organism's phenotype.
@@ -249,24 +240,26 @@ We calculated task loss as the number of times along a lineage that a task is pe
 \end{itemize}
 
 \vspace{0.5cm}
-\subsubsection{Experiment III: Does adaptive phenotypic plasticity decrease deleterious hitchhiking?}
+% Alternative headings:
+% - Does adaptive phenotypic plasticity decrease deleterious hitchhiking?
+\subsubsection{Experiment III: Does adaptive phenotypic plasticity influence the accumulation deleterious genes?}
 \label{sec:methods:experiment-deleterious-hitchhiking}
 
-Given that preliminary experiments showed numerous deleterious mutations, we conducted tests to determine the role of genetic hitchhiking in these results.
-In asexual populations without horizontal gene transfer, all mutations are linked.
-As such, deleterious mutations that co-occur with a beneficial mutation can sometimes `hitchhike' to fixation \citep{smith_hitch-hiking_1974,van_den_bergh_experimental_2018}.
-Without such co-occurrence, natural selection normally prevents deleterious mutations from reaching high frequencies. 
-However, hitchhiking effects have been shown to drive deleterious mutations to high frequencies \citep{buskirk_hitchhiking_2017}. %[citations]. 
-
-To test each of the PLASTIC, NON-PLASTIC, and STATIC treatment's susceptibility to hitchhiking, we added a \code{poison} instruction to the instruction set during the second phase of this experiment.
+% Given that preliminary experiments showed numerous deleterious mutations, we conducted tests to determine the role of genetic hitchhiking in these results.
+% [To test each of the PLASTIC, NON-PLASTIC, and STATIC treatment's susceptibility to hitchhiking, we added a \code{poison} instruction to the instruction set during the second phase of this experiment.]
+To examine the propensity for deleterious genes to accumulate in genomes under each of the PLASTIC, NON-PLASTIC, and STATIC treatments, we added a \code{poison} instruction to the instruction set during the second phase of this experiment.
 When executed by an organism, the \code{poison} instruction reduces the organism's metabolic rate (and thus reproductive success), but does not otherwise alter the organism's function.
 Here, we imposed a 10\% penalty each time an organism executed this instruction, making the instruct explicitly deleterious (see [supplementary material] for tests with 3\% and 30\% penalties, which produced consistent experimental results).
 
 % - measurements -
 At the beginning of phase two, the \code{poison} instruction is not present in the population as it was not part of the instruction set during the first phase of evolution.
 However, by adding \code{poison} to the instruction set during phase two, it can be introduced via a mutation.
-We measured susceptibility to genetic hitchhiking by examining the number of times a \code{poison} instruction is executed by each genotype along the dominant lineage (including the final dominant genotype).
-Because the \code{poison} instruction is explicitly deleterious, we expect it to show up in successful lineages only as a result of hitchhiking, as selection should purge deleterious mutations not linked to beneficial mutations.
+% susceptibility to [genetic hitchhiking]
+We measured deleterious mutation accumulation by examining the number of times a \code{poison} instruction is executed by each genotype along the dominant lineage (including the final dominant genotype).
+Because the \code{poison} instruction is explicitly deleterious, selection should purge mutations that increase \code{poison} execution in the offspring phenotype.
+As such, we expected such mutations to show up in successful lineages either as accumulated cryptic variation in plastic genomes or via hitchhiking with linked beneficial mutations [cite].
+% we expect it to show up in successful lineages either as accumulated cryptic variation in plastic genomes or as a result of hitchhiking 
+% [only as a result of hitchhiking], as selection should purge deleterious mutations not linked to beneficial mutations.
 
 \vspace{0.5cm}
 \subsection{Data analysis and software availability}
