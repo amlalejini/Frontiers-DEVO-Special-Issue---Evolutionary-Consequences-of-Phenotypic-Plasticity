@@ -32,7 +32,7 @@ Indeed, across all three of our experiments, the evolutionary dynamics of plasti
 % -- [Architecture results] --
 
 % -- in context of previous digital evolution work --
-This study is the first in-depth empirical investigation into how the \textit{de novo} evolution of adaptive plasticity shifts the course of subsequent evolution.
+This study is the first in-depth empirical investigation into how the \textit{de novo} evolution of adaptive plasticity shifts the course of subsequent evolution in a cyclic environment.
 The evolutionary dynamics that we observed in non-plastic populations, however, are consistent with results from previous digital evolution studies. 
 \cite{dolson_interpreting_2020} proposed a suite of lineage and phylogeny metrics for quantifying the evolutionary histories of evolving populations of digital organisms; consistent with our findings, they observed that non-plastic populations evolved in cyclically changing environments exhibited higher phenotypic volatility and mutation accumulation than that of populations evolving in static conditions.
 \cite{lalejini_evolutionary_2016} visually inspected the evolutionary histories of non-plastic organisms evolved in fluctuating environments, observing that mutations readily switched the set of traits expressed by offspring.
@@ -49,11 +49,18 @@ As such, retrospective analyses of successful lineages revealed rapid evolutiona
 % WOULD BE NICE: [relevant examples of these dynamics from literature].
 % - Rapid evolutionary change (strong directional selection) => rapid genetic and phenotypic responses.
 % Indeed, many empirical studies demonstrating rapid evolutionary responses to directional selection [????].
+Evolved adaptive plasticity shielded populations from strong directional selection when the environment changed by eliminating the need for a rapid evolutionary response to toggle task expression.
+Indeed, both theoretical and empirical studies have shown that adaptive plasticity can constrain evolutionary change by weakening directional selection on evolving populations \citep{price_role_2003,paenke_influence_2007,ghalambor_non-adaptive_2015}. 
 
-Adaptive plasticity shielded populations from strong directional selection when the environment changed, eliminating the need for a rapid evolutionary response to toggle task expression. 
-After each environmental change, any accumulated cryptic variation in plastic genotypes would have been exposed to selection, potentially resulting in a rapid an evolutionary response \citep{wund_assessing_2012}.
-However, we did not find compelling evidence for this in our experiments, as the evolutionary dynamics of plastic populations were generally comparable to that of populations evolving in static environments.
-% [relevant examples of these dynamics from other work].
+% This result is consistent with both theoretical models predicting that adaptive plasticity can constrain evolutionary change by reducing directional selection on evolving populations .
+% A recent empirical study with \textit{Poecilia reticulata} found that adaptive plasticity 
+% Our results are also consistent with empirical studies demonstrating the potential for reduced evolutionary divergence in adaptively plastic traits \citep{ghalambor_non-adaptive_2015}.
+% [Ghalambor (2015 - guppies].
+% [For example], \cite{ghalambor_non-adaptive_2015} transplanted \textit{Poecilia reticulata} adapted to living with cichlid predators to cichlid-free streams and tested for subsequent evolutionary changes in gene expression patterns.
+% After three to four generations, Ghalambor \textit{et al.} found that...
+
+% After each environmental change, any accumulated cryptic variation in plastic genotypes would have been exposed to selection, potentially resulting in a rapid an evolutionary response \citep{wund_assessing_2012}.
+% However, we did not find compelling evidence for this effect in our experiments, as the evolutionary dynamics of plastic populations were generally comparable to that of non-plastic populations evolving in static environments.
 
 % -- Evidence for relaxed selection --
 We observed evidence of mutation accumulation in plastic lineages that resulted in the loss of unexpressed traits that would have been important for survival in the alternate environment.
@@ -133,7 +140,7 @@ This rate of co-occurrence is conservative because we did not analyze mutations 
 
 % -- Elaboration on plastic result --
 We found that adaptive phenotypic plasticity reduced \code{poison} instruction accumulation by reducing the rate of evolutionary change, which in turn reduced opportunities for \code{poison} instructions to hitchhike to fixation.
-We did not find evidence of cryptic variation harboring \code{poison} instructions in adaptively plastic lineages.
+We did not find compelling evidence of cryptic variation harboring \code{poison} instructions in adaptively plastic lineages.
 We have two hypotheses for why we did not observe the accumulation of \code{poison} instructions in unexpressed plastic responses.
 First, the period of time between environmental changes was too fast for variants carrying unexpressed \code{poison} instructions to reach high frequencies before the environment changed, after which such variants would have been outcompeted.
 Second, the plastic machinery that evolves in Avida is typically well-integrated and highly specific; that is, plastic genomes usually adjust their phenotypic expression by toggling a minimal number of key instructions ([though, toggling of larger sequences is possible but more complex to encode]) [cite - OSF?].
@@ -149,14 +156,18 @@ Second, the plastic machinery that evolves in Avida is typically well-integrated
 \vspace{0.25cm}
 \subsection{Limitations and future directions}
 
-% -- Limitations --
-% - Type of plasticity -
-Our conclusions are limited to \textit{adaptively} plastic populations; we did not explore the affects of non-adaptive plasticity where environmental cues can shift a plastic response further away from the phenotypic optimum.
-Further, environmental cues in our experiments were reliable, and environmental changes were consistent over time; that is, sensory instructions perfectly differentiated between ENV-A and ENV-B, and environmental fluctuations never exposed populations to entirely new conditions.
-Both the reliability of cues and the timescales of environment switching are known to influence evolutionary outcomes \citep{li_digital_2004,boyer_adaptation_2021} [more citations].
+% -- Adaptive vs non-adaptive plasticity --
+Our conclusions are limited to \textit{adaptively} plastic populations.
+We did not explore the effects of non-adaptive plasticity where environmental changes induced phenotypes that were further away from the local optimum.
+Non-adaptive plasticity can increase a population's extinction risk, especially if the misaligned plastic response is strongly tied to survival or the population is not sufficiently large \citep{gomulkiewicz_when_1995,chevin_adaptation_2010}.
+If the population persists, however, non-adaptive plasticity has been shown to be capable of accelerating evolutionary change by increasing the strength of directional selection. \citep{ghalambor_non-adaptive_2015}.
+
+% -- Environmental change --
+Environmental cues in our experiments were reliable, and environmental changes were consistent over time; that is, sensory instructions perfectly differentiated between ENV-A and ENV-B, and environmental fluctuations never exposed populations to entirely new conditions.
+Both the reliability of cues and the timescales of environment switching are known to influence evolutionary outcomes \citep{li_digital_2004,boyer_adaptation_2021} [cite - cue reliability].
 For example, \cite{boyer_adaptation_2021} evolved populations of \textit{Saccharomyces cerevisiae} in an environment that fluctuated between two growth conditions, observing that both environmental predictability and switching rate influenced the rates of evolutionary responses as well as adaptive outcomes at the genotypic and phenotypic levels. % e.g., generalist (rapid switching) vs. specialist (long periods in each env)
 % In plastic populations, switching rate determines maintenance of plastic genes
-In adaptively plastic populations, environmental switching rate can influence how plastic responses are maintained: long periods between switches can (but not always [cite]) result in the loss of plasticity [citations].
+In adaptively plastic populations, environmental switching rate can influence how plastic responses are maintained: long periods between switches can (but not always \citep{grant_maintenance_2020}) result in the loss of plasticity [citations].
 % @AML: I do not like the way this next sentence reads atm. I don't necessarily want to lay claim to these extensions (maybe Austin does?), happy for other folks to do them.
 [Given the flexibility of digital evolution techniques, next steps could extend our study to include different forms of plasticity (e.g., adaptive vs. non-adaptive), more complex environments with more than two possible states, stochastic environmental changes, and a range of environment switching rates.]
 
