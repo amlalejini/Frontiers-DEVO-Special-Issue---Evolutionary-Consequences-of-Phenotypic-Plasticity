@@ -13,7 +13,7 @@
 % --- Deleterious genes ----
 %%%%%%%%%%%
 
-% @AML: This section is missing good empirical examples. Currently relies too heavily on digital evolution studies.
+% @AML: This section is missing empirical examples.
 \section{Discussion}
 
 Our results indicate that adaptive plasticity can improve evolution's ability to maintain and refine novel traits, though with the tradeoff of reducing evolutionary exploration of the fitness landscape.
@@ -25,16 +25,15 @@ Below we discuss the specific implications of the results from each of our three
 % -- Overview of main evolutionary change results --
 Adaptively plastic populations experienced fewer selective sweeps and fewer total genetic changes relative to non-plastic populations evolving in the same environmental conditions.
 Plastic populations adapted to environmental changes by relying on environmentally-induced cues and within-lifetime regulation, which also stabilized these populations against fluctuations. 
-% @AML: added something about 
 Because ENV-A and ENV-B were incompatible (i.e., adaptive phenotypes in ENV-A were maladaptive in ENV-B and vice versa), non-plastic generalists did not evolve; any non-plastic generalist (e.g., that performed all tasks or performed no tasks) would have been quickly outcompeted by a specialist strategy because of the large fitness benefit for performing environment-specific tasks.
-As such, non-plastic populations required genetic modifications to respond to external changes and thus exhibited frequent selective sweeps during each new readaptation.
-Indeed, across all three of our experiments, the evolutionary dynamics of plastic populations were more similar to that of populations evolving in a static environment than to that of non-plastic populations evolving in the same fluctuating environment.
+As such, non-plastic populations repeatedly required genetic modifications to respond to environmental changes and thus exhibited frequent selective sweeps during each new readaptation.
+Indeed, across all three of our experiments, the evolutionary dynamics of plastic populations were more similar to that of populations evolving in a static environment than to that of non-plastic populations evolving in an identical fluctuating environment.
 
 % -- [Architecture results] --
 
 % -- in context of previous digital evolution work --
-This study is the first in-depth empirical investigation into how the \textit{de novo} evolution of adaptive plasticity shifts the course of subsequent evolution [using digital organisms].
-The evolutionary dynamics that we observed in non-plastic populations, however, are consistent with results from previous digital evolution studies. % of the type of fluctuating environment used in this work.
+This study is the first in-depth empirical investigation into how the \textit{de novo} evolution of adaptive plasticity shifts the course of subsequent evolution.
+The evolutionary dynamics that we observed in non-plastic populations, however, are consistent with results from previous digital evolution studies. 
 \cite{dolson_interpreting_2020} proposed a suite of lineage and phylogeny metrics for quantifying the evolutionary histories of evolving populations of digital organisms; consistent with our findings, they observed that non-plastic populations evolved in cyclically changing environments exhibited higher phenotypic volatility and mutation accumulation than that of populations evolving in static conditions.
 \cite{lalejini_evolutionary_2016} visually inspected the evolutionary histories of non-plastic organisms evolved in fluctuating environments, observing that mutations readily switched the set of traits expressed by offspring.
 \cite{canino-koning_evolution_2016} investigated how different types of changing environments shape the genetic architectures of evolved organisms, showing that cyclically-changing environments can steer populations toward genotypes that more readily mutate to alternative phenotypes.
@@ -51,11 +50,9 @@ As such, retrospective analyses of successful lineages revealed rapid evolutiona
 % - Rapid evolutionary change (strong directional selection) => rapid genetic and phenotypic responses.
 % Indeed, many empirical studies demonstrating rapid evolutionary responses to directional selection [????].
 
-% Adaptive plasticity provided a mechanism for organisms to regulate task expression in response to environmental changes.
-%The rates of genetic and phenotypic change as well as the frequency of selective sweeps that we observed in adaptively plastic populations resembled that of populations evolving in a static environment.
 Adaptive plasticity shielded populations from strong directional selection when the environment changed, eliminating the need for a rapid evolutionary response to toggle task expression. 
 After each environmental change, any accumulated cryptic variation in plastic genotypes would have been exposed to selection, potentially resulting in a rapid an evolutionary response \citep{wund_assessing_2012}.
-However, we did not find compelling evidence for this in our experiments, as the evolutionary dynamics of plastic populations were generally comparable to populations evolving in static environments.
+However, we did not find compelling evidence for this in our experiments, as the evolutionary dynamics of plastic populations were generally comparable to that of populations evolving in static environments.
 % [relevant examples of these dynamics from other work].
 
 % -- Evidence for relaxed selection --
@@ -69,48 +66,42 @@ Additionally, we imposed no explicit costs on phenotypic plasticity, which minim
 \vspace{0.25cm}
 \subsection{Adaptively plastic populations retain more novel traits than non-plastic populations in fluctuation environments}
 
-% - overview -
-% - Exploration -.
-In our second experiment, we evaluated if adaptive plasticity improves fitness landscape exploration and exploitation in a cyclic environment by testing whether adaptively plastic populations are better able to evolve and then maintain novel tasks than their non-plastic counterparts.
+% -- overview --
+% - Exploration -
+In our second experiment, we evaluated if adaptive plasticity influences fitness landscape exploration and exploitation in a cyclic environment by testing the ability of different treatment populations to evolve and then maintain novel tasks.
 We found that in a fluctuating environment non-plastic populations explored a larger portion of the fitness landscape than adaptively plastic populations.
 That is, non-plastic populations discovered more novel tasks than adaptively plastic populations.
-% However, we did not find evidence that non-plastic populations discovered novel tasks more \textit{efficiently} than adaptively plastic populations, as fewer generations of evolution elapsed in adaptively plastic populations and the rates of task discovery were not significantly different. 
 
 % - Exploitation -
-Despite lower overall task discovery, we found that adaptively plastic populations better exploited the fitness landscape than non-plastic populations.
-That is, adaptively plastic populations retained more novel tasks than non-plastic populations evolving under identical environmental conditions.
-% Frequent selective sweeps in non-plastic populations driven by repeated  bouts of strong directional selection after each environmental change inhibited the maintenance of novel tasks in non-plastic populations.
-Evolution in non-plastic populations was dominated by repeated bouts of strong directional selection [on base task expression] after each environmental change. 
-In our experiment, novel tasks were less important to survival than fluctuating tasks.
-[As such, in non-plastic populations, if the loss of a novel trait (via mutation) co-occurred with a mutation that improved fitness after the environment changes, then the loss of the novel trait was likely to hitchhike to fixation.] 
-%loss of the novel trait is because of the relative values of base and novel tasks.]
-Indeed, we found that mutations associated with the loss of a novel task along successful lineages form non-plastic populations overwhelmingly co-occurred with mutations that helped offspring adapt to environmental changes.
+Despite lower overall task discovery, we found that adaptively plastic populations better exploited the fitness landscape, retaining a greater number of novel tasks than non-plastic populations evolving under identical environmental conditions.
+Evolution in non-plastic populations was dominated by repeated bouts of strong directional selection on each of the six base tasks after each environmental change. 
+In our experiment, novel tasks were less important to survival than the fluctuating tasks.
+In non-plastic populations, mutations that improve an offspring's fitness after the environment changes are enormously beneficial. 
+Such beneficial mutations can drive co-occurring deleterious mutations that knock out novel tasks to fixation because there is no horizontal gene transfer in our system (that is, all mutations are linked).
+Indeed, we found that mutations associated with novel task loss along successful lineages from non-plastic populations overwhelmingly co-occurred with mutations that helped offspring adapt to environmental changes.
 
-
-% @AML: editing bookmark
-\cite{nahum_improved_2017} found that a single temporary environmental change can improve fitness landscape exploration and exploitation in evolving populations of non-plastic digital organisms.
-In our system, however, we found that \textit{repeated} fluctuations reduced the ability of non-plastic populations to maintain and exploit tasks; though, we did find that repeated fluctuations may improve task discovery. 
-% @AML: I'm not sure this fits - [In a very different context, \cite{zaman_coevolution_2014} found that the constantly changing environment that results from host-parasite coevolution resulted in improved fitness landscape exploration in the (non-plastic) host population (i.e., the evolution of more complex traits).] 
-Consistent with our findings, \cite{canino-koning_fluctuating_2019} found that non-plastic populations of digital organisms evolving in a harsh cyclic environment maintained fewer novel traits than populations evolving in [static environments or cyclic environments without punishments] [despite comparable discovery(?)].
+% -- Changing environments promote evolutionary change --
+\cite{nahum_improved_2017} demonstrated that a single temporary environmental change can improve fitness landscape exploration and exploitation in evolving populations of non-plastic digital organisms.
+% insert more changing environments promote evo change results
+In our system, however, we found that \textit{repeated} fluctuations reduced the ability of non-plastic populations to maintain and exploit tasks; though, we did find that repeated fluctuations may improve overall task discovery. 
+Consistent with our findings, \cite{canino-koning_fluctuating_2019} found that non-plastic populations of digital organisms evolving in a harsh cyclic environment maintained fewer novel traits than populations evolving in static environments.
 % [relevant literature on changing environments + fitness landscape exploration].
 % - [Kashtan et al 2007] - temporally varying goals speed up evolutionary adaptation
 
-% - Plastic rescue, stabilizing effect of plasticity -
-Our results suggest that adaptive phenotypic plasticity can improve the potential for populations exploit novel resources by stabilizing populations against stressful environmental changes.
-% - Plastic rescue -
-Our results lend some support to the hypothesis that phenotypic plasticity can rescue populations from extinction under changing environmental conditions by promoting stability and persistence [cite].
+% -- Plastic rescue, stabilizing effect of plasticity --
+Our results suggest that adaptive phenotypic plasticity can improve the potential for populations to exploit novel resources by stabilizing populations against stressful environmental changes.
+Our results also lend some support to the hypothesis that phenotypic plasticity can rescue populations from extinction under changing environmental conditions by promoting stability and persistence [cite].
 While our experiments do not explore the likelihood of extinction, we did observe that the stabilizing effect of adaptive phenotypic plasticity allowed populations to more effectively exploit novel resources.
-% We hypothesize that a similar study investigating extinction risk rather than novel resource exploitation would 
 % [relevant examples from literature?]
 % - Evolutionary computation?
 % - Wet lab systems?
 % - Theoretical models?
 
-% [relevance to genes as followers hypothesis].
+% -- relevance to genes as followers hypothesis --.
 Our data do not necessarily provide evidence for or against the genes as followers hypothesis.
 The genes as followers hypothesis focuses on contexts where plastic populations experience novel or abnormally stressful environmental change.
 However, in our system, environmental changes were cyclic, and the magnitude of changes were consistent for the entirety of the experiment.
-During the experimental phase of the experiment, no offspring experienced an environment that was not experienced by its ancestors.
+During the experimental phase of the experiment, no offspring experienced an environment that was not experienced by many of their ancestors.
 Further, the introduction of novel tasks during the second experimental phase did not change the meaning of environmental cues; that is, the novel environmental conditions (i.e., the introduction of novel tasks) did not change the background fluctuating environment.
 % [most scenarios hypothesized where plasticity promotes adaptive evolution, change in environment changes phenotypic expression, exposing unexpressed variation; however, this was not the case for this experiment. Novel environmental conditions did not change sensory input].
 % Less evolutionary change + lower task discovery
@@ -118,121 +109,78 @@ Further, the introduction of novel tasks during the second experimental phase di
 \vspace{0.25cm}
 \subsection{Non-plastic populations experience more deleterious gene accumulation than adaptively plastic populations in fluctuating environments}
 
-% did not find evidence that PLASTIC any different than STATIC => adaptive plasticity in our system did not contribute to accumulation of deleterious mutations via cryptic variation
-
 % -- Overview of results --
 %   - More accumulation in non-plastic
 %   - no evidence for cryptic variation housing poison
 %   - plastic ~~ static
 In our third experiment, we evaluated if adaptive plasticity influences the accumulation of explicitly deleterious genes (\code{poison} instructions) in genomes evolving in our system.
-We found that non-plastic lineages evolved in a fluctuating environment had both larger magnitudes and higher rates of \code{poison} accumulation than that of adaptively plastic lineages.
+We found that non-plastic lineages evolved in a fluctuating environment exhibited both larger totals and higher rates of \code{poison} accumulation than that of adaptively plastic lineages.
 We did not find evidence that \code{poison} instructions accumulated as cryptic variation in plastic lineages.
-Indeed, the lineages of adaptively plastic genotypes did not different significantly from the lineages of genotypes evolved in static conditions.
+Indeed, \code{poison} accumulation in the lineages of adaptively plastic genotypes did not different significantly from that of the lineages of genotypes evolved in static conditions.
 
 % -- Elaboration on non-plastic result --
 % - accumulation in non-plastic treatment driven by genetic hitchhiking
-We hypothesize that the elevated rates of \code{poison} instruction accumulation along non-plastic lineages evolved in changing environments is primarily driven by deleterious genetic hitchhiking.
+We hypothesize that the elevated rates of \code{poison} instruction accumulation along non-plastic lineages evolved in changing environments was primarily driven by deleterious genetic hitchhiking.
 In asexual populations without horizontal gene transfer, all mutations are linked.
 As such, deleterious mutations that co-occur with a beneficial mutation (i.e., a driver) can sometimes `hitchhike' to fixation \citep{smith_hitch-hiking_1974,van_den_bergh_experimental_2018,buskirk_hitchhiking_2017}.
-Natural selection normally prevents deleterious mutations from reaching high frequencies, [as carriers are often outcompeted by individuals without the deleterious mutation]. 
+Natural selection normally prevents deleterious mutations from reaching high frequencies, as such mutants would be outcompeted.
 However, when a beneficial mutation sweeps to fixation in a clonal population, so too does any linked genetic material, including other beneficial, neutral, or deleterious mutations [(as long as negative fitness effect does not outweigh benefits of driver(s))] \cite{barton_genetic_2000, smith_hitch-hiking_1974}.
 
 Across our experiments, the rapid frequency of selective sweeps in non-plastic populations evolving in changing environments afforded more opportunities for genetic hitchhiking than that of populations evolving under other treatments. 
 Indeed, across our experiments, successful lineages from non-plastic populations in the cyclic environment exhibited higher mutation accumulation, novel trait loss, and \code{poison} instruction accumulation than their plastic counterparts.
-In aggregate along these lineages, we found that many ($\sim$49\%; XX / XX) mutations that increased \code{poison} instruction execution in offspring co-occurred with mutations that helped the offspring adapt to an environmental change.
-[Conservative report of hitchhiking because we are not looking at mutations along lineage that may have been linked in different generations].
+In aggregate, we found that many ($\sim$49\%; XX / XX) mutations that increased \code{poison} instruction execution in offspring co-occurred with mutations that helped the offspring adapt to an environmental change.
+This rate of co-occurrence is conservative because we did not analyze mutations that became linked in different generations.
 
 % -- Elaboration on plastic result --
-We found that adaptive phenotypic plasticity reduced \code{poison} instruction accumulation by buffering populations against repeated environmental fluctuations, which reduced opportunities for \code{poison} instructions to hitchhike to fixation.
-We did not find evidence of cryptic variation driving the accumulation of \code{poison} instructions in adaptively plastic lineages, as plastic lineages exhibited similar rates of accumulation to that of lineages evolved in a static environment.
-[Several possibilities for why we did not observe poison instruction accumulation in unexpressed genetic variation.]
-[Length of the period between switches; rapid enough such that any unexpressed poison instructions would be revealed to selection before time to reach high frequency in population].
-[Underlying mechanisms of plasticity that evolve in avida typically result in small regions of regulation; not actually a large number of unexpressed instructions. Conditional logic instructions toggle a single instruction. Large regions of regulation are possible, but they require more complicated genetic architecture, combining sensory instructions, conditional logic, and jump statements, and templating.]
+We found that adaptive phenotypic plasticity reduced \code{poison} instruction accumulation by reducing the rate of evolutionary change, which in turn reduced opportunities for \code{poison} instructions to hitchhike to fixation.
+We did not find evidence of cryptic variation harboring \code{poison} instructions in adaptively plastic lineages.
+We have two hypotheses for why we did not observe the accumulation of \code{poison} instructions in unexpressed plastic responses.
+First, the period of time between environmental changes was too fast for variants carrying unexpressed \code{poison} instructions to reach high frequencies before the environment changed, after which such variants would have been outcompeted.
+Second, the plastic machinery that evolves in Avida is typically well-integrated and highly specific; that is, plastic genomes usually adjust their phenotypic expression by toggling a minimal number of key instructions ([though, toggling of larger sequences is possible but more complex to encode]) [cite - OSF?].
+[As such, there is minimal genetic space for variation to accumulate in existing regulated regions.]
+
+
+% [Several possibilities for why we did not observe poison instruction accumulation in unexpressed genetic variation.]
+% [Length of the period between switches; rapid enough such that any unexpressed poison instructions would be revealed to selection before time to reach high frequency in population].
+% [Underlying mechanisms of plasticity that evolve in avida typically result in small regions of regulation; not actually a large number of unexpressed instructions. Conditional logic instructions toggle a single instruction. Large regions of regulation are possible, but they require more complicated genetic architecture, combining sensory instructions, conditional logic, and jump statements, and templating.]
 % [Here is where we would back this up with number of instructions that are toggled in plastic genotypes]
 % [Because adaptively plastic populations already well-adapted, not many large effect mutations available to drive hitchhiking].
-
-Under some circumstances, phenotypic plasticity can serve as cache of hidden genetic variation that, when revealed to selection, will result in a rapid evolutionary response (e.g., genetic accommodation if the variation is adaptive).
-[However, our results... For rapid cycling environments where the magnitude of changes are consistent, our results indicate that we should not necessarily assume accumulation of cryptic variation in plastic responses.]
-
-% several contributing factors: length of period between switches, genetic machinery for plasticity in Avida => small scale regulation, looked retrospectively at successful lineages; if accumulation did not reach high frequencies, quickly outcompeted
-% we suspect this is due to the nature of regulation in our system.
-% way that regulation is implemented by genomes =>  
-% functionality is not modular often very integrated
-% that is, not much physical space on the genome being regulated
-% [Buffering effect: Rate of selective sweeps; plastic populations had sweeps slower than changes, which allowed unexpressed variation to be selected against before having a chance to sweep population]
-
-
-% When do we expect to see hitchhiking?
-% In our first two experiments, we found that non-plastic populations of digital organisms accumulated more mutations and more frequently lost newly acquired adaptive traits than plastic populations in our experimental system.
-% These two results motivated us to directly evaluate the propensity for deleterious hitchhiking in plastic and non-plastic populations evolving in a fluctuating environment. 
-%[Genetic hitchhiking is X].
-% [Barton 2000]
-% - if polymorphishisms fluctuate in frequency, then fluctuating selection could be the main cause of hitchhiking 
-% [Maynard Smith 1990]
-% [Reasons why unclear what treatment might have increased rates of hitchhiking. Plastic populations could accumulate unexpressed hitchhiking instructions, non-plastic populations have more frequent selective sweeps, providing more opportunities for hitchhiking].
-
-% We found that adaptive phenotypic plasticity can reduce a population's susceptibility to deleterious genetic hitchhiking by buffering the population against repeated environmental fluctuations.
-% [Power of digital evolution: unique because instruction is explicitly deleterious and is selected against, so incorporation into successful lineages is due to hitchhiking].
-% [Indeed, we observed that mutations in non-plastic lineages evolved in fluctuating environment that caused increase in execution of deleterious instructions co-occured with mutations that also changed base tasks].
-% TODO - can we pull deleterious changes vs. beneficial changes post-hoc?
-% [The strength of selection against deleterious traits mattered. Weaker selection, more hitchhiking; stronger selection, less hitchhiking.]
-% [Rate of selective sweeps; plastic populations had sweeps slower than changes, which allowed unexpressed variation to be selected against before having a chance to sweep population].
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Misc. thoughts/points (across subsections)
-% - What makes our contributions novel/unique?
-%   - This work is important because we directly manipulate the capacity for phenotypic plasticity, keeping all other conditions consistent. 
-%   - Unlike lab/field/numerical, our experiment directly manipulating the capacity for phenotypic plasticity in digital organisms, 
-% -- non-plastic perspective -
-% - rose's fluctuating environment paper(s)
-% - novel traits do not affect sensor readings
-%   - environment changes do not induce phenotypic changes 
 
 \vspace{0.25cm}
 \subsection{Limitations and future directions}
 
 % -- Limitations --
 % - Type of plasticity -
-Our conclusions are limited to \textit{adaptively} plastic populations; we did not explore the affects of non-adaptive plasticity in which environmental cues shift a trait further away from the phenotypic optimum.
+Our conclusions are limited to \textit{adaptively} plastic populations; we did not explore the affects of non-adaptive plasticity where environmental cues can shift a plastic response further away from the phenotypic optimum.
 Further, environmental cues in our experiments were reliable, and environmental changes were consistent over time; that is, sensory instructions perfectly differentiated between ENV-A and ENV-B, and environmental fluctuations never exposed populations to entirely new conditions.
-% While predictable cyclic change is ubiquitous (e.g., day-night cycles, seasonal cycles, etc.), other axes of environmental change commonly [co-occur/layer on top]. 
-We know that both the reliability of cues and the timescales of environment switching influences evolutionary outcomes [citations - Origins of plasticity, Li and Wilke, theoretical modeling work, experimental evolution?...]].
-For example, [Boyer et al.] evolved populations of \textit{Saccharomyces cerevisiae} in an environment that fluctuated between two growth conditions, observing that both the predictability and environmental switch rate influenced the rate of evolutionary response as well as adaptive outcomes at the genotypic and phenotypic levels. % e.g., generalist (rapid switching) vs. specialist (long periods in each env)
+Both the reliability of cues and the timescales of environment switching are known to influence evolutionary outcomes \citep{li_digital_2004,boyer_adaptation_2021} [more citations].
+For example, \cite{boyer_adaptation_2021} evolved populations of \textit{Saccharomyces cerevisiae} in an environment that fluctuated between two growth conditions, observing that both environmental predictability and switching rate influenced the rates of evolutionary responses as well as adaptive outcomes at the genotypic and phenotypic levels. % e.g., generalist (rapid switching) vs. specialist (long periods in each env)
 % In plastic populations, switching rate determines maintenance of plastic genes
-Future work should [explore the effects of adaptive plasticity on different numbers of environments, switch rates, and orderings (both stochastic and deterministic)...]
+In adaptively plastic populations, environmental switching rate can influence how plastic responses are maintained: long periods between switches can (but not always [cite]) result in the loss of plasticity [citations].
+% @AML: I do not like the way this next sentence reads atm. I don't necessarily want to lay claim to these extensions (maybe Austin does?), happy for other folks to do them.
+[Given the flexibility of digital evolution techniques, next steps could extend our study to include different forms of plasticity (e.g., adaptive vs. non-adaptive), more complex environments with more than two possible states, stochastic environmental changes, and a range of environment switching rates.]
+
+% - limitation: focus on lineages -
+%   - extend to complete evolutionary histories
+We focused our analyses on the lineages of final dominant genotypes.
+These successful lineages represented the majority of the evolutionary histories of populations at the end of our experiment, as populations did not exhibit long-term coexistence of different clades.
+Our analyses, therefore, gave us an accurate picture of [what fixed in the population].
+We did not, however, examine the lineages of extinct clades.
+Future work will extend our analyses to include extinct lineages, giving us a more complete view of evolutionary history, which may allow us to better distinguish adaptively plastic populations from populations evolving in a static environment by measuring [variance in reproductive success within populations over time, ...].
 
 % - Machinery -
-[Limitation: affected by specific genetic machinery e.g., way that regulation/plasticity works in system influences how much unexpressed variation can build up, influencing hitchhiking].
-[Test in different systems (different forms of digital organisms, such as ??)].
-[Directed evolution + microbial systems?].
+% @AML: Goal of this paragraph - get into the weeds about how plasticity generally gets implemented in avida (because it almost certainly matters). But also be as reader-friendly as possible because reading about low-level mechanisms when you're unfamiliar with a system can suck.
+As with most [evolution/wet-lab/??] experiments, our results are in the context of a particular model organism: ``Avidian'' self-replicating computer programs.
+Digital organisms in Avida regulate responses to environmental cues using a combination of sensory instructions and conditional logic instructions (\code{if} statements).
+The \code{if} instructions conditionally execute a single instruction depending on previous computations and the state of memory.  
+As such, plastic genomes typically regulate a small number of key instructions that, when executed, change the expressed phenotype [supplement? or I'll write a mini OSF document with old data to cite].
+[This way of achieving plasticity more often results in 
+small, independently regulated single-instruction sequences 
+than in
+large, sequences of co-regulated instructions (which is possible but more complicated to encode).]
+This bias [toward high-specificity regulation] may limit the accumulation of hidden genetic variation in Avida genomes. 
+However, as there are many model biological organisms, there are many model [computational] organisms (e.g., [citations]) that have different regulatory mechanisms that can be used to test the generality of our results.
+[A broad sentence to wrap everything up?]
+% e.g., A sentence about how we hope this work inspires more use of digital evolution as an experimental tool/expand experimental repertoire of evolutionary biologists studying phenotypic plasticity?
+% e.g., As demonstrated here, Digital evolution studies allow us to directly manipulate the capacity for plastic responses to evolve and perfectly observe subsequent dynamics, enabling us to experimentally test hypotheses that were previously relegated to theoretical analyses.
 
-% - Asexual reproduction -
-[limitation: asexual reproduction]
-[relevance to accumulation of deleterious alleles => hgt allows decoupling, purging of delterious alleles].
-[horizontal gene transmission can decouple mutations, might expect to observe fewer loss of novel traits in non-plastic populations because co-occurrence does not doom genes that encode for novel traits].
-[work in mention to Rose's HGT results].
-[see if hgt reduces effect of trait loss in non-plastic populations]
-
-% - focus on lineages -
-[Focus on successful lineages].
-[No co-existence, recent coalescence events - Represents evolutionary history of majority of final population].
-[Gives us a view of what fixed, what worked].
-[Would be worth exploring full phylogeny].
-[Complete phylogeny, including extinct clades, would allow us to see the variance in our findings]
-[e.g., distinguish between plastic and static populations => plastic have more accumulation of cryptic variation?]
-[might be missing that by focusing on successful lineages].
-
-% - most broad => use digital evolution! -
-% bridge gap between natural experimental systems (in lab and in field) and mathematical modeling
-[digital evolution to test hypotheses about consequences of phenotypic plasticity].
-[just like in bio, many different model organisms => different mechanisms of regulation/plasticity].
-[we can not only control plasticity (as we did here), but we can also explore different mechanisms of plasticity, controlling regions of regulated space, fidelity of regulation, complexity of mechanisms, ... testing generality of these dynamics across mechanisms]
-
-
-
-%%%%%%%%%%%%%% 
-% From Levis and Pfennig:
-% "A chief difficulty with demonstrating plasticity-first evolution in natural popu- lations is that, once a trait has evolved, its evolution cannot be studied in situ. To get around this difficulty, research- ers can study extant lineages that act as ancestral-proxies to the lineage pos- sessing the focal trait"
-% - Digital evolution would be great to test plasticity-first hypotheses!
-%%%%%%%%%%%%%% 
