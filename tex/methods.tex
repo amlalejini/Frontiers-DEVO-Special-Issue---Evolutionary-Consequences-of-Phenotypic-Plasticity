@@ -3,9 +3,6 @@
 % This section may be divided by subheadings and should contain sufficient detail so that when read in conjunction with cited references, all procedures can be repeated. For experiments reporting results on animal or human subject research, an ethics approval statement should be included in this section (for further information, see the Bioethics section.)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% TODOS
-% - work in world grid size!
-
 \section{Materials and Methods}
 
 % -- bookmark --
@@ -17,15 +14,16 @@
 
 % - Define digital organisms -
 Avida is a study system wherein self-replicating computer programs (digital organisms) compete for space on a finite toroidal grid \citep{ofria_avida:_2009}.
-Each digital organism is defined by a linear sequence of program instructions (its genome) and a set of virtual hardware components used to interpret and express those instructions [Figure?].
+Each digital organism is defined by a linear sequence of program instructions (its genome) and a set of virtual hardware components used to interpret and express those instructions. % [Figure?].
 % Avida tracks each organism as it expresses its genome in a given environment in order to measure that organism's phenotype.
 Genomes are expressed sequentially except when the execution of one instruction deterministically changes which instruction should be executed next (e.g., a `jump' instruction). 
-Genomes are built using an instruction set that is both robust and Turing Complete [cite]; that is, any ordering of instructions is syntactically valid (though not necessarily meaningful), and genomes are able to represent any computable function (though not necessarily in an efficient manner).
+Genomes are built using an instruction set that is both robust (\textit{i.e.}, any ordering of instructions is syntactically valid, though not necessarily meaningful) and Turing Complete (\textit{i.e.}, able to represent any computable function, though not necessarily in an efficient manner) [cite].
+% ; that is, any ordering of instructions is syntactically valid (though not necessarily meaningful), and genomes are able to represent any computable function (though not necessarily in an efficient manner).
 The instruction set includes operations for basic computations, flow control (e.g., conditional logic and looping), input, output, and self-replication.
 % @AML: Outsource the next sentence to a figure!
 % The virtual hardware set includes components such as a central processing unit (CPU) for executing instructions, registers to store values, buffers for inputs and outputs, and memory stacks \citep{ofria_avida:_2009}.
 
-\input{tex/figures/avida-virtual-hardware}
+% \input{tex/figures/avida-virtual-hardware}
 
 % - define reproduction & mutation -
 Organisms in Avida reproduce asexually by copying their genome instruction-by-instruction and then dividing. 
@@ -34,7 +32,7 @@ For this work, we configured copy operations to err at a rate of one expected mu
 % at a per-instruction rate of 0.0025 (i.e., one mutation expected for every 400 instructions copied).
 We held individual genomes at a fixed length of 100 instructions; that is, we did not include insertion and deletion mutations. 
 We used fixed-length genomes to control for treatment-specific conditions resulting in the evolution of substantially different genome sizes [supplement, citations]\footnote{We repeated our experiments without genome size restrictions and observed qualitatively similar results [cite supplement].}, which could, on its own, drive differences in evolutionary outcomes among experimental treatments.
-When an organism divides, its offspring is placed in a random location on the toroidal grid, replacing any previous occupant.
+When an organism divides in Avida, its offspring is placed in a random location on the toroidal grid, replacing any previous occupant.
 For this work, we used the default 60 by 60 grid size, which limits the maximum population size to 3600 organisms.
 As such, improvements to the speed of self-replication are advantageous in the competition for space.
 % The combination of this competition for space and heritable variation from imperfect replication results in evolution by natural selection.
@@ -51,6 +49,20 @@ In this way, we can reward or punish particular phenotypic traits.
 \subsubsection{Evolving phenotypic plasticity in Avida}
 \label{sec:methods:evolution-of-plasticity-in-avida}
 
+[under construction]
+
+Ghalambor \textit{et al.} identify four necessary conditions for the evolution of adaptive phenotypic plasticity: 
+(1) populations experience temporal or spatial environmental variation,
+(2) these environments are differentiable by reliable cues,
+(3) each environment favors different phenotypic traits,
+and (4) no single phenotype exhibits high fitness across all environments \citep{ghalambor_behavior_2010}.
+
+For this work, we define a digital organism's phenotype as the set of tasks performed in a given environment.
+We defined a phenotypically plastic organism as one that uses 
+
+Indeed, Clune \textit{et al.} \citep{clune_investigating_2007} and Lalejini \& Ofria \citep{lalejini_evolutionary_2016} experimentally demonstrated that adaptive phenotypic plasticity can evolve \textit{de novo} in Avida under these conditions.
+Here, we shift from focusing on the evolutionary causes of phenotypic plasticity to investigate its evolutionary consequences.
+
 % ----- ENVIRONMENTS -----
 % traits_set_a <- c("not", "and", "or")
 % traits_set_b <- c("nand", "ornot", "andnot")
@@ -58,13 +70,13 @@ In this way, we can reward or punish particular phenotypic traits.
 In this work, we define an organism's phenotype as the set of tasks performed in a given environment.
 We define a phenotypically plastic organism as one that uses sensory information to alter their task expression based on the environment.
 
-Ghalambor \textit{et al.} identify four necessary conditions for the evolution of adaptive phenotypic plasticity: 
-(1) populations experience temporal or spatial environmental variation,
-(2) these environments are differentiable by reliable cues,
-(3) each environment favors different phenotypic traits,
-and (4) no single phenotype exhibits high fitness across all environments \citep{ghalambor_behavior_2010}.
-Indeed, Clune \textit{et al.} \citep{clune_investigating_2007} and Lalejini \& Ofria \citep{lalejini_evolutionary_2016} experimentally demonstrated that adaptive phenotypic plasticity can evolve \textit{de novo} in Avida under these conditions.
-Here, we shift from focusing on the evolutionary causes of phenotypic plasticity to investigate its evolutionary consequences.
+% Ghalambor \textit{et al.} identify four necessary conditions for the evolution of adaptive phenotypic plasticity: 
+% (1) populations experience temporal or spatial environmental variation,
+% (2) these environments are differentiable by reliable cues,
+% (3) each environment favors different phenotypic traits,
+% and (4) no single phenotype exhibits high fitness across all environments \citep{ghalambor_behavior_2010}.
+% Indeed, Clune \textit{et al.} \citep{clune_investigating_2007} and Lalejini \& Ofria \citep{lalejini_evolutionary_2016} experimentally demonstrated that adaptive phenotypic plasticity can evolve \textit{de novo} in Avida under these conditions.
+% Here, we shift from focusing on the evolutionary causes of phenotypic plasticity to investigate its evolutionary consequences.
 
 In this work, we constructed three experimental environments, abbreviated hereafter as ``ENV-A'', ``ENV-B'', and ``ENV-ALL''.
 In ENV-A, organisms are rewarded for performing the NOT, AND, and OR Boolean logic tasks, but are punished for performing the NAND, OR-NOT, and AND-NOT logic tasks.
