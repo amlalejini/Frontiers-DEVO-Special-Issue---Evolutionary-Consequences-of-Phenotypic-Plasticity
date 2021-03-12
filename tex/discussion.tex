@@ -16,6 +16,10 @@
 % @AML: This section is missing empirical examples.
 \section{Discussion}
 
+% TODO - Remove subheadings from discussion
+%  - make flow without subheadings
+%  - Move discussion headings up to results?
+
 Our results indicate that adaptive plasticity can improve evolution's ability to maintain and refine novel traits, though with the tradeoff of reducing evolutionary exploration of the fitness landscape.
 These dynamics appear to be driven by the stabilizing effect that adaptive plasticity had on population dynamics rather than plasticity's effect on genetic architecture or regulation.
 Below we discuss the specific implications of the results from each of our three experiments.
@@ -30,6 +34,9 @@ As such, non-plastic populations repeatedly required genetic modifications to re
 Indeed, across all three of our experiments, the evolutionary dynamics of plastic populations were more similar to that of populations evolving in a static environment than to that of non-plastic populations evolving in an identical fluctuating environment.
 
 % -- [Architecture results] --
+
+% Indeed, previous work experimentally demonstrated the \textit{de novo} evolution of adaptive phenotypic plasticity under these conditions in Avida \citep{clune_investigating_2007,lalejini_evolutionary_2016}.
+% Here, we shift from focusing on the evolutionary causes of phenotypic plasticity to investigate its evolutionary consequences.
 
 % -- in context of previous digital evolution work --
 This study is the first in-depth empirical investigation into how the \textit{de novo} evolution of adaptive plasticity shifts the course of subsequent evolution in a cyclic environment.
@@ -144,6 +151,8 @@ Across our experiments, the selective sweeps in non-plastic populations provided
 Indeed, across our experiments, successful lineages from non-plastic populations in the cyclic environment exhibited higher mutation accumulation, novel trait loss, and \code{poison} instruction accumulation than their plastic counterparts.
 In aggregate, we found that many ($\sim$49\%; XX / XX) mutations that increased \code{poison} instruction execution in offspring co-occurred with mutations that provided an even stronger benefit by adapting the offspring to an environmental change.
 This rate of co-occurrence is conservative because we did not analyze mutations that became linked in different generations.
+
+% Phenotypic plasticity can be encoded in genomes in two ways: ...
 
 % -- Elaboration on plastic result --
 We found that adaptive phenotypic plasticity reduced \code{poison} instruction accumulation by reducing the rate of evolutionary change, which in turn reduced opportunities for \code{poison} instructions to hitchhike to fixation.

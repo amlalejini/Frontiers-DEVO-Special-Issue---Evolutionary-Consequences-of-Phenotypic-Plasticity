@@ -3,6 +3,18 @@
 % This section may be divided by subheadings and should contain sufficient detail so that when read in conjunction with cited references, all procedures can be repeated. For experiments reporting results on animal or human subject research, an ethics approval statement should be included in this section (for further information, see the Bioethics section.)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Questions for 2021-03-09
+% - How should we structure: Experimental Design => Results => Discussion
+%   - We conducted 3 separate experiments. Currently, we discuss each experiment separately across sections. (1) do we want to stick to this structure? (2) if so, what should the headings be?
+% - What parts of what is currently experimental design belong in methods vs. results. vs discussion?
+%   - I 100% want to provide some intuition about measurements (in the paper), but where? I'd like trainees to be able to read this as easily as possible. 
+% - I do actually think the details for the metrics/measurements are important. 
+% - Discuss the overall flow of the methods section. Should the 'quantifying tape of life' metrics actually be under experiment 1 since that's what they are relevant to?
+% - I think we could combine results and discussion? Other major re-organizations?
+% - 'mutation accumulation'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Materials and Methods}
 
 % -- bookmark --
@@ -14,7 +26,7 @@
 
 % - Define digital organisms -
 Avida is a study system wherein self-replicating computer programs (digital organisms) compete for space on a finite toroidal grid \citep{ofria_avida:_2009}.
-Each digital organism is defined by a linear sequence of program instructions (its genome) and a set of virtual hardware components used to interpret and express those instructions. % [Figure?].
+Each digital organism is defined by a linear sequence of program instructions (its genome) and a set of virtual hardware components used to interpret and express those instructions. 
 % Avida tracks each organism as it expresses its genome in a given environment in order to measure that organism's phenotype.
 Genomes are expressed sequentially except when the execution of one instruction deterministically changes which instruction should be executed next (e.g., a `jump' instruction). 
 Genomes are built using an instruction set that is both robust (\textit{i.e.}, any ordering of instructions is syntactically valid, though not necessarily meaningful) and Turing Complete (\textit{i.e.}, able to represent any computable function, though not necessarily in an efficient manner) [cite].
@@ -45,238 +57,238 @@ An organism's metabolic rate determines the speed at which it executes instructi
 Initially, an organism's metabolic rate is proportional to the length of its genome, but that rate is adjusted as it completes designated tasks, such as performing Boolean logic computations \citep{ofria_avida:_2009}.
 In this way, we can reward or punish particular phenotypic traits. 
 
-\vspace{1cm}
-\subsubsection{Evolving phenotypic plasticity in Avida}
-\label{sec:methods:evolution-of-plasticity-in-avida}
+\subsubsection{Phenotypic plasticity in Avida}
 
-[under construction]
+%%%% TODO - EDIT THIS SECTION
 
-Ghalambor \textit{et al.} identify four necessary conditions for the evolution of adaptive phenotypic plasticity: 
-(1) populations experience temporal or spatial environmental variation,
-(2) these environments are differentiable by reliable cues,
-(3) each environment favors different phenotypic traits,
-and (4) no single phenotype exhibits high fitness across all environments \citep{ghalambor_behavior_2010}.
+% -- Phenotypes & Phenotypic plasticity --
+% - What is a phenotype in Avida
+In this work, a digital organism's phenotype is the set of Boolean logic functions that it performs in a given environment.
+Sensory instructions in the Avida instruction set allow organisms to detect how performing a particular logic function would affect their metabolic rate [cite - supplement]. 
+We defined a phenotypically plastic organism as one that uses sensory information to alter which logic functions it performs based on the environment.
 
-For this work, we define a digital organism's phenotype as the set of tasks performed in a given environment.
-We defined a phenotypically plastic organism as one that uses 
+% -- Adaptive plasticity & non-adaptive plasticity --
+Phenotypic plasticity in Avida can be adaptive or non-adaptive.
+Adaptive plasticity shifts net task expression closer to the optimum for a given set of environments.
+Non-adaptive plasticity either changes task expression in a neutral way or further from the optimum for a given set of environments.
 
-Indeed, Clune \textit{et al.} \citep{clune_investigating_2007} and Lalejini \& Ofria \citep{lalejini_evolutionary_2016} experimentally demonstrated that adaptive phenotypic plasticity can evolve \textit{de novo} in Avida under these conditions.
-Here, we shift from focusing on the evolutionary causes of phenotypic plasticity to investigate its evolutionary consequences.
+% For the majority of our experiments, we focus on the following 6 one- and two-input logic functions: NOT, NAND, AND, OR-NOT, OR, and AND-NOT. 
+% An organism's \textit{comprehensive} or \textit{aggregate} phenotype is characterized by the set of logic functions performed in each of a set of given environments. 
+
+% \vspace{1cm}
+% \subsubsection{Evolving adaptive phenotypic plasticity in Avida}
+% \label{sec:methods:evolution-of-plasticity-in-avida}
+
+% @AML: Based on Nkrumah's feedback, I think this section needs to be reorganized. 
+\vspace{0.7cm}
+\subsection{Experimental design}
+\label{sec:methods:experiment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OUTLINE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Overview of experimental design - with diagram (not a subsubsection?)
+% - Focused around diagram
+% Environment implementations
+% Specifications for Phase 1
+% specifications for Phase 2A
+% specifications for Phase 2B
+% specifications for Phase 2C
+% Measurements and Analyses
+% - number of coalescence
+% - mutation accumulation
+% - phenotypic volatility
+% - mutational stability
+% - genetic architectures
+% - novel task performance
+% - novel task discovery
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% -- Overview of experimental design --
+We conducted three independent experiments using Avida to investigate how the evolution of adaptive plasticity influences evolutionary outcomes in fluctuating environments.
+% @AML: 1 liner of what each of these experiments were? IDK, this info is in the intro, so maybe not important here.
+For each experiment, we compared the evolutionary outcomes of populations evolved under three treatments: 
+(1) a \textbf{PLASTIC} treatment where the environment fluctuates, and digital organisms can differentiate between environmental states using sensory instructions;
+(2) a \textbf{NON-PLASTIC} treatment where the environment fluctuates, but sensory instructions are disabled;
+and (3) a \textbf{STATIC} control where organisms evolve in a constant environment.
+
+% @AML: maybe cut this next sentence
+% These experiments build directly on previous digital evolution studies on the evolution of adaptive phenotypic plasticity \citep{clune_investigating_2007,lalejini_evolutionary_2016} and on the evolutionary consequences of fluctuating environments \citep{wilke_evolution_2001,canino-koning_fluctuating_2019}.
+Each experiments was divided into two phases that each lasted for 200,000 updates \footnote{
+    One update in Avida is the amount of time required for the average organism to execute 30 instructions. 
+    See \citep{ofria_avida:_2009} for more details.
+} of evolution (Figure [XX]), which is approximately 30,000 to 40,000 generations.
+In phase one of each experiment, we preconditioned populations to their treatment-specific conditions.
+Each experiment in our study shares a common setup for phase one (described in Section \ref{sec:methods:experiment:phase-one}). 
+
+In phase two, we examined the subsequent evolution of populations founded with organisms from phase one under given treatment conditions.
+[Phase two differed among each of our experiments (described in Sections [X,Y,and Z]), depending the goal of the particular experiment.]
+During phase two, we tracked each population's evolutionary history as well as saving the full final population.
+All comparisons between treatments were performed on data from populations during phase two.
+
+% -- Phase one => Phase two --
+% @AML: I could see these details moving to their respective 'phase sections'!!
+% At the beginning of phase one [in each experiment], we founded 100 independent [replicate?] populations for each of three treatment conditions (described below).
+% Each phase-one population was founded with a common ancestral strain capable only of self-replication [cite - supplement].
+% At the end of phase one, we used the most abundant genotype from each replicate to found a new population for phase two. 
+% During phase two, we evolved these new populations in their treatment-specific conditions, tracking their evolutionary history as well as saving the full final population.
+% All comparisons between treatments were performed on data from populations during phase two.
+
+\subsubsection{Environments}
+\label{sec:methods:experiment:environments}
 
 % ----- ENVIRONMENTS -----
 % traits_set_a <- c("not", "and", "or")
 % traits_set_b <- c("nand", "ornot", "andnot")
 
-In this work, we define an organism's phenotype as the set of tasks performed in a given environment.
-We define a phenotypically plastic organism as one that uses sensory information to alter their task expression based on the environment.
-
-% Ghalambor \textit{et al.} identify four necessary conditions for the evolution of adaptive phenotypic plasticity: 
-% (1) populations experience temporal or spatial environmental variation,
-% (2) these environments are differentiable by reliable cues,
-% (3) each environment favors different phenotypic traits,
-% and (4) no single phenotype exhibits high fitness across all environments \citep{ghalambor_behavior_2010}.
-% Indeed, Clune \textit{et al.} \citep{clune_investigating_2007} and Lalejini \& Ofria \citep{lalejini_evolutionary_2016} experimentally demonstrated that adaptive phenotypic plasticity can evolve \textit{de novo} in Avida under these conditions.
-% Here, we shift from focusing on the evolutionary causes of phenotypic plasticity to investigate its evolutionary consequences.
-
-In this work, we constructed three experimental environments, abbreviated hereafter as ``ENV-A'', ``ENV-B'', and ``ENV-ALL''.
+% -- Environment definitions --
+We constructed three experimental environments, abbreviated hereafter as ``ENV-A'', ``ENV-B'', and ``ENV-ALL'' ([Figure XX]).
 In ENV-A, organisms are rewarded for performing the NOT, AND, and OR Boolean logic tasks, but are punished for performing the NAND, OR-NOT, and AND-NOT logic tasks.
-Conversely in ENV-B, organisms are rewarded for performing NAND, OR-NOT, and AND-NOT, but are punished for performing NOT, AND, and OR.  
+Conversely in ENV-B, organisms are rewarded for performing NAND, OR-NOT, and AND-NOT, but are punished for performing NOT, AND, and OR. 
 Finally, in ENV-ALL, all six tasks are rewarded and none are punished.
-Each rewarded task performed by an organism doubles their metabolic rate (allowing them to execute twice as many instructions in the same amount of time); each punished task performed halves their metabolic rate.
-Thus, organisms with phenotypes that align with their current environment will quickly outcompete those with mismatched phenotypes.  
-Indeed, a perfect match in ENV-A or ENV-B will have a metabolic bonus of $\times{8}$, a perfect mismatch will have a penalty of $\times{0.125}$, and an organism that does no tasks or all tasks will not have a modifier at all. 
+Each rewarded task performed by an organism doubles their metabolic rate (allowing them to execute twice as many instructions in the same amount of time), and each punished task performed halves their metabolic rate. 
+% @AML: Add deleted text to figure caption.
+% Organisms with phenotypes that align with their current environment will quickly outcompete those with mismatched phenotypes.  
+% A perfect match in ENV-A or ENV-B will have a metabolic bonus of $\times{8}$, a perfect mismatch will have a penalty of $\times{0.125}$, and an organism that does no tasks or all tasks will not have a modifier at all. 
 
-% Sensory instructions + control flow and controlling the capacity for plasticity
-Organisms can differentiate ENV-A and ENV-B by executing one of six sensory instructions, each associated with a particular logical task (NOT, NAND, AND, OR-NOT, OR, and AND-NOT); these sensory instructions detect whether their associated task is currently rewarded or punished (see Supplemental Section [blah] for details [cite]).
-Indeed, the values of each of these tasks are perfectly correlated; thus, executing any of the six sensory instructions can differentiate between ENV-A and ENV-B. 
-By using sensory information in combination with execution flow-control instructions, organisms can conditionally perform different logic tasks depending on the current environmental conditions.
-We can experimentally control the capacity for phenotypic plasticity by disabling the functionality of sensory instructions.
-
-Across all experiments, we determine if a given genotype is plastic by evaluating that genotype in both ENV-A and ENV-B. 
-If the genotype expresses a different set of tasks in each environment, we categorize that genotype as phenotypically plastic.
-We consider a genotype to be \textit{optimally} plastic if it expresses each of the rewarded tasks in a given environment and none of the punished tasks in that environment.
-
-\vspace{0.7cm}
-\subsection{Experimental design}
-
-% Overview of experimental design (two phases)
-We conducted a series of experiments using Avida to investigate how the evolution of adaptive plasticity alters evolutionary dynamics and influences evolutionary outcomes in fluctuating environments.
-These experiments build directly on previous digital evolution studies on the evolution of adaptive phenotypic plasticity \citep{clune_investigating_2007,lalejini_evolutionary_2016} and on the evolutionary consequences of fluctuating environments \citep{wilke_evolution_2001,canino-koning_fluctuating_2019}.
-In our work, each replicate (across all experiments) comprised two phases that each lasted for 200,000 updates\footnote{
-    One update in Avida is the amount of time required for the average organism to execute 30 instructions. 
-    See \citep{ofria_avida:_2009} for more details.
-} 
-of evolution (approximately 30,000 to 40,000 generations).  
-Phase one was a treatment-specific adaptation phase where we founded populations with a common ancestor (capable only of self-replication) to generate the seed organism (with or without plasticity) that we used to initialize phase two.
-Phase two was an experimental phase where we used the seed organism to produce a new population that continued to evolve in the same treatment-specific environment, albeit with a possible experimental manipulation, as described below.
-In phase two, we tracked the evolutionary histories of evolving populations to allow for analysis of underlying evolutionary dynamics, as well as saving the full final population.
-All comparisons between treatments were performed on data from populations during phase two evolution.
-
-% \input{tex/figures/experimental-design}
-
-In each experiment described below, we conducted 100 replicates each of three treatments:
-\begin{enumerate}
-    \item PLASTIC: the environment fluctuates between ENV-A and ENV-B, and digital organisms can differentiate between ENV-A and ENV-B using sensory instructions. As such, adaptive plasticity can evolve.
-    \item NON-PLASTIC: the environment fluctuations between ENV-A and ENV-B, but sensory instructions are disabled. As such, plasticity cannot evolve.
-    \item STATIC: a control where organisms evolve in a constant environment (ENV-ALL), and thus sensors provide no information.
-\end{enumerate}
-
+% -- Treatment-specific environment details --
 In both the PLASTIC and NON-PLASTIC conditions, the environment cycles between equal-length periods of ENV-A and ENV-B.
-Each of these periods persist for 100 updates (approximately 15 to 20 generations); thus, populations experience a total of 1,000 full periods of ENV-A and 1,000 full periods of ENV-B during each phase.
+Each of these periods persist for 100 updates (approximately 15 to 20 generations).
+Thus, populations experience a total of 1,000 full periods of ENV-A and 1,000 full periods of ENV-B during each experiment phase.
 
-Phase one gives populations time to adapt to their treatment conditions, affording adaptive phenotypic plasticity the opportunity to evolve \textit{de novo} in the PLASTIC treatment.
-At the end of phase one, we extract the most abundant (i.e., dominant) genotype from each replicate population to seed a new population for phase two.
-The evolution of optimal phenotypic plasticity is not a guaranteed outcome in the PLASTIC treatment; for this condition, we only continue to phase two if the dominant genotype perfectly regulates which tasks it performs in ENV-A and ENV-B.
-This ensures that measurements taken during the experimental phase of the PLASTIC treatment are representative of populations with adaptive phenotypic plasticity.
+% -- Sensory instructions + control flow and controlling the capacity for plasticity --
+% @AML: Not description of an environment, but it is how organisms sense the environment. Not sure where else this would go.
+Organisms can differentiate ENV-A and ENV-B by executing one of six sensory instructions, each associated with a particular logical task (NOT, NAND, AND, OR-NOT, OR, and AND-NOT); these sensory instructions detect whether their associated task is currently rewarded or punished (see Supplemental Section [blah] for details [cite]).
+By using sensory information in combination with execution flow-control instructions, organisms can conditionally perform different logic tasks depending on the current environmental conditions.
 
-\vspace{1cm}
-\subsubsection{Metrics for quantifying the tape of life}
-\label{sec:methods:measurements}
-% @AML: Like the idea of an even more general heading. Some ideas:
-%  - Measurements
-%  - Measuring evolutionary change
-%  - Measuring evolutionary history
-%  - Measuring evolutionary dynamics
-%  - Quantifying the tape of life (call out to the quantifying tape of life paper!)
-%  - Quantifying evolutionary change
+\subsubsection{Experiment Phase 1 -- Environment preconditioning}
+\label{sec:methods:experiment:phase-one}
+% @AML: if we use 'phase 1' and 'phase 2X' in headings, should we switch all 'phase one' text to 'phase 1' etc?
 
-We analyzed the effects of phenotypic plasticity on evolutionary dynamics by quantifying the evolutionary histories of evolving populations.
-Specifically, we examined four metrics (the first three are reviewed in \citep{dolson_interpreting_2020}):
-(1) number of coalescence events that have occurred, which indicates the frequency of selective sweeps in the population;
-(2) mutation accumulation, which is the sum of all mutations that have occurred along a lineage;
-(3) phenotypic volatility, which counts the instances that parent and offspring phenotypes do not match along a lineage, as measured under a given condition;
-and (4) mutational stability, which is the fraction of \textit{mutated} offspring long a lineage whose phenotypes do not match that of their parent, as measured under a given condition.
+At the beginning of phase one for each experiment, we founded 100 independent populations for each of the PLASTIC, NON-PLASTIC, and STATIC treatments.
+Each phase-one population was founded with a common ancestral strain capable only of self-replication [cite - supplement].
+Phase one gives populations time (200,000 updates) to adapt to their treatment conditions, affording adaptive phenotypic plasticity the opportunity to evolve \textit{de novo} in the PLASTIC treatment.
+At the end of phase one, we extract the most abundant (i.e., dominant) genotype from each replicate population to found a new population for phase two.
 
-% --- Coalescence/Selective sweeps ---
-% Phylogenies should coalesce periodically in asexual populations without ecolocial interactions fostering coexistence.
-In asexual populations without ecological interactions fostering coexistence, phylogenies should coalesce periodically; that is, the most recent common ancestor shared by the extant population should change.
-The rate that these coalescence events occur can indicate the strength of selection.
-For example, populations under strong selective pressures should experience more rapid coalescence events than populations under weaker selection \citep{dolson_interpreting_2020}.
+The evolution of adaptive phenotypic plasticity is not a guaranteed outcome in phase one of the PLASTIC treatment.
+For the PLASTIC treatment, we only continue to phase two if the dominant genotype is ``optimally plastic''.
+% @AML: not sure this is the *best* way to define optimal plasticity (it misses on it being okay if the genome performs neutral tasks).
+% An optimally plastic genotype expresses only the NOT, AND, and OR logic functions in ENV-A and performs only the OR-NOT, OR, and AND-NOT in ENV-B.
+An optimally plastic genotype expresses each of the rewarded tasks in a given environment and none of the punished tasks in that environment.
+We test for optimal plasticity by expressing a given genotype [independently/separately] in ENV-A and ENV-B and analyzing its phenotype in each environment. % tracking its phenotype
+This approach ensures that measurements taken on PLASTIC-treatment populations during the second phase of each experiment are representative of populations with adaptive phenotypic plasticity.
 
-% [Sentence about when we might expect *frequent* selective sweeps].
-% We track the rate of coalescence events: how often the most recent common ancestor for each evolving population changes.
-% [todo - more literature review on coalescence theory here].
-% [one more sentence tying selective sweeps to rate of evolutionary change with evolutionary theory].
+% We consider a genotype to be plastic if it expresses a different set of tasks when [tested/cultured] in ENV-A than when [tested] in ENV-B.
+% Genotypes labeled \textit{optimally} plastic express each of the rewarded tasks in a given environment and none of the punished tasks in that environment.
 
-% --- Lineages ---
-A complete lineage describes a continuous line of descent, specifying an unbroken chain of parent-offspring relationships.
-For phase two of each experimental replicate, we isolated a representative lineage from its seed organism to a member of the dominant genotype at the end of its evolution.
-Because our experimental treatments do not support long-term coexistence, each of these lineages represents the majority of evolutionary history from a given population at the end of our experiment.
+\subsubsection{Experiment Phase 2A -- Evolutionary change rate}
+% Testing evolutionary change
 
-% @AML: something about how measurement deviations among experimental treatments represent differences in dynamics/selection pressures experienced by populations over time?
+% To test whether the evolution of adaptive plasticity
+% constrains the rate of subsequent evolutionary change, we 
+[1 sentence of motivation/hypothesis?].
+Phase two continued exactly as phase one, except we tracked the rates of evolutionary change in each of the PLASTIC-, NON-PLASTIC-, and STATIC-treatment populations. 
+Specifically, we quantified evolutionary change rates using four metrics (defined in Section [X]):
+(1) number of coalescence events,
+(2) mutation accumulation, 
+(3) phenotypic volatility,
+and (4) mutational stability.
+We additionally examined how the genetic architectures of organisms and their ancestors changed over time.  
 
-% Deviations in measurements taken along lineages from different  
-% Deviations among experimental treatments in represent differences in selection pressures/evolutionary dynamics.
-% We simplified these lineages by collapsing sequential, genetically identical organisms into a single state represented by the associated genotype.
-% Given the deterministic nature of genome execution, such a simplification should not lose any information relevant to this study [cite - supplement].
+\subsubsection{Experiment Phase 2B -- Novel task evolution}
 
-% -- Mutation accumulation ---
-Mutation accumulation measures the total number of mutations along a lineage \citep{dolson_interpreting_2020}.
-For example, a genotype on the lineage that is two substitution mutations and one insertion mutation away from its parent genotype increases mutation accumulation by three.
-Note that for this measure of mutation accumulation, we do not distinguish between beneficial, neutral, or deleterious mutations. 
-Instead, we use mutation accumulation as a measure of \textit{overall} genomic change.
+[1 sentence of motivation/hypothesis?].
+Phase two continued exactly as phase one, except we used the expanded task set of 77 Boolean logic tasks during the second phase of evolution \citep{ofria_avida:_2009}.
+This task set includes the six phase one tasks (NOT, NAND, AND, OR-NOT, OR, and AND-NOT; hereafter called ``base'' tasks) plus 71 new phase two tasks (hereafter called ``novel'' tasks).
+Under all experimental treatments, organisms could improve their metabolic rate by performing any of the 71 novel tasks.
+The six base tasks were still present in the environment and continued to be rewarded or punished according to the particular treatment conditions.
+% @AML: line below is cut-able if necessary
+As such, in fluctuating environments, the six base tasks continued to fluctuate, but the additional 71 tasks were always rewarded; in static environments, performing any of the 77 logic tasks was always beneficial.
+% @AML: not sure where this next sentence belongs
+During this experiment, we tracked the extent to which populations evolving under each treatment were capable of acquiring and retaining novel tasks.  
 
-% Different evolutionary contexts are expected to result in different rates of mutation accumulation along successful lineages [citations; Barrick 2013?].
-% Most trivially, we expect larger mutation accumulation in environments with high mutation rates.
-% We would expect strong [purifying/stabilizing] selection to result in lower mutation accumulation relative to lineages evolved under weak selection with [large amount of genetic drift] [citations].
-% We might also expect lineages that must continuously adapt to a changing environment via \textit{de novo} genetic changes to exhibit high mutation accumulation relative to lineages evolved under constant environmental conditions [citations; Tape of life].
+An organism received a \novelTraitsReward\ metabolic rate improvement for each of the novel tasks it performed (limited to one reward per unique task).
+This reward provided a selective pressure to evolve these tasks, but their benefits did not overwhelm existing treatment-specific selective pressures.
+As such, populations in the PLASTIC and NON-PLASTIC treatments could not easily escape environmental fluctuations by abandoning the fluctuating base tasks.
 
-% -- Phenotypic volatility --
-We measure phenotypic volatility as the sum of mutationally-induced phenotypic changes observed along a lineage under a given condition \citep{dolson_interpreting_2020}.
-To calculate phenotypic volatility for a given lineage, we express (i.e., evaluate) each genotype along that lineage in a treatment-specific condition, and we sum the number of changes in task profiles between consecutive genotypes.
+\subsubsection{Experiment Phase 2C -- Deleterious instruction accumulation}
+
+[In this experiment,] we tested the propensity for deleterious instructions to accumulate in genomes under each of the PLASTIC, NON-PLASTIC, and STATIC treatments.
+Phase two continued exactly as phase one, except we added a \code{poison} instruction to the instruction set during phase two.
+When executed by an organism, the \code{poison} instruction reduces the organism's metabolic rate (and thus reproductive success), but does not otherwise alter the organism's function.
+We imposed a 10\% penalty each time an organism executed the \code{poison} instruction, making the instruct explicitly deleterious (see [supplementary material] for tests with 3\% and 30\% penalties, which produced consistent experimental results).
+% @AML: want a sentence about what we tracked?
+[We measured/tracked the number of times a \code{poison} instruction is executed by each genotype along the dominant lineage (including the final dominant genotype).]
+
+% - measurements -
+% @AML: This could get moved to the results?
+% At the beginning of phase two, the \code{poison} instruction is not present in the population as it was not part of the instruction set during the first phase of evolution.
+% However, by adding \code{poison} to the instruction set during phase two, it can be introduced via a mutation.
+% We measured deleterious mutation accumulation by examining the number of times a \code{poison} instruction is executed by each genotype along the dominant lineage (including the final dominant genotype).
+% Because the \code{poison} instruction is explicitly deleterious, selection should purge mutations that increase \code{poison} execution in the offspring phenotype.
+% As such, we expected such mutations to show up in successful lineages either as accumulated cryptic variation in plastic genomes or via hitchhiking with linked beneficial mutations [cite].
+
+\subsubsection{Measurements and experimental analyses}
+
+% Evolutionary history
+
+% Lineages and phylogenies
+% - number of coalescence
+% - mutation accumulation
+% - phenotypic volatility
+% - mutational stability
+% - novel task performance
+% - novel task discovery
+% - genetic architectures
+
+% - How we extracted representative lineages -
+For each of our experiments, we tracked and analyzed the phylogenetic histories of evolving populations during phase two. 
+For each replicate, we isolated a representative lineage from its founding organism to a member of the dominant (i.e., most abundant) genotype at the end of its evolution.
+Because our experimental treatments do not support long-term coexistence, each of these lineages represented the majority of evolutionary history from a given population at the end of our experiment.
+
+% - Measuring evolutionary change -
+We quantified rates of evolutionary change using the following four metrics:
+(1) number of \textbf{coalescence events} that have occurred, which indicates the frequency of selective sweeps in the population;
+(2) \textbf{mutation accumulation}, which is the sum of all mutations that have occurred along a lineage;
+(3) \textbf{phenotypic volatility}, which is the number of instances where parent and offspring phenotypes do not match along a lineage, as measured under a given condition;
+and (4) \textbf{mutational stability}, which is the proportion of \textit{mutated} offspring along a lineage whose phenotypes do not match that of their parent, as measured under a given condition.
+
+% - Methods for computing volatility -
+To calculate phenotypic volatility for a given lineage, we expressed (i.e., evaluated) each genotype along that lineage in a treatment-specific condition, and we summed the number of changes in task profiles between consecutive genotypes.
 For lineages evolved in environments fluctuating between ENV-A and ENV-B, we evaluate genotypes in both environmental conditions and count only changes in its \textit{aggregate} phenotype; this technique ensures that environmentally-induced changes are excluded from our measurement.
-This phenotypic volatility metric illuminates the rate at which accumulated genetic changes actually change the phenotype along a lineage. % @AML: need better language to talk about 'comprehensive/full' phenotype
+Phenotypic volatility as defined here illuminates the rate at which accumulated genetic changes actually change the phenotype along a lineage.
 
-% -- Mutational stability --
+% - Methods for computing mutational stability
 We measured mutational stability as the fraction of mutated offspring along a given lineage with a different phenotype than their parent.
 For lineages evolved in fluctuating environments, we evaluated mutants under both ENV-A and ENV-B and counted all changes in the \textit{aggregate} task profile; like our measure of phenotypic volatility, this technique ensures that environmentally-induced changes are excluded from our measurement.
 Mutational stability examines the frequency at which mutations effect changes in an offspring's phenotype.
+ 
+In experiments that introduce novel tasks during phase two, we measured task discovery, task performance, and task loss along representative lineages.
+\textbf{Task discovery} measures a given lineage's level of \textit{exploration} of the fitness landscape (i.e., the mapping between genetic space and phenotype space) \citep{canino-koning_fluctuating_2019}. 
+We calculated task discovery as the total number of unique tasks ever performed along the lineage, even if a task is later lost; as such, a lineage's task discovery measurement ranged from 0 to 71.
 
-\vspace{1cm}
-\subsubsection{Experiment I: Does adaptive phenotypic plasticity constrain evolutionary change?}
-\label{sec:methods:experiment-evolutionary-dynamics}
+\textbf{Task performance} measures the level of \textit{exploitation} of the fitness landscape at a given point in time.
+In this work, we summarized task performance using a count of unique tasks completed by a representative organism from each population.
+We focused on an organism from the dominant genotype at the end of the experiment as the most representative phenotype in the evolved population.
 
-In our first experiment, we examined how the evolution of adaptive plasticity affects the rate of subsequent evolutionary change in fluctuating environments.
-Specifically, we examined the four metrics (described above) across PLASTIC, NON-PLASTIC, and STATIC treatments:
-(1) number of coalescence events,
-(2) mutation accumulation,
-(3) phenotypic volatility,
-and (4) mutational stability.
+\textbf{Task loss} measures how often a lineage fails to retain evolved traits over time and thus indicates the ability for traits to be maintained over time.
+We calculated task loss as the number of times along a lineage that a task is performed by a parent but not its offspring. 
 
-% -- genetic architecture analysis --
-% How does this tie to genetic architecture, and why would that affect rates of change?
-To investigate \textit{why} phenotypic plasticity might alter the rate of evolutionary change, we examine the genetic architecture of organisms evolved under each condition.
-While Avida clearly defines the mechanics of each instruction, the emergent function of an instruction depends on its context within a genome. 
-For an individual organism, we can perform knockout experiments to identify which instructions are responsible for producing a given phenotypic outcome.
+% \subsubsubsection{Genetic architectures}
 
+% While Avida clearly defines the mechanics of each instruction, the emergent function of an instruction depends on its context within a genome. 
+
+% @AML: this is a little jarring
+For an individual organism, we can perform \textbf{knockout experiments} to identify which instructions are responsible for producing a given phenotypic outcome.
 To perform a knockout, we duplicate the organism, replacing a single instruction with an inert ``no-operation'' instruction.
 We then identify any phenotypic changes by contrasting the execution results of the ``knockout'' organism and the original.
 Such changes provide evidence of the role that the original instruction must have played in the genome.
 For example, when an organism performs the NAND task but loses it when an instruction is knocked out, we categorize that instruction as part of the NAND task machinery.
+% @AML: maybe move next sentence to results?
 We use knockout experiments to characterize the role of each instruction in the genomes of every organism along all study lineages, revealing how genetic architectures change over time.
-[specifically, we compared x, y, and z...].
 
 \vspace{0.5cm}
-\subsubsection{Experiment II: Does adaptive phenotypic plasticity promote the subsequent evolution of novel traits?}
-\label{sec:methods:experiment-novel-traits}
-
-% -- overview --
-We tested how the evolution of adaptive phenotypic plasticity influences the potential for novel adaptive traits to evolve.
-In this experiment (across all treatments), we used the expanded task set of 77 Boolean logic tasks during the second phase of evolution \citep{ofria_avida:_2009}.
-This task set includes the six phase one tasks (NOT, NAND, AND, OR-NOT, OR, and AND-NOT; hereafter called ``base'' tasks) plus 71 new phase two tasks (hereafter called ``novel'' tasks).
-Across all experimental treatments, organisms could improve their metabolic rate by performing any of the 71 novel tasks.
-The six base tasks were still present in the environment and continued to be rewarded or punished according to the particular treatment.
-% @AML: line below is cut-able if necessary
-As such, in fluctuating environments, the six base tasks continued to fluctuate, but the additional 71 tasks were always rewarded; in static environments, performing any of the 77 logic tasks was always beneficial.
-
-% --additional tasks--
-An organism receives a \novelTraitsReward\ metabolic rate improvement for each of the novel tasks that it performs (limited to one reward per unique task).
-This reward provides a selective pressure to evolve these tasks, but their benefits do not overwhelm existing treatment-specific selective pressures.
-As such, populations in the PLASTIC and NON-PLASTIC treatments cannot easily escape environmental fluctuations by abandoning the fluctuating base tasks.
-% Performing a fluctuating task in the appropriate environment ([a,b,c] in ENV-A and [x,y,z] in ENV-B) results in a two-fold metabolic rate improvement, whereas, at a \novelTraitsReward\ reward rate, 8 additional tasks are equivalent single rewarded fluctuating task; further, the majority of the 71 additional tasks require more complex genetic machinery to perform than the six fluctuating tasks.
-
-% - performance evaluation -
-We measured task discovery, task performance, and task loss along successful lineages to examine the extent to which populations are capable of acquiring and retaining novel traits. % are more or less evolvable
-We limited these measures to the novel task set, excluding the six base tasks:
-
-\begin{itemize}
-
-\item \textbf{Task discovery} measures a given lineage's level of \textit{exploration} of the fitness landscape (i.e., the mapping between genetic space and phenotype space) \citep{canino-koning_fluctuating_2019}. 
-We calculated task discovery as the total number of unique tasks ever performed along the lineage, even if a task is later lost; as such, a lineage's task discovery measurement could range from 0 to 71.
-
-\item \textbf{Task performance} measures the level of \textit{exploitation} of the fitness landscape at a given point in time.
-In this work, we summarized task performance using a count of unique tasks completed by a representative organism from each population.
-We focused on an organism from the dominant genotype at the end of the experiment as the most representative phenotype in the evolved population.
-
-\item \textbf{Task loss} measures how often a lineage fails to retain evolved traits over time and thus indicates the ability for traits to be maintained over time.
-We calculated task loss as the number of times along a lineage that a task is performed by a parent but not its offspring. 
-
-\end{itemize}
-
-\vspace{0.5cm}
-% Alternative headings:
-% - Does adaptive phenotypic plasticity decrease deleterious hitchhiking?
-\subsubsection{Experiment III: Does adaptive phenotypic plasticity influence the accumulation deleterious genes?}
-\label{sec:methods:experiment-deleterious-hitchhiking}
-
-% Given that preliminary experiments showed numerous deleterious mutations, we conducted tests to determine the role of genetic hitchhiking in these results.
-% [To test each of the PLASTIC, NON-PLASTIC, and STATIC treatment's susceptibility to hitchhiking, we added a \code{poison} instruction to the instruction set during the second phase of this experiment.]
-To examine the propensity for deleterious genes to accumulate in genomes under each of the PLASTIC, NON-PLASTIC, and STATIC treatments, we added a \code{poison} instruction to the instruction set during the second phase of this experiment.
-When executed by an organism, the \code{poison} instruction reduces the organism's metabolic rate (and thus reproductive success), but does not otherwise alter the organism's function.
-Here, we imposed a 10\% penalty each time an organism executed this instruction, making the instruct explicitly deleterious (see [supplementary material] for tests with 3\% and 30\% penalties, which produced consistent experimental results).
-
-% - measurements -
-At the beginning of phase two, the \code{poison} instruction is not present in the population as it was not part of the instruction set during the first phase of evolution.
-However, by adding \code{poison} to the instruction set during phase two, it can be introduced via a mutation.
-% susceptibility to [genetic hitchhiking]
-We measured deleterious mutation accumulation by examining the number of times a \code{poison} instruction is executed by each genotype along the dominant lineage (including the final dominant genotype).
-Because the \code{poison} instruction is explicitly deleterious, selection should purge mutations that increase \code{poison} execution in the offspring phenotype.
-As such, we expected such mutations to show up in successful lineages either as accumulated cryptic variation in plastic genomes or via hitchhiking with linked beneficial mutations [cite].
-% we expect it to show up in successful lineages either as accumulated cryptic variation in plastic genomes or as a result of hitchhiking 
-% [only as a result of hitchhiking], as selection should purge deleterious mutations not linked to beneficial mutations.
-
-\vspace{0.5cm}
-\subsection{Data analysis and software availability}
+\subsection{Statistical analyses and software availability}
 
 Across all of our experiments, we differentiated between sample distributions using non-parametric statistical tests.
 For each major analysis, we first performed a Kruskal-Wallis test \citep{kruskal_use_1952} to 
