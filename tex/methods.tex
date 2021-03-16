@@ -63,14 +63,16 @@ In this way, we can reward or punish particular phenotypic traits.
 
 % -- Phenotypes & Phenotypic plasticity --
 % - What is a phenotype in Avida
-In this work, a digital organism's phenotype is the set of Boolean logic functions that it performs in a given environment.
+In this work, we measure a digital organism's phenotype as the set of Boolean logic functions that it performs in a given environment.
 Sensory instructions in the Avida instruction set allow organisms to detect how performing a particular logic function would affect their metabolic rate [cite - supplement]. 
-We defined a phenotypically plastic organism as one that uses sensory information to alter which logic functions it performs based on the environment.
+We define a phenotypically plastic organism as one that uses sensory information to alter which logic functions it performs based on the environment.
 
 % -- Adaptive plasticity & non-adaptive plasticity --
-Phenotypic plasticity in Avida can be adaptive or non-adaptive.
-Adaptive plasticity shifts net task expression closer to the optimum for a given set of environments.
-Non-adaptive plasticity either changes task expression in a neutral way or further from the optimum for a given set of environments.
+Phenotypic plasticity in Avida can be adaptive or non-adaptive for a given set of environments.
+Adaptive plasticity shifts net task expression closer to the optimum for the given environments.
+% Non-adaptive plasticity either changes task expression in a neutral way or further from the optimum for a given set of environments.
+Non-adaptive plasticity changes task expression in either a neutral or deleterious way.% for a given set of environments.
+Optimal plasticity changes tasks to always perfectly match the set of rewarded tasks.% for each environment.
 
 % For the majority of our experiments, we focus on the following 6 one- and two-input logic functions: NOT, NAND, AND, OR-NOT, OR, and AND-NOT. 
 % An organism's \textit{comprehensive} or \textit{aggregate} phenotype is characterized by the set of logic functions performed in each of a set of given environments. 
@@ -107,24 +109,25 @@ Non-adaptive plasticity either changes task expression in a neutral way or furth
 % -- Overview of experimental design --
 We conducted three independent experiments using Avida to investigate how the evolution of adaptive plasticity influences evolutionary outcomes in fluctuating environments.
 % @AML: 1 liner of what each of these experiments were? IDK, this info is in the intro, so maybe not important here.
-For each experiment, we compared the evolutionary outcomes of populations evolved under three treatments: 
-(1) a \textbf{PLASTIC} treatment where the environment fluctuates, and digital organisms can differentiate between environmental states using sensory instructions;
-(2) a \textbf{NON-PLASTIC} treatment where the environment fluctuates, but sensory instructions are disabled;
+For each experiment, we compared the evolutionary outcomes of populations evolved under three treatments (Figure [XX]): 
+(1) a \textbf{PLASTIC} treatment where the environment fluctuates, and digital organisms can use sensory instructions to differentiate between environmental states;
+(2) a \textbf{NON-PLASTIC} treatment with identical environment fluctuations, but where sensory instructions are disabled;
 and (3) a \textbf{STATIC} control where organisms evolve in a constant environment.
 
 % @AML: maybe cut this next sentence
 % These experiments build directly on previous digital evolution studies on the evolution of adaptive phenotypic plasticity \citep{clune_investigating_2007,lalejini_evolutionary_2016} and on the evolutionary consequences of fluctuating environments \citep{wilke_evolution_2001,canino-koning_fluctuating_2019}.
-Each experiments was divided into two phases that each lasted for 200,000 updates \footnote{
+Each experiment was divided into two phases that each lasted for 200,000 updates \footnote{
     One update in Avida is the amount of time required for the average organism to execute 30 instructions. 
     See \citep{ofria_avida:_2009} for more details.
 } of evolution (Figure [XX]), which is approximately 30,000 to 40,000 generations.
 In phase one of each experiment, we preconditioned populations to their treatment-specific conditions.
-Each experiment in our study shares a common setup for phase one (described in Section \ref{sec:methods:experiment:phase-one}). 
-
-In phase two, we examined the subsequent evolution of populations founded with organisms from phase one under given treatment conditions.
-[Phase two differed among each of our experiments (described in Sections [X,Y,and Z]), depending the goal of the particular experiment.]
+% Each experiment shares a common setup for phase one (described in Section \ref{sec:methods:experiment:phase-one}). 
+In phase two, we founded new populations with the evolved organisms from phase one and examined their subsequent evolution under given combinations of treatment and experimental conditions.
+%In phase two, we examined the subsequent evolution of populations founded with organisms from phase one under given treatment conditions.
+% Phase two differed among each of our experiments (described in Sections [X,Y,and Z]). %, depending the goal of the particular experiment.]
 During phase two, we tracked each population's evolutionary history as well as saving the full final population.
-All comparisons between treatments were performed on data from populations during phase two.
+% , and all comparisons between treatments were performed on these data.
+Phase one was for pre-conditioning only; all comparisons between treatments were performed on phase two data. % from populations during phase two.
 
 % -- Phase one => Phase two --
 % @AML: I could see these details moving to their respective 'phase sections'!!
@@ -143,10 +146,20 @@ All comparisons between treatments were performed on data from populations durin
 
 % -- Environment definitions --
 We constructed three experimental environments, abbreviated hereafter as ``ENV-A'', ``ENV-B'', and ``ENV-ALL'' ([Figure XX]).
-In ENV-A, organisms are rewarded for performing the NOT, AND, and OR Boolean logic tasks, but are punished for performing the NAND, OR-NOT, and AND-NOT logic tasks.
-Conversely in ENV-B, organisms are rewarded for performing NAND, OR-NOT, and AND-NOT, but are punished for performing NOT, AND, and OR. 
-Finally, in ENV-ALL, all six tasks are rewarded and none are punished.
-Each rewarded task performed by an organism doubles their metabolic rate (allowing them to execute twice as many instructions in the same amount of time), and each punished task performed halves their metabolic rate. 
+%Six Boolean logic tasks (...) are each rewarded or punished in each environment, as described in Figure YY.
+Figure YY describes these environments based on whether each of six Boolean logic tasks (...) is rewarded or punished.
+% Each rewarded task performed by an organism doubles their metabolic rate (allowing them to execute twice as many instructions in the same amount of time), and each punished task performed halves their metabolic rate. 
+% A task performed by an organism doubles their metabolic rate if it is rewarded (allowing them to execute twice as many instructions in the same amount of time), or halves their metabolic rate if it is punished. 
+A rewarded task performed by an organism doubles their metabolic rate, allowing them to execute twice as many instructions in the same amount of time.
+A punished task halves an organisms metabolic rate. 
+
+
+% --- TODO - Move these descriptions to the figure caption ---
+% In ENV-A, organisms are rewarded for performing NOT, AND, and OR, but are punished for performing the NAND, OR-NOT, and AND-NOT logic tasks.
+% Conversely in ENV-B, organisms are rewarded for performing NAND, OR-NOT, and AND-NOT, but are punished for performing NOT, AND, and OR. 
+% Finally, in ENV-ALL, all six tasks are rewarded and none are punished.
+% ------------------------------------------------
+
 % @AML: Add deleted text to figure caption.
 % Organisms with phenotypes that align with their current environment will quickly outcompete those with mismatched phenotypes.  
 % A perfect match in ENV-A or ENV-B will have a metabolic bonus of $\times{8}$, a perfect mismatch will have a penalty of $\times{0.125}$, and an organism that does no tasks or all tasks will not have a modifier at all. 
@@ -154,39 +167,42 @@ Each rewarded task performed by an organism doubles their metabolic rate (allowi
 % -- Treatment-specific environment details --
 In both the PLASTIC and NON-PLASTIC conditions, the environment cycles between equal-length periods of ENV-A and ENV-B.
 Each of these periods persist for 100 updates (approximately 15 to 20 generations).
-Thus, populations experience a total of 1,000 full periods of ENV-A and 1,000 full periods of ENV-B during each experiment phase.
+Thus, populations experience a total of 1,000 full periods of ENV-A interlaced with 1,000 full periods of ENV-B during each experimental phase.
 
 % -- Sensory instructions + control flow and controlling the capacity for plasticity --
 % @AML: Not description of an environment, but it is how organisms sense the environment. Not sure where else this would go.
-Organisms can differentiate ENV-A and ENV-B by executing one of six sensory instructions, each associated with a particular logical task (NOT, NAND, AND, OR-NOT, OR, and AND-NOT); these sensory instructions detect whether their associated task is currently rewarded or punished (see Supplemental Section [blah] for details [cite]).
+Organisms in the PLASTIC treatments differentiate between ENV-A and ENV-B by executing one of six sensory instructions, each associated with a particular logical task; these sensory instructions detect whether their associated task is currently rewarded or punished (see Supplemental Section [blah] for details [cite]).
 By using sensory information in combination with execution flow-control instructions, organisms can conditionally perform different logic tasks depending on the current environmental conditions.
 
 \subsubsection{Experiment Phase 1 -- Environment preconditioning}
 \label{sec:methods:experiment:phase-one}
 % @AML: if we use 'phase 1' and 'phase 2X' in headings, should we switch all 'phase one' text to 'phase 1' etc?
 
-At the beginning of phase one for each experiment, we founded 100 independent populations for each of the PLASTIC, NON-PLASTIC, and STATIC treatments.
-Each phase-one population was founded with a common ancestral strain capable only of self-replication [cite - supplement].
-Phase one gives populations time (200,000 updates) to adapt to their treatment conditions, affording adaptive phenotypic plasticity the opportunity to evolve \textit{de novo} in the PLASTIC treatment.
-At the end of phase one, we extract the most abundant (i.e., dominant) genotype from each replicate population to found a new population for phase two.
+For each treatment, we founded 100 independent populations from a common ancestral strain capable only of self-replication [cite - supplement].
+% Each phase-one population was founded with a common ancestral strain capable only of self-replication [cite - supplement].
+%Phase one gives populations time (200,000 updates) to adapt to their treatment conditions, affording adaptive phenotypic plasticity the opportunity to evolve \textit{de novo} in the PLASTIC treatment.
+At the end of phase one, we extracted the most abundant (i.e., dominant) genotype from each replicate population to found a new population for phase two.
 
-The evolution of adaptive phenotypic plasticity is not a guaranteed outcome in phase one of the PLASTIC treatment.
-For the PLASTIC treatment, we only continue to phase two if the dominant genotype is ``optimally plastic''.
+%The evolution of adaptive phenotypic plasticity is not a guaranteed outcome in phase one of the PLASTIC treatment.
+For the PLASTIC treatment, we measure plasticity by independently testing a given genotype in each of ENV-A and ENV-B.
+We discard phase one populations if the dominant genotype does not exhibit optimal plasticity.
 % @AML: not sure this is the *best* way to define optimal plasticity (it misses on it being okay if the genome performs neutral tasks).
 % An optimally plastic genotype expresses only the NOT, AND, and OR logic functions in ENV-A and performs only the OR-NOT, OR, and AND-NOT in ENV-B.
-An optimally plastic genotype expresses each of the rewarded tasks in a given environment and none of the punished tasks in that environment.
-We test for optimal plasticity by expressing a given genotype [independently/separately] in ENV-A and ENV-B and analyzing its phenotype in each environment. % tracking its phenotype
-This approach ensures that measurements taken on PLASTIC-treatment populations during the second phase of each experiment are representative of populations with adaptive phenotypic plasticity.
+% An optimally plastic genotype expresses each of the rewarded tasks in a given environment and none of the punished tasks in that environment.
+This approach ensures that measurements taken on PLASTIC-treatment populations during the second phase of each experiment reflect the evolutionary consequences of adaptive plasticity.
+%are representative of populations with adaptive phenotypic plasticity.
 
 % We consider a genotype to be plastic if it expresses a different set of tasks when [tested/cultured] in ENV-A than when [tested] in ENV-B.
 % Genotypes labeled \textit{optimally} plastic express each of the rewarded tasks in a given environment and none of the punished tasks in that environment.
+
+% ---bookmark---
 
 \subsubsection{Experiment Phase 2A -- Evolutionary change rate}
 % Testing evolutionary change
 
 % To test whether the evolution of adaptive plasticity
 % constrains the rate of subsequent evolutionary change, we 
-[1 sentence of motivation/hypothesis?].
+% [1 sentence of motivation/hypothesis?].
 Phase two continued exactly as phase one, except we tracked the rates of evolutionary change in each of the PLASTIC-, NON-PLASTIC-, and STATIC-treatment populations. 
 Specifically, we quantified evolutionary change rates using four metrics (defined in Section [X]):
 (1) number of coalescence events,
@@ -197,7 +213,7 @@ We additionally examined how the genetic architectures of organisms and their an
 
 \subsubsection{Experiment Phase 2B -- Novel task evolution}
 
-[1 sentence of motivation/hypothesis?].
+% [1 sentence of motivation/hypothesis?].
 Phase two continued exactly as phase one, except we used the expanded task set of 77 Boolean logic tasks during the second phase of evolution \citep{ofria_avida:_2009}.
 This task set includes the six phase one tasks (NOT, NAND, AND, OR-NOT, OR, and AND-NOT; hereafter called ``base'' tasks) plus 71 new phase two tasks (hereafter called ``novel'' tasks).
 Under all experimental treatments, organisms could improve their metabolic rate by performing any of the 71 novel tasks.
@@ -213,7 +229,7 @@ As such, populations in the PLASTIC and NON-PLASTIC treatments could not easily 
 
 \subsubsection{Experiment Phase 2C -- Deleterious instruction accumulation}
 
-[In this experiment,] we tested the propensity for deleterious instructions to accumulate in genomes under each of the PLASTIC, NON-PLASTIC, and STATIC treatments.
+% [In this experiment,] we tested the propensity for deleterious instructions to accumulate in genomes under each of the PLASTIC, NON-PLASTIC, and STATIC treatments.
 Phase two continued exactly as phase one, except we added a \code{poison} instruction to the instruction set during phase two.
 When executed by an organism, the \code{poison} instruction reduces the organism's metabolic rate (and thus reproductive success), but does not otherwise alter the organism's function.
 We imposed a 10\% penalty each time an organism executed the \code{poison} instruction, making the instruct explicitly deleterious (see [supplementary material] for tests with 3\% and 30\% penalties, which produced consistent experimental results).

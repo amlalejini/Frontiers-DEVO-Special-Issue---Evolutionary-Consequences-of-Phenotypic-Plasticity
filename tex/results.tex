@@ -5,9 +5,10 @@
 
 % Go through results, ask what the reader should be thinking about to 
 
-\subsection{Evolutionary change}
+\subsection{The evolution of adaptive phenotypic plasticity slows evolutionary change in fluctuating environments}
 
 \input{tex/figures/evolutionary-change-panel}
+
 \input{tex/figures/architecture_locus_functionality}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,21 +53,29 @@
 %   - mean: 0.4827586 CI [0.4046,  0.5598]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[
+% -- Overview + hypotheses to test --
+
 % [We are specifically interested in contrasting the evolutionary effects of adaptive plasticity relative to non-plastic populations evolving in identical fluctuating environments.]
 % [Environmental change has been shown to drive evolutionary change and promote evolutionary exploration in non-plastic populations as compared to populations evolving in an unchanging environment \citep{zaman_coevolution_2014,nahum_improved_2017}.]
 % [If so, does adaptive plasticity negate the [effects of environmental change on evolutionary exploration]? 
 % Does adaptive plasticity constrain evolutionary change as predicted by conventional evolutionary theory, and if so, does adaptive plasticity negate the [effects of environmental change on evolutionary exploration]? 
 %promoted or constrained subsequent genomic and phenotypic change.
 % [If so, does adaptive plasticity negate the [effects of environmental change on evolutionary exploration]? 
-]
+
+In experimental Phase 2A (Section [XX]),
+we tested whether the evolution of adaptive phenotypic plasticity constrained or promoted subsequent evolutionary change in a fluctuating environment. 
+To do so, we compared the number of coalescence events, mutation accumulation, phenotypic volatility, and mutational stability of adaptively plastic populations to that of non-plastic populations (see Section [XX] for descriptions of each metric).
+The number of coalescence events indicates the frequency of selective sweeps in the population.
+Each of mutation accumulation, phenotypic volatility, and mutational stability are measures of genomic and phenotypic changes along lineages.
+We additionally used instruction knockout analyses to identify how the genetic architectures of digital organisms changed over time. 
 
 % -- Magnitude of evolutionary change --
 %  - Selective sweeps
 %  - Mutation accumulation
 %  - Phenotypic volatility
 %  - Number of generations elapsed
-Adaptive phenotypic plasticity evolved in \evolutionaryChangeRatePlasticReps\ of \evolutionaryChangeRateReplicates\ replicates from the PLASTIC treatment during phase one of Experiment I; we used this more limited group to seed the \evolutionaryChangeRatePlasticReps\ phase-two PLASTIC replicates.
+% @AML: move next statement to the figure?
+% Adaptive phenotypic plasticity evolved in \evolutionaryChangeRatePlasticReps\ of \evolutionaryChangeRateReplicates\ replicates from the PLASTIC treatment during phase one of Experiment I; we used this more limited group to seed the \evolutionaryChangeRatePlasticReps\ phase-two PLASTIC replicates.
 Figure [x] gives the number of coalescence events, mutation accumulation, and phenotypic volatility for PLASTIC, NON-PLASTIC, and STATIC treatments.
 According to each of these metrics, NON-PLASTIC populations experienced a larger magnitude of evolutionary change than either PLASTIC or STATIC populations.
 Specifically, we observed significantly more coalescence events in NON-PLASTIC populations than in PLASTIC or STATIC populations [stats].
@@ -106,9 +115,16 @@ We did, however, observe that, relative to STATIC populations, PLASTIC populatio
 
 % -- genetic architectures --
 [todo - genetic architecture results]
+%Figure \ref{fig:architecture_locus_functionality} shows the functionality of each locus in the final dominant %organism's genome, using a representative sample from each treatment. 
+%Here, we see that PLASTIC and STATIC treatments perform tasks in both environments. 
+%The NONPLASTIC genome, however, only performs tasks in the [A/B] environment, meanwhile it a substantial number of vestigial loci in for the [other environment]
+
+%Architecture analysis of each [replicate]'s final dominant lineage showed that NONPLASTIC populations experienced continuous genetic readaptation. 
+%PLASTIC and STATIC lineages showed [...]
+
 
 \vspace{0.5cm}
-\subsection{The evolution of novel traits}
+\subsection{Adaptively plastic populations retain more novel tasks than non-plastic populations in fluctuating environments}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Results to report (2021-01-31)
@@ -136,12 +152,20 @@ We did, however, observe that, relative to STATIC populations, PLASTIC populatio
 
 \input{tex/figures/novel-tasks-panel}
 
+% -- What did we test? --
+In experimental Phase 2B (Section [XX]), we evaluated how evolution of adaptive phenotypic plasticity influences the ability of populations to evolve and retain novel adaptive traits.
+We have shown that adaptive plasticity reduces the rate of evolutionary change in fluctuating environments, and it is unclear how this dynamic influences the evolution of novel tasks.
+Based on their relative rates of evolutionary change, we would expect NON-PLASTIC-treatment populations to evolve more novel tasks than PLASTIC-treatment populations.
+But, how much of the evolutionary change in NON-PLASTIC-treatment populations is useful for exploring novel regions of the fitness landscape versus repeatedly re-treading previously explored regions of the fitness landscape?
+
 % - Magnitude of exploration/exploitation -
 %   - task performance
 %   - task discovery
 %   - task loss
-Adaptive phenotypic plasticity evolved in \novelTraitsPlasticReps\ of \novelTraitsReplicates\ replicates from the PLASTIC treatment during phase one of Experiment II; we used this more limited group to seed the \novelTraitsPlasticReps\ phase-two PLASTIC replicates.
+% Adaptive phenotypic plasticity evolved in \novelTraitsPlasticReps\ of \novelTraitsReplicates\ replicates from the PLASTIC treatment during phase one of Experiment II; we used this more limited group to seed the \novelTraitsPlasticReps\ phase-two PLASTIC replicates.
 Figure [x] shows the task discovery, task performance, and task loss for PLASTIC, NON-PLASTIC, and STATIC treatments.
+Task discovery is a measure of how well lineages explore the fitness landscape, while task performance and task loss shed light on how well lineages exploit the fitness landscape. 
+
 We found that both PLASTIC and STATIC populations have significantly higher task performance at the end of the experiment than NON-PLASTIC populations [stats].
 This, however, was not due to PLASTIC and STATIC lineages exploring a larger breadth of the fitness landscape, as NON-PLASTIC lineages had significantly higher task discovery than either PLASTIC or STATIC lineages [stats].
 Indeed, we found that NON-PLASTIC lineages exhibited significantly more task loss than either PLASTIC or STATIC lineages [stats], as NON-PLASTIC lineages repeatedly failed to retain novel tasks.
@@ -171,7 +195,7 @@ In contrast, across all PLASTIC and STATIC dominant lineages, we observed that a
 % [Limitation (relative value): in supplemental experiments, relative value of fluctuating and novel tasks affects novel task retention, the stronger directional selection on fluctuation tasks relative to selection on novel tasks makes novel tasks harder to maintain because less deleterious to lose novel trait].
 
 \vspace{0.5cm}
-\subsection{Deleterious gene accumulation}
+\subsection{Non-plastic lineages accumulate more deleterious instructions in fluctuating environments}
 
 %%%%%%
 % 2021-02-05 - Results
@@ -185,12 +209,22 @@ In contrast, across all PLASTIC and STATIC dominant lineages, we observed that a
 %   - Not much hitchhiking. Did not find evidence that hitchiking occurring as cryptic variation in unexpressed phenotype.
 %%%%%%
 
+% -- what we tested --
+% [todo]
+% We have shown that adaptive plasticity stabilized populations against environmental fluctuations, which reduced novel trait loss along the lineages of adaptively plastic organisms relative to that of non-plastic organisms. 
+
+% @AML: needs trimming
+In experimental Phase 2C (Section [XX]), we tested whether the lineages of adaptively plastic organisms accumulate more deleterious \code{poison} instructions than that of non-plastic lineages.
+Phenotypic plasticity allows for the accumulation of genetic variation in genomic regions that are unexpressed under contemporary environmental conditions.
+However, our results thus far, may indicate that PLASTIC-treatment populations accumulate \textit{fewer} deleterious mutations than NON-PLASTIC treatment populations in fluctuating environments.
+% Next sentence is rough.
+That is, NON-PLASTIC lineages accumulated more total genetic changes, and the high rates of adaptive trait loss in NON-PLASTIC lineages may also indicate their increased susceptibility to accumulating deleterious mutations relative to PLASTIC lineages.
+Because the \code{poison} instruction is explicitly deleterious, selection should purge mutations that increase \code{poison} execution in the offspring phenotype.
+As such, we expected such mutations to show up in successful lineages either as accumulated cryptic variation in plastic genomes or via hitchhiking with linked beneficial mutations [cite].
+
 % -- Instruction execution by final dominant & along lineage --
 %    +
 % -- Number of instructions executed per genotype --
-% examining the number of times a \code{poison} instruction is executed by each genotype along the dominant lineage (including the final dominant genotype).
-Adaptive phenotypic plasticity evolved in \deleteriousHitchhikingPlasticReps\ of \deleteriousHitchhikingReplicates\ replicates from the PLASTIC treatment during phase one of Experiment III; we used this more limited group to seed the \deleteriousHitchhikingPlasticReps\ phase-two PLASTIC replicates.
-% Figure [x] shows the [whatever we decide] for PLASTIC, NON-PLASTIC, and STATIC treatments.
 At the end of our experiment, no dominant genotypes evolved in PLASTIC or STATIC treatments expressed the \code{poison} instruction under any environmental condition; however, the dominant genotype from 14 replicates of the NON-PLASTIC treatment did express the \code{poison} instruction at least once (statistically significant, [stats]).
 %The minimal instances of \code{poison} execution in dominant organisms is expected given that each execution is a 10\% reduction in metabolic rate.
 The \code{poison} execution in dominant organisms is expected to be kept minimal given that each execution is a 10\% reduction in metabolic rate.
