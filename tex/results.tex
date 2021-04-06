@@ -1,5 +1,7 @@
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INSTRUCTIONS:
 % This section may be divided by subheadings. Footnotes should not be used and must be transferred to the main text.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Results}
 
@@ -10,12 +12,19 @@
 \input{tex/figures/evolutionary-change-panel}
 
 \input{tex/figures/architecture_locus_functionality}
+\input{tex/figures/architecture_locus_change_time}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Results to report (2021-02-08 experiment)
 % ----- GENERATIONS -----
 % - average generations elapsed (of a population)
 %   - NON-PLASTIC (median: 41768.65) > PLASTIC (median: 31697.65) > STATIC (median: 30839.75)
+%   condition     mean    sd
+%   <chr>        <dbl> <dbl>
+% 1 NON-PLASTIC 41090. 2702.
+% 2 PLASTIC     31016. 2615.
+% 3 STATIC      30002. 3011.
+
 % 
 % ----- SWEEPS -----
 % - coalescence events (total)
@@ -53,44 +62,54 @@
 %   - mean: 0.4827586 CI [0.4046,  0.5598]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% -- Overview + hypotheses to test --
-
-% [We are specifically interested in contrasting the evolutionary effects of adaptive plasticity relative to non-plastic populations evolving in identical fluctuating environments.]
-% [Environmental change has been shown to drive evolutionary change and promote evolutionary exploration in non-plastic populations as compared to populations evolving in an unchanging environment \citep{zaman_coevolution_2014,nahum_improved_2017}.]
-% [If so, does adaptive plasticity negate the [effects of environmental change on evolutionary exploration]? 
-% Does adaptive plasticity constrain evolutionary change as predicted by conventional evolutionary theory, and if so, does adaptive plasticity negate the [effects of environmental change on evolutionary exploration]? 
-%promoted or constrained subsequent genomic and phenotypic change.
-% [If so, does adaptive plasticity negate the [effects of environmental change on evolutionary exploration]? 
-
-In experimental Phase 2A (Section [XX]),
-we tested whether the evolution of adaptive phenotypic plasticity constrained or promoted subsequent evolutionary change in a fluctuating environment. 
-To do so, we compared the number of coalescence events, mutation accumulation, phenotypic volatility, and mutational stability of adaptively plastic populations to that of non-plastic populations (see Section [XX] for descriptions of each metric).
-The number of coalescence events indicates the frequency of selective sweeps in the population.
-Each of mutation accumulation, phenotypic volatility, and mutational stability are measures of genomic and phenotypic changes along lineages.
-We additionally used instruction knockout analyses to identify how the genetic architectures of digital organisms changed over time. 
-
 % -- Magnitude of evolutionary change --
 %  - Selective sweeps
 %  - Mutation accumulation
 %  - Phenotypic volatility
 %  - Number of generations elapsed
-% @AML: move next statement to the figure?
-% Adaptive phenotypic plasticity evolved in \evolutionaryChangeRatePlasticReps\ of \evolutionaryChangeRateReplicates\ replicates from the PLASTIC treatment during phase one of Experiment I; we used this more limited group to seed the \evolutionaryChangeRatePlasticReps\ phase-two PLASTIC replicates.
-Figure [x] gives the number of coalescence events, mutation accumulation, and phenotypic volatility for PLASTIC, NON-PLASTIC, and STATIC treatments.
+In experimental \hyperref[sec:methods:exp:evolutionary-change-rate]{phase 2A},
+we tested whether the evolution of adaptive phenotypic plasticity constrained or promoted subsequent evolutionary change in a fluctuating environment. 
+First, we compared the total amount of evolutionary change in populations evolved under the PLASTIC, NON-PLASTIC, and STATIC treatments as measured by  coalescence event count, mutation count, and phenotypic volatility (Figure \ref{fig:evolutionary-dynamics}).
 According to each of these metrics, NON-PLASTIC populations experienced a larger magnitude of evolutionary change than either PLASTIC or STATIC populations.
-Specifically, we observed significantly more coalescence events in NON-PLASTIC populations than in PLASTIC or STATIC populations [stats].
-NON-PLASTIC lineages had significantly higher mutation accumulation and phenotypic volatility than PLASTIC or STATIC lineages [stats].
-Additionally, we found that significantly more generations of evolution elapsed in NON-PLASTIC populations than in PLASTIC or STATIC populations [stats]; that is, NON-PLASTIC populations exhibited a significantly higher rate of generational turnover ([data - mean, +- std dev]) than PLASTIC ([data - mean, +- stddev]) or STATIC ([data - mean, +- stddev]) populations.
+We observed significantly higher coalescence event counts in NON-PLASTIC populations than in PLASTIC or STATIC populations (Figure \ref{fig:evolutionary-dynamics}\hyperref[fig:evolutionary-dynamics]{a}).
+NON-PLASTIC lineages had significantly higher mutation counts (Figure \ref{fig:evolutionary-dynamics}b) and phenotypic volatility than PLASTIC or STATIC lineages (Figure \ref{fig:evolutionary-dynamics}c).
 
-% -- Rate of evolutionary change --
+% -- Elapsed generations --
+Changing environments have been shown to increase generational turnover in Avida populations \citep{canino-koning_evolution_2016}, which could explain why we observe a larger magnitude of evolutionary change at the end of 200,000 updates of evolution in NON-PLASTIC populations. % because ... large fitness differentials... 
+Indeed, we found that significantly more generations of evolution elapsed in NON-PLASTIC populations (mean of $41090\pm2702$ std. dev.) than in PLASTIC (mean of $31016\pm2615$ std. dev.) or STATIC (mean of $30002\pm3011$ std. dev.) populations during phase 2A (corrected Wilcoxon rank-sum tests, p $<10^{-4}$) %, PLASTIC: p $<10^{-4}$; STATIC: p $<10^{-4}$).
+
+% Additionally, we found that significantly more generations of evolution elapsed in NON-PLASTIC populations (mean of $41090\pm2702$ std. dev.) than in PLASTIC (mean of $31016\pm2615$ std. dev.) or STATIC (mean of $30002\pm3011$ std. dev.) populations during phase 2A (corrected Wilcoxon rank-sum tests, PLASTIC: p $<10^{-4}$; STATIC: p $<10^{-4}$).
+%; that is, NON-PLASTIC populations exhibited a higher rate of generational turnover (mean of $41090\pm2702$ std. dev.) than PLASTIC (mean of $31016\pm2615$ std. dev.) or STATIC (mean of $30002\pm3011$ std. dev.) populations in the given 200,000 Avida updates.
+
+% -- Rate of evolutionary change => intuition --
 %   - Rate of sweeps => (generations per sweep)
 %   - genotypic fidelity => frequency that offspring's genotype is identical to parent genotype (lineage length / number generations)
 %   - phenotypic fidelity => frequency that an offspring's phenotype is same as parent's phenotype (phenotypic volatility / number of generations)
-Next, we examined the \textit{rates} of evolutionary change across treatments to determine if the larger magnitude of evolutionary change in NON-PLASTIC populations is due to the number of additional generations elapsed during the experiment.
-Specifically, we calculated the average number of generations between coalescence events as well as both genotypic fidelity and phenotypic fidelity (i.e., the frequency that an offspring's genotype or phenotype is identical to that of its parent along the dominant lineage).
-We found that significantly fewer generations elapse between coalescence events in NON-PLASTIC populations than in either PLASTIC or STATIC populations [stats].
-We also observed that NON-PLASTIC lineages had significantly lower genotypic and phenotypic fidelity than either PLASTIC or STATIC lineages [stats]; that is, offspring along NON-PLASTIC lineages more frequently differed genotypically and phenotypically than offspring along either PLASTIC or STATIC lineages.
-Thus, our results indicate that NON-PLASTIC populations experienced both a greater magnitude of evolutionary change and a higher frequency of evolutionary change than either PLASTIC or STATIC populations.
+To evaluate whether increased generational turnover explains the greater magnitude of evolutionary change in NON-PLASTIC populations, we examined the average number of generations between coalescence events and the mutational stability of lineages (Table \ref{tab:metrics-definitions}).
+% the \textit{rate} of evolutionary change in PLASTIC, STATIC, and NON-PLASTIC populations. 
+% Specifically, we calculated the average number of generations between coalescence events and mutational stability (Table \ref{tab:metrics-definitions}).
+% The rate that coalescence events occur can indicate the strength of selection \citep{dolson_interpreting_2020}.
+% For example, we would expect populations evolving under strong directional selection to experience more rapid coalescence events than populations evolving under weak selection pressure.
+A coalescence event indicates a selective sweep, which is a hallmark of adaptive evolutionary change.
+% Genotypic and phenotypic fidelity measure the frequency that an offspring's genotype or phenotype is identical to that of its parent along a given lineage.
+Mutational stability measures the frequency that mutations cause phenotypic changes along a lineage.
+% We hypothesize that the STATIC treatment produces highly fit genotypes that no longer undergo rapid adaptive change and hence do not trigger frequent coalescence events.
+We expect that static conditions should favor fit lineages with high mutational stability that no longer undergo rapid adaptive change and hence do not trigger frequent coalescence events.
+Under fluctuating conditions, however, lineages must be composed of plastic organisms if they are to maintain high fitness and mutational stability.
+Without plasticity, we expect these conditions to produce lineages with low stability and frequent coalescence events as populations must continually readapt.
+
+% Given , the lineages of organisms evolved in static conditions should exhibit high genotypic and phenotypic fidelity.
+
+% and have high genotypic and phenotypic fidelity.
+% than those evolved under changing conditions, as changing conditions require populations to continuously adapt.
+
+% if more selective sweeps occurred, indication of adaptive evolution 
+% adaptive evolutionary change
+
+% -- Rate of evolutionary change => findings --
+On average, significantly fewer generations elapsed between coalescence events in NON-PLASTIC populations than in either PLASTIC or STATIC populations (Figure \ref{fig:evolutionary-dynamics}d).
+We also observed that PLASTIC and STATIC lineages had significantly higher genotypic and phenotypic fidelity than NON-PLASTIC lineages (Figure \ref{fig:evolutionary-dynamics}e and \ref{fig:evolutionary-dynamics}f, respectively); that is, offspring were identical to their parent more often in the PLASTIC and STATIC regimes than in the NON-PLASTIC regime.
+Overall, our results indicate that NON-PLASTIC populations underwent more rapid (and thus a greater amount of) evolutionary changes than either PLASTIC or STATIC populations. 
 
 % -- mutations affect phenotypes --
 %   - fraction of mutational steps that alter (aggregate) phenotype
@@ -99,29 +118,43 @@ Thus, our results indicate that NON-PLASTIC populations experienced both a great
 %   - fraction of mutations that affect unexpressed phenotype that are beneficial (PLASTIC only)
 % @AML: TODO - update with mutational stability
 %   - IDEA: Terms for over 30 years working with digital evolution
-We measured the fraction of mutated offspring along these lineages with a different phenotype than their parent.
-For lineages evolved in fluctuating environments, we evaluated mutants under both environmental conditions and counted all changes in the \textit{aggregate} task profile.
-Consistent with previous results, we found that mutated offspring along NON-PLASTIC lineages exhibit more frequent phenotypic changes from their parent than mutated offspring from either PLASTIC or STATIC lineages [stats].
-% medians: NON-PLASTIC 0.437583018324547, PLASTIC 0.00224941742616098, STATIC 0
-While mutational stability for PLASTIC and STATIC lineages is higher than for those from NON-PLASTIC lineages, we found that STATIC lineages exhibit a small, but significant, difference in mutational stability relative to PLASTIC lineages [stats]. 
-Across all PLASTIC lineages, we found that over 80\% ([data]) of changes to task profiles occur in phenotypic traits that are expressed only in the off environment (i.e., as cryptic variation).
-Approximately 52\% ([data]) of this cryptic variation degraded tasks that would have been needed in the off environment, and the remaining $\sim$48\% ([data]) were compensatory mutations; that is, they restored tasks before the environment changed.
-% @AML: todo - put raw numbers in for percentages
+
+
+% the nature of the evolutionary changes observed under the PLASTIC, NON-PLASTIC, and STATIC treatment regimes.
+% Specifically, we performed knockout experiments to characterize evolved genetic architectures.
+% genetic architectures of representative organisms and how those architectures changed over time.
+% Mutational stability combines the information from genotypic and phenotypic fidelity, measuring the proportion of \textit{mutated} offspring whose phenotypic profile matches that of their parent; that is, how often do mutations actually effect phenotypic changes along a given lineage?
+% For example, lineages that exhibit frequent mutationally-induced phenotypic changes will have low mutational stability relative to lineages that exhibit little to no mutationally-induced phenotypic changes.
+
+% Consistent with both genotypic and phenotypic fidelity, we found that both STATIC and PLASTIC lineages exhibited high mutational stability relative to that of NON-PLASTIC lineages (corrected Wilcoxon rank-sum tests, PLASTIC: p $<10^{-4}$; STATIC: p $<10^{-4}$).
+% [Specifically, non-plastic offspring more often had a different phenotype (mean +- std dev)].
+% We also found that STATIC lineages exhibited higher mutational stability than PLASTIC lineages (corrected Wilcoxon rank-sum test, p $<10^{-4}$), which we hypothesized was due to the possibility for cryptic variation to manifest in the off-environment phenotypes of plastic organisms. 
+% We found that STATIC lineages exhibited a small, but significant
+% Because our 
+% While mutational stability for PLASTIC and STATIC lineages is higher than that of NON-PLASTIC lineages, we found that STATIC lineages exhibit a small, but significant, difference in mutational stability relative to PLASTIC lineages [stats]. 
+% Overall, there were few instances of mutations that caused a change in phenotypic profile across all PLASTIC lineages.
+% However, of these mutations, we found that over 80\% (83 out of 102) of changes to phenotypic profiles was cryptic; that is, they occurred in traits that would not have been expressed when the organism was alive but would have been expressed if the environment changed.
+
+% -- genetic architectures --
+% - Since we're looking at the phenotypic profile, we see that STATIC and PLASTIC treatments perform tasks in both environments while NON-PLASTIC only perform tasks from one environment
+    % - Like we'd expect!
+% - Additionally, we see substantial vestigial task machinery in the NON-PLASTIC treatment, showing that a small number of mutations can cause the task profile to flip environments
+% - Indeed, we see that the NON-PLASTIC treatment sees loci functionality change much more frequently. 
+
+% --- BOOKMARK ---
+Next, we performed knockout experiments to investigate how genetic architectures evolved under the PLASTIC, NON-PLASTIC, and STATIC treatment regimes.
+Figure \ref{fig:architecture_locus_functionality} shows the functionality of each locus in the most abundant genotype of the final population, using a representative sample from each treatment. 
+PLASTIC and STATIC genomes perform tasks in both environments, while the NON-PLASTIC genome only performs tasks in the B environment.
+We see substantial vestigial task machinery in environment A for the NON-PLASTIC genome, indicating that the genome previously performed environment A tasks but some other locus changed to ``switch off'' those tasks while leaving the sites intact.  
+Indeed, Figure \ref{fig:architecture_locus_change_time} demonstrates that, when looking at locus functionality over an entire lineage, loci change function significantly faster (and thus more often) in the NON-PLASTIC treatment [stats].
+%This supports our hypothesis that NON-PLASTIC populations rely on [genetic re-adaptation] to [keep up with] the changing environment, while the PLASTIC and STATIC treatments have relatively fixed architecture. 
+This supports our hypothesis that the fluctuating environment forces NON-PLASTIC populations to rely on mutations to continuously readapt, while organisms that are adaptively plastic change their phenotype according to environmental stimuli and thus do not require genetic changes to readapt. 
+
 
 % -- in general, PLASTIC and STATIC more similar than NON-PLASTIC --
 In general, the evolution of adaptive plasticity stabilized PLASTIC treatment populations against environmental fluctuations, and their evolutionary dynamics more closely resembled those of populations evolving in a static environment.
-We observed no significant difference in coalescence events in PLASTIC and STATIC populations.
-We did, however, observe that, relative to STATIC populations, PLASTIC populations had more elapsed generations [significant, stats], mutation accumulation [stats], and phenotypic volatility [stats]; though these differences were statistically significant, they were not substantial.
-
-% -- genetic architectures --
-[todo - genetic architecture results]
-%Figure \ref{fig:architecture_locus_functionality} shows the functionality of each locus in the final dominant %organism's genome, using a representative sample from each treatment. 
-%Here, we see that PLASTIC and STATIC treatments perform tasks in both environments. 
-%The NONPLASTIC genome, however, only performs tasks in the [A/B] environment, meanwhile it a substantial number of vestigial loci in for the [other environment]
-
-%Architecture analysis of each [replicate]'s final dominant lineage showed that NONPLASTIC populations experienced continuous genetic readaptation. 
-%PLASTIC and STATIC lineages showed [...]
-
+We observed no significant difference in the number and frequency of coalescence events in PLASTIC and STATIC populations.
+We did, however, observe small, but statistically significant, differences in each of elapsed generations, mutation counts, genotypic fidelity, phenotypic fidelity, and mutational stability between PLASTIC and STATIC populations (see supplemental material \citealt{supplemental_material}).
 
 \vspace{0.5cm}
 \subsection{Adaptively plastic populations retain more novel tasks than non-plastic populations in fluctuating environments}
@@ -152,10 +185,14 @@ We did, however, observe that, relative to STATIC populations, PLASTIC populatio
 
 \input{tex/figures/novel-tasks-panel}
 
+% [Environmental change has been shown to drive evolutionary change and promote evolutionary exploration in non-plastic populations as compared to populations evolving in an unchanging environment \citep{zaman_coevolution_2014,nahum_improved_2017}.]
+% [If so, does adaptive plasticity negate the [effects of environmental change on evolutionary exploration]? 
+
 % -- What did we test? --
-In experimental Phase 2B (Section [XX]), we evaluated how evolution of adaptive phenotypic plasticity influences the ability of populations to evolve and retain novel adaptive traits.
-We have shown that adaptive plasticity reduces the rate of evolutionary change in fluctuating environments, and it is unclear how this dynamic influences the evolution of novel tasks.
-Based on their relative rates of evolutionary change, we would expect NON-PLASTIC-treatment populations to evolve more novel tasks than PLASTIC-treatment populations.
+In experimental phase 2B, we evaluated how evolution of adaptive phenotypic plasticity influences the ability of populations to evolve and retain novel adaptive traits.
+We have shown that adaptive plasticity constrains the rate of evolutionary change in fluctuating environments.
+However, it is unclear how this dynamic influences the evolution of novel tasks.
+Based on their relative rates of evolutionary change, we might expect NON-PLASTIC-treatment populations to evolve more novel tasks than PLASTIC-treatment populations.
 But, how much of the evolutionary change in NON-PLASTIC-treatment populations is useful for exploring novel regions of the fitness landscape versus repeatedly re-treading previously explored regions of the fitness landscape?
 
 % - Magnitude of exploration/exploitation -
@@ -163,30 +200,35 @@ But, how much of the evolutionary change in NON-PLASTIC-treatment populations is
 %   - task discovery
 %   - task loss
 % Adaptive phenotypic plasticity evolved in \novelTraitsPlasticReps\ of \novelTraitsReplicates\ replicates from the PLASTIC treatment during phase one of Experiment II; we used this more limited group to seed the \novelTraitsPlasticReps\ phase-two PLASTIC replicates.
-Figure [x] shows the task discovery, task performance, and task loss for PLASTIC, NON-PLASTIC, and STATIC treatments.
-Task discovery is a measure of how well lineages explore the fitness landscape, while task performance and task loss shed light on how well lineages exploit the fitness landscape. 
+Figure \ref{fig:complex-traits} shows the final novel task count, novel task discovery, and novel task loss for the PLASTIC, NON-PLASTIC, and STATIC treatments.
+Final novel task count measures the number of novel tasks performed by a representative organism in the final population of each replicate, which indicates how well the final population exploits the fitness landscape.
+Novel task discovery is the number of types of novel tasks ever performed by an organism along a representative lineage, which sheds light on how well lineages explore the fitness landscape. 
+Finally, novel task loss is the number of times along a representative lineage that a novel task is performed by a parent but not its offspring, which measures a lineage's capacity to maintain novel tasks. 
 
-We found that both PLASTIC and STATIC populations have significantly higher task performance at the end of the experiment than NON-PLASTIC populations [stats].
-This, however, was not due to PLASTIC and STATIC lineages exploring a larger breadth of the fitness landscape, as NON-PLASTIC lineages had significantly higher task discovery than either PLASTIC or STATIC lineages [stats].
-Indeed, we found that NON-PLASTIC lineages exhibited significantly more task loss than either PLASTIC or STATIC lineages [stats], as NON-PLASTIC lineages repeatedly failed to retain novel tasks.
+We found that both PLASTIC and STATIC populations had significantly higher final task counts than NON-PLASTIC populations at the end of the experiment (Figure~\ref{fig:complex-traits}a).
+This, however, was not due to PLASTIC and STATIC lineages exploring a larger breadth of the fitness landscape, as NON-PLASTIC lineages exhibited significantly higher novel task discovery than either PLASTIC or STATIC lineages (Figure~\ref{fig:complex-traits}b).
+Indeed, we found that NON-PLASTIC lineages repeatedly failed to retain evolved novel tasks, exhibiting significantly higher novel task loss than either PLASTIC or STATIC lineages (Figure~\ref{fig:complex-traits}c).
 
 % - Rates of exploration/exploitation -
 %  - tasks discovered per generation(?)
 %  - tasks lost per generation(?)
-As noted in our evolutionary change results, a larger number of generations elapsed in NON-PLASTIC populations than in PLASTIC or STATIC populations during our experiment.
-As such, we examined the \textit{rates} of task loss and task discovery: are NON-PLASTIC lineages discovering and losing novel tasks more frequently than PLASTIC or STATIC lineages?
-We computed the per-generation rate of task discovery along dominant lineages and the per-generation rate of task loss along those same lineages.
-We found no significant difference in per-generation task discovery between NON-PLASTIC and STATIC lineages [stats], but we did find that PLASTIC lineages had a lower per-generation task discovery rate than NON-PLASTIC or STATIC lineages [stats].
+As noted previously, a larger number of generations elapsed in NON-PLASTIC populations than in PLASTIC or STATIC populations during our experiment.
+Are NON-PLASTIC lineages discovering and losing novel tasks more frequently than PLASTIC or STATIC lineages, or are our observations a result of differences in generational turnover?
+To tease this apart, we examined the frequencies of novel task discovery and novel task loss along representative lineages by dividing novel task discovery and novel task loss measurements by the number of elapsed generations.
+We found no significant difference in the frequency of novel task discovery between NON-PLASTIC and STATIC lineages, and we found that PLASTIC lineages had a lower frequency of novel task discovery than STATIC lineages (Figure~\ref{fig:complex-traits}d).
+Therefore, we cannot reject the possibility that the larger magnitude of task discovery in NON-PLASTIC lineages was driven by a larger number of elapsed generations.
+NON-PLASTIC lineages had a higher frequency of task loss than either PLASTIC or STATIC lineages, and PLASTIC lineages tended to have a lower frequency of novel task loss than STATIC lineages (Figure~\ref{fig:complex-traits}e). 
+
+% We computed the per-generation rate of task discovery along dominant lineages and the per-generation rate of task loss along those same lineages.
 % small, but significant, per-generation task discovery rate than NON-PLASTIC or STATIC lineages [stats].
-We found that NON-PLASTIC lineages had a significantly higher per-generation rate of task loss than either PLASTIC or STATIC lineages [stats], while PLASTIC lineages had a small but significantly lower per-generation rate of task loss than STATIC lineages [stats].
-We cannot reject the possibility that the larger magnitude of task discovery in NON-PLASTIC lineages was driven by a larger number of elapsed generations.
-Indeed, we found that NON-PLASTIC lineages repeatedly gained and failed to retain novel tasks during the experiment, and the final evolved genotypes performed fewer overall tasks.
+% We found that NON-PLASTIC lineages had a significantly higher per-generation rate of task loss than either PLASTIC or STATIC lineages [stats], while PLASTIC lineages had a small but significantly lower per-generation rate of task loss than STATIC lineages [stats].
+% Indeed, we found that NON-PLASTIC lineages repeatedly gained and failed to retain novel tasks during the experiment, and the final evolved genotypes performed fewer overall tasks.
 
 % - Characterizing trait loss -
 %   - fraction of novel trait loss co-occuring with change in base trait profile
 %   - reporting overall aggregate vs. comparing distributions of fractions (among lineages that have trait loss)
-% We found NON-PLASTIC lineages had sig higher fractions of task loss co-occurrence than PLASTIC and STATIC lineages [stats].
-Next, we examined the frequency at which novel task loss along lineages co-occurred with base task loss (i.e., loss of any of the original six tasks).
+% @AML: [Some rationale for doing this???]
+Next, we examined the frequency at which novel task loss along lineages co-occurred with a change in base task performance (\textit{i.e.}, the loss or gain of any of the six base tasks).
 Across all NON-PLASTIC dominant lineages, over 97\% (10998 out of 11229) of instances of novel task loss co-occurred with a simultaneous change in base task profile.
 In contrast, across all PLASTIC and STATIC dominant lineages, we observed that approximately 20\% (29 out of 142) and 2\% (13 out of 631), respectively, of instances of novel task loss co-occurred with a simultaneous change in base task profile. 
 
@@ -213,35 +255,35 @@ In contrast, across all PLASTIC and STATIC dominant lineages, we observed that a
 % [todo]
 % We have shown that adaptive plasticity stabilized populations against environmental fluctuations, which reduced novel trait loss along the lineages of adaptively plastic organisms relative to that of non-plastic organisms. 
 
-% @AML: needs trimming
-In experimental Phase 2C (Section [XX]), we tested whether the lineages of adaptively plastic organisms accumulate more deleterious \code{poison} instructions than that of non-plastic lineages.
-Phenotypic plasticity allows for the accumulation of genetic variation in genomic regions that are unexpressed under contemporary environmental conditions.
-However, our results thus far, may indicate that PLASTIC-treatment populations accumulate \textit{fewer} deleterious mutations than NON-PLASTIC treatment populations in fluctuating environments.
-% Next sentence is rough.
-That is, NON-PLASTIC lineages accumulated more total genetic changes, and the high rates of adaptive trait loss in NON-PLASTIC lineages may also indicate their increased susceptibility to accumulating deleterious mutations relative to PLASTIC lineages.
-Because the \code{poison} instruction is explicitly deleterious, selection should purge mutations that increase \code{poison} execution in the offspring phenotype.
-As such, we expected such mutations to show up in successful lineages either as accumulated cryptic variation in plastic genomes or via hitchhiking with linked beneficial mutations [cite].
 
-% -- Instruction execution by final dominant & along lineage --
-%    +
-% -- Number of instructions executed per genotype --
-At the end of our experiment, no dominant genotypes evolved in PLASTIC or STATIC treatments expressed the \code{poison} instruction under any environmental condition; however, the dominant genotype from 14 replicates of the NON-PLASTIC treatment did express the \code{poison} instruction at least once (statistically significant, [stats]).
-%The minimal instances of \code{poison} execution in dominant organisms is expected given that each execution is a 10\% reduction in metabolic rate.
-The \code{poison} execution in dominant organisms is expected to be kept minimal given that each execution is a 10\% reduction in metabolic rate.
+
+
+% @AML: needs trimming
+% the lineages of adaptively plastic organisms accumulate more deleterious \code{poison} instructions than that of non-plastic lineages.
+Phenotypic plasticity allows for possibility of accumulating of genetic variation in genomic regions that are unexpressed under contemporary environmental conditions, which could lead to the fixation of deleterious instructions in PLASTIC-treatment populations.
+However, our results thus far indicate that PLASTIC-treatment populations accumulate \textit{fewer} deleterious mutations than NON-PLASTIC treatment populations in fluctuating environments.
+That is, NON-PLASTIC lineages accumulated more total genetic changes (Figure \ref{fig:evolutionary-dynamics}), and the high rates of novel task loss in NON-PLASTIC lineages (Figure \ref{fig:complex-traits}) may also indicate their increased susceptibility to accumulating deleterious mutations relative to PLASTIC lineages.
+
+In experimental phase 2C, we tested whether the evolution of adaptive phenotypic plasticity increases deleterious instruction accumulation in genomes by measuring poisonous task performance in representative organisms and along representative lineages. 
+Organisms can perform the poisonous task by executing a \code{poison} instruction, which reduces their fitness. 
+At the beginning of phase two, the \code{poison} instruction is not present in the population as it was not part of the instruction set during the first phase of evolution.
+If a \code{poison} instruction fixes in a population, it must be the result of evolutionary dynamics during phase 2C, as no founding organism's genome contained the \code{poison} instruction.
+Selection should purge mutations that increase \code{poison} instruction execution in the offspring phenotype, unless those mutations accumulate as cryptic variation in plastic genomes or hitchhike to fixation with linked beneficial mutations.
 
 \input{tex/figures/poison-accumulation-panel}
 
-% - total offspring with increases -
-Figure [x] shows the [prevalence of poison instructions in final dominant genotypes and along dominant linages] for all treatments.
-%We found that the number of offspring on NON-PLASTIC lineages where \code{poison} instruction execution increases was significantly higher than that of PLASTIC or STATIC lineages [stats]; we found no significant difference in \code{poison} execution along dominant lineages between PLASTIC and STATIC lineages.
-We found that NON-PLASTIC lineages had significantly more organisms that executed the \code{poison} instruction more often than their parent as compared to PLASTIC or STATIC lineages [stats]; we found no significant difference in \code{poison} execution along dominant lineages between PLASTIC and STATIC lineages.
-%These numbers remain significant when normalized by number of generations ([stats]).
-These significance patterns do not qualitatively change when normalized by number of generations ([stats]).
+% -- Instruction execution by final dominant & along lineage --
+At the end of our experiment, no representative organisms from the PLASTIC or STATIC treatments performed the poisonous task under any environmental condition; however, representative organisms from 14 replicates of the NON-PLASTIC treatment performed the poisonous task at least once. % (statistically significant, fisher's exact test)
+Figure \ref{fig:deleterious-hitchhiking} shows the poisonous task acquisition rate for each treatment, which measures the number of instances along a lineage where a mutation causes an offspring to perform the poisonous task more often than its parent. 
+We found that NON-PLASTIC lineages contained significantly more offspring that performed the poisonous task more often than their parent as compared to offspring along PLASTIC or STATIC lineages (\ref{fig:deleterious-hitchhiking}a).
+This result does not change when we normalize each poisonous task acquisition value by the number of generations represented in the given lineage (Figure \ref{fig:deleterious-hitchhiking}b).
 
 % -- When/where does hitchhiking take place? --
-Next, we examined the frequency that mutations that increase \code{poison} execution co-occur with mutations that change the base task profile of offspring along dominant lineages across treatments.
-Across all NON-PLASTIC dominant lineages, we found that approximately 49\% (956 out of 1916) mutations that increased \code{poison} execution co-occurred with mutations that changed the base task profile; we observed zero instances of co-occurrence in PLASTIC and STATIC lineages.
-Additionally, we did not find compelling evidence that mutations that increased \code{poison} execution occurred as cryptic variation in PLASTIC lineages [supplement].
+% @AML: Could use a little transition here!
+Next, we examined the frequency that mutations that increase \code{poison} execution co-occurred with mutations that change the base task profile of offspring along representative lineages.
+Across all NON-PLASTIC representative lineages, we found that approximately 49\% (956 out of 1916) mutations that increased \code{poison} instruction execution co-occurred with mutations that changed the base task profile.
+Along all representative lineages from the PLASTIC treatment, only 18 offspring sustained a mutation that increased task poisonous task performance relative to their parent, and none of these mutations simultaneously co-occurred with a change in base task profile.
+Likewise, along all representative lineages from the STATIC treatment, only 58 offspring sustained a mutation that increased poisonous task performance, and none of these mutations simultaneously co-occurred with a change in base task profile.
+We did not find compelling evidence that the few mutations that increased \code{poison} task performance occurred as cryptic variation in PLASTIC lineages.
 
-
-
+We repeated this experiment with 3\% and 30\% metabolic rate penalties associated with the poisonous task, which produced consistent experimental results \citep{supplemental_material}.

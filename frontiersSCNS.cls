@@ -34,7 +34,7 @@
 \def\helveticaitalic{\fontfamily{phv}\itshape\selectfont}
 \def\helveticabold{\fontfamily{phv}\bfseries\selectfont}
 \def\helveticabolditalic{\fontfamily{phv}\bfseries\itshape\selectfont}
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[usenames,dvipsnames,table]{xcolor}
 \usepackage[labelsep=quad,indention=10pt]{caption}
 \usepackage[labelfont=bf,list=true]{subcaption}
 

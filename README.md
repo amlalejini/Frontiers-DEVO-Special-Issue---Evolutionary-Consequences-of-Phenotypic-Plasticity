@@ -18,15 +18,21 @@
 ## Action items
 
 - TODO - Re-title!
-- TODO - [methods] include a figure that depicts the avida virtual hardware/genome
+- TODO - [supplemental material] include a figure that depicts the avida virtual hardware/genome
 - TODO - with validation control data - show no stochastic phenotypes
 - TODO - [Van den Bergh et al., 2018] for relevant examples/research wet lab experiments (e.g., cycling environments, hitchhiking, etc)
-- TODO - Draft a figure explaining the metrics
 - Question: Do we want to shoot for a bigger journal? 
     - can we claim that this is the first empirical study of consequences of adaptive plasticity?
 - Future experiment - repeat this sort of experiment with plastic organisms, but keep entire phylogeny to measure rates of relaxed selection.
 - TODO - Define fitness landscape concept somewhere
-- Comment from matthew: "if this figure is going into the paper one quick mention of how I first interpreted the graphs in that figure, I first thought time was on the x axis and it was alternating between equ up nand down etc"
+- [ ] Make metric names consistent across paper!
+- [ ] Clean up/update supplemental material
+    - [ ] add list of instructions w/descriptions (avida virtual hardware document)
+- [ ] Update reference names for supplemental material and data references.
+- [ ] Re-run and add STATIC + sensors condition to supplemental material
+- [ ] Clean up genotype/organism language
+- [ ] Novel task count => novel task discovery?
+- [ ] Strip genotypic fidelity & phenotypic fidelity from paper, replace with mutational stability
 
 ### Details to move into supplement
 

@@ -1,0 +1,108 @@
+%%%%%%%%% BOX %%%%%%%%%%%%
+% this is my current "definition" environment
+% \newtcolorbox[auto counter]{definitions}[1][] {
+%   enhanced,
+%   breakable,
+%   arc=0mm,
+%   title={\textbf{Box \thetcbcounter. Metrics}},
+%   #1
+% }
+
+% \begin{definitions}[colback=blue!5!white,colframe=blue!75!black,label=box:metrics]
+
+% Hello world.
+
+% \end{definitions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% @AML: Not sure the best way to start the description of each metric. 
+
+\newcommand{\SweepsMetricName}{
+The \textbf{number of coalescence events} in a population indicates the frequency of selective sweeps.
+}
+
+\newcommand{\MutationCountMetricName}{
+The number of mutations along a lineage, its \textbf{mutation count}, shows [...].
+}
+
+\newcommand{\PhenotypicVolatilityMetricName}{
+\textbf{Phenotypic volatility} measures the number of instances along a lineage where an offspring has a different phenotypic profile than its parent. 
+This indicates the rate at which [...].
+}
+
+
+\newcommand{\MutationalStabilityMetricName}{
+\textbf{Mutational stability} is the proportion of mutated offspring along a lineage whose phenotypic profiles differs from that of their parent. 
+Mutational stability thus examines the frequency at which mutations effect change in an offspring's phenotype. 
+}
+
+\newcommand{\TaskPerformanceMetricName}{
+The \textbf{final novel task count} measures the number of unique \textit{novel} tasks performed by the most abundant genotype in the final population (ranges from 0 to 71). 
+This measures the level of exploitation of the fitness landscape at a given point in time. (i.e., the mapping between genetic space and phenotype space)
+}
+
+\newcommand{\TaskDiscoveryMetricName}{
+\textbf{Lineage novel task count} measures the number of unique \textit{novel} tasks performed by a given lineage, even if those tasks are later lost. 
+This measures the level of exploration of the fitness landscape (i.e., the mapping between genetic space and phenotype space)
+}
+
+\newcommand{\TaskLossMetricName}{
+\textbf{Lineage novel task loss} measures the number of \textit{novel} tasks that were performed by an organism in a given lineage and then lost in the organism's offspring. 
+Lineage task loss measures how often a lineage fails to retain evolved traits over time and thus indicates the ability for traits to be maintained over time.
+}
+
+\newcommand{\FinalPoisonMetricName}{
+The number of times the \code instruction is executed by the most abundant genotype in the final population is recorded as the \textbf{final \code{poison} count}.
+This measures how effectively a population has purged deleterious mutations at given point in time. 
+}
+
+\newcommand{\LineagePoisonMetricName}{
+\textbf{Lineage \code{poison} increases} measures the total number of instances along a given lineage where a mutation causes an offspring to execute the \code{poison} instruction more times than its parent. 
+This indicates how often deleterious hitchhiking occurred along the lineage.
+}
+
+\newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
+
+\setlength{\tabcolsep}{16pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[h]
+    \centering
+    
+    \rowcolors{2}{gray!25}{white}
+    \begin{tabularx}{\linewidth}{X} % p{10cm}
+        \rowcolor{gray!50}
+        \hline 
+        \thead{Definitions} \\ % & \thead{Description}   \\
+        \hline
+        \SweepsMetricName \\ % & \SweepsMetricDesc \\
+        \MutationCountMetricName \\ %& \MutationCountMetricDesc \\
+        \PhenotypicVolatilityMetricName \\ %& \PhenotypicVolatilityMetricDesc \\
+        \MutationalStabilityMetricName \\ %& \MutationalStabilityMetricDesc \\
+        % (architecture metric(s)) & \\
+        \TaskPerformanceMetricName \\ %& \TaskPerformanceMetricDesc \\
+        \TaskDiscoveryMetricName \\ %& \TaskDiscoveryMetricDesc \\
+        \TaskLossMetricName \\ %& \TaskLossMetricDesc \\
+        \FinalPoisonMetricName \\ %& \FinalPoisonMetricDesc \\
+        \LineagePoisonMetricName \\ %& \LineagePoisonMetricDesc \\
+        \hline
+    \end{tabularx}
+    
+    \caption{\textbf{Metric descriptions.}}
+    \label{tab:metrics-definitions}
+\end{table}
+
+%     \item number of coalescence events
+%     \item mutation count
+%     \item phenotypic volatility
+%     \item mutational stability
+%     \item [architecture metric(s)]
+%     \item final task count
+%     \item lineage task count
+%     \item lineage task loss
+%     \item final poison count
+%     \item lineage poison count
+
+% \newcommand{\DecOwnRegulatorName}{\code{DecOwnRegulator}}
+% \newcommand{\DecOwnRegulatorDescription}{Subtract one from the regulatory modifier of the currently executing module.}
+
+
