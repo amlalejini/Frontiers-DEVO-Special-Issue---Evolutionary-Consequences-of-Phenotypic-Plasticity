@@ -70,7 +70,8 @@ Optimal plasticity toggles tasks to always perfectly match the set of rewarded t
 % \vspace{0.7cm}
 \subsection{Experimental design}
 \label{sec:methods:experiment}
-\input{tex/figures/conceptual_figure}
+
+\input{tex/figures/experimental-design}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OUTLINE
@@ -86,7 +87,7 @@ Optimal plasticity toggles tasks to always perfectly match the set of rewarded t
 
 % -- Treatments --
 We conducted three independent experiments using Avida to investigate how the evolution of adaptive plasticity influences evolutionary outcomes in fluctuating environments.
-For each experiment, we compared the evolutionary outcomes of populations evolved under three treatments (Figure [XX]): 
+For each experiment, we compared the evolutionary outcomes of populations evolved under three treatments (Figure \ref{fig:experimental-design}): 
 (1) a \textbf{PLASTIC} treatment where the environment fluctuates, and digital organisms can use sensory instructions to differentiate between environmental states;
 (2) a \textbf{NON-PLASTIC} treatment with identical environment fluctuations, but where sensory instructions are disabled;
 and (3) a \textbf{STATIC} control where organisms evolve in a constant environment.
@@ -95,7 +96,7 @@ and (3) a \textbf{STATIC} control where organisms evolve in a constant environme
 Each experiment was divided into two phases that each lasted for 200,000 updates\footnote{
     One update in Avida is the amount of time required for the average organism to execute 30 instructions. 
     See \citep{ofria_avida:_2009} for more details.
-} of evolution (Figure [XX]), which is approximately 30,000 to 40,000 generations.
+} of evolution (Figure \ref{fig:experimental-design}), which is approximately 30,000 to 40,000 generations.
 In phase one of each experiment, we preconditioned populations to their treatment-specific conditions.
 In phase two, we founded new populations with the evolved organisms from phase one and examined their subsequent evolution under given combinations of treatment and experimental conditions.
 During phase two, we tracked each population's evolutionary history as well as saving the full final population.
@@ -154,13 +155,13 @@ This approach ensures that measurements taken on PLASTIC-treatment populations d
 \label{sec:methods:exp:evolutionary-change-rate}
 
 Phase 2A continued exactly as phase one, except we tracked the rates of evolutionary change in each of the PLASTIC-, NON-PLASTIC-, and STATIC-treatment populations. 
-Specifically, we quantified evolutionary change rates using six metrics (each described in Table~\ref{tab:metrics-definitions}):
+Specifically, we quantified evolutionary change rates using four metrics (each described in Table~\ref{tab:metrics-definitions}):
 (1) coalescence event count,
 (2) mutation count, 
 (3) phenotypic volatility,
-(4) genotypic fidelity, 
-(5) phenotypic fidelity,
-and (6) mutational stability.
+% (4) genotypic fidelity, 
+% (5) phenotypic fidelity,
+and (4) mutational stability.
 We additionally used knockout experiments to examine how the genetic architectures of organisms and their ancestors changed over time.
 
 \vspace{3mm}
