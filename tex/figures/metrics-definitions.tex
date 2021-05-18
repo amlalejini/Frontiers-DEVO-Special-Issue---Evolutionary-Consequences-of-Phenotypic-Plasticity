@@ -31,6 +31,8 @@ Mutation count
 Sum of all mutations that have occurred along a lineage.
 }
 
+% Phenotypic volatility => 
+% - 
 \newcommand{\PhenotypicVolatilityMetricName}{
 Phenotypic volatility
 }
@@ -40,26 +42,23 @@ Phenotypic volatility as defined here indicates the rate at which accumulated ge
 }
 
 \newcommand{\MutationalStabilityMetricName}{
-Mutational stability
+Mutational robustness
+% OLD: Mutational stability
 }
 \newcommand{\MutationalStabilityMetricDesc}{
-Proportion of mutated offspring along a lineage whose phenotypic profile matches that of their parent. 
-% Mutational stability examines the frequency at which mutations effect changes in an offspring's phenotype.
+Proportion of mutations (from the set of all possible one-step mutations) that do not change the phenotypic profile of a focal genotype. We also measured \textit{realized mutational robustness}, which is the proportion of mutated offspring along a lineage whose phenotypic profile matches that of their parent. 
+% OLD DEFS:
+% - Proportion of mutated offspring along a lineage whose phenotypic profile matches that of their parent. 
+% - Proportion of mutants whose phenotypic profile matches that of their parent. Two variations were recorded: lineage mutational stability which examines the mutated offspring along a lineage, and neighborhood mutational stability which examines a set of possible mutations on a given genotype.
 }
 
-\newcommand{\GenotypicFidelityMetricName}{
-Genotypic fidelity
-}
-\newcommand{\GenotypicFidelityMetricDesc}{
-Frequency that an offspring's genotype is identical to its parent's genotype along a given lineage.
-}
 
-\newcommand{\PhenotypicFidelityMetricName}{
-Phenotypic fidelity
-}
-\newcommand{\PhenotypicFidelityMetricDesc}{
-Frequency that an offspring's phenotypic profile is identical to its parent's phenotypic profile along a given lineage.
-}
+% Mutational stability => phenotypic stability / mutational robustness
+% - Lineage => realized phenotypic stability / realized stability / realized mutational robustness
+% - Neighborhood => potential phenotypic stability / potential stability / potential mutational robustness
+
+% - Mutational robustness
+% - Realized mutational robustness
 
 \newcommand{\TaskPerformanceMetricName}{
 Final novel task count
@@ -83,7 +82,7 @@ This metric can range from 0 to 71 and measures a given lineage's level of explo
 Novel task loss
 }
 \newcommand{\TaskLossMetricDesc}{
-Number of instances along a given lineage from experimental \hyperref[sec:methods:exp:novel-task-evolution]{phase 2B} that a novel task is performed by a parent but not its offspring. 
+Number of instances along a given lineage from experimental \hyperref[sec:methods:exp:novel-task-evolution]{phase 2B} where a novel task is performed by a parent but not its offspring. 
 This metric measures how often a given lineage fails to retain evolved traits over time.
 }
 
@@ -98,7 +97,16 @@ Number of times the poisonous task is performed by the representative organism f
 Poisonous task acquisition count
 }
 \newcommand{\LineagePoisonMetricDesc}{
-Number of instances along a given lineage where a mutation causes an offspring perform the poisonous task more times than its parent. 
+Number of instances along a given lineage where a mutation causes an offspring to perform the poisonous task more times than its parent. 
+}
+
+\newcommand{\ArchitectureVolatilityMetricName}{
+Architectural volatility
+}
+\newcommand{\ArchitectureVolatilityMetricDesc}{
+The average number of loci in the genome that change function per mutation along a lineage. 
+% @AML: The average number of mutations that cause a change in function along a lineage. 
+%Loci function is denoted as the combination of task machinery, plasticity machinery, vestigial machinery for both ENV-A and ENV-B tasks, as well as replication and required machinery. 
 }
 
 \newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
@@ -121,6 +129,7 @@ Number of instances along a given lineage where a mutation causes an offspring p
         % \PhenotypicFidelityMetricName &         \PhenotypicFidelityMetricDesc \\
         \MutationalStabilityMetricName & \MutationalStabilityMetricDesc \\
         % (architecture metric(s)) & \\
+        %\ArchitectureVolatilityMetricName & \ArchitectureVolatilityMetricDesc \\
         \TaskPerformanceMetricName & \TaskPerformanceMetricDesc \\
         \TaskDiscoveryMetricName & \TaskDiscoveryMetricDesc \\
         \TaskLossMetricName & \TaskLossMetricDesc \\

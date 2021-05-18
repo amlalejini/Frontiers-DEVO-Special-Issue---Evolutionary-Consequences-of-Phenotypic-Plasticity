@@ -33,6 +33,7 @@
 - [ ] Clean up genotype/organism language
 - [ ] Novel task count => novel task discovery?
 - [ ] Strip genotypic fidelity & phenotypic fidelity from paper, replace with mutational stability
+- [ ] Analysis: for every change along the lineage, see if it appears in the first half or the second half of an environmental condition (first 50 updates, second 50 updates)
 
 ### Details to move into supplement
 

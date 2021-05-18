@@ -26,29 +26,46 @@
 
 % Leave a blank line between paragraphs instead of using \\
 
+% - Alexander Lalejini - MSU, CSE, BEACON, EEB
+% - Austin J. Ferguson - CSE, BEACON, EEB
+% - Nkrumah A. Grant - Marx Lab, University of Idaho, Department of Biological Sciences, Moscow, ID, USA, BEACON
+% - Charles Ofria - CSE, BEACON, EEB
+
 \def\keyFont{\fontsize{8}{11}\helveticabold }
-\def\firstAuthorLast{Sample {et~al.}} %use et al only if is more than 1 author
-\def\Authors{First Author\,$^{1,*}$, Co-Author\,$^{2}$ and Co-Author\,$^{1,2}$}
+\def\firstAuthorLast{Lalejini {et~al.}} %use et al only if is more than 1 author
+\def\Authors{Alexander Lalejini\,$^{1,2,3,*}$, Austin J. Ferguson\,$^{1,2,3}$, Nkrumah A. Grant\,$^{1,4}$, and Charles Ofria\,$^{1,2,3}$}
 % Affiliations should be keyed to the author's name with superscript numbers and be listed as follows: Laboratory, Institute, Department, Organization, City, State abbreviation (USA, Canada, Australia), and Country (without detailed address information such as city zip codes or street names).
 % If one of the authors has a change of address, list the new address below the correspondence details using a superscript symbol and use the same symbol to indicate the author in the author list.
-\def\Address{$^{1}$Laboratory X, Institute X, Department X, Organization X, City X , State XX (only USA, Canada and Australia), Country X \\
-$^{2}$Laboratory X, Institute X, Department X, Organization X, City X , State XX (only USA, Canada and Australia), Country X  }
+% \def\Address{$^{1}$Laboratory X, Institute X, Department X, Organization X, City X , State XX (only USA, Canada and Australia), Country X \\
+% $^{2}$Laboratory X, Institute X, Department X, Organization X, City X , State XX (only USA, Canada and Australia), Country X  }
+\def\Address{
+$^{1}$BEACON Center for the Study of Evolution in Action, Michigan State University, East Lansing, MI, USA \\
+$^{2}$Ecology, Evolution, and Behavior Program, Michigan State University, East Lansing, MI, USA \\
+$^{3}$Department of Computer Science and Engineering, Michigan State University, East Lansing, MI, USA \\
+$^{4}$Department of Biological Sciences, University of Idaho, Moscow, ID, USA
+% $^{X}$Laboratory X, Institute X, Department X, Organization X, City X , State XX (only USA, Canada and Australia), Country X \\
+% $^{Y}$Laboratory X, Institute X, Department X, Organization X, City X , State XX (only USA, Canada and Australia), Country X  
+}
 % The Corresponding Author should be marked with an asterisk
 % Provide the exact contact address (this time including street name and city zip code) and email of the corresponding author
-\def\corrAuthor{Corresponding Author}
+\def\corrAuthor{Alexander lalejini}
 
-\def\corrEmail{email@uni.edu}
+\def\corrEmail{amlalejini@gmail.com}
 
 
 \begin{document}
 \onecolumn
 \firstpage{1}
 
-% Phenotypic plasticity can promote the evolution of complex features in fluctuating environments
-% Phenotypic plasticity can simultaneously slow rate of evolutionary change and promote evo of complex features 
-% Adaptive plasticity buffers population against fluctuations, promoting novel trait evolution/retention
-% Phenotypic plasticity can promote the evolution and maintenance of complex features in fluctuating environments
-\title[The evolutionary consequences of adaptive plasticity]{The evolutionary consequences of adaptive phenotypic plasticity} 
+% ============= TITLE IDEAS =============
+% - Adaptive phenotypic plasticity stabilizes populations in fluctuating environments
+% - The evolution of adaptive phenotypic plasticity stabilizes populations in fluctuating environments
+% - Phenotypic plasticity can promote the evolution of complex features in fluctuating environments
+% - Adaptive plasticity buffers population against fluctuations, promoting novel trait evolution/retention
+% - Phenotypic plasticity can simultaneously slow rate of evolutionary change and promote evo of complex features 
+% - Phenotypic plasticity can promote the evolution and maintenance of complex features in fluctuating environments
+% - Adaptive plasticity stabilizes populations in fluctuating environments and constrains evolutionary outcomes
+\title[Adaptive plasticity stabilizes evolution]{Adaptive phenotypic plasticity stabilizes evolution in fluctuating environments} 
 
 \author[\firstAuthorLast ]{\Authors} %This field will be automatically populated
 \address{} %This field will be automatically populated
@@ -64,6 +81,9 @@ $^{2}$Laboratory X, Institute X, Department X, Organization X, City X , State XX
 
 \input{tex/abstract}
 
+
+\begin{raggedbottom}
+
 \input{tex/introduction}
 
 \input{tex/methods}
@@ -71,6 +91,8 @@ $^{2}$Laboratory X, Institute X, Department X, Organization X, City X , State XX
 \input{tex/results}
 
 \input{tex/discussion}
+
+\end{raggedbottom}
 
 \input{tex/supplemental-material}
 

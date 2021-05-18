@@ -53,10 +53,11 @@ In this way, environmentally-induced phenotypic changes can precede an evolution
 
 % -- Plastic rescue + wrap up on plasticity background? --
 Phenotypic plasticity may also ``rescue'' populations from extinction under changing environmental conditions by buffering populations against novel stressors.
-This buffer promotes stability and persistence and grants populations time to further adapt to rapidly changing environmental conditions \citep{west-eberhard_developmental_2003,chevin_when_2010}. %[citations - Snell-Rood et al. 2018?].
+This buffer promotes stability and persistence and grants populations time to further adapt to rapidly changing environmental conditions \citep{west-eberhard_developmental_2003,chevin_when_2010}. 
+
 Disparate predictions about how phenotypic plasticity may shift the course of subsequent evolution are not necessarily mutually exclusive.
-Figure \ref{fig:reaction-norms} overviews how we might expect different forms of phenotypic plasticity to result in different evolutionary responses after an environmental change.
 Genetic and environmental contexts determine if and to what extent phenotypic plasticity promotes or constrains subsequent evolution.
+Figure \ref{fig:reaction-norms} overviews how we might expect different forms of phenotypic plasticity to result in different evolutionary responses after an environmental change.
 
 %%%%%%%%%%%%%%%%%%%%%%
 % -- Digital evolution --
@@ -68,12 +69,12 @@ In digital evolution, self-replicating computer programs (digital organisms) com
 Digital evolution studies balance the speed and transparency of mathematical and computational simulations with the open-ended realism of laboratory experiments.
 Modern computers allow us to observe many generations of digital evolution at tractable time scales; thousands of generations can take mere minutes as opposed to months, years, or centuries.
 Digital evolution systems also allow for perfect, non-invasive data tracking.
-Such transparency permits the tracking of complete evolutionary histories within an experiment, which circumvents the historical problem of drawing evolutionary inferences using incomplete records (from frozen samples or even fossils) and extant genetic sequences.
+Such transparency permits the tracking of complete evolutionary histories within an experiment, which circumvents the historical problem of drawing evolutionary inferences using incomplete records (from frozen samples or fossils) and extant genetic sequences.
 Additionally, digital evolution systems allow for experimental manipulations and analyses that go beyond what is possible in wet-lab experiments.
-Such analyses have included exhaustive knockouts of every loci to identify the functionality of each \citep{lenski_evolutionary_2003},
+Such analyses have included exhaustive knockouts of every site in a genome to identify the functionality of each \citep{lenski_evolutionary_2003},
 comprehensive characterization of local mutational landscapes \citep{lenski_genome_1999,canino-koning_fluctuating_2019},
 and the real-time reversion of all deleterious mutations as they occur to isolate their long-term effects on evolutionary outcomes \citep{covert_experiments_2013}. 
-Digital evolution studies allow us to directly toggle the possibility for adaptive plastic responses to evolve, which enables us to empirically test hypotheses that were previously relegated to theoretical analyses.
+Furthermore, digital evolution studies allow us to directly toggle the possibility for adaptive plastic responses to evolve, which enables us to empirically test hypotheses that were previously relegated to theoretical analyses.
 
 %%%%%%%%%%%%%%%%%%%%%%
 % -- Overview of what we're testing / doing --
@@ -84,13 +85,13 @@ the origins of complex features \citep{lenski_evolutionary_2003},
 the survival of the flattest effect \citep{wilke_evolution_2001},
 and the origins of reproductive division of labor \citep{goldsby_evolutionary_2014}.
 % @AML: next bit is a little awkward
-Our experiments build directly on previous studies in Avida that characterized the \textit{de novo} evolution of adaptive phenotypic plasticity \citep{clune_investigating_2007,lalejini_evolutionary_2016} as well as previous work investigating the evolutionary consequences of fluctuating environments for populations of non-plastic digital organisms \citep{wilke_evolution_2001,canino-koning_fluctuating_2019}.
-Of particular relevance, \cite{clune_investigating_2007} and \cite{lalejini_evolutionary_2016} experimentally demonstrated that adaptive phenotypic plasticity can evolve given the following four conditions (as identified by \cite{ghalambor_behavior_2010}):
-(1) populations experience temporal environmental variation (\textit{i.e.}, a fluctuating environment),
+Our experiments build directly on previous studies in Avida that characterized the \textit{de novo} evolution of adaptive phenotypic plasticity \citep{clune_investigating_2007,lalejini_evolutionary_2016} as well as previous work investigating the evolutionary consequences of fluctuating environments for populations of non-plastic digital organisms \citep{li_digital_2004,canino-koning_fluctuating_2019}.
+Of particular relevance, \cite{clune_investigating_2007} and \cite{lalejini_evolutionary_2016} experimentally demonstrated that adaptive phenotypic plasticity can evolve given the following four conditions (as identified by \citealt{ghalambor_behavior_2010}):
+(1) populations experience temporal environmental variation,
 (2) these environments are differentiable by reliable cues,
 (3) each environment favors different phenotypic traits,
 and (4) no single phenotype exhibits high fitness across all environments.
-We build on this previous work, but shift our focus from the evolutionary causes of adaptive phenotypic plasticity to investigate its evolutionary consequences in a fluctuating environment.
+We build on this previous work, but we shift our focus from the evolutionary causes of adaptive phenotypic plasticity to investigate its evolutionary consequences in a fluctuating environment.
 
 %%%%%%%%%%%%%%%%%
 
@@ -98,21 +99,16 @@ We build on this previous work, but shift our focus from the evolutionary causes
 Each of our experiments are divided into two phases: in phase one, we precondition sets of founder organisms with differing plastic or non-plastic adaptations;
 in phase two, we examine the subsequent evolution of populations founded with organisms from phase one under specific environmental conditions. % [figure].
 First, we examine the evolutionary histories of phase two populations to test whether adaptive plasticity constrained subsequent genomic and phenotypic changes. 
-Next, we evaluate how adaptive plasticity influences fitness landscape exploration and exploitation by identifying how well populations produced by each type of founder are able to evolve and retain novel adaptive traits.
-Finally, we examine lineages to determine whether adaptive plasticity facilitated the accumulation of cryptic genetic variation that would prove deleterious when the environment changed. %initially unexpressed deleterious genes via cryptic genetic variation by measuring the frequency with which deleterious mutations occur along successful lineages. 
-% [Finally we examine the frequency with which deleterious mutations occur along successful lineages in each type of population in order to understand how and why different types of plasticity allow or prevent].
+Next, we evaluate how adaptive plasticity influences exploration and exploitation by identifying how well populations produced by each type of founder are able to evolve and retain novel adaptive traits.
+Finally, we examine lineages to determine whether adaptive plasticity facilitated the accumulation of cryptic genetic variation that would prove deleterious when the environment changed. 
 
 %%%%%%%%%%%%%%%%%%%%%%
 % - Overview of findings -
 %%%%%%%%%%%%%%%%%%%%%%
 % TODO - incorporate architecture results
 We found that the evolution of adaptive plasticity reduced subsequent rates of evolutionary change in a cyclic environment.
-% We found that adaptively plastic populations evolve more slowly than non-plastic populations in a cyclic environment. 
 The non-plastic populations underwent more frequent selective sweeps and accumulated many more genetic changes over time, as non-plastic populations relied on genetic variation from \textit{de novo} mutations to continuously re-adapt to environmental changes. 
-We found that the evolution of adaptive phenotypic plasticity buffers populations against environmental fluctuations, whereas repeated selective sweeps in non-plastic populations drive the accumulation of deleterious genes and the loss of secondary beneficial traits via deleterious hitchhiking.
+We found that the evolution of adaptive phenotypic plasticity buffers populations against environmental fluctuations, whereas repeated selective sweeps in non-plastic populations drive the accumulation of deleterious mutations and the loss of secondary beneficial traits via deleterious hitchhiking.
 As such, adaptively plastic populations were better able to retain novel traits than their non-plastic counterparts.
 % We additionally found no evidence of delthat the evolution of adaptive phenotypic plasticity 
 % In addition, we did not find evidence that the evolution of adaptive plasticity resulted in increased rates of deleterious mutation accumulation. 
-
-
-% Our results suggest that adaptive phenotypic plasticity can improve the potential for populations exploit novel resources in cyclically changing environments.

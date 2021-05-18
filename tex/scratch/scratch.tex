@@ -652,3 +652,145 @@ We conducted a series of experiments using Avida to investigate how the evolutio
 % While mutational stability for PLASTIC and STATIC lineages is higher than that of NON-PLASTIC lineages, we found that STATIC lineages exhibit a small, but significant, difference in mutational stability relative to PLASTIC lineages [stats]. 
 % Overall, there were few instances of mutations that caused a change in phenotypic profile across all PLASTIC lineages.
 % However, of these mutations, we found that over 80\% (83 out of 102) of changes to phenotypic profiles was cryptic; that is, they occurred in traits that would not have been expressed when the organism was alive but would have been expressed if the environment changed.
+
+% (mutation count and novel task loss, Figures [xx] and [yy]). 
+% PLASTIC lineages also accumulated fewer total genetic changes and lower novel task loss relative to NON-PLASTIC lineages (Figure [XX] and [YY]).
+%that is, NON-PLASTIC lineages accumulated more total genetic changes (Figure \ref{fig:evolutionary-dynamics-magnitude}).
+%Indeed, the higher novel task loss in NON-PLASTIC lineages (Figure \ref{fig:complex-traits-rate}) are a clear outcome of increased susceptibility to deleterious mutations.
+
+% Overall, our results indicate that adaptive plasticity can improve evolution's ability to maintain and refine novel traits, though with the tradeoff of reducing evolutionary exploration of the fitness landscape.
+% Additionally, we found no evidence that adaptive plasticity increased the potential for deleterious instructions to accumulate in genomes.
+% Instead, the genomes of non-plastic organisms that evolved in an identical fluctuating environment accumulated more deleterious instructions than that of the genomes of adaptively plastic organisms. 
+% These dynamics appear to be driven by the stabilizing effect that adaptive plasticity had on population dynamics rather than plasticity's effect on genetic architecture or regulation.
+% Below we discuss the specific implications of the results from each of our three experiments.
+
+% Given that NON-PLASTIC lineages exhibited the lowest mutational stability of each of our three experimental treatments, we sought to determine if mutations in NON-PLASTIC genomes were more likely to produce phenotypic change.
+% Given that NON-PLASTIC lineages exhibited the lowest mutational stability of each of our three experimental treatments, we sought to determine if mutations in NON-PLASTIC genomes more often produced phenotypic changes relative to that of PLASTIC or STATIC genomes; that is, do NON-PLASTIC lineages exhibit low mutational stability because the constituent genomes [...]?
+% The alternative hypothesis is that lower mutational stability in NON-PLASTIC lineages was a result of survivorship bias, as our analysis examined only the most successful lineage.
+% Alternatively, do we observe lower mutational stability in NON-PLASTIC lineages because of survivorship bias, as our analysis examined only successful lineages?
+% That is, mutants with different phenotypes than their parent's phenotype were more often selected for in NON-PLASTIC populations.
+
+% our mutational stability analyses focused on successful lineages, our mutation
+
+%The mutational stability results show that mutations occurred along NON-PLASTIC lineages are more likely to result in phenotypic change, and we next investigated the mutational neighborhood of representative organisms to determine if this difference in stability was due to genetic architecture or [mutants were more often selected for in NON-PLASTIC populations]. 
+%We expect that NON-PLASTIC lineages evolved genetic architectures that increased the fraction of mutations resulting in phenotypic change. 
+%However, Figure \ref{fig:architecture-panel}A shows that mutations on representative genotypes from NON-PLASTIC lineages are \textit{less} likely to change the phenotype than those of STATIC and PLASTIC lineages.
+
+
+%%%%%% old genetic architecture paragraph
+% Next, we performed knockout experiments to investigate how genetic architectures evolved under the three treatment regimes. 
+% Thus far, we have shown that adaptive plasticity slows evolutionary change in fluctuating environments, 
+% but we have not determined if adaptive plasticity also alters how genetic architectures (\textit{i.e.}, how functions are arranged on genomes) change over time. 
+% %Figure \ref{fig:architecture_locus_functionality} shows the function of each locus in a representative genome from each treatment at the end of the experiment, which is also 100 updates after the environment changed from ENV-A to ENV-B in the PLASTIC and NON-PLASTIC treatments. 
+% The PLASTIC and STATIC genomes are capable of performing tasks from both environments, while the NON-PLASTIC genome only performs tasks rewarded in ENV-B.
+% We expect instructions associated with ENV-A tasks to be lost in NON-PLASTIC populations during evolution in ENV-B. 
+% Indeed, we assign a metabolic cost for performing ENV-A tasks in ENV-B, resulting in negative selection on performing ENV-A tasks.
+% Unused ENV-A tasks should also decay with evolution in ENV-B even without the metabolic cost we impose, as the associated instructions are more likely to accumulate mutations under relaxed selection \citep{lahti_relaxed_2009}.  
+% Alternatively, previous work in Avida has shown that tasks punished in one environment can be maintained in the genome as vestigial loci \citep{canino-koning_evolution_2016,canino-koning_fluctuating_2019} where their function is retained and co-opted for use in an alternate environment. 
+% Under this scenario we might expect the NON-PLASTIC genomes to retain the instructions needed for ENV-A tasks during their evolution in ENV-B.
+% Consistent with \cite{canino-koning_evolution_2016,canino-koning_fluctuating_2019}'s work, the NON-PLASTIC genome that we analyzed from ENV-B (Figure \ref{fig:architecture_locus_functionality}) contains substantial vestigial loci for ENV-A's NOT task; we also found that these vestigial sites were exapted for ENV-B's NAND and OR-NOT tasks. 
+% Indeed, visual inspection of locus functions over entire lineages shows that NON-PLASTIC lineages often contain loci that are continuously cycling between coding for ENV-A tasks and ENV-B tasks.
+% Further, NON-PLASTIC lineages exhibited significantly higher architectural volatility than STATIC or PLASTIC lineages (Figure~\ref{fig:architecture_volatility}).
+
+% ----------------- PREVIOUS ARCHITECTURE TEXT -----------------
+% Next, we performed knockout experiments to investigate how genetic architectures evolved under the three treatment regimes. 
+% PLASTIC and STATIC genomes are capable of performing tasks from both environments, while the NON-PLASTIC genome only performs tasks rewarded in ENV-B.
+% Consequently, we expect instructions associated with ENV-A tasks to be lost in NON-PLASTIC populations during evolution in ENV-B. 
+% Indeed, we assign a metabolic cost for performing ENV-A tasks in ENV-B, resulting in negative selection on performing ENV-A tasks.
+% Unused ENV-A tasks should also decay with evolution in ENV-B even without the metabolic cost we impose as the associated instructions are more likely to accumulate deleterious mutations under relaxed selection [citation].  
+% % cryptic genes, introns, 
+% Alternatively,  previous work in Avida has shown that tasks punished in one environment can be maintained in the genome as vestigial loci [CITE] where their function is retained and co-opted for use in an alternate environment. Under this scenario we might expect the NON-PLASTIC genomes to retain ENV-A tasks during their evolution in ENV-B.
+% Figure \ref{fig:architecture_locus_functionality} shows the function of each locus in a representative genome from each treatment. 
+% Contrary to our expectation, the NON-PLASTIC genome that we analyzed from ENV-B contains substantial vestigial loci for the NOT task, which we found evolved the ability to code for NAND and ORNOT tasks rewarded in ENV-B  (Figure \ref{fig:architecture_locus_functionality}). 
+% %Vestigial loci are instructions in the genome that previously coded for a task that has since been disabled by a mutation at another site. @NAG because I have now added a nod to Rose's paper, I do not believe we have to explicitly define what a vestigial loci is. Instead, that sentence focuses on the consequences, i.e. retention and co-option. 
+% % In our example genome, many of the vestigial loci that were previously associated with NOT now actively code for ENV-B tasks, NAND and ORNOT (Figure \ref{fig:architecture_locus_functionality}).
+% %In our example genome, many vestigial loci previously coded for NOT.
+% %However, many of these vestigial loci now actively code for NAND and ORNOT, tasks rewarded in ENV-B (Figure \ref{fig:architecture_locus_functionality}).
+% [expected overlap between tasks].
+% Indeed, visual inspection of locus functions over entire lineages shows that NON-PLASTIC lineages often contain loci that are continuously cycling between coding for ENV-A tasks and ENV-B tasks.
+% Quantitative analyses support [visual inspection].
+% % Looking at these changes quantitatively, 
+% We see that sites associated with tasks are repeatedly [recycled] along NON-PLASTIC lineages (Figure \ref{fig:architecture_locus_change_time}). 
+% %[loci change function significantly] more often in the NON-PLASTIC treatment .
+
+% % a mutation at another locus/site/position rendered the function inactive. 
+% %That is, [the genome previously coded for] NOT, but a mutation at another locus disabled the task while leaving some sites intact. 
+% %the sites that prevously coded for 
+% %While the NON-PLASTIC genome does not perform any tasks from ENV-A, there exists substantial vestigial task machinery for ENV-A tasks NOT and AND.
+
+
+% % [Unlike the representative genomes STATIC and PLASTIC, we find lots of vestigial machinery in NON-PLASTIC genome].
+
+% % [what does this mean?]
+
+% %This supports our hypothesis that NON-PLASTIC populations rely on [genetic re-adaptation] to [keep up with] the changing environment, while the PLASTIC and STATIC treatments have relatively fixed architecture. 
+% %This supports our hypothesis that the fluctuating environment forces NON-PLASTIC populations to rely on mutations to continuously readapt, while organisms that are adaptively plastic change their phenotype according to environmental stimuli and thus do not require genetic changes to readapt. 
+
+% ----------------- END PREVIOUS ARCHITECTURE TEXT -----------------
+
+
+
+
+% ----------------- BEGIN PREVIOUS ARCHITECTURE DISCUSSION TEXT -----------------
+
+%%%% old
+% This provides evidence against our hypothesis that evolved genetic architectures are less stable in non-plastic populations. 
+% One major factor unexplored here is the effect of loci that encode tasks on these metrics. 
+% The fluctuating environment explicitly punishes tasks performed in the wrong environment, and thus we expect (and indeed see) that non-plastic organisms can only perform tasks from one of the environments while a single plastic organism can regulate performance of all six tasks and static organisms always perform every task. 
+% Non-plastic organisms therefore are only performing half the tasks and thus there are fewer sites in the genome that are actively encoding tasks [cite supplement]. 
+% Any mutation to a task-encoding site is very likely to change the phenotype of the organism, so this might explain why we see higher mutational and architectural stability in non-plastic genotypes. 
+% Further, previous work on fluctuating environments in Avida has shown that non-plastic organisms \textit{do} evolve genetic architectures that allow mutations to easily change the phenotype \citep{canino-koning_fluctuating_2019}.
+% In that same work, \cite{canino-koning_fluctuating_2019} discuss the possibility that vestigial sites (\textit{i.e.} those that coded for a task but now do not due a mutation elsewhere) may play a role in how non-plastic populations are readily able to change phenotype. 
+
+
+%%%% older
+% Definitely work in that plasticity also stabilizes the ARCHITECTURE
+% More concretely shift to what we can actually say (that there are more epistatic changes per mutation in non-plastic lineages and plastic/static lineages are more STABLE)
+% Analysis of the evolved genetic architectures further supports our hypothesis that the non-plastic populations relied on mutations to continuously readapt to the fluctuating environment. 
+% % That is, [the particular functions encoded in the genomes of  and where that are changed]
+% %Indeed, while plastic and static populations performed tasks from both environments, non-plastic populations typically performed tasks from only one environment at a time (Figure \ref{fig:architecture_locus_functionality}).
+% This result aligns with previous work, which has shown that, in the absence of plasticity, fluctuating environments steer populations toward genotypes that readily mutate to alternative phenotypes \citep{lalejini_evolutionary_2016, canino-koning_fluctuating_2019}.
+% when mutations occurred in a lineage from the NON-PLASTIC treatments, they were far more likely to epistatically change the phenotypic contributions of other sites than were mutations along the PLASTIC lineages (Figure \ref{fig:architecture_volatility}).
+% \cite{canino-koning_fluctuating_2019} also observed that genomes evolved in harsh cyclic environments often contained vestigial fragments of genetic material adapted to prior environments, which we see in the non-plastic populations.
+% The significantly higher architectural volatility we observe in non-plastic populations (Figure \ref{fig:architecture_volatility}) suggests that non-plastic populations not only evolved to regions of the fitness landscape where individual mutations can have drastic effects, but these mutations were often advantageous and thus fixed in the lineage. 
+% \cite{canino-koning_fluctuating_2019} also observed that genomes evolved in harsh cyclic environments often contained vestigial fragments of genetic material adapted to prior environments, which we see in the non-plastic populations.
+% Furthermore, in the PLASTIC treatments, we see that the genetic architectures were much more stable along a lineage than in the NON-PLASTIC treatments.
+% Specifically, when mutations occurred in a lineage from the NON-PLASTIC treatments, they were far more likely to epistatically change the phenotypic contributions of other sites than were mutations along the PLASTIC lineages.
+% ----------------- END PREVIOUS ARCHITECTURE DISCUSSION TEXT -----------------
+
+% --- BOOKMARK ---
+% -- Non-plastic populations repeatedly re-adapted to environmental change --
+% We did not observe non-plastic generalism as a viable long-term strategy because adaptive phenotypes in ENV-A were maladaptive in ENV-B and vice versa.
+% Non-plastic generalists 
+% We did not observe [non-plastic generalists] and would not expect such a strategy to be viable because adaptive phenotypes in ENV-A were maladaptive in ENV-B and vice versa.
+% Selection against non-plastic generalists may be attributed to competition with phenotypic specialists that have a much larger fitness advantage for performing environment-specific tasks.
+% In fluctuating environments where plasticity was disallowed, we hypothesize that strong selection after each environmental change repeatedly drove the fixation of mutations that align an organism's phenotypic profile to the new conditions.
+
+
+% POTENTIAL TODO: Rewrite this in a "genetic manipulation" framework that covers both knockouts and mutational neighborhoods
+% -- KNOCKOUT EXPERIMENTS --
+% While Avida clearly defines the mechanics of each instruction, the emergent function of an instruction depends on its context within a genome. 
+For an individual organism, we can perform knockout experiments to identify which instructions are responsible for producing a given phenotypic outcome.
+To perform a knockout, we duplicate the organism, replacing a single instruction with an inert ``no-operation'' instruction.
+We then identify any phenotypic changes by contrasting the execution results of the ``knockout'' organism and the original.
+Such changes provide evidence of the role that the original instruction must have played in the genome.
+For example, when an organism performs the NAND task but loses it when an instruction is knocked out, we categorize that instruction as part of the NAND task machinery.
+% @AML: maybe move next sentence to results?
+We use knockout experiments to characterize the role of each instruction in the genomes of every organism along all study lineages, revealing how genetic architectures change over time.
+
+
+
+
+
+%\cite{canino-koning_evolution_2016} investigated how different types of changing environments shape the genetic architectures of evolved organisms, showing that cyclically-changing environments can steer populations toward genotypes that more readily mutate to alternative phenotypes.
+
+
+
+
+%Thus, differences in genetic architecture alone do not account for lower mutational and phenotypic stability observed in the NON-PLASTIC lineages. 
+%That is, do mutations to evolved NON-PLASTIC genomes more often result in phenotypic changes than mutations to evolved PLASTIC or STATIC genomes?
+%Thus the higher levels of mutational volatility along non-plastic lineages are not due to differences in genetic architecture alone.  
+
+% We also conducted knockout experiments to analyze the architectural volatility of lineages and mutants to determine the levels of epistatic interaction in the different genetic architectures.
+% Again, architectural volatility along the representative lineage was higher in the NON-PLASTIC condition, while volatility of the representative genotype was lower in the NON-PLASTIC condition (Figures \ref{fig:architecture-panel}B and \ref{fig:architecture-panel}C). 
+% Thus the higher levels of mutational and architectural volatility along non-plastic lineages are not due to differences in genetic architecture alone.  
