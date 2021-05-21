@@ -3,6 +3,13 @@
 [![Convert to docx](https://github.com/amlalejini/Frontiers-DEVO-Special-Issue---Evolutionary-Consequences-of-Phenotypic-Plasticity/actions/workflows/convert-to-docx.yml/badge.svg)](https://github.com/amlalejini/Frontiers-DEVO-Special-Issue---Evolutionary-Consequences-of-Phenotypic-Plasticity/actions/workflows/convert-to-docx.yml)
 [![Build and deploy to GitHub Pages](https://github.com/amlalejini/Frontiers-DEVO-Special-Issue---Evolutionary-Consequences-of-Phenotypic-Plasticity/actions/workflows/pages.yml/badge.svg)](https://github.com/amlalejini/Frontiers-DEVO-Special-Issue---Evolutionary-Consequences-of-Phenotypic-Plasticity/actions/workflows/pages.yml)
 
+
+## Todo
+
+- Remove (e) from Figure 1
+- Make treatment/condition usage consistent
+- introduction: incorporate stability into introduction
+
 ## Guidelines
 
 ### At a glance
