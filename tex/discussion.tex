@@ -10,27 +10,28 @@ Specifically, we compared lineages of adaptively plastic organisms in fluctuatin
 
 % -- Adaptively plastic populations underwent less evolutionary change than non-plastic populations --
 We found strong evidence that adaptive plasticity slows evolutionary change in fluctuating environments. 
-Adaptively plastic populations experienced fewer selective sweeps and fewer total genetic changes relative to non-plastic populations evolving under identical environmental conditions (Figure \ref{fig:evolutionary-dynamics-magnitude}).
+Adaptively plastic populations experienced fewer coalescence events and fewer total genetic changes relative to non-plastic populations evolving under identical environmental conditions (Figure \ref{fig:evolutionary-dynamics-magnitude}).
 Whereas non-plastic populations relied on \textit{de novo} mutations to adapt to each environmental fluctuation, plastic populations leveraged sensory instructions to regulate task performance. 
 Indeed, in fluctuating environments, selection pressures toggle after each environmental change.
 We hypothesize that in non-plastic populations such toggling would repeatedly drive the fixation of mutations that align an organism's phenotypic profile to the new conditions.
-This hypothesis is supported by the increased frequency of coalescence events in these populations (Figure \ref{fig:evolutionary-dynamics-rate}) as well as increased rates of genetic and phenotypic changes observed along the lineages of non-plastic organisms. 
+This hypothesis is supported by the increased frequency of coalescence events in these populations (Figure \ref{fig:evolutionary-dynamics-rate}a) as well as increased rates of genetic and phenotypic changes observed along the lineages of non-plastic organisms. 
 
 
 %TODO: Make sure we use org vs. genotype consistently with rest of paper
 % - Mutational neighborhood results
 %We expected this was [caused by / due to / the result of] non-plastic populations evolving a bet-hedging strategy where mutations are more likely to modify the phenotypic profile.
 %However, when we repeated the mutational robustness analysis on the mutational neighborhoods of representative genotypes (\textit{i.e.}, all possible one-step mutants), across the three conditions we observed the highest mutational robustness in the non-plastic condition (Figure \ref{fig:neighborhood-mutational-stability}).
-Representative lineages in the non-plastic condition experienced lower realized mutational robustness than plastic and static lineages (Figure \ref{fig:evolutionary-dynamics-rate}b).
-We expected this lower realized mutational robustness was due to non-plastic populations evolving a bet-hedging strategy where mutations are more likely to modify the phenotypic profile. 
-However, when we switched from measuring the realized mutational robustness of representative lineages to measuring the mutational robustness of representative genotypes (i.e., what fraction of one-step mutants change the phenotypic profile), we observed that non-plastic genotypes exhibited the highest mutational robustness of all three conditions (Figure \ref{fig:mutational-robustness}).
+Representative lineages in the non-plastic treatment experienced lower realized mutational robustness than plastic and static lineages (Figure \ref{fig:evolutionary-dynamics-rate}b).
+We reasoned that this lower realized mutational robustness was due to non-plastic populations evolving a bet-hedging strategy where mutations are more likely to modify the phenotypic profile. 
+However, when we switched from measuring the realized mutational robustness of representative lineages to measuring the mutational robustness of representative genotypes (i.e., what fraction of one-step mutants change the phenotypic profile), we observed that non-plastic genotypes exhibited the highest mutational robustness of all three treatments (Figure \ref{fig:mutational-robustness}).
 This result runs contrary to both our expectations and the results of other fluctuating environment studies in Avida \citep{canino-koning_fluctuating_2019}.
 \cite{canino-koning_fluctuating_2019} found that mutational robustness is negatively correlated with the number of task-encoding sites in the genome.
 In our work, most plastic and static genotypes encode all six base tasks, while most non-plastic genotypes only encode tasks from one environment; this results in fewer task-encoding sites and thus may increase mutational robustness in non-plastic genotypes. %relative to genotypes from other treatments. 
-Regardless of the cause, this higher mutational robustness in non-plastic organisms indicates that bet-hedging is not driving the  lower realized mutational robustness observed in non-plastic lineages.
+Regardless of the cause, this higher mutational robustness in non-plastic organisms indicates that bet-hedging is not driving the lower realized mutational robustness observed in non-plastic lineages.
 Thus, we expect the lower realized mutational robustness in non-plastic lineages to be driven by survivorship bias. 
-Non-plastic lineages must rely on mutations to adapt to environmental changes. 
-These adaptive mutations are highly beneficial and are thus selected, decreasing the realized mutational robustness of the lineage. 
+%Because non-plastic lineages must rely on mutations to adapt to environmental changes, these adaptive mutations are highly beneficial and are thus selected. 
+%This decreases the realized mutational robustness of the lineage even though
+Because non-plastic lineages must rely on mutations to adapt to environmental changes, phenotype-altering mutations are often highly advantageous, and their selection decreases the realized mutational robustness of the lineage. 
 %We expect this result to thus be due to survivorship bias, as non-plastic lineages rely on mutations to adapt to their environment, and thus the phenotype-changing mutations that do occur are highly adaptive and thus selected. 
 %Future work is needed to determine if there are other contributing factors. 
 
@@ -57,11 +58,12 @@ Indeed, both theoretical and empirical studies have shown that adaptive plastici
 \subsection{The evolution and maintenance of novel tasks}
 
 % -- Exploration + Exploitation --
-In fluctuating environments, non-plastic populations explored a larger area of the fitness landscape than adaptively plastic populations, as measured by novel task discovery (Figure \ref{fig:complex-traits-magnitude}b).
+In fluctuating environments, non-plastic populations explored a larger area of the fitness landscape than adaptively plastic populations (Figure \ref{fig:complex-traits-magnitude}b).
 However, adaptively plastic populations better exploited the fitness landscape, retaining a greater number of novel tasks than non-plastic populations evolving under identical environmental conditions (Figure \ref{fig:complex-traits-magnitude}a).
 In our experiment, novel tasks were less important to survival than the fluctuating base tasks.
 In non-plastic populations, when a mutation changes a base task to better align with current environmental conditions, its benefit will often outweigh the cost of losing one or more novel tasks. 
-Indeed, we found that mutations associated with novel task loss along representative lineages from non-plastic populations co-occurred with phenotypic changes that helped offspring adapt to current environmental conditions 97\% of the time.
+%Indeed, we found that mutations associated with novel task loss along representative lineages from non-plastic populations co-occurred with phenotypic changes that helped offspring adapt to current environmental conditions 97\% of the time.
+Indeed, we found that along non-plastic representative lineages, 97\% of the mutations associated with novel task loss co-occurred with phenotypic changes that helped offspring adapt to current environmental conditions. 
 
 % -- Changing environments promote evolutionary change --
 Previous studies have shown that transitory environmental changes can improve overall fitness landscape exploration in evolving populations of non-plastic digital organisms \citep{nahum_improved_2017}.
@@ -77,18 +79,18 @@ The stability that we observe may also lend some support to the hypothesis that 
 Our data do not necessarily provide evidence for or against the genes as followers hypothesis.
 The genes as followers hypothesis focuses on contexts where plastic populations experience novel or abnormally stressful environmental change.
 However, in our system, environmental changes were cyclic (not novel), and changes were not \textit{abnormally} stressful.
-Further, the introduction of novel tasks during the second phase of the experiment merely added additional static opportunities for fitness improvement.
+Further, the introduction of novel tasks during the second phase of the experiment merely added static opportunities for fitness improvement.
 This addition did not change the meaning of existing environmental cues, nor did it require those cues to be used in new ways. 
  
 
 % \vspace{0.25cm}
-\subsection{The accumulation of deleterious traits}
+\subsection{The accumulation of deleterious alleles}
 
 % -- Overview of results --
 %   - More accumulation in non-plastic
 %   - no evidence for cryptic variation housing poison
 %   - plastic ~~ static
-We found that non-plastic lineages that evolved in a fluctuating environment exhibited both larger totals and higher rates of poisonous task acquisition than that of adaptively plastic lineages (Figure \ref{fig:deleterious-hitchhiking}).
+We found that non-plastic lineages that evolved in a fluctuating environment exhibited both greater totals and higher rates of poisonous task acquisition than that of adaptively plastic lineages (Figure \ref{fig:deleterious-hitchhiking}).
 In asexual populations without horizontal gene transfer, all co-occurring mutations are linked.
 As such, deleterious mutations linked with a stronger beneficial mutation (\textit{i.e.}, a driver) can sometimes ``hitchhike'' to fixation \citep{smith_hitch-hiking_1974,van_den_bergh_experimental_2018,buskirk_hitchhiking_2017}.
 Natural selection normally prevents deleterious mutations from reaching high frequencies, as such mutants are outcompeted.
@@ -123,7 +125,7 @@ However, the data presented here are limited to the evolution of adaptively plas
 Future work might explore the evolutionary consequences of maladaptive and non-adaptive phenotypic plasticity (\textit{e.g.}, \citealt{leroi_temperature_1994}), which are known to bias evolutionary outcomes \citep{ghalambor_non-adaptive_2015}. 
 % -- Environmental change --
 Additionally in our experiments, sensory instructions perfectly differentiated between ENV-A and ENV-B, and environmental fluctuations never exposed populations to entirely new conditions.
-These parameters have been shown to influence evolutionary outcomes \citep{li_digital_2004,boyer_adaptation_2021} , which if relaxed in context of further digital evolution experiments, may yield additional insights.
+These parameters have been shown to influence evolutionary outcomes \citep{li_digital_2004,boyer_adaptation_2021}, which if relaxed in context of further digital evolution experiments, may yield additional insights.
 
 % - limitation: focus on lineages -
 %   - extend to complete evolutionary histories

@@ -77,10 +77,10 @@ and (3) a \textbf{STATIC} control where organisms evolve in a constant environme
 Each experiment was divided into two phases that each lasted for 200,000 updates\footnote{
     One update in Avida is the amount of time required for the average organism to execute 30 instructions. 
     See \citep{ofria_avida:_2009} for more details.
-} of evolution (Figure \ref{fig:experimental-design}), which is approximately 30,000 to 40,000 generations.
+} of evolution (Figure \ref{fig:experimental-design}), which is equivalent to approximately 30,000 to 40,000 generations.
 In phase one of each experiment, we preconditioned populations to their treatment-specific conditions.
 In phase two, we founded new populations with the evolved organisms from phase one and examined their subsequent evolution under given combinations of treatment and experimental conditions.
-During phase two, we tracked each population's evolutionary history as well as saving the full final population.
+During phase two, we tracked and saved each population's evolutionary history as well as saving the full final population.
 Phase one was for preconditioning only; all comparisons between treatments were performed on phase two data.
 
 \subsubsection{Environments}
@@ -97,7 +97,7 @@ A rewarded task performed by an organism doubles their metabolic rate, allowing 
 A punished task halves an organism's metabolic rate. 
 
 % -- Treatment-specific environment details --
-In both the PLASTIC and NON-PLASTIC conditions, the environment cycles between equal-length periods of ENV-A and ENV-B.
+In both the PLASTIC and NON-PLASTIC treatments, the environment cycles between equal-length periods of ENV-A and ENV-B.
 Each of these periods persist for 100 updates (approximately 15 to 20 generations).
 Thus, populations experience a total of 1,000 full periods of ENV-A interlaced with 1,000 full periods of ENV-B during each experimental phase.
 
@@ -110,7 +110,7 @@ By using sensory information in combination with execution flow-control instruct
 \label{sec:methods:experiment:phase-one}
 
 For each treatment, we founded 100 independent populations from a common ancestral strain capable only of self-replication.
-At the end of phase one, we identified the most abundant (\textit{i.e.}, dominant) genotype and extracted an organism with that genotype from each replicate population to found a new population for phase two.
+At the end of phase one, we identified the most abundant (\textit{i.e.}, dominant) genotype and sampled an organism with that genotype from each replicate population to found a new population for phase two.
 
 For the PLASTIC treatment, we measure plasticity by independently testing a given genotype in each of ENV-A and ENV-B.
 We discard phase one populations if the dominant genotype does not exhibit optimal plasticity.
@@ -183,7 +183,8 @@ and (2) poisonous task acquisition count.
 % - How we extracted representative lineages -
 For each of our experiments, we tracked and analyzed the phylogenetic histories of evolving populations during phase two. 
 For each replicate, we identified an organism with the most abundant genotype in the final evolved population, and we used it as a representative organism for further analysis.
-We then isolated the lineage from the founding organism to the representative organism, which we used as the representative lineage for further analysis.
+% We then isolated the lineage from the founding organism to the representative organism, which we used as the representative lineage for further analysis.
+We used the lineage from the founding organism to the representative organism (\textit{i.e.}, the representative lineage) for further analysis.
 We manually inspected evolved phylogenies and found no evidence that any of our experimental treatments supported long-term coexistence. 
 As such, each of the representative lineages reflect the majority of evolutionary history from a given population at the end of our experiment.
 
@@ -199,7 +200,7 @@ For example, an organism that expresses NOT in ENV-A and NAND in ENV-B has a dis
 % How do we produce mutants for analyses?
 While most analyses employed here are retrospective metrics applied to lineages, digital evolution allows precise manipulations on individual organisms and genomes. 
 Mutational robustness uses this technique when looking at the possible mutations on a representative genotype. 
-Genomes in Avida are linear sequences of instructions, and as such possible mutations can be simulated by swapping these instructions. 
+Genomes in Avida are linear sequences of instructions, and as such possible mutations can be simulated by substituting other instructions at the desired site.%swapping these instructions. 
 Indeed, the mutational robustness of a genotype examines all one-step mutations (\textit{i.e.}, each mutation where exactly one instruction is substituted). 
 This allows us the disentangle whether results of the lineage metrics are a consequence of evolved genetic architectures or purely the results of selection. 
 
@@ -227,5 +228,5 @@ Hmisc \citep{R-Hmisc},
 fmsb \citep{R-fmsb}, 
 and boot \citep{R-boot}.
 We used R markdown \citep{rmarkdown} and bookdown \citep{R-bookdown} to generate web-enabled supplemental material.
-All of the source code for our experiments and analyses, including guides for replication and configuration files, can be found in our supplemental material, which is hosted on \href{https://github.com/amlalejini/evolutionary-consequences-of-plasticity}{GitHub} \citep{supplemental_material}.
+All of the source code for our experiments and analyses, including configuration files and guides for replication, can be found in our supplemental material, which is hosted on \href{https://github.com/amlalejini/evolutionary-consequences-of-plasticity}{GitHub} \citep{supplemental_material}.
 Additionally, our experimental data is available on the Open Science Framework at \url{https://osf.io/sav2c/} \citep{osf_data}.
