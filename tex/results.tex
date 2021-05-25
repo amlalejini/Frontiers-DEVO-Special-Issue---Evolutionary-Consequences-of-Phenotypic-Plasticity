@@ -79,7 +79,7 @@ A coalescence event indicates a selective sweep, which is a hallmark of adaptive
 Realized mutational robustness measures the frequency that mutations cause phenotypic changes along a lineage.
 We expect that static conditions should favor fit lineages with high realized mutational robustness that no longer undergo rapid adaptive change and hence do not trigger frequent coalescence events.
 Under fluctuating conditions, however, lineages must be composed of plastic organisms if they are to maintain both high fitness and realized mutational robustness.
-Without plasticity, we expect fluctuating conditions to produce lineages with low realized mutational robustness and frequent coalescence events as populations must continually acquire and fix mutations to readpt to the environment.  
+Without plasticity, we expect fluctuating conditions to produce lineages with low realized mutational robustness and frequent coalescence events as populations must continually acquire and fix mutations to readapt to the environment.  
 
 \input{tex/figures/evolutionary-change-pace-panel}
 
@@ -118,12 +118,10 @@ We found that mutations to representative genotypes on NON-PLASTIC lineages are 
 These data provide evidence against NON-PLASTIC lineages engaging in a mutation-driven bet-hedging strategy, and instead, are consistent with the hypothesis that lower realized mutational robustness in the NON-PLASTIC treatment was due to survivorship bias.
 % @AML: Maybe one more sentence elaborating on implication of survivorship bias?
 
-
-
 % -- in general, PLASTIC and STATIC more similar than NON-PLASTIC --
 In general, adaptive plasticity stabilized PLASTIC-treatment populations against environmental fluctuations, and their evolutionary dynamics more closely resembled those of populations evolving in a static environment.
 We observed no significant difference in the number and frequency of coalescence events in PLASTIC and STATIC populations.
-We did, however, observe small, but statistically significant, differences in each of the following metrics: elapsed generations, mutation counts, mutational robustness, realized mutational robustness, and architectural volatility between PLASTIC and STATIC populations. % (see supplemental material \citealt{supplemental_material}).
+We did, however, observe small, but statistically significant, differences in each of the following metrics: elapsed generations, mutation counts, mutational robustness, and realized mutational robustness between PLASTIC and STATIC populations. 
 
 \vspace{0.5cm}
 \subsection{Adaptively plastic populations retain more novel tasks than non-plastic populations in fluctuating environments}
@@ -167,7 +165,7 @@ We found that both PLASTIC and STATIC populations had significantly higher final
 The final novel task count in PLASTIC and STATIC lineages could be higher than that of the NON-PLASTIC lineages for several non-mutually exclusive reasons. 
 One possibility is that PLASTIC and STATIC lineages could be exploring a larger area of the fitness landscape when compared to NON-PLASTIC lineages. 
 Another possibility is that the propensity of the NON-PLASTIC lineages to maintain novel traits could be significantly lower than PLASTIC or STATIC lineages. 
-When we looked at the total sum of novel tasks discovered by each of the PLASTIC, STATIC, and NON-PLASTIC lineages, we found that the NON-PLASTIC lineages explored a significantly larger area of the fitness landscape (Figure~\ref{fig:complex-traits-magnitude}b).
+When we looked at the total sum of novel tasks discovered by each of the PLASTIC, STATIC, and NON-PLASTIC lineages, we found that NON-PLASTIC lineages generally explored a larger area of the fitness landscape (Figure~\ref{fig:complex-traits-magnitude}b).
 Although the NON-PLASTIC lineages discovered more novel tasks, those lineages also exhibited significantly higher novel task loss when compared to PLASTIC and STATIC lineages (Figure~\ref{fig:complex-traits-magnitude}c). 
 
 \input{tex/figures/novel-tasks-rate-panel}
@@ -202,12 +200,11 @@ As such, the losses of novel tasks in NON-PLASTIC lineages appear to be primaril
 %%%%%%
 
 Phenotypic plasticity allows for genetic variation to accumulate in genomic regions that are unexpressed, which could lead to the fixation of deleterious instructions in PLASTIC populations.
-However, in NON-PLASTIC lineages we observe a higher rate of novel task loss, indicating that they may be more susceptible to deleterious mutations (Figure \ref{fig:complex-traits-rate}b).
+However, in NON-PLASTIC lineages, we observe a higher rate of novel task loss, indicating that they may be more susceptible to deleterious mutations (Figure \ref{fig:complex-traits-rate}b).
 
 Therefore, in experiment phase 2C, we tested whether adaptive phenotypic plasticity can increase the incidence of deleterious task performance. 
 Specifically, we added an instruction that triggered a ``poisonous'' task and measured the number of times it was executed.
 Each execution of the  \code{poison} instruction reduces an organism's fitness by 10\%. 
-
 At the beginning of phase 2C, the \code{poison} instruction is not present in the population, as it was not part of the instruction set during phase one of evolution.
 Accordingly, if a \code{poison} instruction fixes in a population, it must be the result of evolutionary dynamics during phase 2C, including cryptic variation or hitchhiking. 
 

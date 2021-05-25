@@ -23,11 +23,11 @@ This hypothesis is supported by the increased frequency of coalescence events in
 %However, when we repeated the mutational robustness analysis on the mutational neighborhoods of representative genotypes (\textit{i.e.}, all possible one-step mutants), across the three conditions we observed the highest mutational robustness in the non-plastic condition (Figure \ref{fig:neighborhood-mutational-stability}).
 Representative lineages in the non-plastic treatment experienced lower realized mutational robustness than plastic and static lineages (Figure \ref{fig:evolutionary-dynamics-rate}b).
 We reasoned that this lower realized mutational robustness was due to non-plastic populations evolving a bet-hedging strategy where mutations are more likely to modify the phenotypic profile. 
-However, when we switched from measuring the realized mutational robustness of representative lineages to measuring the mutational robustness of representative genotypes (i.e., what fraction of one-step mutants change the phenotypic profile), we observed that non-plastic genotypes exhibited the highest mutational robustness of all three treatments (Figure \ref{fig:mutational-robustness}).
+However, when we switched from measuring the realized mutational robustness of representative lineages to measuring the mutational robustness of representative genotypes (\textit{i.e.}, what fraction of one-step mutants change the phenotypic profile), we observed that non-plastic genotypes exhibited the highest mutational robustness of all three treatments (Figure \ref{fig:mutational-robustness}).
 This result runs contrary to both our expectations and the results of other fluctuating environment studies in Avida \citep{canino-koning_fluctuating_2019}.
 \cite{canino-koning_fluctuating_2019} found that mutational robustness is negatively correlated with the number of task-encoding sites in the genome.
-In our work, most plastic and static genotypes encode all six base tasks, while most non-plastic genotypes only encode tasks from one environment; this results in fewer task-encoding sites and thus may increase mutational robustness in non-plastic genotypes. %relative to genotypes from other treatments. 
-Regardless of the cause, this higher mutational robustness in non-plastic organisms indicates that bet-hedging is not driving the lower realized mutational robustness observed in non-plastic lineages.
+In our work, most plastic and static genotypes encode all six base tasks, while most non-plastic genotypes only encode tasks from one environment; this results in fewer task-encoding sites, which may increase mutational robustness in non-plastic genotypes (relative to plastic and static genotypes). %relative to genotypes from other treatments. 
+Regardless of the cause, this higher mutational robustness in non-plastic organisms indicates that bet-hedging is not driving the low realized mutational robustness observed in non-plastic lineages.
 Thus, we expect the lower realized mutational robustness in non-plastic lineages to be driven by survivorship bias. 
 %Because non-plastic lineages must rely on mutations to adapt to environmental changes, these adaptive mutations are highly beneficial and are thus selected. 
 %This decreases the realized mutational robustness of the lineage even though
@@ -78,7 +78,7 @@ The stability that we observe may also lend some support to the hypothesis that 
 % -- relevance to genes as followers hypothesis --.
 Our data do not necessarily provide evidence for or against the genes as followers hypothesis.
 The genes as followers hypothesis focuses on contexts where plastic populations experience novel or abnormally stressful environmental change.
-However, in our system, environmental changes were cyclic (not novel), and changes were not \textit{abnormally} stressful.
+However, in our system, environmental changes were cyclic (not novel), and no single environmental change was \textit{abnormally} stressful.
 Further, the introduction of novel tasks during the second phase of the experiment merely added static opportunities for fitness improvement.
 This addition did not change the meaning of existing environmental cues, nor did it require those cues to be used in new ways. 
  
@@ -121,11 +121,11 @@ Additionally, plastic organisms in Avida usually adjust their phenotype by toggl
 
 % -- Adaptive vs non-adaptive plasticity --
 Our work lays the groundwork for using digital evolution experiments to investigate the evolutionary consequences of phenotypic plasticity in a range of contexts.
-However, the data presented here are limited to the evolution of adaptively plastic populations.
+However, the data presented here are limited to the evolution of \textit{adaptively} plastic populations.
 Future work might explore the evolutionary consequences of maladaptive and non-adaptive phenotypic plasticity (\textit{e.g.}, \citealt{leroi_temperature_1994}), which are known to bias evolutionary outcomes \citep{ghalambor_non-adaptive_2015}. 
 % -- Environmental change --
 Additionally in our experiments, sensory instructions perfectly differentiated between ENV-A and ENV-B, and environmental fluctuations never exposed populations to entirely new conditions.
-These parameters have been shown to influence evolutionary outcomes \citep{li_digital_2004,boyer_adaptation_2021}, which if relaxed in context of further digital evolution experiments, may yield additional insights.
+These parameters have been shown to influence evolutionary outcomes \citep{li_digital_2004,boyer_adaptation_2021}, which if relaxed in the context of further digital evolution experiments, may yield additional insights.
 
 % - limitation: focus on lineages -
 %   - extend to complete evolutionary histories
@@ -141,7 +141,7 @@ Digital organisms in Avida regulate responses to environmental cues using a comb
 The \code{if} instructions conditionally execute a single instruction depending on previous computations and the state of memory. 
 As such, plastic organisms in Avida typically regulate phenotypes by toggling the expression of a small number of key instructions as opposed to regulating cohorts of instructions under the control of a single regulatory sequence \citep{supplemental_material}. 
 This bias may limit the accumulation of hidden genetic variation in Avida genomes. 
-However, as there are many model biological organisms, there are many model digital organisms that have different regulatory mechanisms that should be used to test the generality of our results.
+However, as there are many model biological organisms, there are many model digital organisms that have different regulatory mechanisms (\textit{e.g.}, \citealt{lalejini_evolving_2018}) that should be used to test the generality of our results.
 
 % [A broad sentence to wrap everything up?]
 % e.g., A sentence about how we hope this work inspires more use of digital evolution as an experimental tool/expand experimental repertoire of evolutionary biologists studying phenotypic plasticity?

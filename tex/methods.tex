@@ -157,8 +157,7 @@ We did not limit the number of times that an organism could perform the poisonou
 
 We tracked the number of times each organism along the dominant lineage performed the poisonous task.
 Specifically, we used two metrics (each described in Table~\ref{tab:metrics-definitions}):
-(1) final poisonous task count,
-and (2) poisonous task acquisition count.
+(1) final poisonous task count and (2) poisonous task acquisition count.
 
 % \vspace{5mm}
 \subsection{Experimental analyses}
@@ -182,9 +181,9 @@ and (2) poisonous task acquisition count.
 
 % - How we extracted representative lineages -
 For each of our experiments, we tracked and analyzed the phylogenetic histories of evolving populations during phase two. 
-For each replicate, we identified an organism with the most abundant genotype in the final evolved population, and we used it as a representative organism for further analysis.
+For each replicate, we identified an organism with the most abundant genotype in the final evolved population, and we used it as a \textit{representative organism} for further analysis.
 % We then isolated the lineage from the founding organism to the representative organism, which we used as the representative lineage for further analysis.
-We used the lineage from the founding organism to the representative organism (\textit{i.e.}, the representative lineage) for further analysis.
+We used the lineage from the founding organism to the representative organism as the \textit{representative lineage} for further analysis.
 We manually inspected evolved phylogenies and found no evidence that any of our experimental treatments supported long-term coexistence. 
 As such, each of the representative lineages reflect the majority of evolutionary history from a given population at the end of our experiment.
 
@@ -200,9 +199,10 @@ For example, an organism that expresses NOT in ENV-A and NAND in ENV-B has a dis
 % How do we produce mutants for analyses?
 While most analyses employed here are retrospective metrics applied to lineages, digital evolution allows precise manipulations on individual organisms and genomes. 
 Mutational robustness uses this technique when looking at the possible mutations on a representative genotype. 
-Genomes in Avida are linear sequences of instructions, and as such possible mutations can be simulated by substituting other instructions at the desired site.%swapping these instructions. 
+Genomes in Avida are linear sequences of instructions, and as such possible mutations can be simulated by substituting other instructions at the desired site. 
 Indeed, the mutational robustness of a genotype examines all one-step mutations (\textit{i.e.}, each mutation where exactly one instruction is substituted). 
-This allows us the disentangle whether results of the lineage metrics are a consequence of evolved genetic architectures or purely the results of selection. 
+This allows us the disentangle whether results of the lineage metrics are a consequence of evolved genetic architectures or otherwise. 
+%purely the results of selection. 
 
 
 \subsection{Statistical analyses}
