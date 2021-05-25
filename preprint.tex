@@ -1,0 +1,115 @@
+
+\documentclass[utf8]{article}
+
+\usepackage{inputenc,crop,amsmath,array,color,amssymb,flushend,stfloats,amsthm,chngpage,times,datetime,parskip,epstopdf}
+\usepackage[usenames,dvipsnames,table]{xcolor}
+\usepackage[labelsep=quad,indention=10pt]{caption}
+\usepackage[labelfont=bf,list=true]{subcaption}
+\usepackage{url,hyperref,lineno,microtype}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[english]{babel}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx}
+\usepackage{natbib}
+\usepackage[margin=1in]{geometry}
+% \usepackage{colortbl}
+
+\linenumbers
+
+% Leave a blank line between paragraphs instead of using \\
+
+% \def\keyFont{\fontsize{8}{11}\helveticabold }
+% \def\firstAuthorLast{Lalejini {et~al.}} %use et al only if is more than 1 author
+% \def\Authors{Alexander Lalejini\,$^{1,2,3,*}$, Austin J. Ferguson\,$^{1,2,3}$, Nkrumah A. Grant\,$^{1,4}$, and Charles Ofria\,$^{1,2,3}$}
+
+% \def\Address{
+% $^{1}$BEACON Center for the Study of Evolution in Action, Michigan State University, East Lansing, MI, USA \\
+% $^{2}$Ecology, Evolution, and Behavior Program, Michigan State University, East Lansing, MI, USA \\
+% $^{3}$Department of Computer Science and Engineering, Michigan State University, East Lansing, MI, USA \\
+% $^{4}$Department of Biological Sciences, University of Idaho, Moscow, ID, USA
+% }
+
+% \def\corrAuthor{Alexander Lalejini}
+% \def\corrEmail{amlalejini@gmail.com}
+
+
+\begin{document}
+\onecolumn
+% \firstpage{1}
+
+% \title[Adaptive plasticity stabilizes evolution]{Adaptive phenotypic plasticity stabilizes evolution in fluctuating environments}
+
+% \author[\firstAuthorLast ]{\Authors}
+% \address{}
+% \correspondance{}
+
+% \extraAuth{}
+
+
+% \maketitle
+
+\input{tex/variables}
+
+\begin{center}
+  \begin{Large}
+  \textbf{Adaptive phenotypic plasticity stabilizes evolution in fluctuating environments}
+  \end{Large}
+
+  % \vspace{0.4cm}
+  % \large
+  % Thesis Subtitle
+  % \normalfont
+  Alexander Lalejini\,$^{1,2,3,*}$, Austin J. Ferguson\,$^{1,2,3}$, Nkrumah A. Grant\,$^{1,4}$, and Charles Ofria\,$^{1,2,3}$ \\
+
+\end{center}
+
+  $^{1}$BEACON Center for the Study of Evolution in Action, Michigan State University, East Lansing, MI, USA \\
+  $^{2}$Ecology, Evolution, and Behavior Program, Michigan State University, East Lansing, MI, USA \\
+  $^{3}$Department of Computer Science and Engineering, Michigan State University, East Lansing, MI, USA \\
+  $^{4}$Department of Biological Sciences, University of Idaho, Moscow, ID, USA \\
+  $^{*}$Corresponding author \\
+
+  \textbf{Keywords:} phenotypic plasticity, experimental evolution, digital evolution, changing environments, Avida
+
+  % \vspace{0.4cm}
+  % \textbf{Author Name}
+
+  % \vspace{0.9cm}
+  % \textbf{Abstract}
+
+
+\input{tex/abstract}
+
+% \tiny
+%  \keyFont{ \section{Keywords:} phenotypic plasticity, experimental evolution, digital evolution, changing environments, Avida}
+
+\begin{raggedbottom}
+
+\input{tex/introduction}
+
+\input{tex/methods}
+
+\input{tex/results}
+
+\input{tex/discussion}
+
+\end{raggedbottom}
+
+\input{tex/supplemental-material}
+
+\input{tex/data-availability}
+
+\input{tex/author-contributions}
+
+\input{tex/funding}
+
+\input{tex/conflict-of-interest}
+
+\input{tex/acknowledgements}
+
+\bibliographystyle{frontiersinSCNS_ENG_HUMS}
+\bibliography{references,software,ferguson}
+
+\end{document}
