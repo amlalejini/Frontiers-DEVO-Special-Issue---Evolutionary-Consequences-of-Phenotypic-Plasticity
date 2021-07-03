@@ -15,7 +15,7 @@ jobs:
       - name: create output directory, copy media over
         run: |
           mkdir output
-          cp -R media output/
+          cp media-*.pdf output/
       - name: convert latex to markdown
         uses: docker://pandoc/latex:2.11
         with:
