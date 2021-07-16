@@ -26,28 +26,16 @@
 
 % Leave a blank line between paragraphs instead of using \\
 
-% - Alexander Lalejini - MSU, CSE, BEACON, EEB
-% - Austin J. Ferguson - CSE, BEACON, EEB
-% - Nkrumah A. Grant - Marx Lab, University of Idaho, Department of Biological Sciences, Moscow, ID, USA, BEACON
-% - Charles Ofria - CSE, BEACON, EEB
-
 \def\keyFont{\fontsize{8}{11}\helveticabold }
 \def\firstAuthorLast{Lalejini {et~al.}} %use et al only if is more than 1 author
 \def\Authors{Alexander Lalejini\,$^{1,2,3,*}$, Austin J. Ferguson\,$^{1,2,3}$, Nkrumah A. Grant\,$^{1,4}$, and Charles Ofria\,$^{1,2,3}$}
-% Affiliations should be keyed to the author's name with superscript numbers and be listed as follows: Laboratory, Institute, Department, Organization, City, State abbreviation (USA, Canada, Australia), and Country (without detailed address information such as city zip codes or street names).
-% If one of the authors has a change of address, list the new address below the correspondence details using a superscript symbol and use the same symbol to indicate the author in the author list.
-% \def\Address{$^{1}$Laboratory X, Institute X, Department X, Organization X, City X , State XX (only USA, Canada and Australia), Country X \\
-% $^{2}$Laboratory X, Institute X, Department X, Organization X, City X , State XX (only USA, Canada and Australia), Country X  }
 \def\Address{
 $^{1}$BEACON Center for the Study of Evolution in Action, Michigan State University, East Lansing, MI, USA \\
 $^{2}$Ecology, Evolution, and Behavior Program, Michigan State University, East Lansing, MI, USA \\
 $^{3}$Department of Computer Science and Engineering, Michigan State University, East Lansing, MI, USA \\
 $^{4}$Department of Biological Sciences, University of Idaho, Moscow, ID, USA
-% $^{X}$Laboratory X, Institute X, Department X, Organization X, City X , State XX (only USA, Canada and Australia), Country X \\
-% $^{Y}$Laboratory X, Institute X, Department X, Organization X, City X , State XX (only USA, Canada and Australia), Country X
 }
-% The Corresponding Author should be marked with an asterisk
-% Provide the exact contact address (this time including street name and city zip code) and email of the corresponding author
+
 \def\corrAuthor{Alexander Lalejini}
 
 \def\corrEmail{amlalejini@gmail.com}
@@ -57,14 +45,6 @@ $^{4}$Department of Biological Sciences, University of Idaho, Moscow, ID, USA
 \onecolumn
 \firstpage{1}
 
-% ============= TITLE IDEAS =============
-% - Adaptive phenotypic plasticity stabilizes populations in fluctuating environments
-% - The evolution of adaptive phenotypic plasticity stabilizes populations in fluctuating environments
-% - Phenotypic plasticity can promote the evolution of complex features in fluctuating environments
-% - Adaptive plasticity buffers population against fluctuations, promoting novel trait evolution/retention
-% - Phenotypic plasticity can simultaneously slow rate of evolutionary change and promote evo of complex features
-% - Phenotypic plasticity can promote the evolution and maintenance of complex features in fluctuating environments
-% - Adaptive plasticity stabilizes populations in fluctuating environments and constrains evolutionary outcomes
 \title[Adaptive plasticity stabilizes evolution]{Adaptive phenotypic plasticity stabilizes evolution in fluctuating environments}
 
 \author[\firstAuthorLast ]{\Authors} %This field will be automatically populated
@@ -83,16 +63,12 @@ $^{4}$Department of Biological Sciences, University of Idaho, Moscow, ID, USA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\code}{\texttt}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Evolutionary change rate experiment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % data from experiment - 2021-02-08
 \newcommand{\evolutionaryChangeRateReplicates}{100}
-
 \newcommand{\evolutionaryChangeRatePlasticReps}{42}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Novel traits experiment
@@ -141,63 +117,67 @@ Proportion of mutations (from the set of all possible one-step mutations) that d
 }
 
 \newcommand{\TaskPerformanceMetricName}{
-Final novel task count
+Final novel function count
 }
 \newcommand{\TaskPerformanceMetricDesc}{
-Count of unique novel tasks performed by the representative organism in a final population from experiment \hyperref[sec:methods:exp:novel-task-evolution]{phase 2B}.
+Count of unique novel functions performed by the representative organism in a final population from experiment \hyperref[sec:methods:exp:novel-task-evolution]{phase 2B}.
 This metric can range from 0 to 71 and measures how well the fitness landscape was exploited  at a given point in time.
 }
 
 \newcommand{\TaskDiscoveryMetricName}{
-Novel task discovery
+Novel function discovery
 }
 \newcommand{\TaskDiscoveryMetricDesc}{
-Number of unique novel tasks ever performed along a given lineage in experimental \hyperref[sec:methods:exp:novel-task-evolution]{phase 2B}, even if a task is later lost.
+Number of unique novel functions ever performed along a given lineage in experimental \hyperref[sec:methods:exp:novel-task-evolution]{phase 2B}, even if a function is later lost.
 This metric can range from 0 to 71 and measures a given lineage's level of exploration of the fitness landscape.
 }
 
 \newcommand{\TaskLossMetricName}{
-Novel task loss
+Novel function loss
 }
 \newcommand{\TaskLossMetricDesc}{
-Number of instances along a given lineage from experimental \hyperref[sec:methods:exp:novel-task-evolution]{phase 2B} where a novel task is performed by a parent but not its offspring.
+Number of instances along a given lineage from experimental \hyperref[sec:methods:exp:novel-task-evolution]{phase 2B} where a novel function is performed by a parent but not its offspring.
 This metric measures how often a given lineage fails to retain evolved traits over time.
 }
 
 \newcommand{\FinalPoisonMetricName}{
-Final poisonous task count
+Final deleterious function count
 }
 \newcommand{\FinalPoisonMetricDesc}{
-Number of times the poisonous task is performed by the representative organism from a final population from experiment \hyperref[sec:methods:exp:deleterious-instruction-accumulation]{phase 2C}.
+Number of times the deleterious function is performed by the representative organism from a final population from experiment \hyperref[sec:methods:exp:deleterious-instruction-accumulation]{phase 2C}.
 }
 
 \newcommand{\LineagePoisonMetricName}{
-Poisonous task acquisition count
+Deleterious function acquisition count
 }
 \newcommand{\LineagePoisonMetricDesc}{
-Number of instances along a given lineage where a mutation causes an offspring to perform the poisonous task more times than its parent.
+Number of instances along a given lineage where a mutation causes an offspring to perform the deleterious function more times than its parent.
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABSTRACT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 
-  \section{}
-  Fluctuating environmental conditions are ubiquitous in natural systems, and populations have evolved various strategies to cope with such fluctuations.
-  The particular mechanisms that evolve profoundly influence subsequent evolutionary dynamics.
-  One such mechanism is phenotypic plasticity, which is the ability of a single genotype to produce alternate phenotypes in an environmentally dependent context.
-  Here, we use digital organisms (self-replicating computer programs) to investigate how adaptive phenotypic plasticity alters evolutionary dynamics and influences evolutionary outcomes in cyclically changing environments.
-  Specifically, we examined the evolutionary histories of both plastic populations and non-plastic populations to ask:
-  (1) Does adaptive plasticity promote or constrain evolutionary change?
-  (2) Are plastic populations better able to evolve and then maintain novel traits?
-  And (3), how does adaptive plasticity affect the potential for maladaptive alleles to accumulate in evolving genomes?
-  We find that populations with adaptive phenotypic plasticity undergo less evolutionary change than non-plastic populations, which must rely on genetic variation from \textit{de novo} mutations to continuously readapt to environmental fluctuations.
-  Indeed, the non-plastic populations undergo more frequent selective sweeps and accumulate many more genetic changes.
-  We find that the repeated selective sweeps in non-plastic populations drive the loss of beneficial traits and accumulation of maladaptive alleles via deleterious hitchhiking, whereas phenotypic plasticity can stabilize populations against environmental fluctuations.
-  This stabilization allows plastic populations to more easily retain novel adaptive traits than their non-plastic counterparts.
-  In general, the evolution of adaptive phenotypic plasticity shifted evolutionary dynamics to be more similar to that of populations evolving in a static environment than to non-plastic populations evolving in an identical fluctuating environment.
-  All natural environments subject populations to some form of change; our findings suggest that the stabilizing effect of phenotypic plasticity plays an important role in subsequent adaptive evolution.
+\section{}
+Fluctuating environmental conditions are ubiquitous in natural systems, and populations have evolved various strategies to cope with such fluctuations.
+The particular mechanisms that evolve profoundly influence subsequent evolutionary dynamics.
+One such mechanism is phenotypic plasticity, which is the ability of a single genotype to produce alternate phenotypes in an environmentally dependent context.
+Here, we use digital organisms (self-replicating computer programs) to investigate how adaptive phenotypic plasticity alters evolutionary dynamics and influences evolutionary outcomes in cyclically changing environments.
+Specifically, we examined the evolutionary histories of both plastic populations and non-plastic populations to ask:
+(1) Does adaptive plasticity promote or constrain evolutionary change?
+(2) Are plastic populations better able to evolve and then maintain novel traits?
+And (3), how does adaptive plasticity affect the potential for maladaptive alleles to accumulate in evolving genomes?
+We find that populations with adaptive phenotypic plasticity undergo less evolutionary change than non-plastic populations, which must rely on genetic variation from \textit{de novo} mutations to continuously readapt to environmental fluctuations.
+Indeed, the non-plastic populations undergo more frequent selective sweeps and accumulate many more genetic changes.
+We find that the repeated selective sweeps in non-plastic populations drive the loss of beneficial traits and accumulation of maladaptive alleles, whereas phenotypic plasticity can stabilize populations against environmental fluctuations.
+% via deleterious hitchhiking, whereas phenotypic plasticity can stabilize populations against environmental fluctuations.
+This stabilization allows plastic populations to more easily retain novel adaptive traits than their non-plastic counterparts.
+In general, the evolution of adaptive phenotypic plasticity shifted evolutionary dynamics to be more similar to that of populations evolving in a static environment than to non-plastic populations evolving in an identical fluctuating environment.
+All natural environments subject populations to some form of change; our findings suggest that the stabilizing effect of phenotypic plasticity plays an important role in subsequent adaptive evolution.
 
-  \tiny
-  \keyFont{ \section{Keywords:} phenotypic plasticity, experimental evolution, digital evolution, changing environments, Avida}
+\tiny
+\keyFont{ \section{Keywords:} phenotypic plasticity, experimental evolution, digital evolution, changing environments, Avida}
 
 \end{abstract}
 
@@ -213,14 +193,12 @@ Number of instances along a given lineage where a mutation causes an offspring t
 % -- Different mechanisms evolve to cope with fluctuating environments, and those mechanisms
 %    affect evolution. --
 %%%%%%%%%%%%%%%%%%%%%%
-%Fluctuating environmental conditions are ubiquitous in natural systems.
 Natural organisms employ a wide range of evolved strategies for coping with environmental change, such as
 periodic migration \citep{winger_long_2019},
 bet-hedging \citep{beaumont_experimental_2009},
 adaptive tracking \citep{barrett_adaptation_2008},
 and phenotypic plasticity \citep{ghalambor_adaptive_2007}.
 The particular mechanisms that evolve in response to fluctuating environments will also shift the course of subsequent evolution \citep{wennersten_population-level_2012,schaum_plasticity_2014}.
-%Identifying the mechanisms most likely to evolve and examining both the evolutionary constraints and opportunities associated with each is critical for us to understand and predict evolutionary outcomes in changing environments.
 As such, if we are to understand or predict evolutionary outcomes, we must be able to identify which mechanisms are most likely to evolve and what constraints and opportunities they impart on subsequent evolution.
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -229,8 +207,9 @@ As such, if we are to understand or predict evolutionary outcomes, we must be ab
 In this work, we focus on phenotypic plasticity, which can be defined as the capacity for a single genotype to alter phenotypic expression in response to a change in its environment \citep{west-eberhard_developmental_2003}.
 Phenotypic plasticity is controlled by genes whose expression is coupled to one or more environmental signals, which may be either biotic or abiotic.
 For example, the sex ratio of the crustacean \textit{Gammarus duebeni} is modulated by changes in photoperiod and temperature \citep{dunn_two_2005}, and the reproductive output of some invertebrate species is heightened when infected with parasites to compensate for offspring loss \citep{chadwick_parasite-mediated_2005}.
-In this study, we conducted digital evolution experiments to investigate how the evolution of adaptive phenotypic plasticity shifts the course of evolution in a cyclically changing environment.
-Specifically, we examined the effects of adaptive plasticity on subsequent genomic and phenotypic change, the capacity to evolve and then maintain novel traits, and the accumulation of deleterious alleles.
+% -- @AML: move next two lines to later as suggested by editor --
+% In this study, we conducted digital evolution experiments to investigate how the evolution of adaptive phenotypic plasticity shifts the course of evolution in a cyclically changing environment.
+% Specifically, we examined the effects of adaptive plasticity on subsequent genomic and phenotypic change, the capacity to evolve and then maintain novel traits, and the accumulation of deleterious alleles.
 
 
 %%%%%%%%%%%%%%
@@ -244,20 +223,26 @@ In this context, the stabilizing effect of adaptive plasticity has been hypothes
 That is, directional selection may be weak if environmentally-induced phenotypes are close to the optimum; as such, adaptively plastic populations may evolve slowly (relative to non-plastic populations) unless there is a substantial fitness cost to plasticity.
 
 \begin{figure}[ht!]
-  \centering
-  \includegraphics[width=0.65\textwidth]{media-reaction-norms.pdf}
-  \caption{\small
-  \textbf{Hypothetical reaction norms for genotypes placed in different environments.}
-  In all panels, two environments (denoted E$_1$ and E$_2$) are shown on the x-axis.
-  The y-axis indicates the phenotype expressed in each environment with O$_{\text{E}1}$ and O$_{\text{E}2}$ designating the optimal phenotype for E$_1$ and E$_2$, respectively.
-  Each pair of points connected by a solid black line denotes a genotype, with the points themselves representing its hypothetical phenotypes in each environment.
-  We present four scenarios for how populations could respond to a change from E$_1$ to E$_2$.
-  (a) A non-plastic population where phenotypes do not change with environmental shifts.  In such cases, we would expect strong directional selection toward O$_{\text{E}2}$ after the environment changes.
-  (b) An adaptively plastic populations where phenotypes dynamically adjust to the new optimum whenever the environment shifts. As such, we would expect this population to remain relatively stable after the environment changes.
-  (c) A population exhibiting non-adaptive plasticity with substantial variation in how individuals respond to the environmental change. In this case, we expect the change in environment to result in a rapid evolutionary sweep by genotypes closest to the new optimal phenotype.
-  (d) A population exhibiting maladaptive plasticity relative to the given environmental change. When the environment changes, there is little variation for selection to act on, and without beneficial mutations, this population could be at risk of extinction.
-  }
-  \label{fig:reaction-norms}
+\centering
+\includegraphics[width=0.85\textwidth]{media-reaction-norms.pdf}
+\caption{\small
+\textbf{Hypothetical reaction norms for populations comprising genotypes placed in different environments.}
+A reaction norm describes phenotypic change (or lack thereof) induced by environmental variation~\citep{west-eberhard_phenotypic_2008}. 
+In all panels, two environmental conditions (denoted E$_1$ and E$_2$) are shown on the x-axis.
+The y-axis indicates the phenotype expressed in each environment with O$_{\text{E}1}$ and O$_{\text{E}2}$ designating the optimal phenotype for E$_1$ and E$_2$, respectively.
+Each pair of points connected by a solid black line denotes a genotype, with the points themselves representing its hypothetical phenotypes in each environment.
+We present three scenarios for how populations could respond to a change from E$_1$ to E$_2$.
+(a) A non-plastic population where phenotypes do not change with environmental shifts.  
+% In such cases, we would expect strong directional selection toward O$_{\text{E}2}$ after the environment changes.
+(b) An adaptively plastic population where phenotypes dynamically adjust to the new optimum. 
+% As such, we would expect this population to remain relatively stable after the environment changes.
+% (c) A population exhibiting non-adaptive plasticity with substantial variation in how individuals respond to the environmental change. In this case, we expect the change in environment to result in a rapid evolutionary sweep by genotypes closest to the new optimal phenotype.
+% (d) A population exhibiting maladaptive plasticity. 
+(c) A population exhibiting non-adaptive plasticity where environmental change induces phenotypes further away from the optimum. 
+% relative to the given environmental change. 
+% When the environment changes, there is little variation for selection to act on, and without beneficial mutations, this population could be at risk of extinction.
+}
+\label{fig:reaction-norms}
 \end{figure}
 
 % -- Plasticity as a source of cryptic variation --
@@ -277,7 +262,10 @@ This buffer promotes stability and persistence and grants populations time to fu
 
 Disparate predictions about how phenotypic plasticity may shift the course of subsequent evolution are not necessarily mutually exclusive.
 Genetic and environmental contexts determine if, and to what extent, phenotypic plasticity promotes or constrains subsequent evolution.
-Figure \ref{fig:reaction-norms} overviews how we might expect different forms of phenotypic plasticity to result in different evolutionary responses after an environmental change.
+Figure~\ref{fig:reaction-norms} overviews how we might expect different forms of phenotypic plasticity to result in different evolutionary responses after an environmental change.
+In Figure~\ref{fig:reaction-norms}a, we would expect non-plastic populations to experience strong directional selection toward the new optimum (O$_{\text{E}2}$) after the environment changes.
+We would expect an adaptively plastic population (Figure~\ref{fig:reaction-norms}b) to remain relatively stable after the environment changes, as plasticity shifts organisms' phenotypes to the new optimum.
+In Figure~\ref{fig:reaction-norms}c, we would expect the non-adaptively plastic population to experience strong directional selection on their response to the new environmental conditions; indeed, such maladaptive plasticity may even put the population at risk of extinction in the absence of beneficial mutations.
 
 %%%%%%%%%%%%%%%%%%%%%%
 % -- Digital evolution --
@@ -299,21 +287,21 @@ Furthermore, digital evolution studies allow us to directly toggle the possibili
 %%%%%%%%%%%%%%%%%%%%%%
 % -- Overview of what we're testing / doing --
 %%%%%%%%%%%%%%%%%%%%%%
-In this work, we use the Avida Digital Evolution Platform \citep{ofria_avida:_2009}.
+
+In this study, we conduct digital evolution experiments to investigate how the evolution of adaptive phenotypic plasticity shifts the course of evolution in a cyclically changing environment.
+We use the Avida Digital Evolution Platform \citep{ofria_avida:_2009}.
 Avida is an open-source system that has been used to conduct a wide range of well-regarded studies on evolutionary dynamics, including
 the origins of complex features \citep{lenski_evolutionary_2003},
 the survival of the flattest effect \citep{wilke_evolution_2001},
 and the origins of reproductive division of labor \citep{goldsby_evolutionary_2014}.
-% @AML: next bit is a little awkward
 Our experiments build directly on previous studies in Avida that characterized the \textit{de novo} evolution of adaptive phenotypic plasticity \citep{clune_investigating_2007,lalejini_evolutionary_2016} as well as previous work investigating the evolutionary consequences of fluctuating environments for populations of non-plastic digital organisms \citep{li_digital_2004,canino-koning_fluctuating_2019}.
-Of particular relevance, \cite{clune_investigating_2007} and \cite{lalejini_evolutionary_2016} experimentally demonstrated that adaptive phenotypic plasticity can evolve given the following four conditions (as identified by \citealt{ghalambor_behavior_2010}):
+Of particular relevance, \cite{clune_investigating_2007} and \cite{lalejini_evolutionary_2016} experimentally demonstrated that adaptive phenotypic plasticity can evolve given the following four conditions (as described by \citealt{ghalambor_behavior_2010}):
 (1) populations experience temporal environmental variation,
 (2) these environments are differentiable by reliable cues,
 (3) each environment favors different phenotypic traits,
 and (4) no single phenotype exhibits high fitness across all environments.
 We build on this previous work, but we shift our focus from the evolutionary causes of adaptive phenotypic plasticity to investigate its evolutionary consequences in a fluctuating environment.
-
-%%%%%%%%%%%%%%%%%
+Specifically, we examine the effects of adaptive plasticity on subsequent genomic and phenotypic change, the capacity to evolve and then maintain novel traits, and the accumulation of deleterious alleles.
 
 % - what we did -
 Each of our experiments are divided into two phases: in phase one, we precondition sets of founder organisms with differing plastic or non-plastic adaptations;
@@ -327,18 +315,15 @@ Finally, we examine lineages to determine whether adaptive plasticity facilitate
 %%%%%%%%%%%%%%%%%%%%%%
 We found that the evolution of adaptive plasticity reduced subsequent rates of evolutionary change in a cyclic environment.
 The non-plastic populations underwent more frequent selective sweeps and accumulated many more genetic changes over time, as non-plastic populations relied on genetic variation from \textit{de novo} mutations to continuously readapt to environmental changes.
-The evolution of adaptive phenotypic plasticity buffered populations against environmental fluctuations, whereas repeated selective sweeps in non-plastic populations drove the accumulation of deleterious mutations and the loss of secondary beneficial traits via deleterious hitchhiking.
+The evolution of adaptive phenotypic plasticity buffered populations against environmental fluctuations, whereas repeated selective sweeps in non-plastic populations drove the accumulation of deleterious mutations and the loss of secondary beneficial traits. % via deleterious hitchhiking.
 As such, adaptively plastic populations were better able to retain novel traits than their non-plastic counterparts.
 In general, the evolution of adaptive phenotypic plasticity shifted evolutionary dynamics to be more similar to that of populations evolving in a static environment than to non-plastic populations evolving in an identical fluctuating environment.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% JOURNAL INSTRUCTIONS
-% This section may be divided by subheadings and should contain sufficient detail so that when read in conjunction with cited references, all procedures can be repeated. For experiments reporting results on animal or human subject research, an ethics approval statement should be included in this section (for further information, see the Bioethics section.)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Materials and Methods}
+\label{sec:methods}
 
 \subsection{The Avida Digital Evolution Platform}
+\label{sec:methods:avida}
 
 % -- Define digital organisms --
 Avida is a study system wherein self-replicating computer programs (digital organisms) compete for space on a finite toroidal grid \citep{ofria_avida:_2009}.
@@ -352,7 +337,7 @@ The instruction set includes operations for basic computations, flow control (\t
 Organisms in Avida reproduce asexually by copying their genome instruction-by-instruction and then dividing.
 However, copy operations are imperfect and can result in single-instruction substitution mutations in an offspring's genome.
 For this work, we configured copy operations to err at a rate of one expected mutation for every 400 instructions copied (\textit{i.e.}, a per-instruction error rate of 0.0025).
-We held individual genomes at a fixed length of 100 instructions; that is, we did not include insertion and deletion mutations.
+We held individual genomes at a fixed length of 100 instructions (the default genome size in Avida); that is, we did not include insertion and deletion mutations.
 We used fixed-length genomes to control for treatment-specific conditions resulting in the evolution of substantially different genome sizes \citep{supplemental_material}\footnote{
 We repeated our experiments without genome size restrictions and observed qualitatively similar results (see supplemental material, \citealt{supplemental_material}).
 }, which could, on its own, drive differences in evolutionary outcomes among experimental treatments.
@@ -363,23 +348,23 @@ As such, improvements to the speed of self-replication are advantageous in the c
 % -- Define fitness/metabolic rate/improving replication speed --
 During evolution, organism replication rates improve in two ways: by improving genome efficiency (\textit{e.g.}, using a more compact encoding) or by accelerating the rate at which the genome is expressed (their ``metabolic rate'').
 An organism's metabolic rate determines the speed at which it executes instructions in its genome.
-Initially, an organism's metabolic rate is proportional to the length of its genome, but that rate is adjusted as it completes designated tasks, such as performing Boolean logic computations \citep{ofria_avida:_2009}.
-In this way, we can reward or punish particular phenotypic traits.
+Initially, an organism's metabolic rate is proportional to the length of its genome, but that rate is adjusted as it completes designated functions, such as performing Boolean logic functions \citep{ofria_avida:_2009}.
+In this way, we can reward or punish particular phenotypic traits (\textit{i.e.}, Boolean logic functions).
 
-% \vspace{0.25cm}
 \subsubsection{Phenotypic plasticity in Avida}
+\label{sec:methods:avida:plasticity}
 
 % -- Phenotypes & Phenotypic plasticity --
 %   - What is a phenotype in Avida?
-In this work, we measure a digital organism's phenotype as the set of Boolean logic functions that it performs in a given environment.
-Sensory instructions in the Avida instruction set allow organisms to detect how performing a particular logic function would affect their metabolic rate (see supplemental material for more details, \citealt{supplemental_material}).
-We define a phenotypically plastic organism as one that uses sensory information to alter which logic functions it performs based on the environment.
+In this work, we measure a digital organism's phenotype as the set of Boolean logic functions that it performs (\textit{i.e.} expresses) in a given environment.
+Sensory instructions in the Avida instruction set allow organisms to detect how performing a particular function would affect their metabolic rate (see supplemental material for more details, \citealt{supplemental_material}).
+We define a phenotypically plastic organism as one that uses sensory information to alter which functions it performs based on the environment.
 
 % -- Adaptive plasticity & non-adaptive plasticity --
 Phenotypic plasticity in Avida can be adaptive or non-adaptive for a given set of environments.
-Adaptive plasticity shifts net task expression closer to the optimum for the given environments.
-Non-adaptive plasticity changes task expression in either a neutral or deleterious way.
-In this work, optimal plasticity toggles tasks to always perfectly match the set of rewarded tasks for the given set of environments.
+Adaptive plasticity shifts net function expression closer to the optimum for the given environments.
+Non-adaptive plasticity changes function expression in either a neutral or deleterious way.
+In this work, optimal plasticity toggles functions to always perfectly match the set of rewarded functions for the given set of environments.
 
 \subsection{Experimental design}
 \label{sec:methods:experiment}
@@ -389,13 +374,13 @@ In this work, optimal plasticity toggles tasks to always perfectly match the set
   \includegraphics[width=1\textwidth]{media-experimental-design.pdf}
   \caption{\small
   \textbf{Overview of experimental design.}
-  The first three plots in panel (a) show the environments used in every experiment and whether they reward or punish each base task.
-  Additionally, the last two subplots in (a) show the additional tasks added in phases 2B and 2C.
-  All novel tasks in phase 2B confer a 10\% metabolic reward, while executing the poisonous task in phase 2C causes a 10\% metabolic punishment (bars not drawn to scale).
-  Panel (b) shows treatment differences and experimental phases.
+  The three plots in panel (a) show the environmental conditions used in every experiment and whether they reward or punish each base function.
+  The two plots in (b) show the additional functions added in phases 2B and 2C. %Optional: phase 2A is not shown as it adds no additional functions
+  %All novel tasks in phase 2B confer a 10\% metabolic reward, while executing the poisonous task in phase 2C causes a 10\% metabolic punishment (bars not drawn to scale).
+  Panel (c) shows treatment differences and experimental phases.
   Treatments are listed on the left, with each treatment specifying its environmental configuration and whether sensors are functional.
   We conducted three independent two-phase experiments, each described on the right.
-  Phases 2B and 2C are textured to match their task definitions in panel (a).
+  Phases 2B and 2C are textured to match their function definitions in panel (b).
   Phase one is repeated for \textit{each} experiment with 100 replicate populations per treatment per experiment.
   For each replicate at the end of phase one, we used an organism of the most abundant genotype to found the second phase population.
   All STATIC and NON-PLASTIC populations move on to phase two, but PLASTIC populations only continue to the second phase if their most abundant genotype exhibits optimal plasticity.
@@ -427,9 +412,10 @@ and (3) a \textbf{STATIC} control where organisms evolve in a constant environme
 Each experiment was divided into two phases that each lasted for 200,000 updates\footnote{
     One update in Avida is the amount of time required for the average organism to execute 30 instructions.
     See \citep{ofria_avida:_2009} for more details.
-} of evolution (Figure \ref{fig:experimental-design}), which is equivalent to approximately 30,000 to 40,000 generations.
-In phase one of each experiment, we preconditioned populations to their treatment-specific conditions.
-In phase two, we founded new populations with the evolved organisms from phase one and examined their subsequent evolution under given combinations of treatment and experimental conditions.
+} of evolution (Figure~\ref{fig:experimental-design}), which is equivalent to approximately 30,000 to 40,000 generations.
+% Phase one of each experiment was an acclimation phase.
+In phase one of each experiment, we evolved plastic, non-plastic, and control organisms for use in phase two.
+In phase two, we founded new populations with these evolved organisms and examined their subsequent evolution under given combinations of treatment and experimental conditions.
 During phase two, we tracked and saved each population's evolutionary history as well as saving the full final population.
 Phase one was for preconditioning only; all comparisons between treatments were performed on phase two data.
 
@@ -441,74 +427,88 @@ Phase one was for preconditioning only; all comparisons between treatments were 
 % traits_set_b <- c("nand", "ornot", "andnot")
 
 % -- Environment definitions --
-We constructed three experimental environments, abbreviated hereafter as ``ENV-A'', ``ENV-B'', and ``ENV-ALL''.
-Figure \ref{fig:experimental-design} describes these environments based on whether each of six Boolean logic tasks (NOT, NAND, AND, OR-NOT, OR, and AND-NOT) is rewarded or punished.
-A rewarded task performed by an organism doubles their metabolic rate, allowing them to execute twice as many instructions in the same amount of time.
-A punished task halves an organism's metabolic rate.
+% In all of our experiments, populations evolve in either static or fluctuating environments.
+
+We constructed three experimental environmental conditions, abbreviated hereafter as ``ENV-A'', ``ENV-B'', and ``ENV-ALL''.
+In ENV-A, organisms are rewarded for expressing the NOT, AND, and OR Boolean logic functions, and organisms are punished for expressing the NAND, AND-NOT, and OR-NOT functions. 
+ENV-B is the reverse of ENV-A; that is, in ENV-B, organisms are rewarded for expressing the NAND, AND-NOT, and OR-NOT functions and are punished for expressing the NOT, AND, and OR functions.
+In ENV-ALL, organisms are rewarded for expressing each of the NOT, AND, OR, NAND, AND-NOT, and OR-NOT functions.
+In all environmental conditions (ENV-A, ENV-B, and ENV-ALL), a rewarded function expressed by an organism doubles their metabolic rate, allowing them to execute twice as many instructions in the same amount of time.
+A punished function halves an organism's metabolic rate.
+Each Boolean logic function is a non-trivial trait to evolve, as they each require the coordination of multiple genetic instructions to express~\citep{lenski_evolutionary_2003}.
+
+% Figure \ref{fig:experimental-design} describes these environments based on whether each of six Boolean logic tasks (NOT, NAND, AND, OR-NOT, OR, and AND-NOT) is rewarded or punished.
 
 % -- Treatment-specific environment details --
 In both the PLASTIC and NON-PLASTIC treatments, the environment cycles between equal-length periods of ENV-A and ENV-B.
 Each of these periods persist for 100 updates (approximately 15 to 20 generations).
 Thus, populations experience a total of 1,000 full periods of ENV-A interlaced with 1,000 full periods of ENV-B during each experimental phase.
+Previous work has shown that this rate of change reliably allows for the evolution of adaptive phenotypic plasticity in Avida~\citep{clune_investigating_2007,lalejini_evolutionary_2016}.
 
 % -- Sensory instructions + control flow and controlling the capacity for plasticity --
-Organisms in the PLASTIC treatments differentiate between ENV-A and ENV-B by executing one of six sensory instructions, each associated with a particular logical task; these sensory instructions detect whether their associated task is currently rewarded or punished.
-By using sensory information in combination with execution flow-control instructions, organisms can conditionally perform different logic tasks depending on the current environmental conditions.
+Organisms in the PLASTIC treatments differentiate between ENV-A and ENV-B by executing one of six sensory instructions, each associated with a particular Boolean logic function; these sensory instructions detect whether their associated function is currently rewarded or punished.
+By using sensory information in combination with execution flow-control instructions, organisms can conditionally perform different functions depending on the current environmental conditions.
 
-% \vspace{5mm}
 \subsubsection{Experiment Phase 1 -- Environment preconditioning}
 \label{sec:methods:experiment:phase-one}
 
 For each treatment, we founded 100 independent populations from a common ancestral strain capable only of self-replication.
 At the end of phase one, we identified the most abundant (\textit{i.e.}, dominant) genotype and sampled an organism with that genotype from each replicate population to found a new population for phase two.
 
-For the PLASTIC treatment, we measure plasticity by independently testing a given genotype in each of ENV-A and ENV-B.
-We discard phase one populations if the dominant genotype does not exhibit optimal plasticity.
-This approach ensures that measurements taken on PLASTIC-treatment populations during the second phase of each experiment reflect the evolutionary consequences of adaptive plasticity.
+For the PLASTIC treatment, we needed to ensure that our observations during the second phase of each experiment reflected the evolutionary consequences of adaptive plasticity. 
+To do so, measured the plasticity of each PLASTIC-treatment population's dominant genotype by independently testing that genotype in each of ENV-A and ENV-B and recording the phenotype expressed in each environment.
+We discarded PLASTIC-treatment phase one populations if the dominant genotype did not exhibit optimal plasticity (as defined in Section~\ref{sec:methods:avida:plasticity}), which ensured that PLASTIC-treatment phase two populations were founded with an optimally plastic organism.
 
-% \vspace{5mm}
+% For the PLASTIC treatment, we measure the plasticity of each population's dominant genotype by independently testing the given genotype in each of ENV-A and ENV-B and recording the phenotype expressed in each environment.
+% We discard PLASTIC-treatment phase one populations if the dominant genotype does not exhibit optimal plasticity (as defined in Section \ref{sec:methods:avida:plasticity}).
+% This approach ensures that measurements taken on PLASTIC-treatment populations during the second phase of each experiment reflect the evolutionary consequences of adaptive plasticity.
+
 \subsubsection{Experiment Phase 2A -- Evolutionary change rate}
 \label{sec:methods:exp:evolutionary-change-rate}
 
+We conducted experiment phase 2A to test for differences in evolutionary change---the accumulation of genetic and phenotypic changes---among populations evolving under each of our three treatment conditions (PLASTIC, NON-PLASTIC, and STATIC). 
 Phase 2A continued exactly as phase one, except we tracked the rates of evolutionary change in each of the PLASTIC-, NON-PLASTIC-, and STATIC-treatment populations.
-Specifically, we quantified evolutionary change rates using four metrics (each described in Table~\ref{tab:metrics-definitions}):
+Specifically, we quantified evolutionary change using four metrics (each described in Table~\ref{tab:metrics-definitions}):
 (1) coalescence event count,
 (2) mutation count,
 (3) phenotypic volatility,
 and (4) mutational robustness.
 
-% \vspace{3mm}
-\subsubsection{Experiment Phase 2B -- Novel task evolution}
+While environmental conditions during phases one and 2A are identical, these phases are distinct in how populations are founded: each phase one population is founded with a common ancestor capable only of self-replication, whereas each phase two population is founded with an organism that was evolved in its treatment-specific conditions.
+Thus, during phase two, phylogenies are rooted with an ancestor that is well-adapted to its treatment conditions, which, in turn, ensures that our observations can exclude dynamics associated with initial adaptation.
+
+\subsubsection{Experiment Phase 2B -- Novel function evolution}
 \label{sec:methods:exp:novel-task-evolution}
 
-Phase 2B extended the conditions of phase one by adding 71 novel Boolean logic tasks, which were always rewarded in all treatments \citep{ofria_avida:_2009}.
-The original six phase one tasks (NOT, NAND, AND, OR-NOT, OR, and AND-NOT; hereafter called ``base'' tasks) continued to be rewarded or punished according to the particular treatment conditions.
+We conducted experiment phase 2B to quantify the extent to which organisms evolved under PLASTIC-, NON-PLASTIC-, and STATIC-treatment conditions were able to acquire and retain novel functions. 
+Phase 2B extended the conditions of phase one by adding 71 novel Boolean logic functions~\citep{ofria_avida:_2009}, which were always rewarded in all treatments.
+The original six phase one functions (NOT, NAND, AND, OR-NOT, OR, and AND-NOT; hereafter called ``base'' functions) continued to be rewarded or punished according to the particular treatment conditions.
 % @CAO: line below can be restored (and reworded) if readers need help with the intuition.
 %As such, in fluctuating environments, the six base tasks continued to fluctuate, but the additional 71 tasks were always rewarded; in static environments, performing any of the 77 logic tasks was always beneficial.
-An organism's metabolic rate was increased by \novelTraitsReward\ for each novel task that it performed (limited to one reward per task).
-This reward provided a selective pressure to evolve these tasks, but their benefits did not overwhelm the 100\% metabolic rate increase conferred by rewarded base tasks.
-As such, populations in the PLASTIC and NON-PLASTIC treatments could not easily escape environmental fluctuations by abandoning the fluctuating base tasks.
+An organism's metabolic rate was increased by \novelTraitsReward\ for each novel function that it expressed (limited to one reward per function).
+This reward provided a selective pressure to evolve these functions, but their benefits did not overwhelm the 100\% metabolic rate increase conferred by rewarded base functions.
+As such, populations in the PLASTIC and NON-PLASTIC treatments could not easily escape environmental fluctuations by abandoning the fluctuating base functions.
 
-During this experiment, we tracked the extent to which populations evolving under each treatment were capable of acquiring and retaining novel tasks.
-Specifically, we used three metrics (each described in Table~\ref{tab:metrics-definitions}):
-(1) final novel task count,
-(2) novel task discovery,
-and (3) novel task loss.
+During this experiment, we used three metrics to quantify novel function acquisition and retention in evolving populations (each described in Table~\ref{tab:metrics-definitions}):
+% During this experiment, we tracked the extent to which populations evolving under each treatment were capable of acquiring and retaining novel tasks.
+% Specifically, we used three metrics (each described in Table~\ref{tab:metrics-definitions}):
+(1) final novel function count,
+(2) novel function discovery,
+and (3) novel function loss.
 
-% \vspace{5mm}
 \subsubsection{Experiment Phase 2C -- Deleterious instruction accumulation}
 \label{sec:methods:exp:deleterious-instruction-accumulation}
 
-Phase 2C extended the instruction set of phase one with a \code{poison} instruction.
-When an organism executes a \code{poison} instruction, it performs a ``poisonous'' task, which reduces the organism's metabolic rate (and thus reproductive success) but does not otherwise alter the organism's function.
-We imposed a 10\% penalty each time an organism performed the poisonous task, making the \code{poison} instruction explicitly deleterious to execute.
-We did not limit the number of times that an organism could perform the poisonous task, and as such, organisms could perform the poisonous task as many times as they executed the \code{poison} instruction.
+We conducted experiment phase 2C to quantify the extent to which organisms evolved under PLASTIC-, NON-PLASTIC-, and STATIC-treatment conditions acquired deleterious instructions via mutation.
+Phase 2C extended the instruction set of phase one with a \code{deleterious} instruction.
+When an organism executes a \code{deleterious} instruction, it performs a ``deleterious'' function, which reduces the organism's metabolic rate (and thus reproductive success) but does not otherwise alter the organism's behavior.
+We imposed a 10\% penalty each time an organism performed the deleterious function, making the \code{deleterious} instruction explicitly harmful to execute.
+We did not limit the number of times that an organism could perform the deleterious function, and as such, organisms could perform the deleterious function as many times as they executed the \code{deleterious} instruction.
 
-We tracked the number of times each organism along the dominant lineage performed the poisonous task.
+We tracked the number of times each organism along the dominant lineage performed the deleterious function.
 Specifically, we used two metrics (each described in Table~\ref{tab:metrics-definitions}):
-(1) final poisonous task count and (2) poisonous task acquisition count.
+(1) final deleterious function count and (2) deleterious function acquisition count.
 
-% \vspace{5mm}
 \subsection{Experimental analyses}
 
 \newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
@@ -544,28 +544,40 @@ Specifically, we used two metrics (each described in Table~\ref{tab:metrics-defi
 % alternative environment = what organism is not currently experiencing
 
 % - How we extracted representative lineages -
-For each of our experiments, we tracked and analyzed the phylogenetic histories of evolving populations during phase two.
-For each replicate, we identified an organism with the most abundant genotype in the final evolved population, and we used it as a \textit{representative organism} for further analysis.
+For each of our experiments, we tracked and analyzed the phylogenetic histories of evolving populations during phase two and generated a set of summary statistics (Table~\ref{tab:metrics-definitions}).
+For each phylogenetic history, we counted the number of times that the most recent common ancestor for the population shifted and used this value as the number of coalescence events.
+Next, at the final time point, we identified the most abundant genotype in the evolved population, and chose a \textit{representative organism} from that genotype for further analysis.
 % We then isolated the lineage from the founding organism to the representative organism, which we used as the representative lineage for further analysis.
-We used the lineage from the founding organism to the representative organism as the \textit{representative lineage} for further analysis.
+% We used the lineage from the founding organism to the representative organism as the \textit{representative lineage} for further analysis.
+We used the lineage from the founding organism to the representative organism to summarize the evolutionary pathway of a population. 
+This lineage represents the majority of the evolutionary history from the given population as long as the entire population traces back to the lineage in recent history.
 We manually inspected evolved phylogenies and found no evidence that any of our experimental treatments supported long-term coexistence.
-As such, each of the representative lineages reflect the majority of evolutionary history from a given population at the end of our experiment.
+As such, analyses of the representative lineages reflect the majority of evolutionary history for a given population.
+
+% To be confident that each representative lineage reflected the majority of the evolutionary history from a given populuation at the end of the ex
+% [These lineages represent the majority of the evolutionary history from a given population only if there aren't members of the population that haven't diverged too far in the past / only if single the entire population traces back to that lineage in recent history (i.e., no long-term coexistence)].
+% We manually inspected evolved phylogenies and found no evidence that any of our experimental treatments supported long-term coexistence.
+% As such, each of the representative lineages reflect the majority of evolutionary history from a given population at the end of our experiment.
 
 % -- PHENOTYPIC PROFILE --
 % DEFINE PHENOTYPIC PROFILE - metric definitions will use this.
 Some of our metrics (Table \ref{tab:metrics-definitions}) required us to measure genotype-by-environment interactions.
 Importantly, in the fluctuating environments, we needed to differentiate phenotypic changes that were caused by mutations from those that were caused by environmental changes.
-To accomplish this, we produced organisms with the given focal genotype, measured their phenotype in each environment, and aggregated the resulting phenotypes to create a \textit{phenotypic profile}.
-Although organisms with different genotypes may express the same set of tasks across environments, their phenotypic profiles may not necessarily be the same.
+To accomplish this, we produced organisms with the given focal genotype, measured their phenotype in each environmental condition, and aggregated the resulting phenotypes to create a \textit{phenotypic profile}.
+Although organisms with different genotypes may express the same set of functions across environmental conditions, their phenotypic profiles may not necessarily be the same.
 For example, an organism that expresses NOT in ENV-A and NAND in ENV-B has a distinct phenotypic profile from one that expresses NAND in ENV-A and NOT in ENV-B.
+Because phenotypic profiles encapsulate function expression across all relevant environmental conditions (ENV-A and ENV-B), a change in phenotypic profile from parent to offspring indicates a mutationally-induced phenotypic change.  
 
 % -- GENETIC MANIPULATION / MUTATIONAL NEIGHBORHOOD --
 % How do we produce mutants for analyses?
 While most analyses employed here are retrospective metrics applied to lineages, digital evolution allows precise manipulations on individual organisms and genomes.
 Mutational robustness uses this technique when looking at the possible mutations on a representative genotype.
-Genomes in Avida are linear sequences of instructions, and as such possible mutations can be simulated by substituting other instructions at the desired site.
+Genomes in Avida are linear sequences of instructions, and as such, possible mutations can be simulated by substituting other instructions at the desired site.
 Indeed, the mutational robustness of a genotype examines all one-step mutations (\textit{i.e.}, each mutation where exactly one instruction is substituted).
-This allows us the disentangle whether results of the lineage metrics are a consequence of evolved genetic architectures or otherwise.
+This allows us to disentangle whether the frequency of mutationally-induced phenotypic changes observed along a lineage is a consequence of evolved genetic architectures versus the result of population dynamics that actively skewed the distribution of organisms along the lineage; that is, are genomes organized such that mutations are more likely to induce phenotypic changes, or are organisms with phenotypes different from their parents more likely to be successful and thus appear along the representative lineage?
+
+% the results of the lineage metrics are a consequence of evolved genetic architectures versus ongoing population dynamics that are actively skewing the distribution of organisms along each lineage. %or the results of selection.
+%otherwise.
 %purely the results of selection.
 
 
@@ -579,20 +591,21 @@ We applied Bonferroni corrections for multiple comparisons \citep{rice_analyzing
 
 \subsection{Software availability}
 
-We conducted our experiments using a modified version of the Avida software, which is open source and freely available on \href{https://github.com/amlalejini/evolutionary-consequences-of-plasticity}{GitHub} \citep{supplemental_material}.
-We used Python for data processing, and we conducted all statistical analyses using R version 4 \citep{r_core_team_r_v4}.
-We used the tidyverse collection of R packages \citep{r_tidyverse_2019} to wrangle data, and we used the following R packages for analysis, graphing, and visualization:
-ggplot2 \citep{R-ggplot2},
-cowplot \citep{R-cowplot},
-Color Brewer \citep{harrower_colorbrewerorg_2003,R-Brewer_2014},
-rstatix \citep{R-rstatix},
-ggsignif \citep{R-ggsignif},
-scales \citep{R-scales},
-Hmisc \citep{R-Hmisc},
-fmsb \citep{R-fmsb},
-and boot \citep{R-boot}.
-We used R markdown \citep{rmarkdown} and bookdown \citep{R-bookdown} to generate web-enabled supplemental material.
-All of the source code for our experiments and analyses, including configuration files and guides for replication, can be found in our supplemental material, which is hosted on \href{https://github.com/amlalejini/evolutionary-consequences-of-plasticity}{GitHub} \citep{supplemental_material}.
+We conducted our experiments using a modified version of the Avida software, which is open source and freely available on \href{https://github.com/amlalejini/evolutionary-consequences-of-plasticity}{GitHub}~\citep{supplemental_material}.
+Modifications to Avida included an improved phylogeny tracking system that enabled us to track coalescence events and the addition of custom sensory instructions specific to our experiments.
+We used Python for data processing, and we conducted all statistical analyses using R version 4~\citep{r_core_team_r_v4}.
+We used the tidyverse collection of R packages~\citep{r_tidyverse_2019} to wrangle data, and we used the following R packages for analysis, graphing, and visualization:
+ggplot2~\citep{R-ggplot2},
+cowplot~\citep{R-cowplot},
+Color Brewer~\citep{harrower_colorbrewerorg_2003,R-Brewer_2014},
+rstatix~\citep{R-rstatix},
+ggsignif~\citep{R-ggsignif},
+scales~\citep{R-scales},
+Hmisc~\citep{R-Hmisc},
+fmsb~\citep{R-fmsb},
+and boot~\citep{R-boot}.
+We used R markdown~\citep{rmarkdown} and bookdown~\citep{R-bookdown} to generate web-enabled supplemental material.
+All of the source code for our experiments and analyses, including configuration files and guides for replication, can be found in our supplemental material, which is hosted on \href{https://github.com/amlalejini/evolutionary-consequences-of-plasticity}{GitHub}~\citep{supplemental_material}.
 Additionally, our experimental data is available on the Open Science Framework at \url{https://osf.io/sav2c/} \citep{osf_data}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -609,11 +622,11 @@ Additionally, our experimental data is available on the Open Science Framework a
   \includegraphics[width=1\textwidth]{media-evolutionary-change-magnitude-panel.pdf}
   \caption{\small
   \textbf{Magnitude of evolutionary change.}
-  Raincloud plots \citep{allen_raincloud_2019} of
+  Raincloud plots~\citep{allen_raincloud_2019} of
   (a) coalescence event count,
   (b) mutation count,
   and (c) phenotypic volatility.
-  See Table \ref{tab:metrics-definitions} for descriptions of each metric.
+  See Table~\ref{tab:metrics-definitions} for descriptions of each metric.
   Each plot is annotated with statistically significant comparisons (Bonferroni-corrected pairwise Wilcoxon rank-sum tests).
   Note that adaptive phenotypic plasticity evolved in \evolutionaryChangeRatePlasticReps\ of \evolutionaryChangeRateReplicates\ replicates from the PLASTIC treatment during phase one of this experiment; we used this more limited group to found \evolutionaryChangeRatePlasticReps\ phase-two PLASTIC replicates from which we report these PLASTIC data.
   }
@@ -675,13 +688,13 @@ Additionally, our experimental data is available on the Open Science Framework a
 %  - Phenotypic volatility
 In experimental phase 2A,
 we tested whether adaptive phenotypic plasticity constrained or promoted subsequent evolutionary change in a fluctuating environment.
-First, we compared the total amount of evolutionary change in populations evolved under the PLASTIC, NON-PLASTIC, and STATIC treatments as measured by coalescence event count, mutation count, and phenotypic volatility (Figure \ref{fig:evolutionary-dynamics-magnitude}).
+First, we compared the total amount of evolutionary change in populations evolved under the PLASTIC, NON-PLASTIC, and STATIC treatments as measured by coalescence event count, mutation count, and phenotypic volatility (Figure~\ref{fig:evolutionary-dynamics-magnitude}).
 According to each of these metrics, NON-PLASTIC populations experienced a larger magnitude of evolutionary change than either PLASTIC or STATIC populations.
-We observed significantly higher coalescence event counts in NON-PLASTIC populations than in PLASTIC or STATIC populations (Figure \ref{fig:evolutionary-dynamics-magnitude}\hyperref[fig:evolutionary-dynamics-magnitude]{a}).
-NON-PLASTIC lineages had significantly higher mutation counts (Figure \ref{fig:evolutionary-dynamics-magnitude}b) and phenotypic volatility than PLASTIC or STATIC lineages (Figure \ref{fig:evolutionary-dynamics-magnitude}c).
+We observed significantly higher coalescence event counts in NON-PLASTIC populations than in PLASTIC or STATIC populations (Figure~\ref{fig:evolutionary-dynamics-magnitude}\hyperref[fig:evolutionary-dynamics-magnitude]{a}).
+NON-PLASTIC lineages had significantly higher mutation counts (Figure~\ref{fig:evolutionary-dynamics-magnitude}b) and phenotypic volatility than PLASTIC or STATIC lineages (Figure~\ref{fig:evolutionary-dynamics-magnitude}c).
 
 % -- Elapsed generations --
-Changing environments have been shown to increase generational turnover in Avida populations \citep{canino-koning_evolution_2016}, which could explain why we observe a larger magnitude of evolutionary change at the end of 200,000 updates of evolution in NON-PLASTIC populations.
+Changing environments have been shown to increase generational turnover (\textit{i.e.}, how rapidly generations elapse) in Avida populations~\citep{canino-koning_evolution_2016}, which could explain why we observe a larger magnitude of evolutionary change at the end of 200,000 updates of evolution in NON-PLASTIC populations.
 Indeed, we found that significantly more generations of evolution elapsed in NON-PLASTIC populations (mean of $41090\pm2702$ std. dev.) than in PLASTIC (mean of $31016\pm2615$ std. dev.) or STATIC (mean of $30002\pm3011$ std. dev.) populations during phase 2A (corrected Wilcoxon rank-sum tests, p $<10^{-4}$).
 
 % -- Rate of evolutionary change => intuition --
@@ -735,9 +748,11 @@ That is, the mutations affected traits that would not have been expressed in the
 %   - Why not look at mutational neighborhoods for the other experiments?
 Given that NON-PLASTIC lineages exhibited the lowest realized mutational robustness of our three experimental treatments, we sought to determine if this effect was driven by differences in evolved genetic architectures.
 Specifically, did the NON-PLASTIC genetic architectures evolve such that mutations were more likely to result in phenotypic change?
-Such a  mutational bias would trade off descendant fitness in the same environment in exchange for a chance of increasing descendant fitness in alternate environments.
+Such a mutational bias would trade off descendant fitness in the same environment in exchange for a chance of increasing descendant fitness in alternate environments.
 This strategy would be an example of diversifying bet-hedging (\textit{i.e.}, reducing expected mean fitness to lower variance in fitness) \citep{childs2010evolutionary}.
 Alternatively, the lower realized mutational robustness in NON-PLASTIC lineages could be due to survivorship bias, as we measured realized mutational robustness as the fraction of mutations observed along \textit{successful} lineages that caused a phenotypic change.
+That is, our measure of realized mutational robustness concentrates only on mutations that appear in the representative lineage (\textit{i.e.}, ``survivors'' of selection), ignoring mutations that did not. 
+Thus, lower realized mutational robustness in NON-PLASTIC lineages could simply be due to phenotype-altering mutations being more frequently favored by selection.
 %(\textit{i.e.}, the lineages of extant organisms)
 
 
@@ -749,10 +764,11 @@ These data provide evidence against NON-PLASTIC lineages engaging in a mutation-
 % -- in general, PLASTIC and STATIC more similar than NON-PLASTIC --
 In general, adaptive plasticity stabilized PLASTIC-treatment populations against environmental fluctuations, and their evolutionary dynamics more closely resembled those of populations evolving in a static environment.
 We observed no significant difference in the number and frequency of coalescence events in PLASTIC and STATIC populations.
-We did, however, observe small, but statistically significant, differences in each of the following metrics: elapsed generations, mutation counts, mutational robustness, and realized mutational robustness between PLASTIC and STATIC populations.
+We did, however, observe small, but statistically significant, differences in each of the following metrics: elapsed generations,  mutation counts, phenotypic volatility, realized mutational robustness, and mutational robustness between PLASTIC and STATIC populations.  
+We expect that these differences are a result of plastic organisms needing to simultaneously maintain both function and function-regulation machinery, resulting in more genetic components that can be broken by mutations; moreover, many of these components are under relaxed selection in periods between environmental changes.
+Overall, these differences were not substantial enough to play an obvious role in any of the dynamics we analyzed, but could be examined further in the future.
 
-\vspace{0.5cm}
-\subsection{Adaptively plastic populations retain more novel tasks than non-plastic populations in fluctuating environments}
+\subsection{Adaptively plastic populations retain more novel functions than non-plastic populations in fluctuating environments}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Results to report (2021-01-31)
@@ -763,18 +779,18 @@ We did, however, observe small, but statistically significant, differences in ea
 %   - non-plastic < plastic < static
 % - Final population (1% threshold) discovered:
 %   - non-plastic > (plastic ~~ static)
-% - Lineage tasks discovered
+% - Lineage functions discovered
 %   - non-plastic > static ~>(nosig) plastic
-% - Lineage tasks discovered / step
+% - Lineage functions discovered / step
 %   - (static ~~ plastic) > non-plastic
-% - Lineage tasks lost
+% - Lineage functions lost
 %   - non-plastic > static > plastic
-% - Lineage tasks lost / step
+% - Lineage functions lost / step
 %   - non-plastic > static > plastic
 
-% - tasks discovered per generation(?)
+% - functions discovered per generation(?)
 %   - NON-PLASTIC [0.00014358046266055] ~~ STATIC [0.00015363220504867] > PLASTIC [0.000117695011124939]
-% - tasks lost per generation(?)
+% - functions lost per generation(?)
 %   - NON-PLASTIC [0.0022026054610079] > STATIC [0.000161396283669756] > PLASTIC [6.25141973661864e-05]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -782,11 +798,11 @@ We did, however, observe small, but statistically significant, differences in ea
   \centering
   \includegraphics[width=0.9\textwidth]{media-complex-traits-magnitude-panel.pdf}
   \caption{\small
-  \textbf{Novel task evolution.}
+  \textbf{Novel function evolution.}
   Raincloud plots of
-  (a) final novel task count,
-  (b) novel task discovery,
-  and (c) novel task loss.
+  (a) final novel function count,
+  (b) novel function discovery,
+  and (c) novel function loss.
   See Table \ref{tab:metrics-definitions} for descriptions of each metric.
   Each plot is annotated with statistically significant comparisons (Bonferroni-corrected pairwise Wilcoxon rank-sum tests).
   Note that adaptive phenotypic plasticity evolved in \novelTraitsPlasticReps\ of \novelTraitsReplicates\ replicates from the PLASTIC treatment during phase one of this experiment; we used this more limited group to seed the resulting \novelTraitsPlasticReps\ phase-two PLASTIC replicates.
@@ -795,29 +811,28 @@ We did, however, observe small, but statistically significant, differences in ea
 \end{figure}
 
 % -- What did we test? --
-%In experimental phase 2B, we evaluated how evolution of adaptive phenotypic plasticity influences the ability of populations to evolve and retain novel adaptive traits. Commented out by Nkrumah...
 We have so far shown that adaptive plasticity constrains the rate of evolutionary change in fluctuating environments.
-However, it is unclear how this dynamic influences the evolution of novel tasks.
-Based on their relative rates of evolutionary change, we might expect NON-PLASTIC-treatment populations to evolve more novel tasks than PLASTIC-treatment populations.
+However, it is unclear how this dynamic influences the evolution of novel functions.
+Based on their relative rates of evolutionary change, we might expect NON-PLASTIC-treatment populations to evolve more novel functions than PLASTIC-treatment populations.
 But, how much of the evolutionary change in NON-PLASTIC populations is useful for exploring novel regions of the fitness landscape versus continually rediscovering the same regions?
 
 % - Magnitude of exploration/exploitation -
-To answer this question, we quantified the number of novel tasks performed by a representative organism in the final population of each replicate.
-We found that both PLASTIC and STATIC populations had significantly higher final task counts than NON-PLASTIC populations at the end of the experiment (Figure~\ref{fig:complex-traits-magnitude}a).
-The final novel task count in PLASTIC and STATIC lineages could be higher than that of the NON-PLASTIC lineages for several non-mutually exclusive reasons.
+To answer this question, we quantified the number of novel functions performed by a representative organism in the final population of each replicate.
+We found that both PLASTIC and STATIC populations had significantly higher final function counts than NON-PLASTIC populations at the end of the experiment (Figure~\ref{fig:complex-traits-magnitude}a).
+The final novel function count in PLASTIC and STATIC lineages could be higher than that of the NON-PLASTIC lineages for several non-mutually exclusive reasons.
 One possibility is that PLASTIC and STATIC lineages could be exploring a larger area of the fitness landscape when compared to NON-PLASTIC lineages.
 Another possibility is that the propensity of the NON-PLASTIC lineages to maintain novel traits could be significantly lower than PLASTIC or STATIC lineages.
-When we looked at the total sum of novel tasks discovered by each of the PLASTIC, STATIC, and NON-PLASTIC lineages, we found that NON-PLASTIC lineages generally explored a larger area of the fitness landscape (Figure~\ref{fig:complex-traits-magnitude}b).
-Although the NON-PLASTIC lineages discovered more novel tasks, those lineages also exhibited significantly higher novel task loss when compared to PLASTIC and STATIC lineages (Figure~\ref{fig:complex-traits-magnitude}c).
+When we looked at the total sum of novel functions discovered by each of the PLASTIC, STATIC, and NON-PLASTIC lineages, we found that NON-PLASTIC lineages generally explored a larger area of the fitness landscape (Figure~\ref{fig:complex-traits-magnitude}b).
+Although the NON-PLASTIC lineages discovered more novel functions, those lineages also exhibited significantly higher novel function loss when compared to PLASTIC and STATIC lineages (Figure~\ref{fig:complex-traits-magnitude}c).
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.66\textwidth]{media-complex-traits-pace-panel.pdf}
   \caption{\small
-  \textbf{Rate of novel task evolution.}
+  \textbf{Rate of novel function evolution.}
   Raincloud plots of
-  (a) novel task discovery frequency
-  and (b) novel task loss frequency.
+  (a) novel function discovery frequency
+  and (b) novel function loss frequency.
   Each plot is annotated with statistically significant comparisons (Bonferroni-corrected pairwise Wilcoxon rank-sum tests).
   }
   \label{fig:complex-traits-rate}
@@ -825,20 +840,20 @@ Although the NON-PLASTIC lineages discovered more novel tasks, those lineages al
 
 % - Rates of exploration/exploitation -
 A larger number of generations elapsed in NON-PLASTIC populations than in PLASTIC or STATIC populations during our experiment \citep{supplemental_material}.
-Are NON-PLASTIC lineages discovering and losing novel tasks more frequently than PLASTIC or STATIC lineages, or are our observations a result of differences in generational turnover?
-To answer this question, we converted the metrics of novel task discovery and novel task loss to rates by dividing each metric by the number of elapsed generations along the associated representative lineages.
-We found no significant difference in the frequency of novel task discovery between NON-PLASTIC and STATIC lineages, and we found that PLASTIC lineages had a lower frequency of novel task discovery than STATIC lineages (Figure~\ref{fig:complex-traits-rate}a).
-Therefore, we cannot reject the possibility that the larger magnitude of task discovery in NON-PLASTIC lineages was driven by a larger number of elapsed generations.
-NON-PLASTIC lineages had a higher frequency of task loss than either PLASTIC or STATIC lineages, and PLASTIC lineages tended to have a lower frequency of novel task loss than STATIC lineages (Figure~\ref{fig:complex-traits-rate}b).
+Are NON-PLASTIC lineages discovering and losing novel functions more frequently than PLASTIC or STATIC lineages, or are our observations a result of differences in generational turnover?
+To answer this question, we converted the metrics of novel function discovery and novel function loss to rates by dividing each metric by the number of elapsed generations along the associated representative lineages.
+We found no significant difference in the frequency of novel function discovery between NON-PLASTIC and STATIC lineages, and we found that PLASTIC lineages had a lower frequency of novel function discovery than STATIC lineages (Figure~\ref{fig:complex-traits-rate}a).
+Therefore, we cannot reject the possibility that the larger magnitude of function discovery in NON-PLASTIC lineages was driven by a larger number of elapsed generations.
+NON-PLASTIC lineages had a higher frequency of function loss than either PLASTIC or STATIC lineages, and PLASTIC lineages tended to have a lower frequency of novel function loss than STATIC lineages (Figure~\ref{fig:complex-traits-rate}b).
 
 
 % - Characterizing trait loss -
-Next, we examined the frequency at which novel task loss along lineages co-occurred with the loss or gain of any of the six base tasks.
-Across all NON-PLASTIC representative lineages, over 97\% (10998 out of 11229) of instances of novel task loss co-occurred with a simultaneous change in base task profile.
-In contrast, across all PLASTIC and STATIC dominant lineages, we observed that approximately 20\% (29 out of 142) and 2\% (13 out of 631), respectively, of instances of novel task loss co-occurred with a simultaneous change in base task profile.
-As such, the losses of novel tasks in NON-PLASTIC lineages appear to be primarily due to hitchhiking.
+Next, we examined the frequency at which novel function loss along lineages co-occurred with the loss or gain of any of the six base functions.
+Across all NON-PLASTIC representative lineages, over 97\% (10998 out of 11229) of instances of novel function loss co-occurred with a simultaneous change in base function profile.
+In contrast, across all PLASTIC and STATIC dominant lineages, we observed that approximately 20\% (29 out of 142) and 2\% (13 out of 631), respectively, of instances of novel function loss co-occurred with a simultaneous change in base function profile.
+As such, the losses of novel functions in NON-PLASTIC lineages appear to be primarily due to hitchhiking or epistatic effects where a mutation that knocks out a maladaptive base function (after the environment changes) also knocks out a beneficial novel function.
 
-\subsection{Lineages without plasticity that evolve in fluctuating environments express more deleterious tasks}
+\subsection{Lineages without plasticity that evolve in fluctuating environments express more deleterious functions}
 
 %%%%%%
 % 2021-02-05 - Results
@@ -853,13 +868,15 @@ As such, the losses of novel tasks in NON-PLASTIC lineages appear to be primaril
 %%%%%%
 
 Phenotypic plasticity allows for genetic variation to accumulate in genomic regions that are unexpressed, which could lead to the fixation of deleterious instructions in PLASTIC populations.
-However, in NON-PLASTIC lineages, we observe a higher rate of novel task loss, indicating that they may be more susceptible to deleterious mutations (Figure \ref{fig:complex-traits-rate}b).
+However, in NON-PLASTIC lineages, we observe a higher rate of novel function loss, indicating that they may be more susceptible to deleterious mutations (Figure \ref{fig:complex-traits-rate}b).
 
-Therefore, in experiment phase 2C, we tested whether adaptive phenotypic plasticity can increase the incidence of deleterious task performance.
-Specifically, we added an instruction that triggered a ``poisonous'' task and measured the number of times it was executed.
-Each execution of the  \code{poison} instruction reduces an organism's fitness by 10\%.
-At the beginning of phase 2C, the \code{poison} instruction is not present in the population, as it was not part of the instruction set during phase one of evolution.
-Accordingly, if a \code{poison} instruction fixes in a population, it must be the result of evolutionary dynamics during phase 2C, including cryptic variation or hitchhiking.
+Therefore, in experiment phase 2C, we tested whether adaptive phenotypic plasticity can increase the incidence of deleterious function performance.
+Specifically, we added an instruction that triggered an explicitly deleterious  function and measured the number of times it was executed.
+Each execution of the \code{deleterious} instruction reduces an organism's fitness by 10\%.
+At the beginning of phase 2C, the \code{deleterious} instruction is not present in the population, as it was not part of the instruction set during phase one of evolution.
+Accordingly, if a \code{deleterious} instruction fixes in a population, it must be the result of evolutionary dynamics during phase 2C, including cryptic variation, hitchhiking, or as a result of sign epistasis where a \code{deleterious} instruction knocks out an even more maladaptive trait.
+% sign epistasis; two things that are deleterious that are less deleterious in combination than you would expect form individual effects
+% sign epistasis 
 
 \begin{figure}[ht!]
   \centering
@@ -867,9 +884,9 @@ Accordingly, if a \code{poison} instruction fixes in a population, it must be th
   \caption{\small
   \textbf{Deleterious instruction accumulation.}
   Raincloud plots of
-  (a) poisonous task acquisition,
-  (b) poisonous task acquisition frequency,
-  and (c) the proportion of mutations that increase poisonous task performance along a lineage that co-occur with a change in phenotypic profile.
+  (a) deleterious function acquisition,
+  (b) deleterious function acquisition frequency,
+  and (c) the proportion of mutations that increase deleterious function expression along a lineage that co-occur with a change in phenotypic profile.
   Each plot is annotated with statistically significant comparisons (Bonferroni-corrected pairwise Wilcoxon rank-sum tests).
   Note that adaptive phenotypic plasticity evolved in \deleteriousHitchhikingPlasticReps\ of \deleteriousHitchhikingReplicates\ replicates from the PLASTIC treatment during phase one of this experiment; we used this more limited group to seed the \deleteriousHitchhikingPlasticReps\ phase-two PLASTIC replicates.
   }
@@ -877,20 +894,20 @@ Accordingly, if a \code{poison} instruction fixes in a population, it must be th
 \end{figure}
 
 % -- Instruction execution by final dominant & along lineage --
-At the end of our experiment, no representative organisms from the PLASTIC or STATIC treatments performed the poisonous task under any environmental condition; however, representative organisms in 14\% of replicates of the NON-PLASTIC treatment performed the poisonous task at least once.
-NON-PLASTIC lineages contained significantly more mutations that conferred the poisonous task as compared to PLASTIC or STATIC lineages (Figure \ref{fig:deleterious-hitchhiking}a), and these mutations occurred at a significantly higher frequency in NON-PLASTIC lineages (Figure \ref{fig:deleterious-hitchhiking}b).
+At the end of our experiment, no representative organisms from the PLASTIC or STATIC treatments performed the deleterious function under any environmental condition; however, representative organisms in 14\% of replicates of the NON-PLASTIC treatment performed the deleterious function at least once.
+NON-PLASTIC lineages contained significantly more mutations that conferred the deleterious function as compared to PLASTIC or STATIC lineages (Figure \ref{fig:deleterious-hitchhiking}a), and these mutations occurred at a significantly higher frequency in NON-PLASTIC lineages (Figure \ref{fig:deleterious-hitchhiking}b).
 % Additionally, we did not observe
 % This result does not change when we normalize [what?] by the number of generations represented in the given lineage (Figure \ref{fig:deleterious-hitchhiking}b).
 
 % -- When/where does hitchhiking take place? --
-Next, we measured how often mutations that increased poisonous task performance co-occurred with changes to the base task profile within representative lineages.
-A poisonous instruction can fix in a lineage by having a beneficial effect that outweighs its inherent cost (\textit{e.g.}, knocking out a punished task) or through linkage with a secondary beneficial mutation at another site within the genome.
-Across all NON-PLASTIC representative lineages, we found that approximately 49\% (956 out of 1916) of mutations that increased poisonous task expression co-occurred with a change in the base task profile (Figure \ref{fig:deleterious-hitchhiking}c).
-In all representative lineages from the PLASTIC treatment, only 18 mutations increased poisonous task expression, and none co-occurred with a change in base task profile (Figure \ref{fig:deleterious-hitchhiking}c).
-Likewise, only 58 mutations increased poisonous task performance in all representative lineages from the STATIC treatment, and none co-occurred with a change in base task profile (Figure \ref{fig:deleterious-hitchhiking}c).
-We did not find compelling evidence that the few mutations that increased poisonous task expression occurred as cryptic variation in PLASTIC lineages.
+Next, we measured how often mutations that increased deleterious function performance co-occurred with changes to the base function profile within representative lineages.
+A \code{deleterious} instruction can fix in a population by having a beneficial effect that outweighs its inherent cost (\textit{e.g.}, knocking out a punished function) or through linkage with a secondary beneficial mutation at another site within the genome.
+Across all NON-PLASTIC representative lineages, we found that approximately 49\% (956 out of 1916) of mutations that increased deleterious function expression co-occurred with a change in the base function profile (Figure \ref{fig:deleterious-hitchhiking}c).
+In all representative lineages from the PLASTIC treatment, only 18 mutations increased deleterious function expression, and none co-occurred with a change in base function profile (Figure \ref{fig:deleterious-hitchhiking}c).
+Likewise, only 58 mutations increased deleterious function performance in all representative lineages from the STATIC treatment, and none co-occurred with a change in base function profile (Figure \ref{fig:deleterious-hitchhiking}c).
+We did not find compelling evidence that the few mutations that increased deleterious function expression occurred as cryptic variation in PLASTIC lineages.
 
-We repeated this experiment with 3\% and 30\% metabolic rate penalties associated with the poisonous task, which produced results that were consistent with those reported here \citep{supplemental_material}.
+We repeated this experiment with 3\% and 30\% metabolic rate penalties associated with the deleterious function, which produced results that were consistent with those reported here \citep{supplemental_material}.
 
 
 % GUIDELINES:
@@ -906,29 +923,21 @@ Specifically, we compared lineages of adaptively plastic organisms in fluctuatin
 % -- Adaptively plastic populations underwent less evolutionary change than non-plastic populations --
 We found strong evidence that adaptive plasticity slows evolutionary change in fluctuating environments.
 Adaptively plastic populations experienced fewer coalescence events and fewer total genetic changes relative to non-plastic populations evolving under identical environmental conditions (Figure \ref{fig:evolutionary-dynamics-magnitude}).
-Whereas non-plastic populations relied on \textit{de novo} mutations to adapt to each environmental fluctuation, plastic populations leveraged sensory instructions to regulate task performance.
+Whereas non-plastic populations relied on \textit{de novo} mutations to adapt to each environmental fluctuation, plastic populations leveraged sensory instructions to regulate function performance.
 Indeed, in fluctuating environments, selection pressures toggle after each environmental change.
 We hypothesize that in non-plastic populations such toggling would repeatedly drive the fixation of mutations that align an organism's phenotypic profile to the new conditions.
 This hypothesis is supported by the increased frequency of coalescence events in these populations (Figure \ref{fig:evolutionary-dynamics-rate}a) as well as increased rates of genetic and phenotypic changes observed along the lineages of non-plastic organisms.
 
-
-%TODO: Make sure we use org vs. genotype consistently with rest of paper
 % - Mutational neighborhood results
-%We expected this was [caused by / due to / the result of] non-plastic populations evolving a bet-hedging strategy where mutations are more likely to modify the phenotypic profile.
-%However, when we repeated the mutational robustness analysis on the mutational neighborhoods of representative genotypes (\textit{i.e.}, all possible one-step mutants), across the three conditions we observed the highest mutational robustness in the non-plastic condition (Figure \ref{fig:neighborhood-mutational-stability}).
-Representative lineages in the non-plastic treatment experienced lower realized mutational robustness than plastic and static lineages (Figure \ref{fig:evolutionary-dynamics-rate}b).
+Representative lineages in the non-plastic treatment experienced lower realized mutational robustness than plastic and static lineages (Figure~\ref{fig:evolutionary-dynamics-rate}b).
 We reasoned that this lower realized mutational robustness was due to non-plastic populations evolving a bet-hedging strategy where mutations are more likely to modify the phenotypic profile.
-However, when we switched from measuring the realized mutational robustness of representative lineages to measuring the mutational robustness of representative genotypes (\textit{i.e.}, what fraction of one-step mutants change the phenotypic profile), we observed that non-plastic genotypes exhibited the highest mutational robustness of all three treatments (Figure \ref{fig:mutational-robustness}).
-This result runs contrary to both our expectations and the results of other fluctuating environment studies in Avida \citep{canino-koning_fluctuating_2019}.
-\cite{canino-koning_fluctuating_2019} found that mutational robustness is negatively correlated with the number of task-encoding sites in the genome.
-In our work, most plastic and static genotypes encode all six base tasks, while most non-plastic genotypes only encode tasks from one environment; this results in fewer task-encoding sites, which may increase mutational robustness in non-plastic genotypes (relative to plastic and static genotypes). %relative to genotypes from other treatments.
+However, when we switched from measuring the realized mutational robustness of representative lineages to measuring the mutational robustness of representative genotypes (\textit{i.e.}, what fraction of one-step mutants change the phenotypic profile), we observed that non-plastic genotypes exhibited the highest mutational robustness of all three treatments (Figure~\ref{fig:mutational-robustness}).
+This result runs contrary to both our expectations and the results of other fluctuating environment studies in Avida~\citep{canino-koning_fluctuating_2019}.
+\cite{canino-koning_fluctuating_2019} found that mutational robustness is negatively correlated with the number of function-encoding sites in the genome.
+In our work, most plastic and static genotypes encode all six base functions, while most non-plastic genotypes only encode functions from one environment; this results in fewer function-encoding sites, which may increase mutational robustness in non-plastic genotypes (relative to plastic and static genotypes). %relative to genotypes from other treatments.
 Regardless of the cause, this higher mutational robustness in non-plastic organisms indicates that bet-hedging is not driving the low realized mutational robustness observed in non-plastic lineages.
 Thus, we expect the lower realized mutational robustness in non-plastic lineages to be driven by survivorship bias.
-%Because non-plastic lineages must rely on mutations to adapt to environmental changes, these adaptive mutations are highly beneficial and are thus selected.
-%This decreases the realized mutational robustness of the lineage even though
-Because non-plastic lineages must rely on mutations to adapt to environmental changes, phenotype-altering mutations are often highly advantageous, and their selection decreases the realized mutational robustness of the lineage.
-%We expect this result to thus be due to survivorship bias, as non-plastic lineages rely on mutations to adapt to their environment, and thus the phenotype-changing mutations that do occur are highly adaptive and thus selected.
-%Future work is needed to determine if there are other contributing factors.
+Because non-plastic lineages must rely on mutations to adapt to environmental changes, phenotype-altering mutations are often highly advantageous, and their selection decreases the realized mutational robustness of successful lineages.
 
 
 % -- in context of previous digital evolution work --
@@ -942,28 +951,26 @@ Furthermore, \cite{lalejini_evolutionary_2016} visually inspected the evolutiona
 % -- In context of conventional evolutionary theory: evo response => f(selection, variation) --
 Our results are also consistent with conventional evolutionary theory.
 A trait's evolutionary response to selection depends on the strength of directional selection and on the amount of genetic variation for selection to act upon \citep{lande_measurement_1983,zimmer_evolution_2013}.
-In our experiments, non-plastic populations repeatedly experienced strong directional selection to toggle which tasks were expressed after each environmental change.
+In our experiments, non-plastic populations repeatedly experienced strong directional selection to toggle which functions were expressed after each environmental change.
 As such, retrospective analyses of successful lineages revealed rapid evolutionary responses (that is, high rates of genetic and phenotypic changes).
-Evolved adaptive plasticity shielded populations from strong directional selection when the environment changed by eliminating the need for a rapid evolutionary response to toggle task expression.
+Evolved adaptive plasticity shielded populations from strong directional selection when the environment changed by eliminating the need for a rapid evolutionary response to toggle function expression.
 Indeed, both theoretical and empirical studies have shown that adaptive plasticity can constrain evolutionary change by weakening directional selection on evolving populations \citep{price_role_2003,paenke_influence_2007,ghalambor_non-adaptive_2015}.
 
 % TODO, consider: Expectations that could arise if we took into consideration lineages off the line of descent.
 
-% \vspace{0.25cm}
-\subsection{The evolution and maintenance of novel tasks}
+\subsection{The evolution and maintenance of novel functions}
 
 % -- Exploration + Exploitation --
 In fluctuating environments, non-plastic populations explored a larger area of the fitness landscape than adaptively plastic populations (Figure \ref{fig:complex-traits-magnitude}b).
-However, adaptively plastic populations better exploited the fitness landscape, retaining a greater number of novel tasks than non-plastic populations evolving under identical environmental conditions (Figure \ref{fig:complex-traits-magnitude}a).
-In our experiment, novel tasks were less important to survival than the fluctuating base tasks.
-In non-plastic populations, when a mutation changes a base task to better align with current environmental conditions, its benefit will often outweigh the cost of losing one or more novel tasks.
-%Indeed, we found that mutations associated with novel task loss along representative lineages from non-plastic populations co-occurred with phenotypic changes that helped offspring adapt to current environmental conditions 97\% of the time.
-Indeed, we found that along non-plastic representative lineages, 97\% of the mutations associated with novel task loss co-occurred with phenotypic changes that helped offspring adapt to current environmental conditions.
+However, adaptively plastic populations better exploited the fitness landscape, retaining a greater number of novel functions than non-plastic populations evolving under identical environmental conditions (Figure \ref{fig:complex-traits-magnitude}a).
+In our experiment, novel functions were less important to survival than the fluctuating base functions.
+In non-plastic populations, when a mutation changes a base function to better align with current environmental conditions, its benefit will often outweigh the cost of losing one or more novel functions.
+Indeed, we found that along non-plastic representative lineages, 97\% of the mutations associated with novel function loss co-occurred with phenotypic changes that helped offspring adapt to current environmental conditions.
 
 % -- Changing environments promote evolutionary change --
 Previous studies have shown that transitory environmental changes can improve overall fitness landscape exploration in evolving populations of non-plastic digital organisms \citep{nahum_improved_2017}.
 Similarly, changing environments have been shown to increase the rate of evolutionary adaptation in simulated network models \citep{kashtan2007varying}.
-In our system, however, we found that \textit{repeated} fluctuations reduced the ability of non-plastic populations to maintain and exploit tasks; that said, we did find that repeated fluctuations may improve overall task discovery by increasing generational turnover.
+In our system, however, we found that \textit{repeated} fluctuations reduced the ability of non-plastic populations to maintain and exploit functions; that said, we did find that repeated fluctuations may improve overall function discovery by increasing generational turnover.
 Consistent with our findings, \cite{canino-koning_fluctuating_2019} found that non-plastic populations of digital organisms evolving in a cyclic environment maintained fewer novel traits than populations evolving in static environments.
 
 % -- Plastic rescue, stabilizing effect of plasticity --
@@ -974,34 +981,43 @@ The stability that we observe may also lend some support to the hypothesis that 
 Our data do not necessarily provide evidence for or against the genes as followers hypothesis.
 The genes as followers hypothesis focuses on contexts where plastic populations experience novel or abnormally stressful environmental change.
 However, in our system, environmental changes were cyclic (not novel), and no single environmental change was \textit{abnormally} stressful.
-Further, the introduction of novel tasks during the second phase of the experiment merely added static opportunities for fitness improvement.
+Further, the introduction of novel functions during the second phase of the experiment merely added static opportunities for fitness improvement.
 This addition did not change the meaning of existing environmental cues, nor did it require those cues to be used in new ways.
 
-
-% \vspace{0.25cm}
 \subsection{The accumulation of deleterious alleles}
 
 % -- Overview of results --
 %   - More accumulation in non-plastic
 %   - no evidence for cryptic variation housing poison
 %   - plastic ~~ static
-We found that non-plastic lineages that evolved in a fluctuating environment exhibited both greater totals and higher rates of poisonous task acquisition than that of adaptively plastic lineages (Figure \ref{fig:deleterious-hitchhiking}).
+We found that non-plastic lineages that evolved in a fluctuating environment exhibited both greater totals and higher rates of deleterious function acquisition than that of adaptively plastic lineages (Figure \ref{fig:deleterious-hitchhiking}).
+There are several, non-mutually exclusive possibilities that could explain the fixation of explicitly deleterious instructions: random genetic drift, deleterious hitchhiking, epistatic effects, and cryptic variation (in plastic organisms).
+We find it unlikely that random genetic drift explains our observations.
+Each time an organism expresses a \code{deleterious} instruction, the organism incurs a 10\% penalty to their replication rate, which results in strong purifying selection against mutations that cause offspring to execute \code{deleterious} instructions.
+
 In asexual populations without horizontal gene transfer, all co-occurring mutations are linked.
 As such, deleterious mutations linked with a stronger beneficial mutation (\textit{i.e.}, a driver) can sometimes ``hitchhike'' to fixation \citep{smith_hitch-hiking_1974,van_den_bergh_experimental_2018,buskirk_hitchhiking_2017}.
 Natural selection normally prevents deleterious mutations from reaching high frequencies, as such mutants are outcompeted.
 However, when a beneficial mutation sweeps to fixation in a clonal population, it carries along any linked genetic material, including other beneficial, neutral, or deleterious mutations \citep{barton_genetic_2000, smith_hitch-hiking_1974}.
-Therefore, we hypothesize that deleterious genetic hitchhiking drove \code{poison} instruction accumulation along non-plastic lineages in changing environments.
+Therefore, deleterious genetic hitchhiking could have contributed to \code{deleterious} instruction accumulation along non-plastic lineages in changing environments.
 
-Across our experiments, the frequency of selective sweeps in non-plastic populations provided additional opportunities for genetic hitchhiking with each environmental change.
-Indeed, representative lineages from non-plastic populations in the cyclic environment exhibited higher mutation accumulation (Figure~\ref{fig:evolutionary-dynamics-magnitude}b), novel trait loss (Figure~\ref{fig:complex-traits-magnitude}c), and poisonous task acquisition (Figure~\ref{fig:deleterious-hitchhiking}a) than their plastic counterparts.
-In aggregate, we found that many ($\sim$49\%; 956 / 1916) mutations that increased \code{poison} instruction execution in offspring co-occurred with mutations that provided an even stronger benefit by adapting the offspring to an environmental change.
+% Antagonistic pleiotropy occurs when a mutation has beneficial effects for one trait but also causes deleterious effects on other traits~\citep{zimmer_evolution_2013}. 
+Epistatic effects (\textit{i.e.}, interactions between genes) could have also contributed to \code{deleterious} instruction accumulation along non-plastic lineages. 
+On their own, mutations that increase \code{deleterious} instruction execution are maladaptive; however, if such a mutation were to also knock out an even more harmful function, that mutation may have a net beneficial effect.
+As such, mutations that confer increased \code{deleterious} instruction execution could directly drive a selective sweep. 
+
+% Across our experiments, the frequency of selective sweeps in non-plastic populations provided additional opportunities for genetic hitchhiking and antagonistic pleiotropy with each environmental change.
+% Indeed, 
+Representative lineages from non-plastic populations in the cyclic environment exhibited higher mutation accumulation (Figure~\ref{fig:evolutionary-dynamics-magnitude}b), novel function loss (Figure~\ref{fig:complex-traits-magnitude}c), and deleterious function acquisition (Figure~\ref{fig:deleterious-hitchhiking}a) than their plastic counterparts.
+In aggregate, we found that many ($\sim$49\%; 956 / 1916) mutations that increased \code{deleterious} instruction execution in offspring co-occurred with mutations that provided an even stronger benefit by adapting the offspring to an environmental change.
 We expect that an even larger fraction of these deleterious mutations were linked to beneficial mutations, but our analysis only counted mutations that co-occurred in the same generation.
+Our analyses did not distinguish between epistatic effects and deleterious hitchhiking; however, more fine-grained analyses of secondary effects of mutations that conferred \code{deleterious} instruction execution could be performed in future work to disentangle these two mechanisms.
 
 
 % -- Elaboration on plastic result --
 Theory predicts that under relaxed selection deleterious mutations should accumulate as cryptic variation in unexpressed traits \citep{lahti_relaxed_2009}.
-Contrary to this expectation, we did not find evidence of \code{poison} instructions accumulating as cryptic variation in adaptively plastic lineages.
-One possible explanation is that the period of time between environmental changes was too brief for variants carrying unexpressed \code{poison} instructions to drift to high frequencies before the environment changed, after which purifying selection would have removed such variants.
+Contrary to this expectation, we did not find evidence of \code{deleterious} instructions accumulating as cryptic variation in adaptively plastic lineages.
+One possible explanation is that the period of time between environmental changes was too brief for variants carrying unexpressed \code{deleterious} instructions to drift to high frequencies before the environment changed, after which purifying selection would have removed such variants.
 Indeed, we would not expect drift to fix an unexpressed trait since we tuned the frequency of environmental fluctuations to prevent valuable traits from being randomly eliminated during the off environment.
 Additionally, plastic organisms in Avida usually adjust their phenotype by toggling the expression of a minimal number of key instructions, leaving little genomic space for cryptic variation to accumulate.
 
@@ -1017,10 +1033,14 @@ Additionally, plastic organisms in Avida usually adjust their phenotype by toggl
 % -- Adaptive vs non-adaptive plasticity --
 Our work lays the groundwork for using digital evolution experiments to investigate the evolutionary consequences of phenotypic plasticity in a range of contexts.
 However, the data presented here are limited to the evolution of \textit{adaptively} plastic populations.
-Future work might explore the evolutionary consequences of maladaptive and non-adaptive phenotypic plasticity (\textit{e.g.}, \citealt{leroi_temperature_1994}), which are known to bias evolutionary outcomes \citep{ghalambor_non-adaptive_2015}.
+Future work might explore the evolutionary consequences of maladaptive and non-adaptive phenotypic plasticity (\textit{e.g.}, \citealt{leroi_temperature_1994}), which are known to bias evolutionary outcomes~\citep{ghalambor_non-adaptive_2015}.
+
 % -- Environmental change --
 Additionally in our experiments, sensory instructions perfectly differentiated between ENV-A and ENV-B, and environmental fluctuations never exposed populations to entirely new conditions.
-These parameters have been shown to influence evolutionary outcomes \citep{li_digital_2004,boyer_adaptation_2021}, which if relaxed in the context of further digital evolution experiments, may yield additional insights.
+These parameters have been shown to influence evolutionary outcomes~\citep{li_digital_2004,boyer_adaptation_2021}, which if relaxed in the context of further digital evolution experiments, may yield additional insights.
+Our experiments also focused on asexually reproducing digital organisms. 
+Sexual reproduction has been shown to be advantageous in rapidly changing environments, such as the cyclic environments used in our study~\citep{misevic_experiments_2010}. 
+Future work could investigate how sexual reproduction affects the evolutionary consequences of adaptive plasticity. 
 
 % - limitation: focus on lineages -
 %   - extend to complete evolutionary histories
@@ -1037,6 +1057,16 @@ The \code{if} instructions conditionally execute a single instruction depending 
 As such, plastic organisms in Avida typically regulate phenotypes by toggling the expression of a small number of key instructions as opposed to regulating cohorts of instructions under the control of a single regulatory sequence \citep{supplemental_material}.
 This bias may limit the accumulation of hidden genetic variation in Avida genomes.
 However, as there are many model biological organisms, there are many model digital organisms that have different regulatory mechanisms (\textit{e.g.}, \citealt{lalejini_evolving_2018}) that should be used to test the generality of our results.
+
+% -- Reviewer 1 comment --
+% With a population size of 3600 individuals and a genomic mutation rate of 0.25 mutations/genome/generation, potential beneficial mutations are generated quickly and selective sweeps occur quickly
+% "One can imagine that a larger population with a decreased mutation rate would not see the observed phenomenon due to differences in the dynamics of selective sweeps."
+% "Altering the time spent in each environment may alter this trend of selective sweeps driving deleterious mutation accumulation. "
+As with most digital evolution experiments, our mutation rates were high and population sizes were small (3600 individuals) relative to experiments with microbes or conditions common in nature.
+As such, beneficial mutations can be generated rapidly and selective sweeps can occur quickly.
+Moreover, our analyses were limited to a single rate of environmental change and simple function reward structures, which likely influenced the rates of selective sweeps observed in our experiments. 
+Future studies could address these limitations by increasing population sizes, decreasing mutation rates, investigating different function rewards and punishments, and altering the time spent in each environment. %, painting a more complete picture of the range of scenarios where our results apply.
+
 
 \end{raggedbottom}
 
@@ -1065,6 +1095,7 @@ The authors declare that the research was conducted in the absence of any commer
 
 We thank members of the MSU Digital Evolution Lab for helpful comments and suggestions on this work.
 We also thank Luis Zaman whose keynote talk at the 2020 Artificial Life conference inspired the initial exploratory experiments from which this work blossomed.
+Additionally, we thank the anonymous reviewers whose thoughtful comments and suggestions improved the quality of our manuscript.
 MSU provided computational resources through the Institute for Cyber-Enabled Research.
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation, Department of Energy, Michigan State University, or The University of Idaho.
 
